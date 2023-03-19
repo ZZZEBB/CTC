@@ -11,9 +11,13 @@
 		<typeAlias type="com.spring.ctc.cart.vo.CartVO" alias="cartVO" />
 		<typeAlias type="com.spring.ctc.goods.ReviewVO" alias="reviewVO" />
 		<typeAlias type="com.spring.ctc.goods.flight.vo.GoodsFlightVO" alias="goodsFlightVO" />
+		<typeAlias type="com.spring.ctc.goods.flight.vo.FlightImageFileVO" alias="flightImageFileVO" />
 		<typeAlias type="com.spring.ctc.goods.hotel.vo.GoodsHotelVO" alias="goodsHotelVO" />
+		<typeAlias type="com.spring.ctc.goods.hotel.vo.HotelImageFileVO" alias="hotelImageFileVO" />
 		<typeAlias type="com.spring.ctc.goods.pack.vo.GoodsPackVO" alias="goodsPackVO" />
+		<typeAlias type="com.spring.ctc.goods.pack.vo.PackImageFileVO" alias="packImageFileVO" />
 		<typeAlias type="com.spring.ctc.goods.rent.vo.GoodsRentVO" alias="goodsRentVO" />
+		<typeAlias type="com.spring.ctc.goods.rent.vo.RentImageFileVO" alias="rentImageFileVO" />
 		<typeAlias type="com.spring.ctc.joinandlogin.vo.AdminVO" alias="adminVO" />
 		<typeAlias type="com.spring.ctc.joinandlogin.vo.CompanyVO" alias="companyVO" />
 		<typeAlias type="com.spring.ctc.joinandlogin.vo.MemberVO" alias="memberVO" />

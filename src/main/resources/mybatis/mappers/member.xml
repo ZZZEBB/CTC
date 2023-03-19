@@ -9,8 +9,10 @@
 		<result property="member_id" column="member_id" />
 		<result property="member_pw" column="member_pw" />
 		<result property="member_name" column="member_name" />
-		<result property="member_ph" column="member_ph" />
-		<result property="member_rrn" column="member_rrn" />
+		<result property="member_ph1" column="member_ph1" />
+		<result property="member_ph2" column="member_ph2" />
+		<result property="member_rrn1" column="member_rrn1" />
+		<result property="member_rrn2" column="member_rrn2" />
 		<result property="member_email" column="member_email" />
 		<result property="member_email_yn" column="member_email_yn" />
 		<result property="member_zipcode" column="member_zipcode" />
@@ -25,7 +27,7 @@
 	
 	<select id="findId" parameterType="java.util.Map" resultType="memberVO" >
        <![CDATA[
-         select * from t_shopping_member where member_name=#{member_name} and email1=#{email1}         
+         select * from member where member_id=#{member_id} and member_email=#{member_email}         
       ]]>
    </select>
 </mapper>

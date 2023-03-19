@@ -30,9 +30,11 @@
 	<context:component-scan base-package="com.spring.ctc" />
 	
 	<!-- 인터셉터  -->
-	<mvc:interceptors><mvc:interceptor><mvc:mapping path="/*/*.do" /><mvc:mapping path="/*/*/*.do" /><beans:bean
+	<mvc:interceptors><mvc:interceptor><mvc:mapping path="/*/*.do" /><beans:bean
 	class ="com.spring.ctc.common.interceptor.ViewNameInterceptor" /></mvc:interceptor>
 	</mvc:interceptors>
+	
+	<!-- <mvc:mapping path="/*/*/*.do" /> -->
  
  	<!-- 멀티파트 리졸버 -->
     <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

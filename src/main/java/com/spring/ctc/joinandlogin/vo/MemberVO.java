@@ -8,8 +8,10 @@ public class MemberVO {
 	private String member_id;
 	private String member_pw;
 	private String member_name;
-	private String member_ph;
-	private String member_rrn;
+	private String member_ph1;
+	private String member_ph2;
+	private String member_rrn1;
+	private String member_rrn2;
 	private String member_email;
 	private String member_email_yn;
 	private String member_zipcode;
@@ -18,14 +20,19 @@ public class MemberVO {
 	private String member_namuji_address;
 	private Date member_joindate;
 	private int status;
+	private Date member_unregister_date;
+	private Date member_deldate;
+	
+	
+	public MemberVO(String member_name, String member_email) {
+		
+		this.member_id = member_id;
+		this.member_email = member_email;
+	}
+	
 	public int getMember_num() {
 		return member_num;
 	}
-	
-	public MemberVO(String member_name, String member_email) {
-		this.member_name = member_name;
-		this.member_email = member_email;
-}
 	public void setMember_num(int member_num) {
 		this.member_num = member_num;
 	}
@@ -47,17 +54,29 @@ public class MemberVO {
 	public void setMember_name(String member_name) {
 		this.member_name = member_name;
 	}
-	public String getMember_ph() {
-		return member_ph;
+	public String getMember_ph1() {
+		return member_ph1;
 	}
-	public void setMember_ph(String member_ph) {
-		this.member_ph = member_ph;
+	public void setMember_ph1(String member_ph1) {
+		this.member_ph1 = member_ph1;
 	}
-	public String getMember_rrn() {
-		return member_rrn;
+	public String getMember_ph2() {
+		return member_ph2;
 	}
-	public void setMember_rrn(String member_rrn) {
-		this.member_rrn = member_rrn;
+	public void setMember_ph2(String member_ph2) {
+		this.member_ph2 = member_ph2;
+	}
+	public String getMember_rrn1() {
+		return member_rrn1;
+	}
+	public void setMember_rrn1(String member_rrn1) {
+		this.member_rrn1 = member_rrn1;
+	}
+	public String getMember_rrn2() {
+		return member_rrn2;
+	}
+	public void setMember_rrn2(String member_rrn2) {
+		this.member_rrn2 = member_rrn2;
 	}
 	public String getMember_email() {
 		return member_email;
@@ -113,13 +132,11 @@ public class MemberVO {
 	public void setMember_unregister_date(Date member_unregister_date) {
 		this.member_unregister_date = member_unregister_date;
 	}
-	public Date getMemberr_deldate() {
-		return memberr_deldate;
+	public Date getMember_deldate() {
+		return member_deldate;
 	}
-	public void setMemberr_deldate(Date memberr_deldate) {
-		this.memberr_deldate = memberr_deldate;
+	public void setMember_deldate(Date member_deldate) {
+		this.member_deldate = member_deldate;
 	}
-	private Date member_unregister_date;
-	private Date memberr_deldate;
-
+	
 }

@@ -20,35 +20,35 @@ import com.spring.ctc.joinandlogin.vo.MemberVO;
 @Controller("joinAndLoginController")
 @RequestMapping(value="/joinAndLogin")
 public class JoinAndLoginControllerImpl implements JoinAndLoginController {
-//	@Autowired
-//	private JoinAndLoginService joinAndLoginService;
-//	@Autowired
-//	private MemberVO memberVO;
-//	@Autowired
-//	private JoinAndLoginDAO joinAndLoginDAO;
+	
+	@Autowired
+	private JoinAndLoginService joinAndLoginService;
+	  
+	@Autowired
+	private MemberVO memberVO;
+	
+	@Autowired
+	private JoinAndLoginDAO joinAndLoginDAO;
+	 
 	
 	@Override
-	   @RequestMapping(value="/lookup_id.do" ,method = RequestMethod.POST)
-	   public ModelAndView findId(@RequestParam Map<String, String> findIdMap, 
-	                        HttpServletResponse response, HttpServletRequest request) throws Exception {
-	      ModelAndView mav = new ModelAndView();
-	        memberVO = joinAndLoginService.findId(findIdMap);
-	        
-	        if (memberVO!= null) {
-	           String memberId = memberVO.getMember_id();
-	           HttpSession session=request.getSession();
-	            session.setAttribute("id", memberId);
-	            mav.setViewName("forward:/member/find_id.do"); 
-	      } else {
-	         
-	         String message="�씠由� �삉�뒗 �씠硫붿씪�씠 �씪移섑븯吏� �븡�뒿�땲�떎. �쉶�썝�젙蹂대�� �솗�씤�빐二쇱꽭�슂.";
-	         mav.addObject("id", message);
-	         mav.setViewName("forward:/member/find_id.do"); //forward�뒗 留듯븨媛믪씠�옉 �씠由� 媛숈쑝硫� �삤瑜�(李얜뒗嫄� 臾댄븳 諛섎났)
-	      }
-
-           return mav;
-
-	   }
+	@RequestMapping(value="/lookup_id.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView findId(@RequestParam Map<String, String> findIdMap, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		MemberVO memberVO = joinAndLoginService.findId(findIdMap);
+		
+		if (memberVO!= null) {
+			String memberId = memberVO.getMember_id();
+			HttpSession session=request.getSession();
+			session.setAttribute("id", memberId);
+			mav.setViewName("forward:/member/find_id.do"); 
+		} else {
+			String message="아이디가 틀립니다. 다시 한번 입력해주세요.";
+			mav.addObject("id", message);
+			mav.setViewName("forward:/member/find_id.do"); //forward�뒗 留듯븨媛믪씠�옉 �씠由� 媛숈쑝硫� �삤瑜�(李얜뒗嫄� 臾댄븳 諛섎났)
+		}
+		return mav;
+	}
 	
 	/* 회원가입 메인페이지 이동 */
 	@RequestMapping(value= "/join_main.do" ,method={RequestMethod.POST,RequestMethod.GET})
