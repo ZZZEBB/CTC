@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mapper.board">
+	<resultMap id="eventResult" type="eventVO">
+		<result property="com_id" column="com_id" />
+		<result property="flight_code" column="flight_code" />
+		<result property="hotel_code" column="hotel_code" />
+		<result property="package_code" column="package_code" />
+		<result property="rent_code" column="rent_code" />
+		<result property="event_num" column="event_num" />
+		<result property="event_title" column="event_title" />
+		<result property="event_content" column="event_content" />
+		<result property="event_start_date" column="event_start_date" />
+		<result property="event_end_date" column="event_end_date" />
+		<result property="event_write_date" column="event_write_date" />
+		<result property="event_status" column="event_status" />
+		<result property="event_category" column="event_category" />
+	</resultMap>	
+
+	<resultMap id="faqResult" type="faqVO">
+		<result property="faq_num" column="faq_num" />
+		<result property="faq_title" column="faq_title" />
+		<result property="faq_content" column="faq_content" />
+		<result property="faq_write_date" column="faq_write_date" />
+	</resultMap>	
+	
+	<resultMap id="noticeResult" type="noticeVO">
+		<result property="notice_title" column="notice_title" />
+		<result property="notice_content" column="notice_content" />
+		<result property="notice_write_date" column="notice_write_date" />
+	</resultMap>
+	
+	<resultMap id="qnaResult" type="qnaVO">
+		<result property="member_id" column="member_id" />
+		<result property="qna_num" column="qna_num" />
+		<result property="qna_answer_num" column="qna_answer_num" />
+		<result property="qna_title" column="qna_title" />
+		<result property="qna_content" column="qna_content" />
+		<result property="qna_write_date" column="qna_write_date" />
+	</resultMap>
+</mapper>
+
