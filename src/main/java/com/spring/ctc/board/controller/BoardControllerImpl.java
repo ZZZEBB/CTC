@@ -25,7 +25,7 @@ public class BoardControllerImpl implements BoardController {
 	
 	private EventVO eventVO;
 	
-	//이벤트 목록 조회
+	//이벤트 목록 조회(/eventList.do)
 	@Override
 	@RequestMapping(value= "/eventList.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView eventList(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -43,6 +43,7 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
 	}
 	
+	//이벤트 상세 조회(/eventDetail.do)
 	@RequestMapping(value= "/eventDetail.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView eventDetail(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
