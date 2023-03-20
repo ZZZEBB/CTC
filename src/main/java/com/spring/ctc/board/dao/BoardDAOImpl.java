@@ -1,8 +1,25 @@
 package com.spring.ctc.board.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class BoardDAOImpl {
+import com.spring.ctc.board.vo.EventVO;
+
+@Repository("boardDAO")
+public class BoardDAOImpl implements BoardDAO {
+	
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@Override
+	public List<EventVO> eventLists() throws DataAccessException {
+		List<EventVO> eventLists = (ArrayList) sqlSession.selectList("mapper.board.eventList");
+	   return eventLists;
+	}
 
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//import com.spring.ctc.joinandlogin.dao.JoinAndLoginDAO;
+import com.spring.ctc.joinandlogin.dao.JoinAndLoginDAO;
 import com.spring.ctc.joinandlogin.service.JoinAndLoginService;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 
@@ -24,11 +24,8 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 	@Autowired
 	private JoinAndLoginService joinAndLoginService;
 	  
-//	@Autowired
-//	private MemberVO memberVO;
-//	
-//	@Autowired
-//	private JoinAndLoginDAO joinAndLoginDAO;
+	private MemberVO memberVO;
+	private JoinAndLoginDAO joinAndLoginDAO;
 	 
 	
 	@Override
@@ -41,11 +38,11 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 			String memberId = memberVO.getMember_id();
 			HttpSession session=request.getSession();
 			session.setAttribute("id", memberId);
-			mav.setViewName("forward:/member/find_id.do"); 
+			mav.setViewName("forward:/joinAndLogin/find_id.do"); 
 		} else {
 			String message="아이디가 틀립니다. 다시 한번 입력해주세요.";
 			mav.addObject("id", message);
-			mav.setViewName("forward:/member/find_id.do"); //forward�뒗 留듯븨媛믪씠�옉 �씠由� 媛숈쑝硫� �삤瑜�(李얜뒗嫄� 臾댄븳 諛섎났)
+			mav.setViewName("forward:/joinAndLogin/find_id.do"); //forward�뒗 留듯븨媛믪씠�옉 �씠由� 媛숈쑝硫� �삤瑜�(李얜뒗嫄� 臾댄븳 諛섎났)
 		}
 		return mav;
 	}

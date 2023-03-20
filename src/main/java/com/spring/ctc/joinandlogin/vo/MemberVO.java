@@ -2,6 +2,9 @@ package com.spring.ctc.joinandlogin.vo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component("memberVO")
 public class MemberVO {
 	
 	private int member_num;
@@ -16,16 +19,18 @@ public class MemberVO {
 	private String member_email_yn;
 	private String member_zipcode;
 	private String member_road_address;
-	private String member_jibun_address;
-	private String member_namuji_address;
+	private String member_local_address;
+	private String member_rest_address;
 	private Date member_joindate;
 	private int status;
 	private Date member_unregister_date;
 	private Date member_deldate;
 	
+	public MemberVO() {
+		
+	}
 	
 	public MemberVO(String member_name, String member_email) {
-		
 		this.member_id = member_id;
 		this.member_email = member_email;
 	}
@@ -102,17 +107,17 @@ public class MemberVO {
 	public void setMember_road_address(String member_road_address) {
 		this.member_road_address = member_road_address;
 	}
-	public String getMember_jibun_address() {
-		return member_jibun_address;
+	public String getMember_local_address() {
+		return member_local_address;
 	}
-	public void setMember_jibun_address(String member_jibun_address) {
-		this.member_jibun_address = member_jibun_address;
+	public void setMember_local_address(String member_jibun_address) {
+		this.member_local_address = member_jibun_address;
 	}
-	public String getMember_namuji_address() {
-		return member_namuji_address;
+	public String getMember_rest_address() {
+		return member_rest_address;
 	}
-	public void setMember_namuji_address(String member_namuji_address) {
-		this.member_namuji_address = member_namuji_address;
+	public void setMember_rest_address(String member_namuji_address) {
+		this.member_rest_address = member_namuji_address;
 	}
 	public Date getMember_joindate() {
 		return member_joindate;

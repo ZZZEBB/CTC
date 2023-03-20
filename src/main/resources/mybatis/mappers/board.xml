@@ -41,5 +41,13 @@
 		<result property="qna_content" column="qna_content" />
 		<result property="qna_write_date" column="qna_write_date" />
 	</resultMap>
+	
+	<select id="eventList" parameterType="eventVO" resultMap="eventResult" >
+		<![CDATA[
+			select event_title, event_content, event_start_date, event_end_date, event_status, event_category
+			from event
+			order by event_write_date desc
+		]]>
+   </select>
 </mapper>
 

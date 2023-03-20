@@ -50,8 +50,8 @@
 	                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
 		                <li><a href="${contextPath}/joinAndLogin/join_main.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
-		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-		                <li><a href="${contextPath}/company/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
+		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
 	                </ul>
 	            </div>
             </div>

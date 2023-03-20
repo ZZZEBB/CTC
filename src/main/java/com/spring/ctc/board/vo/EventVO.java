@@ -2,6 +2,9 @@ package com.spring.ctc.board.vo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component("eventVO")
 public class EventVO {
 
 	private String com_id;
@@ -18,6 +21,10 @@ public class EventVO {
 	private int event_status;
 	private int event_category;
 
+	public EventVO() {
+		
+	}
+	
 	public EventVO(int event_num, String event_title, String event_content, Date event_start_date, Date event_end_date, Date event_write_date) {
 		this.event_num = event_num;
 		this.event_title = event_title;

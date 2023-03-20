@@ -2,6 +2,9 @@ package com.spring.ctc.joinandlogin.vo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component("companyVO")
 public class CompanyVO {
 	
 	private int com_num;
@@ -25,6 +28,10 @@ public class CompanyVO {
 	private String com_crn_yn;
 	private Date com_unregister_date;
 	private Date com_deldate;
+	
+	public CompanyVO() {
+		
+	}
 	
 	public int getCom_num() {
 		return com_num;

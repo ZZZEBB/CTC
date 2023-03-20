@@ -17,7 +17,7 @@ public class JoinAndLoginDAOImpl implements JoinAndLoginDAO{
 	 
 	@Override
 	public MemberVO findId(Map<String,String> findIdMap) throws DataAccessException {
-		MemberVO member=(MemberVO)sqlSession.selectOne("mapper.member.findId", findIdMap);
+		MemberVO member=(MemberVO)sqlSession.selectOne("mapper.login.findId", findIdMap);
 		return member;
 	}
 }

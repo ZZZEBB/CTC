@@ -1,5 +1,9 @@
 package com.spring.ctc.goods.flight.service;
 
-public interface GoodsFlightService {
+import java.util.List;
+import java.util.Map;
 
+import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
+
+public interface GoodsFlightService {
 }

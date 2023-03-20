@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<!--검색창-->
-	    <!-- <div class="row justify-content-center" style="margin-top: 10%; height: 30px;">
+	    <div class="row justify-content-center" style="margin-top: 10%; height: 30px;">
             <div class="col-md-8">
                 <form class="card card-sm border border-0">
                     <div class="card-body row no-gutters align-items-center justify-content-end" style="padding : 5px; line-height: 40px;">
@@ -76,7 +76,7 @@
                     </div>
                 </form>
             </div>
-        </div> -->
+        </div>
         <!--/검색창-->
 	</div>
     <!-- 이벤트 게시물 조회 -->
@@ -85,64 +85,28 @@
     	<hr class = "event_hr">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <div class="list-group list-group-flush">
-                	<!-- <c:choose>
-                		<c:when test="${empty eventLists}">
-                			<h3>등록된 이벤트가 없습니다.</h3>
-                		</c:when>
-                		<c:otherwise>
-                			<c:forEach var = "event" items = "${eventLists }">
-                				<a href="#" class="list-group-item">
-			                       	<div class="d-flex w-70">
-			                        	<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
-			                            <h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
-			                            	<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date } ~ ${event.event_end_date }</small>
-			                            </h6>
-			                            <span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">진행중</span>
-			                        </div>
-			                    </a>
-			                </div>
-			                <hr class = "event_hr">
-                			</c:forEach>
-                		</c:otherwise>
-                	</c:choose> -->
-                 <div class="list-group list-group-flush">
-                    <a href="${contextPath}/board/eventDetail.do" class="list-group-item">
-                       	<div class="d-flex w-100">
-                        	<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
-                        	<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">이벤트</span>
-                            <h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;">
-                            	<span class = "fs-5 fw-bolder">Conrer To Corner 1주년 기념 감사제!</span>
-                            	<small class="smallCaption text-secondary"><br>corner to corner 생일파티에 여러분을 초대합니다!<br>2023-03-10 ~ 2023-03-31</small>
-                            </h6>
-                            <span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">진행중</span>
-                        </div>
-                    </a>
-                </div>
-                <hr class = "event_hr col-md-12">
-                <div class="list-group list-group-flush">
-                    <a href="${contextPath}/board/eventDetail.do" class="list-group-item">
-                       	<div class="d-flex w-70">
-                        	<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
-                            <h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">Conrer To Corner 1주년 기념 감사제!</span>
-                            	<small class="smallCaption text-secondary"><br>corner to corner 생일파티에 여러분을 초대합니다!<br>2023-03-10 ~ 2023-03-31</small>
-                            </h6>
-                            <span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">진행중</span>
-                        </div>
-                    </a>
-                </div>
-                <hr class = "event_hr col-md-12">
-                <div class="list-group list-group-flush">
-                    <a href="${contextPath}/board/eventDetail.do" class="list-group-item">
-                       	<div class="d-flex w-70">
-                        	<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
-                            <h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">Conrer To Corner 1주년 기념 감사제!</span>
-                            	<small class="smallCaption text-secondary"><br>corner to corner 생일파티에 여러분을 초대합니다!<br>2023-03-10 ~ 2023-03-31</small>
-                            </h6>
-                            <span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">진행중</span>
-                        </div>
-                    </a>
-                </div>
+				<div class="list-group list-group-flush">
+					<c:choose>
+						<c:when test="${empty eventLists}">
+							<h3>등록된 이벤트가 없습니다.</h3>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var = "event" items = "${eventLists}">
+								<a href="#" class="list-group-item">
+									<div class="d-flex w-70">
+										<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
+										<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+										<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+											<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
+										</h6>
+										<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+									</div>
+								</a>
+								<hr class = "event_hr col-md-12">
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
+				</div>
             </div>
         </div>
     </div>

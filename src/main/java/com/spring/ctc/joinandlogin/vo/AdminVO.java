@@ -1,5 +1,8 @@
 package com.spring.ctc.joinandlogin.vo;
 
+import org.springframework.stereotype.Component;
+
+@Component("adminVO")
 public class AdminVO {
 
 	private String admin_id;
