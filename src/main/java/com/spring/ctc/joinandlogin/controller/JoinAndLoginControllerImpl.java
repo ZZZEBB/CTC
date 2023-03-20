@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.ctc.joinandlogin.dao.JoinAndLoginDAO;
+//import com.spring.ctc.joinandlogin.dao.JoinAndLoginDAO;
 import com.spring.ctc.joinandlogin.service.JoinAndLoginService;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 
@@ -24,11 +24,11 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 	@Autowired
 	private JoinAndLoginService joinAndLoginService;
 	  
-	@Autowired
-	private MemberVO memberVO;
-	
-	@Autowired
-	private JoinAndLoginDAO joinAndLoginDAO;
+//	@Autowired
+//	private MemberVO memberVO;
+//	
+//	@Autowired
+//	private JoinAndLoginDAO joinAndLoginDAO;
 	 
 	
 	@Override

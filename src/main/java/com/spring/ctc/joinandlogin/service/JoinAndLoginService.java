@@ -6,5 +6,5 @@ import com.spring.ctc.joinandlogin.vo.MemberVO;
 
 public interface JoinAndLoginService {
 
-	public MemberVO findId(Map findIdMap) throws Exception;
+	public MemberVO findId(Map<String,String> findIdMap) throws Exception;
 }

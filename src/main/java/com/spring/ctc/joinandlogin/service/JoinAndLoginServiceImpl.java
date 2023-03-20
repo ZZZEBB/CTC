@@ -11,11 +11,12 @@ import com.spring.ctc.joinandlogin.vo.MemberVO;
 @Service
 public class JoinAndLoginServiceImpl implements JoinAndLoginService{
 	
-	@Autowired private JoinAndLoginDAO joinAndLoginDAO;
+	@Autowired 
+	private JoinAndLoginDAO joinAndLoginDAO;
 	
 	
 	@Override
-	   public MemberVO findId(Map findIdMap) throws Exception {
+	   public MemberVO findId(Map<String,String> findIdMap) throws Exception {
 	      return joinAndLoginDAO.findId(findIdMap);
 	   }
 }

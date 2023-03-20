@@ -11,18 +11,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.board.service.BoardService;
 
-@Controller("boardController")
+//@Controller("boardController")
+@Controller
 @RequestMapping(value="/board")
 public class BoardControllerImpl implements BoardController {
 	
-	/*@Autowired
-	  private BoardService boardService; */
+	@Autowired
+	private BoardService boardService;
 	
 	@RequestMapping(value= "/eventList.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView eventList(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
+		
+		boardService.test();
+		
 		mav.setViewName(viewName);
 		return mav;
 	}

@@ -8,5 +8,5 @@ import com.spring.ctc.joinandlogin.vo.MemberVO;
 
 public interface JoinAndLoginDAO {
 
-	public MemberVO findId(Map findIdMap) throws DataAccessException;
+	public MemberVO findId(Map<String,String> findIdMap) throws DataAccessException;
 }
