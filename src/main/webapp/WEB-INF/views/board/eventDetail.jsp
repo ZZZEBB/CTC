@@ -30,8 +30,20 @@
 			<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">다음글</a>
 			<a href="${contextPath}/board/eventList.do" class = "btn btn-outline-dark btn-sm my-2 mx-1">목록</a>
 		</div>
-		<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
-		<img src="${contextPath}/resources/image/eventImage02.png" class = "w-80">
+		<c:forEach var = "event" items = "${eventLists}">
+			<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+			<img src="${contextPath}/resources/image/eventImage02.png" class = "w-80">
+			<div>
+				<p>${event.event_num }</p>
+				<p>${event.event_title }</p>
+				<p>${event.event_content }</p>
+				<p>${event.event_start_date }</p>
+				<p>${event.event_end_date }</p>
+				<p>${event.event_write_date }</p>
+				<p>${event.event_status }</p>
+				<p>${event.event_category }</p>
+			</div>
+		</c:forEach>
 		
 		<!-- 이벤트 관련 호텔 목록 -->
 	    <div class="container mx-2 w-90">

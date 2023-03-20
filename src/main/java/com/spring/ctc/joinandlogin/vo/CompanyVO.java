@@ -21,8 +21,8 @@ public class CompanyVO {
 	private String com_crn3;
 	private String com_zipcode;
 	private String com_road_address;
-	private String com_jibun_address;
-	private String com_namuji_address;
+	private String com_local_address;
+	private String com_rest_address;
 	private Date com_joindate;
 	private int com_status;
 	private String com_crn_yn;
@@ -117,17 +117,17 @@ public class CompanyVO {
 	public void setCom_road_address(String com_road_address) {
 		this.com_road_address = com_road_address;
 	}
-	public String getCom_jibun_address() {
-		return com_jibun_address;
+	public String getCom_local_address() {
+		return com_local_address;
 	}
-	public void setCom_jibun_address(String com_jibun_address) {
-		this.com_jibun_address = com_jibun_address;
+	public void setCom_local_address(String com_jibun_address) {
+		this.com_local_address = com_jibun_address;
 	}
-	public String getCom_namuji_address() {
-		return com_namuji_address;
+	public String getCom_rest_address() {
+		return com_rest_address;
 	}
-	public void setCom_namuji_address(String com_namuji_address) {
-		this.com_namuji_address = com_namuji_address;
+	public void setCom_rest_address(String com_namuji_address) {
+		this.com_rest_address = com_namuji_address;
 	}
 	public Date getCom_joindate() {
 		return com_joindate;

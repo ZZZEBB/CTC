@@ -19,15 +19,17 @@
    <style>
    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	   	.event_hr {
+	   		box-sizing : border-box;
 			background-color : #808080;
-			margin : 0 auto;
+			margin : 30px auto;
 			border : none;
-			height : 3px;
-			margin-top : 20px;
-			margin-bottom : 20px;
+			height : 2px;
 		}
    </style>
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+   	
+   </script>
 </head>
 <body>
 	<div class="container">
@@ -92,7 +94,7 @@
 						</c:when>
 						<c:otherwise>
 							<c:forEach var = "event" items = "${eventLists}">
-								<a href="#" class="list-group-item">
+								<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
 									<div class="d-flex w-70">
 										<img src="${contextPath}/resources/image/eventImage01.png" width="30%">
 										<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>

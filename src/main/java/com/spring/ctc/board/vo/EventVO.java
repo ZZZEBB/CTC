@@ -25,6 +25,11 @@ public class EventVO {
 		
 	}
 	
+	public EventVO(int event_num) {
+		this.event_num = event_num;
+		System.out.println("###########" + event_num);
+	}
+	
 	public EventVO(int event_num, String event_title, String event_content, Date event_start_date, Date event_end_date, Date event_write_date) {
 		this.event_num = event_num;
 		this.event_title = event_title;

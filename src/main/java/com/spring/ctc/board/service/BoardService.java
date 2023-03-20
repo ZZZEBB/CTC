@@ -6,4 +6,5 @@ import com.spring.ctc.board.vo.EventVO;
 public interface BoardService {
 
 	public List<EventVO> eventList() throws Exception;
+	public List eventDetail(int event_num) throws Exception;
 }

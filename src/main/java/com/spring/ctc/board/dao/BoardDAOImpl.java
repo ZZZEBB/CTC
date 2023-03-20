@@ -21,5 +21,11 @@ public class BoardDAOImpl implements BoardDAO {
 		List<EventVO> eventLists = (ArrayList) sqlSession.selectList("mapper.board.eventList");
 	   return eventLists;
 	}
+	
+	@Override
+	public List eventDetail(int event_num) throws DataAccessException {
+		List eventLists = (List) sqlSession.selectList("mapper.board.eventDetail", event_num);
+	   return eventLists;
+	}
 
 }

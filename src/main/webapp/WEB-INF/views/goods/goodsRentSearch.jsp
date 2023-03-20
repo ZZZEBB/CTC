@@ -12,22 +12,11 @@
 <meta charset="UTF-8">
 <title>호텔 상품 조회</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+
 <script>
-    //뭐지
-	console.log('http://www.abdullahkahriman.com');
-	
-	//시간스크립트
-	document.querySelector("#time").addEventListener("input", function(e) {
-		  const reTime = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
-		  const time = this.value;
-		  if (reTime.exec(time)) {
-		    const minute = Number(time.substring(3,5));
-		    const hour = Number(time.substring(0,2)) % 12 + (minute / 60);
-		    this.style.backgroundImage = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='18.5' fill='none' stroke='%23222' stroke-width='3' /><path d='M20,4 20,8 M4,20 8,20 M36,20 32,20 M20,36 20,32' stroke='%23bbb' stroke-width='1' /><circle cx='20' cy='20' r='2' fill='%23222' stroke='%23222' stroke-width='2' /></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M18.5,24.5 19.5,4 20.5,4 21.5,24.5 Z' fill='%23222' style='transform:rotate(${360 * minute / 60}deg); transform-origin: 50% 50%;' /></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M18.5,24.5 19.5,8.5 20.5,8.5 21.5,24.5 Z' style='transform:rotate(${360 * hour / 12}deg); transform-origin: 50% 50%;' /></svg>")`;
-		  }
-		});
-	
+
 	function cartype(){
 		var selectList = document.getElementById("carResult")
 		
@@ -142,24 +131,6 @@
 	width:120px;
 	height:30px;
 }
-/* 캘린더 사이즈조정 */
-.date{
-	font-weight:bold;
-	padding-left:5px;
-	border:none;
-	background-color:#E0E0E0;
-	text-align: center;
-	height:20px;
-}
-/* 시간 */
-#time{
-	font-weight:bold;
-	border:none;
-	background-color:#E0E0E0;
-	margin-left:-6px;
-	text-align: center;
-	height:20px;
-}
 /* 자동차 타입 위치조정 */
 #carResult{
 	background-color:#E0E0E0;
@@ -169,32 +140,6 @@
 	border:2px solid black;
 	border-radius:5px;
 	text-align: center;
-}
-/* 캘린더 시간 검색 */
-#calendertime1{
-	background-color:#E0E0E0;
-	border:2px solid black;
-	border-radius:5px;
-	text-align: center;
-	padding-top:5px;
-	height:15px;
-	margin:-10px 10px auto auto; 
-}
-#calendertime2{
-	background-color:#E0E0E0;
-	border:2px solid black;
-	border-radius:5px;
-	text-align: center;
-	padding-top:5px;
-	height:15px;
-}
-.productmap{
-	border:2px solid black;
-	float:left;
-	width:330px;
-	height:400px;
-	margin:15px auto 15px 130px;
-	border-radius:5px;
 }
 /* 상품자동차 큰틀조정 */
 .productcar{
@@ -238,8 +183,43 @@
 </head>
 <body>
 <form id="search" action="${contextPath}/goods/rentsearchWord.do" method="get"> 
-		<hr id="product_hr">
- 		<span id="findSearch">
+		
+ 		
+ 		<!-- <span class="reform">출발일 </span><span id="calendertime1"> 
+ 		<input class="date" type="date" name="start"/> 
+			<input id="time" type="time" name="time"/>
+		</span>
+ 		<span class="reform">도착일 </span><span id="calendertime2"> 
+ 		<input class="date" type="date" name="End"/>
+			<input id="time" type="time" name="time"/>
+		</span>	
+   	   	<button type="submit" class="btn btn-link">
+	       	<img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> 
+	    </button> -->
+	    
+	    <!-- 은빈 대여일시~반납일시 폼 -->
+	    <div class="container">
+		    <div class="row">
+		        <div class='col-sm-6'>
+		            <div class="form-group">
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' class="form-control" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+		        </div>
+		        <script type="text/javascript">
+		            $(function () {
+		                $('#datetimepicker1').datetimepicker();
+		            });
+		        </script>
+		    </div>
+		</div>
+	    
+	  <hr id="product_hr">
+	  <span id="findSearch">
  		<img class="icon" alt="car_icon" src="${contextPath}/resources/image/car.png"> <!-- 검색창 왼쪽 자동차아이콘 -->
 		<select id="carResult" name="carResult" onchange="cartype()">
 			  <option value="all">차종</option>
@@ -282,19 +262,11 @@
 				  <option value="gv80">gv80</option>
 				  <c:forEach items=""></c:forEach>
 			</select>
+			<button type="submit" class="btn btn-link">
+		  		<img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> 
+		  	</button>
 		</span>
- 		<span class="reform">출발일 </span><span id="calendertime1"> 
- 		<input class="date" type="date" name="start"/> <!-- 출발달력 -->
-			<input id="time" type="time" name="time"/><!-- 출발시간 -->
-		</span>
- 		<span class="reform">도착일 </span><span id="calendertime2"> 
- 		<input class="date" type="date" name="End"/> <!-- 도착달력 -->
-			<input id="time" type="time" name="time"/><!-- 도착시간 -->
-		</span>	
-   	   	<button type="submit" class="btn btn-link">
-	       	<img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> <!-- submit 검색버튼 -->
-	    </button>
-</form>
+	</form>
 
 
  <!-- for 문으로 돌려야하는데......... DB연결해야 확인가능하네........ㅠㅠ -->
@@ -436,6 +408,5 @@
  	</c:otherwise>
  	
  </c:choose>
-
 </body>
 </html>
