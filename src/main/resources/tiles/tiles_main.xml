@@ -35,14 +35,14 @@
 	
 	<!-- 사업체 레이아웃 -->
 	<definition name="sideCompany" template="/WEB-INF/views/common/companyLayout.jsp">
-		<put-attribute name="headerManager" value="/WEB-INF/views/common/headerManager.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="sideCompany" value="/WEB-INF/views/common/sideCompany.jsp" />
 	</definition>
 	
 		<!-- 관리자 레이아웃 -->
 	<definition name="sideAdmin" template="/WEB-INF/views/common/adminLayout.jsp">
-		<put-attribute name="headerManager" value="/WEB-INF/views/common/headerManager.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="sideAdmin" value="/WEB-INF/views/common/sideAdmin.jsp" />
 	</definition>

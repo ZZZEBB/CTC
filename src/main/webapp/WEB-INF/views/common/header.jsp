@@ -46,13 +46,42 @@
 	                		<img src="${contextPath}/resources/image/search.png" alt="검색" width="15" height="15">
 	                	</button>
 	                </form>
-	        
+	        		<!-- 기본 상단 헤더 -->
 	                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
 		                <li><a href="${contextPath}/joinAndLogin/join_main.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
 		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
 	                </ul>
+	                
+	                <!-- 사용자 로그인 상태 상단 헤더 -->
+	           <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">장덕배님</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+	                </ul> -->  
+	                
+	                <!-- 사업체 로그인 상태 상단 헤더 -->
+	           <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">사업체님</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">사업체</a></li>
+	                </ul>      
+	                
+	                <!-- 관리자 로그인 상태 상단 헤더 -->
+	           <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">관리자님</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">관리자</a></li>
+	                </ul> -->
 	            </div>
             </div>
             <div class="container-fluid">

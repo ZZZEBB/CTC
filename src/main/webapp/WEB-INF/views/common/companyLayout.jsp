@@ -14,8 +14,8 @@
 </head>
 <body>
 	<div id="container">
-		<div id="headerManager">
-			<tiles:insertAttribute name="headerManager" />
+		<div id="header">
+			<tiles:insertAttribute name="header" />
 		</div>
 		<div id ="sideCompany">
 			<tiles:insertAttribute name="sideCompany" />
