@@ -51,7 +51,7 @@
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
 		                <li><a href="${contextPath}/joinAndLogin/join_main.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
-		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+		                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
 		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
 	                </ul>
 	                
@@ -60,7 +60,7 @@
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">장덕배님</a></li>
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
-		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
+		                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
 		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
 		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
 	                </ul> -->  

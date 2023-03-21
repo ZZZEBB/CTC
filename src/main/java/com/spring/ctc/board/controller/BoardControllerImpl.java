@@ -55,13 +55,10 @@ public class BoardControllerImpl implements BoardController {
 	public ModelAndView eventDetail(@RequestParam("event_num") int event_num, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String viewName = (String)request.getAttribute("viewName");
-		System.out.println("@@@@@@@@@@@@@" + event_num);
 		ModelAndView mav = new ModelAndView(viewName);
-		
 		Map eventMap = boardService.eventDetail(event_num);
 		mav.addObject("eventMap", eventMap);
 		EventVO eventVO = (EventVO) eventMap.get("eventVO");
-		System.out.println(eventMap + "@@@@@@@@@@@@@@@@222####");
 		return mav;
 	}
 	

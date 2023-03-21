@@ -1,5 +1,11 @@
 package com.spring.ctc.cart.controller;
 
-public interface CartController {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.ModelAndView;
+
+public interface CartController {
+	
+	public ModelAndView cartList(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

@@ -25,6 +25,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/goods/goodsHotelSearch.jsp" />
 	</definition>
 	
+	<definition name="/cart/cartList" extends="baseLayout">
+		<put-attribute name="title" value="회사소개 페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/cart/cartList.jsp" />
+	</definition>
+	
 	<!-- 사용자 레이아웃 -->
 	<definition name="sideMember" template="/WEB-INF/views/common/memberLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
@@ -40,7 +45,7 @@
 		<put-attribute name="sideCompany" value="/WEB-INF/views/common/sideCompany.jsp" />
 	</definition>
 	
-		<!-- 관리자 레이아웃 -->
+	<!-- 관리자 레이아웃 -->
 	<definition name="sideAdmin" template="/WEB-INF/views/common/adminLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
 		<put-attribute name="body" value="" />
