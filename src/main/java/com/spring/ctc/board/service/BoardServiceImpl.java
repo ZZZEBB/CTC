@@ -1,5 +1,6 @@
 package com.spring.ctc.board.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,22 +17,16 @@ import com.spring.ctc.board.vo.EventVO;
 public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
-	private BoardDAO baordDAO;
+	private BoardDAO boardDAO;
 
 	public List<EventVO> eventList() throws Exception {
-		List<EventVO> eventLists = baordDAO.eventLists();
+		List<EventVO> eventLists = boardDAO.eventLists();
 		return eventLists;
 	}
 	
 	@Override
-	//public Map eventDetail(int event_num) throws Exception {
-		/*
-		 * Map eventMap = new HashMap(); ArrayList<EventVO> eventList =
-		 * baordDAO.selectEventDetail(event_num);
-		 * 
-		 * orderMap.put("orderList",orderList);
-		 * orderMap.put("deliveryInfo",deliveryInfo); orderMap.put("orderer", orderer);
-		 * return orderMap;
-		 */
+	public Map eventDetail(int event_num) throws Exception {
+		
+		 return boardDAO.selectEventDetail(event_num);
 	}
 }

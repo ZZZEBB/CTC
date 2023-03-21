@@ -17,39 +17,41 @@
 
    <style>
    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-   
+   .card-img-top {
+   		height : 10rem;
+		object-fit : cover;
+   }
    </style>
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- css 스타일시트 추가 -->
     <!-- <link href="css/headers.css" rel="stylesheet"> -->
 </head>
 <body>
-	<div class = "container">
-		<div class = "d-flex w-70 justify-content-end">
-			<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">이전글</a>
-			<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">다음글</a>
-			<a href="${contextPath}/board/eventList.do" class = "btn btn-outline-dark btn-sm my-2 mx-1">목록</a>
-		</div>
-		<c:forEach var = "event" items = "${eventLists}">
-			<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
-			<img src="${contextPath}/resources/image/eventImage02.png" class = "w-80">
-			<div>
-				<p>${event.event_num }</p>
-				<p>${event.event_title }</p>
-				<p>${event.event_content }</p>
-				<p>${event.event_start_date }</p>
-				<p>${event.event_end_date }</p>
-				<p>${event.event_write_date }</p>
-				<p>${event.event_status }</p>
-				<p>${event.event_category }</p>
+	<div class="container">
+        <div class="row justify-content-center">
+			<!-- <div class = "d-flex w-70 justify-content-end">
+				<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">이전글</a>
+				<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">다음글</a>
+				<a href="${contextPath}/board/eventList.do" class = "btn btn-outline-dark btn-sm my-2 mx-1">목록</a>
+			</div> -->
+			<div class = "row justify-content-center">
+				<span class = "fs-2 fw-bold">${eventMap.event_title }</span>
+				<span class = "justify-content-end">${eventMap.event_write_date }</span>
+				<hr>
+				<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+				<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+				<p></p>
 			</div>
-		</c:forEach>
-		
+		</div>
+			
 		<!-- 이벤트 관련 호텔 목록 -->
-	    <div class="container mx-2 w-90">
+	    <div class="container mx-2">
 	    	<div class = "container text">
 	    		<h3>호텔을 특가로!</h3>
 	    	</div> <!-- 원래 이 다음에 메모장 코드 있었음 -->
+	    	<div class="row justify-content-center my-4">
+	    		<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+	    	</div>
 	    	<div class = "row row-cols-1 row-cols-md-4 g-4">
 	    		<div class = "col">
 	    			<div class = "card h-100">

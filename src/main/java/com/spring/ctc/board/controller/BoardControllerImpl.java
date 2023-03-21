@@ -1,5 +1,6 @@
 package com.spring.ctc.board.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +41,9 @@ public class BoardControllerImpl implements BoardController {
 		eventVO = (EventVO)session.getAttribute("eventLists");
 		
 		List<EventVO> eventLists = boardService.eventList();
+		for(int i = 0; i < eventLists.size(); i++) {
+			System.out.println("##" + eventLists.get(i).getEvent_num());
+		}
 		
 		mav.addObject("eventLists", eventLists);
 		return mav;
@@ -51,9 +55,13 @@ public class BoardControllerImpl implements BoardController {
 	public ModelAndView eventDetail(@RequestParam("event_num") int event_num, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String viewName = (String)request.getAttribute("viewName");
+		System.out.println("@@@@@@@@@@@@@" + event_num);
 		ModelAndView mav = new ModelAndView(viewName);
+		
 		Map eventMap = boardService.eventDetail(event_num);
 		mav.addObject("eventMap", eventMap);
+		EventVO eventVO = (EventVO) eventMap.get("eventVO");
+		System.out.println(eventMap + "@@@@@@@@@@@@@@@@222####");
 		return mav;
 	}
 	

@@ -2,6 +2,7 @@ package com.spring.ctc.board.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,9 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
-	public List eventDetail(int event_num) throws DataAccessException {
-		List eventLists = (List) sqlSession.selectList("mapper.board.eventDetail", event_num);
-	   return eventLists;
+	public Map selectEventDetail(int event_num) throws DataAccessException {
+	   return sqlSession.selectOne("mapper.board.selectEventDetail", event_num);
+	  
 	}
 
 }
