@@ -62,16 +62,15 @@
 								</c:when>
 								<c:otherwise>
 									<c:forEach var = "event" items = "${eventLists}">
-										<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
-											<div class="d-flex w-70">
-												<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
-												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
-												<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
-													<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
-												</h6>
-												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
-											</div>
-										</a>
+										<div class="d-flex w-70 list-group-item">
+											<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+											<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+											<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+												<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
+											</h6>
+											<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+											<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
+										</div>
 										<hr class = "event_hr col-md-12">
 									</c:forEach>
 								</c:otherwise>
