@@ -26,11 +26,9 @@ function result(){
 
 <style type="text/css">
 @use postcss-preset-env;
-@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
+
 body {
    /* background: #f4f4f4; */
    color: #5a5656;

@@ -27,6 +27,9 @@ window.onload = function() {
       }
    }
 </script>
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+</style>
 </head>
 <body>
 <div class="w3-content w3-container w3-margin-top">

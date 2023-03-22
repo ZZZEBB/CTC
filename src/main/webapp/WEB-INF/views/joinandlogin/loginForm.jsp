@@ -18,6 +18,10 @@ function result(){
    alert("아이디나  비밀번호가 틀립니다. 다시 로그인해주세요");
 }
 
+
+$(window).load(function() {
+    $('#load').hide();
+});
 </script>
 
 </c:if>
@@ -26,10 +30,27 @@ function result(){
 
 <style type="text/css">
 @use postcss-preset-env;
-@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+
+#load {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;
+}
+
+#load > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
 }
 body {
    /* background: #f4f4f4; */
@@ -162,7 +183,9 @@ form fieldset a:hover { text-decoration: underline; }
 
 </head>
 <body>
-   
+	<div id="load">
+    	<img src="/assets/img/../layout/loading.gif" alt="loading">
+	</div>
    <div id="login">
 
   <h1><strong>회원 로그인</strong></h1>
