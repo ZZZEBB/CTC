@@ -19,13 +19,10 @@ request.setCharacterEncoding("UTF-8");
    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
    crossorigin="anonymous">
    <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-   
-   #map {
-   	margin : 10px auto;
-   	padding : 20px;
-   	
-   }
+	   #map {
+	   	margin : 10px auto;
+	   	padding : 20px;
+	   }
    </style>
 </head>
 <body>

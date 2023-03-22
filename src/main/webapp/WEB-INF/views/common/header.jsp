@@ -77,7 +77,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
    <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	.main_hr {
 		background-color : #dce4f0;
 		margin : 0 auto;
@@ -87,8 +86,6 @@
 	}
    </style>
 
-    <!-- css 스타일시트 추가 -->
-    <!-- <link href="css/headers.css" rel="stylesheet"> -->
 </head>
 <body>
     <div class="container">

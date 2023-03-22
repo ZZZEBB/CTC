@@ -9,8 +9,6 @@
 <meta charset="utf-8">
 <title>회원가입 선택창</title>
 <style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 </style>
 <!-- css 스타일시트 추가 -->
 <link href="${contextPath}/resources/css/join_main.css" rel="stylesheet" type="text/css">

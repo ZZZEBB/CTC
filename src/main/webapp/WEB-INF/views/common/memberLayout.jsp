@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <title><tiles:insertAttribute name="title" /></title>
 <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 </style>
 </head>
 <body>

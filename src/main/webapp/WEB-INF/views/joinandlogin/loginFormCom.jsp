@@ -23,10 +23,8 @@ function result(){
 </c:if>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-
 <style type="text/css">
 @use postcss-preset-env;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
 body {
@@ -159,7 +157,6 @@ form fieldset a:hover { text-decoration: underline; }
 
 </head>
 <body>
-   
    <div id="login">
 
   <h1><strong>사업체 로그인</strong></h1>

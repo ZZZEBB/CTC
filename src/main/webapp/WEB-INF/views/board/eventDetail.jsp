@@ -18,7 +18,6 @@
 		document.title = "${eventMap.event_title}";
 	</script>
    <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	   .card-img-top {
 	   		height : 10rem;
 			object-fit : cover;
@@ -40,8 +39,8 @@
 				<span class = "fs-2 fw-bold">${eventMap.event_title }</span>
 				<span class = "justify-content-end">${eventMap.event_write_date }</span>
 				<hr>
-				<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
-				<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+				<img src="${contextPath}/resources/image/event/eventImage01.png" class = "w-80">
+				<img src="${contextPath}/resources/image/event/eventImage01.png" class = "w-80">
 				<p></p>
 			</div>
 		</div>
@@ -52,7 +51,7 @@
 	    		<h3>호텔을 특가로!</h3>
 	    	</div> <!-- 원래 이 다음에 메모장 코드 있었음 -->
 	    	<div class="row justify-content-center my-4">
-	    		<img src="${contextPath}/resources/image/eventImage01.png" class = "w-80">
+	    		<img src="${contextPath}/resources/image/event/eventImage01.png" class = "w-80">
 	    	</div>
 	    	<div class = "row row-cols-1 row-cols-md-4 g-4">
 	    		<div class = "col">

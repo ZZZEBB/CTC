@@ -121,13 +121,9 @@ margin-left: 20px;
 	margin-left: 300px;
 	margin-bottom: 100px;
 }
-
-
 </style>
-
 </head>
 <body>
-
 <form id="search"> 
       
        <span>
