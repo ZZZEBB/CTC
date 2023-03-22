@@ -48,8 +48,8 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
          HttpSession session=request.getSession();
          session=request.getSession();
          
-           session.setAttribute("isLogOn", true);
-           session.setAttribute("memberInfo",memberVO);
+	       session.setAttribute("isLogOn", true);
+	       session.setAttribute("memberInfo",memberVO);
           
          String action=(String)session.getAttribute("action");
          if(action!=null && action.equals("/order/orderEachGoods.do")){
