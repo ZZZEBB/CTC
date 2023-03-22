@@ -32,86 +32,96 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row" style = "text-align : center;">
-			<div class="col-xs12">
-				<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
-					<a href="#all" class="btn btn-default active" data-toggle="tab">
-						<input type="radio" style="appearance: none;" />전체
-					</a>
-					<a href="#hotel" class="btn btn-default" data-toggle="tab">
-						<input type="radio" style="appearance: none;" />호텔
-					</a>
-					<a href="#air" class="btn btn-default" data-toggle="tab">
-						<input type="radio" style="appearance: none;" />항공권
-					</a>
-					<a href="#rent" class="btn btn-default" data-toggle="tab">
-						<input type="radio" style="appearance: none;" />렌트
-					</a>
-					<a href="#package" class="btn btn-default" data-toggle="tab">
-						<input type="radio" style="appearance: none;" />패키지
-					</a>
-				</div>
-				<div class="tab-content">
-					<div class="tab-pane active" id="all">전체 이벤트 게시물 조회</div>
-					<div class="tab-pane" id="hotel">호텔 관련 이벤트 게시물 조회</div>
-					<div class="tab-pane" id="air">항공권 관련 이벤트 게시물 조회</div>
-					<div class="tab-pane" id="rent">렌트 관련 이벤트 게시물 조회</div>
-					<div class="tab-pane" id="package">패키지 이벤트 게시물 조회</div>
-				</div>
-			</div>
+		<ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+		  <li class="nav-item" role="presentation">
+		    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="home" aria-selected="true">전체</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+		    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#hotel" type="button" role="tab" aria-controls="profile" aria-selected="false">호텔</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#flight" type="button" role="tab" aria-controls="contact" aria-selected="false">항공권</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button" role="tab" aria-controls="contact" aria-selected="false">렌트</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#package" type="button" role="tab" aria-controls="contact" aria-selected="false">패키지</button>
+		  </li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
+		  	<h6 class = "col-md-7 fs-6 fw-bold">전체 프로모션 n개</h6>
+		  	<hr class = "event_hr">
+			  	<div class="row justify-content-center">
+			  		<div class="col-md-9">
+			  			<div class="list-group list-group-flush">
+			  				<c:choose>
+								<c:when test="${empty eventLists}">
+									<h3>등록된 이벤트가 없습니다.</h3>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var = "event" items = "${eventLists}">
+										<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
+											<div class="d-flex w-70">
+												<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+												<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+													<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
+												</h6>
+												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+											</div>
+										</a>
+										<hr class = "event_hr col-md-12">
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</div>
+	            	</div>
+	        	</div>
+    		</div>
+		  </div>
+		  <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="profile-tab">
+		  	<h6 class = "col-md-7 fs-6 fw-bold">호텔 프로모션 n 개</h6>
+		  	<hr class = "event_hr">
+			  	<div class="row justify-content-center">
+			  		<div class="col-md-9">
+			  			<div class="list-group list-group-flush">
+			  				<c:choose>
+								<c:when test="${empty eventLists}">
+									<h3>등록된 이벤트가 없습니다.</h3>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var = "event" items = "${eventLists}">
+										<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
+											<div class="d-flex w-70">
+												<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+												<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+													<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
+												</h6>
+												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+											</div>
+										</a>
+										<hr class = "event_hr col-md-12">
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</div>
+	            	</div>
+	        	</div>
+		  </div>
+		  <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="contact-tab">
+		  
+		  </div>
+		  <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="contact-tab">
+		  
+		  </div>
+		  <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="contact-tab">
+		  
+		  </div>
 		</div>
-		<!--검색창-->
-	    <div class="row justify-content-center" style="margin-top: 10%; height: 30px;">
-            <div class="col-md-8">
-                <form class="card card-sm border border-0">
-                    <div class="card-body row no-gutters align-items-center justify-content-end" style="padding : 5px; line-height: 40px;">
-                    <div class="col-auto">
-                        <i class="fas fa-search h4 text-body"></i>
-                    </div>
-                    <div class="col-md-5">
-                        <input class="form-control form-control-borderless" type="search" placeholder="검색어를 입력해주세요">
-                    </div>
-                    <div class="col-auto">
-                        <button class="btn btn-primary" type="submit" style="background-color: #004680">Search</button>
-                    </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!--/검색창-->
 	</div>
-    <!-- 이벤트 게시물 조회 -->
-    <div class="container">
-		<h6 class = "col-md-7 fs-6 fw-bold">전체 프로모션 6 개</h6>
-    	<hr class = "event_hr">
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-				<div class="list-group list-group-flush">
-					<c:choose>
-						<c:when test="${empty eventLists}">
-							<h3>등록된 이벤트가 없습니다.</h3>
-						</c:when>
-						<c:otherwise>
-							<c:forEach var = "event" items = "${eventLists}">
-								<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
-									<div class="d-flex w-70">
-										<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
-										<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
-										<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
-											<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
-										</h6>
-										<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
-									</div>
-								</a>
-								<hr class = "event_hr col-md-12">
-							</c:forEach>
-						</c:otherwise>
-					</c:choose>
-				</div>
-            </div>
-        </div>
-    </div>
-    <!--자유게시판_목록-->
     <!--페이징-->
     <nav class="paging" aria-label="Pagination" style="margin-top: 20px;">
         <ul class="pagination justify-content-center" >

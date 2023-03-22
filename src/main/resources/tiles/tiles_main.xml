@@ -20,6 +20,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/main/intro.jsp" />
 	</definition>
 	
+	<definition name="/main/totalSearch" extends="baseLayout">
+		<put-attribute name="title" value="회사소개 페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/main/totalSearch.jsp" />
+	</definition>
+	
 	<definition name="/goods/goodsHotelSearch" extends="baseLayout">
 		<put-attribute name="title" value="호텔 목록 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/goods/goodsHotelSearch.jsp" />

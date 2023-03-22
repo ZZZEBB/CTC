@@ -33,4 +33,13 @@ public class MainController {
 		return mav;
 	}
 	
+	@RequestMapping(value= "/main/totalSearch.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView totalSearch(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
 }

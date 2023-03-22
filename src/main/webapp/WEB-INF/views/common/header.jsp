@@ -94,14 +94,12 @@
 	            <div class="d-flex flex-wrap">
 	                <!-- <form class="d-flex me-lg-auto justify-content-between" role="search"> -->
 	                <form class="d-flex me-lg-auto justify-content-between" role="search">
-	                <a href="${contextPath}/main/main.do" class="navbar-brand mt-2">
-						<img src="${contextPath}/resources/image/logo.png" alt="로고" width="40" height="30">
-						<img src="${contextPath}/resources/image/ctc.png" alt="이름" width="250" height="30">
-					</a>
-	        
+		                <a href="${contextPath}/main/main.do" class="navbar-brand mt-2">
+							<img src="${contextPath}/resources/image/logo.png" alt="로고" width="40" height="30">
+							<img src="${contextPath}/resources/image/ctc.png" alt="이름" width="250" height="30">
+						</a>
 	                	<input class="form-control input-lg" type="search" placeholder="검색어를 입력해주세요" aria-label="Search">
-	                	<!-- <input class="form-control mt-1 ms-4 input-lg " type="search" placeholder="검색어를 입력해주세요" aria-label="Search"> -->
-	                	 <button type="submit" class="btn btn-link">
+	                	<button type = "button" class="btn btn-link"  onclick="location.href='${contextPath}/main/totalSearch.do'">
 	                		<img src="${contextPath}/resources/image/search.png" alt="검색" width="15" height="15">
 	                	</button>
 	                </form>
