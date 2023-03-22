@@ -18,10 +18,10 @@
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-*{
+/* {
 	font-family: 'OTWelcomeRA';
 	font-weight:bold;
-}
+} */
 /* 상품제목 위치조정 */
 .rentDetailtitle{
 	margin-left:300px;

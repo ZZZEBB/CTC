@@ -33,7 +33,6 @@ body {
    /* background: #f4f4f4; */
    color: #5a5656;
   display: grid;
-  font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   margin: 0;
   min-height: 100vh;
