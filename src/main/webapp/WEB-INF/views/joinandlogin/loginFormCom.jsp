@@ -165,25 +165,28 @@ form fieldset a:hover { text-decoration: underline; }
    
    <div id="login">
 
-  <h1><strong>회원 로그인</strong></h1>
+  <h1><strong>사업체 로그인</strong></h1>
 
 
-  <form action="${contextPath}/joinAndLogin/login.do" method="post" name="member" >
+  <form action="${contextPath}/joinAndLogin/loginCom.do" method="post" >
 	
     <fieldset>
 
-      <p><input type="text" placeholder="아이디" name="member_id" required></p>
+      <p><input type="text" placeholder="아이디" name="com_id" required></p>
 
-      <p><input type="password" placeholder="비밀번호" name="member_pw" required></p>
+      <p><input type="password" placeholder="비밀번호" name="com_pw" required></p>
       
-      <p><a href="${contextPath}/joinAndLogin/search_id.do">아이디 찾기</a> | <a href="${contextPath}/joinAndLogin/search_pw.do">비밀번호 찾기</a> | <a href="${contextPath}/member/memberForm.do">회원가입</a></p>
+      <p><a href="${contextPath}/joinAndLogin/search_id_com.do">아이디 찾기</a> | <a href="${contextPath}/joinAndLogin/search_pw_com.do">비밀번호 찾기</a> | <a href="${contextPath}/member/memberForm.do">회원가입</a></p>
       <p><input type="submit" value="로그인"></p>
 
     </fieldset>
 
   </form>
+  
+   
 
-  <!-- <p><span class="btn-round">or</span></p> -->
+
+  <p><span class="btn-round">or</span></p>
 
  
 

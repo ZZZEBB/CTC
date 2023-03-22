@@ -22,10 +22,10 @@
          </div>
          <div>
             <h5>
-               ${id}
+               ${comId}
             </h5>
             <p class="w3-center">
-               <a href="${contextPath}/joinAndLogin/loginForm.do"><button type="button" id=loginBtn class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">Login</button></a>
+               <a href="${contextPath}/joinAndLogin/loginFormCom.do"><button type="button" id=loginBtn class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">Login</button></a>
                <button type="button" onclick="history.go(-1);" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-margin-bottom w3-round">Cancel</button>
             </p>
          </div>

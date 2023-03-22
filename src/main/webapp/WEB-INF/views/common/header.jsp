@@ -6,8 +6,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <script>
-   </script>
+	<script type="text/javascript">
+
+	var loopSearch=true;
+	function keywordSearch(){
+		if(loopSearch==false)
+			return;
+	 var value=document.frmSearch.searchWord.value;
+		$.ajax({
+			type : "get",
+			async : true, //false인 경우 동기식으로 처리한다.
+			url : "${contextPath}/goods/keywordSearch.do",
+			data : {keyword:value},
+			success : function(data, textStatus) {
+			    var jsonInfo = JSON.parse(data);
+				displayResult(jsonInfo);
+			},
+			/* error : function(data, textStatus) {
+				alert("에러가 발생했습니다."+data); */
+			},
+			complete : function(data, textStatus) {
+				//alert("작업을완료 했습니다");
+				
+			}
+		}); //end ajax	
+	}
+	
+	function displayResult(jsonInfo){
+		var count = jsonInfo.keyword.length;
+		if(count > 0) {
+		    var html = '';
+		    for(var i in jsonInfo.keyword){
+			   html += "<a href=\"javascript:select('"+jsonInfo.keyword[i]+"')\">"+jsonInfo.keyword[i]+"</a><br/>";
+		    }
+		    var listView = document.getElementById("suggestList");
+		    listView.innerHTML = html;
+		    show('suggest');
+		}else{
+		    hide('suggest');
+		} 
+	}
+	
+	function select(selectedKeyword) {
+		 document.frmSearch.searchWord.value=selectedKeyword;
+		 loopSearch = false;
+		 hide('suggest');
+	}
+		
+	function show(elementId) {
+		 var element = document.getElementById(elementId);
+		 if(element) {
+		  element.style.display = 'block';
+		 }
+		}
+	
+	function hide(elementId){
+	   var element = document.getElementById(elementId);
+	   if(element){
+		  element.style.display = 'none';
+	   }
+	}
+
+</script>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>HEADER</title>
@@ -47,12 +107,25 @@
 	                	</button>
 	                </form>
 	        		<!-- 기본 상단 헤더 -->
-	                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
-		                <li><a href="${contextPath}/joinAndLogin/join_main.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
-		                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
-		                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-		                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+                	<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+	               		 <c:choose>
+		                	<c:when test="${isLogon == true}">
+		                		<!-- 사용자 로그인 상태 상단 헤더 -->
+				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">${memberInfo.member_name} 님</a></li>
+				                <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
+				                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
+				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+				                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
+			                 </c:when>
+			                 <c:otherwise>
+			                 	 <!-- 로그인X 상태 상단 헤더 -->
+				                 <li><a href="${contextPath}/joinAndLogin/select_login.do" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
+				                 <li><a href="${contextPath}/joinAndLogin/join_main.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
+				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+				                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+			                 </c:otherwise>
+	                 	</c:choose>
 	                </ul>
 	                
 	                <!-- 사용자 로그인 상태 상단 헤더 -->

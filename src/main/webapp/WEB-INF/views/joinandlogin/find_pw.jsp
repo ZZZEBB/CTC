@@ -12,17 +12,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-<title>아이디 찾기</title>
+<title>비밀번호 찾기</title>
 </head>
 <body>
    <div class="w3-content w3-container w3-margin-top">
       <div class="w3-container w3-card-4">
          <div class="w3-center w3-large w3-margin-top">
-            <h3>아이디 찾기 검색결과</h3>
+            <h3>비밀번호 찾기 검색결과</h3>
          </div>
          <div>
             <h5>
-               ${id}
+               ${pw}
             </h5>
             <p class="w3-center">
                <a href="${contextPath}/joinAndLogin/loginForm.do"><button type="button" id=loginBtn class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">Login</button></a>
