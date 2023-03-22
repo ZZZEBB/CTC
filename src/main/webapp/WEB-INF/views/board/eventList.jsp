@@ -69,6 +69,8 @@
 												<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
 											</h6>
 											<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+										</div>
+										<div class="d-flex justify-content-end">
 											<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
 										</div>
 										<hr class = "event_hr col-md-12">
