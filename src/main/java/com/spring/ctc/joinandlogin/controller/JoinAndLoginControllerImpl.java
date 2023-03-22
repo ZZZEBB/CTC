@@ -47,12 +47,10 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       if(memberVO!= null && memberVO.getMember_id()!=null){
          HttpSession session=request.getSession();
          session=request.getSession();
-         /*
-          * session.setAttribute("isLogOn", true);
-          * session.setAttribute("memberInfo",memberVO);
-          */
-         mav.addObject("isLogOn", true);
-         mav.addObject("memberInfo", memberVO);
+         
+           session.setAttribute("isLogOn", true);
+           session.setAttribute("memberInfo",memberVO);
+          
          String action=(String)session.getAttribute("action");
          if(action!=null && action.equals("/order/orderEachGoods.do")){
             mav.setViewName("forward:"+action);
@@ -318,7 +316,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 		} else {
 			String message="아이디가 틀립니다. 다시 한번 입력해주세요.";
 			mav.addObject("id", message);
-			mav.setViewName("forward:/joinAndLogin/find_id.do"); //forward�뒗 留듯븨媛믪씠�옉 �씠由� 媛숈쑝硫� �삤瑜�(李얜뒗嫄� 臾댄븳 諛섎났)
+			mav.setViewName("forward:/joinAndLogin/find_id.do"); //forward 뒗 留듯븨媛믪씠 옉  씠由  媛숈쑝硫   삤瑜 (李얜뒗嫄  臾댄븳 諛섎났)
 		}
 		return mav;
 	}
