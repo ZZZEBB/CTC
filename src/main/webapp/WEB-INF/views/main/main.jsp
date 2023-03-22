@@ -44,7 +44,7 @@ new Swiper('#ConEvnt2', {
 <div id="sliderdiv_center">
 <div id="main_searchform">
 
-<h3 style="margin-top:140px; font-size:1.5em;">고객님<br><br> 어디로떠나시나요?</h3><br><br>
+<h3 style="margin-top:140px; font-size:1.5em;">고객님<br><br> 어디로 떠나시나요?</h3><br><br>
 
 <form name="mainSearch" action="${contextPath}/goods/searchGoods.do" >
          <input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
@@ -108,17 +108,14 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                <div id="ConEvnt"
                   class="ConEvnt swiper-container swiper-container-horizontal">
                   <ul class="swiper-wrapper">
-                     <li class="swiper-slide swiper-slide-duplicate"
-                        data-swiper-slide-index="" style="width: 295px;">
+                     <li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="" style="width: 295px;">
                         <a href="#">
                            <div class="ConTx">
                               <pre>24시간 롱스테이</pre>
                               <span>호텔 브릿지 서귀포</span>
                            </div>
                            <div class="ConPhoto">
-                              <img
-                                 src="${contextPath}/resources/image/hotel/CADO220009_1.png"
-                                 alt="">
+                              <img src="${contextPath}/resources/image/hotel/CADO220009_1.png" alt="">
                            </div>
                      </a>
                      </li>
@@ -332,8 +329,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                   <ul class="swiper-wrapper">
                      <li class="swiper-slide"><a href="#">
                            <div class="ConTx">
-                              <pre>친환경 전기차<br>모음<br>
-                              </pre>
+                              <pre>친환경 전기차</pre>
                               <span>청정제주와 함께하는 제주여행</span>
                            </div>
                            <div class="ConPhoto">

@@ -36,8 +36,8 @@
 				<a href="${contextPath}/board/eventList.do" class = "btn btn-outline-dark btn-sm my-2 mx-1">목록</a>
 			</div> -->
 			<div class = "row justify-content-center">
-				<span class = "fs-2 fw-bold">${eventMap.event_title }</span>
-				<span class = "justify-content-end">${eventMap.event_write_date }</span>
+				<span class = "fs-2 fw-bold">${eventMap.event_title}</span>
+				<span class = "justify-content-end">${eventMap.event_write_date}</span>
 				<hr>
 				<img src="${contextPath}/resources/image/event/eventImage01.png" class = "w-80">
 				<img src="${contextPath}/resources/image/event/eventImage01.png" class = "w-80">
