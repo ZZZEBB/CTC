@@ -1,5 +1,6 @@
 package com.spring.ctc.goods.flight.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -10,15 +11,14 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
 
-@Repository
+@Repository("flightDAO")
 public class GoodsFlightDAOImpl implements GoodsFlightDAO{
+	@Autowired
+	private SqlSession sqlSession;
 	
-	   @Autowired
-	   private SqlSession sqlSession;
-	   
-	   @Override
-	   public List<GoodsFlightVO> selectListFlight(Map keyword) throws DataAccessException {
-	      List<GoodsFlightVO> flight = sqlSession.selectList("mapper.flight.flightList",keyword);
-	      return flight;
-	   }   
-	}
+	@Override
+	public List<GoodsFlightVO> selectListFlight(Map keyword) throws DataAccessException{
+		List<GoodsFlightVO> flight = sqlSession.selectList("mapper.flight.flightList",keyword);
+		return flight;
+	}	
+}

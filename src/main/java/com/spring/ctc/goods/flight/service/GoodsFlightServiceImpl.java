@@ -14,11 +14,11 @@ import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
 @Service("flightService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class GoodsFlightServiceImpl implements GoodsFlightService{
-   @Autowired
-   private GoodsFlightDAO goodsflightDAO;
-   
-   @Override
-   public List<GoodsFlightVO> selectListFlight(Map keyword) throws Exception {
-      return goodsflightDAO.selectListFlight(keyword);
-   }
+	@Autowired
+	private GoodsFlightDAO goodsflightDAO;
+	
+	@Override
+	public List<GoodsFlightVO> selectListFlight(Map keyword)throws Exception{
+		return goodsflightDAO.selectListFlight(keyword);
+	}
 }

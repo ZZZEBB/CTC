@@ -1,9 +1,11 @@
 package com.spring.ctc.goods.flight.vo;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 
+import org.springframework.stereotype.Component;
+@Component("GoodsFlightVO")
 public class GoodsFlightVO {
-	   
 	private String com_id;
 	private int airport_num;
 	private String flight_code;
@@ -13,15 +15,27 @@ public class GoodsFlightVO {
 	private int flight_saleprice;
 	private String flight_departures;
 	private Date flight_departure_date;
-	private Date flight_departure_date_time;
+	private Time flight_departure_time;
 	private String flight_arrivals;
 	private Date flight_arrival_date;
+	private Time flight_arrival_time;
 	private int flight_status;
 	private int flight_charge;
 	private int flight_mileage;
 	
-	public GoodsFlightVO() {
-		
+	
+
+	public Time getFlight_departure_time() {
+		return flight_departure_time;
+	}
+	public void setFlight_departure_time(Time flight_departure_time) {
+		this.flight_departure_time = flight_departure_time;
+	}
+	public Time getFlight_arrival_time() {
+		return flight_arrival_time;
+	}
+	public void setFlight_arrival_time(Time flight_arrival_time) {
+		this.flight_arrival_time = flight_arrival_time;
 	}
 	public String getCom_id() {
 		return com_id;
@@ -77,12 +91,6 @@ public class GoodsFlightVO {
 	public void setFlight_departure_date(Date flight_departure_date) {
 		this.flight_departure_date = flight_departure_date;
 	}
-	public Date getFlight_departure_date_time() {
-		return flight_departure_date_time;
-	}
-	public void setFlight_departure_date_time(Date flight_departure_date_time) {
-		this.flight_departure_date_time = flight_departure_date_time;
-	}
 	public String getFlight_arrivals() {
 		return flight_arrivals;
 	}
@@ -113,4 +121,7 @@ public class GoodsFlightVO {
 	public void setFlight_mileage(int flight_mileage) {
 		this.flight_mileage = flight_mileage;
 	}
+	
+	
+	
 }

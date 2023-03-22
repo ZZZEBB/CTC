@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.rent">
+<resultMap id="rentResult" type="goodsRentVO">
+<result property="com_id" column="com_id"/>
+<result property="rent_code" column="rent_code"/>
+<result property="car_name" column="car_name"/>
+<result property="car_exp" column="car_exp"/>
+<result property="car_model" column="car_model"/>
+<result property="car_location" column="car_location"/>
+<result property="car_latitude" column="car_latitude"/>
+<result property="car_logitude" column="car_logitude"/>
+<result property="car_entered_date" column="car_entered_date"/>
+<result property="car_start_date" column="car_start_date"/>
+<result property="car_end_date" column="car_end_date"/>
+<result property="car_start_time" column="car_start_time"/>
+<result property="car_end_time" column="car_end_time"/>
+<result property="car_price" column="car_price"/>
+<result property="car_saleprice" column="car_saleprice"/>
+<result property="car_charge" column="car_charge"/>
+<result property="car_mileage" column="car_mileage"/>
+<result property="car_status" column="car_status"/>
+<result property="car_image_filename" column="car_image_filename"/>
+</resultMap>
+<select id="rentAllList" parameterType="java.util.Map" resultType="goodsRentVO"> SELECT * FROM rent </select>
+<select id="rentList" parameterType="java.util.Map" resultType="goodsRentVO">
+SELECT * FROM rent WHERE
+<if test="carname1 != ''">car_model=#{carResult} AND car_exp=#{carname1} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
+<if test="carname2 != ''">car_model=#{carResult} AND car_exp=#{carname2} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
+<if test="carname3 != ''">car_model=#{carResult} AND car_exp=#{carname3} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
+<if test="carname4 != ''">car_model=#{carResult} AND car_exp=#{carname4} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
+</select>
+<select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO"> SELECT * FROM rent WHERE car_name=#{car_name} </select>
+</mapper>

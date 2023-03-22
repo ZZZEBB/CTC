@@ -111,7 +111,7 @@
 	               		 <c:choose>
 		                	<c:when test="${isLogon == true}">
 		                		<!-- 사용자 로그인 상태 상단 헤더 -->
-				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">${memberInfo.member_name} 님</a></li>
+				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">님</a></li>
 				                <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
 				                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
 				                <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>

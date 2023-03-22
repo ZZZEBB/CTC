@@ -6,6 +6,5 @@ import java.util.Map;
 import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
 
 public interface GoodsFlightService {
-	
-	public List<GoodsFlightVO> selectListFlight(Map keyword) throws Exception;
+	public List<GoodsFlightVO> selectListFlight(Map keyword)throws Exception;
 }

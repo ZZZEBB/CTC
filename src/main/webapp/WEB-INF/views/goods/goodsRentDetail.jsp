@@ -3,8 +3,6 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<c:set var="carsize" value=""/>
-<c:set var="carName" value=""/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +10,11 @@
 <title>호텔 상품 조회</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
     //뭐지이거..??
 	console.log('http://www.abdullahkahriman.com');
-	
+    
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -81,121 +80,31 @@ hr{
 </style>
 </head>
 <body>
- <!-- for 문으로 돌려야하는데......... DB연결해야 확인가능하네........ㅠㅠ -->
- <c:choose>
- 	<c:when test="${cartype eq '소형'}">
+ <c:forEach var="product" items="${carList}">
  	<form>
  	<div class="rentDetailtitle">
-	 	<h4>렌터카 정보</h4>
+	 	<h4>${product.car_name}</h4>
 	 	<hr>
 	</div>
  	<div class="rentmaintitle">
 		<img alt="소형이미지" src="${contextPath}/resources/image/car.png" width="400px" height="400px">
-		<h5>2022년식 장난감 차(17년~22년)</h5>
-	
-		<table class="minititle">
-			<tr style="list-style: none; display:inline-block;">
-				<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/frontcar.png" width="35px" height="25px">소형</td>
-				<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/seat.png" width="35px" height="25px">4인승</td>
-				<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/handle.png" width="35px" height="25px">자동변속</td>
-				<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/gasoline.png" width="35px" height="25px">휘발유</td>
-			</tr>
-		</table>
-	</div>	
-	</form>
- 	</c:when>
- 	
- 	 <c:when test="${cartype eq '중형'}">
- 	<form>
- 	<div class="rentDetailtitle">
-	 	<h4>렌터카 정보</h4>
-	 	<hr>
-	</div>
- 	<div class="rentmaintitle">
-		<img alt="중형이미지" src="${contextPath}/resources/image/car.png" width="400px" height="400px">
-		<h5>2022년식 장난감 차(17년~22년)</h5>
-	
-		<table class="minititle">
-			<tr style="list-style: none; display:inline-block;">
-				<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/frontcar.png" width="35px" height="25px">소형</td>
-				<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/seat.png" width="35px" height="25px">4인승</td>
-				<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/handle.png" width="35px" height="25px">자동변속</td>
-				<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/gasoline.png" width="35px" height="25px">휘발유</td>
-			</tr>
-		</table>
-	</div>	
-	</form>
- 	</c:when>
- 	
- 	 <c:when test="${cartype eq '대형'}">
- 	<form>
- 	<div class="rentDetailtitle">
-	 	<h4>렌터카 정보</h4>
-	 	<hr>
-	</div>
- 	<div class="rentmaintitle">
-		<img alt="대형이미지" src="${contextPath}/resources/image/car.png" width="400px" height="400px">
-		<h5>2022년식 장난감 차(17년~22년)</h5>
-	
-		<table class="minititle">
-			<tr style="list-style: none; display:inline-block;">
-				<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/frontcar.png" width="35px" height="25px">소형</td>
-				<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/seat.png" width="35px" height="25px">4인승</td>
-				<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/handle.png" width="35px" height="25px">자동변속</td>
-				<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/gasoline.png" width="35px" height="25px">휘발유</td>
-			</tr>
-		</table>
-	</div>	
-	</form>
- 	</c:when>
- 	
- 	 <c:when test="${cartype eq 'suv'}">
-	  <form>
-	 	<div class="rentDetailtitle">
-		 	<h4>렌터카 정보</h4>
-		 	<hr>
-		</div>
-	 	<div class="rentmaintitle">
-			<img alt="SUV이미지" src="${contextPath}/resources/image/car.png" width="400px" height="400px">
-			<h5>2022년식 장난감 차(17년~22년)</h5>
-		
-			<table class="minititle">
-				<tr style="list-style: none; display:inline-block;">
-					<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/frontcar.png" width="35px" height="25px">소형</td>
-					<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/seat.png" width="35px" height="25px">4인승</td>
-					<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/handle.png" width="35px" height="25px">자동변속</td>
-					<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/gasoline.png" width="35px" height="25px">휘발유</td>
-				</tr>
-			</table>
-		</div>	
-	</form>
- 	</c:when>
- 	
- 	<c:otherwise>
- 	<form>
- 	<div class="rentDetailtitle">
-	 	<h4>렌터카 정보</h4>
-	 	<hr>
-	</div>
- 	<div class="rentmaintitle">
-		<img alt="소형이미지" src="${contextPath}/resources/image/car.png" width="400px" height="400px">
-		<h5>2022년식 장난감 차(17년~22년)</h5>
+		<h5></h5>
 	
 		<table class="minititle">
 			<tr id="minititleOne" style="list-style: none; display:inline-block;">
-				<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/frontcar.png" width="35px" height="25px">소형</td>
-				<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/seat.png" width="35px" height="25px">4인승</td>
-				<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/handle.png" width="35px" height="25px">자동변속</td>
-				<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/gasoline.png" width="35px" height="25px">휘발유</td>
+				<td style="width:100px;"><img alt="미니카" src="${contextPath}/resources/image/rent/frontcar.png" width="35px" height="25px">소형</td>
+				<td style="width:100px;"><img alt="좌석" src="${contextPath}/resources/image/rent/seat.png" width="35px" height="25px">4인승</td>
+				<td style="width:105px;"><img alt="핸들" src="${contextPath}/resources/image/rent/handle.png" width="35px" height="25px">자동변속</td>
+				<td style="width:100px;"><img alt="기름" src="${contextPath}/resources/image/rent/gasoline.png" width="35px" height="25px">휘발유</td>
 			</tr>
 		</table>
 		<ul class="minititle1">
-			<li><img alt="캘린더" src="${contextPath}/resources/image/calender.png" width="20px" height="15px">이용일 : <span>날짜</span></li>			
-			<li><img alt="시계" src="${contextPath}/resources/image/watch.png" width="20px" height="15px">이용 시간 : <span>시간</span></li>
-			<li><img alt="시계" src="${contextPath}/resources/image/watch.png" width="20px" height="15px">인수 장소 : <span>위치</span></li>
-			<li><img alt="시계" src="${contextPath}/resources/image/watch.png" width="20px" height="15px">반납 장소 : <span>위치</span></li>
-			<li><img alt="시계" src="${contextPath}/resources/image/watch.png" width="20px" height="15px">대여가능 나이 : <span>26세이상</span></li>
-			<li><img alt="시계" src="${contextPath}/resources/image/watch.png" width="20px" height="15px">대여가능 운전경력 : <span>1년이상</span></li>
+			<li><img alt="캘린더" src="${contextPath}/resources/image/rent/calender.png" width="20px" height="15px">이용일 : <span>날짜</span></li>			
+			<li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">이용 시간 : <span>시간</span></li>
+			<li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">인수 장소 : <span>${product.car_location}</span></li>
+			<li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">반납 장소 : <span>${product.car_location}</span></li>
+			<li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">대여가능 나이 : <span>26세이상</span></li>
+			<li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">대여가능 운전경력 : <span>1년이상</span></li>
 		</ul>
 	</div>
 	<div id="licensebox">
@@ -212,8 +121,8 @@ hr{
 		</div>
 	</div>
 	</form>
- </c:otherwise>
- </c:choose>
+</c:forEach>
+
 
 </body>
 </html>
