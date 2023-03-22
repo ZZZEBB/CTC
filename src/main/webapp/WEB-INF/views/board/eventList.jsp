@@ -34,23 +34,23 @@
 	<div class="container">
 		<ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="home" aria-selected="true">전체</button>
+		    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="home" aria-selected="true">전체</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#hotel" type="button" role="tab" aria-controls="profile" aria-selected="false">호텔</button>
+		    <button class="nav-link" id="hotel-tab" data-bs-toggle="tab" data-bs-target="#hotel" type="button" role="tab" aria-controls="hotel" aria-selected="false">호텔</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#flight" type="button" role="tab" aria-controls="contact" aria-selected="false">항공권</button>
+		    <button class="nav-link" id="flight-tab" data-bs-toggle="tab" data-bs-target="#flight" type="button" role="tab" aria-controls="flight" aria-selected="false">항공권</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button" role="tab" aria-controls="contact" aria-selected="false">렌트</button>
+		    <button class="nav-link" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button" role="tab" aria-controls="rent" aria-selected="false">렌트</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#package" type="button" role="tab" aria-controls="contact" aria-selected="false">패키지</button>
+		    <button class="nav-link" id="package-tab" data-bs-toggle="tab" data-bs-target="#package" type="button" role="tab" aria-controls="package" aria-selected="false">패키지</button>
 		  </li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
-		  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
+		  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
 		  	<h6 class = "col-md-7 fs-6 fw-bold">전체 프로모션 n개</h6>
 		  	<hr class = "event_hr">
 			  	<div class="row justify-content-center">
@@ -82,7 +82,7 @@
 	        	</div>
     		</div>
 		  </div>
-		  <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="profile-tab">
+		  <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
 		  	<h6 class = "col-md-7 fs-6 fw-bold">호텔 프로모션 n 개</h6>
 		  	<hr class = "event_hr">
 			  	<div class="row justify-content-center">
@@ -112,13 +112,13 @@
 	            	</div>
 	        	</div>
 		  </div>
-		  <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="contact-tab">
+		  <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="flight-tab">
 		  
 		  </div>
-		  <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="contact-tab">
+		  <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="rent-tab">
 		  
 		  </div>
-		  <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="contact-tab">
+		  <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
 		  
 		  </div>
 		</div>
