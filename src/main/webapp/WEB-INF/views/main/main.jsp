@@ -44,7 +44,7 @@ new Swiper('#ConEvnt2', {
 <div id="sliderdiv_center">
 <div id="main_searchform">
 
-<h3 style="margin-top:140px; font-size:1.5em;">고객님<br><br> 어디로 떠나시나요?</h3><br><br>
+<h3 style="margin-top:140px; font-size:1.5em; color : #00aff0; font-weight: 900;">고객님<br><br> 어디로 떠나시나요?</h3><br><br>
 
 <form name="mainSearch" action="${contextPath}/goods/searchGoods.do" >
          <input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
@@ -87,7 +87,10 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
        '${contextPath}/resources/image/event/event_3.png',
        '${contextPath}/resources/image/event/event_4.png',
      ];
-     var colors = ['#f5f5f5', '#d9edf7', '#dff0d8', '#fcf8e3', '#f2dede'];
+     /*슬라이드 4개의 배경색*/
+     var colors = ['#e0f0d7', '#d9edf7', '#ebd7ff', '#fcf8e3'];
+     /*슬라이드 5개의 배경색*/
+     /* var colors = ['#c6ffc4', '#d9edf7', '#ebd7ff', '#fcf8e3', '#f2dede']; */
      var sliderdiv = $('#sliderdiv_center');
      sliderdiv.css('background-color', colors[index % colors.length]);
    });
@@ -466,8 +469,6 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                                     class="text__unit">원</span>
                               </div>
                               <div class="bxLabel">
-                                 <!---->
-                                 <!---->
                               </div>
                            </div>
                      </a></li>
