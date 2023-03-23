@@ -51,7 +51,7 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">529,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/order.do'">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 						<tr>
@@ -67,13 +67,13 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/order.do'">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class = "container d-flex col-md-12 justify-content-end">
-					<button class = "btn btn-warning btn-md">예약하기</button>
+					<button class = "btn btn-warning btn-md" onclick="location.href='${contextPath}/order/order.do'">예약하기</button>
 				</div>
 			</div>
 		</div>

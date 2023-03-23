@@ -143,7 +143,4 @@ public class GoodsRentVO {
 		this.car_status = car_status;
 	}
 	
-
-	
-	
 }

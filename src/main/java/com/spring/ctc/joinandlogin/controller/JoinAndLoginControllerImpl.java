@@ -283,7 +283,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
             /*
              * mav.setViewName("forward:/joinandlogin/findId.do"); //forward는 맵핑값이랑 이름 같으면
              * 오류(찾는거 무한 반복)
-             */       
+             */
             }
 
         return mav;

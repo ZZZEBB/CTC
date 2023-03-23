@@ -25,13 +25,18 @@
 <result property="car_status" column="car_status"/>
 <result property="car_image_filename" column="car_image_filename"/>
 </resultMap>
-<select id="rentAllList" parameterType="java.util.Map" resultType="goodsRentVO"> SELECT * FROM rent </select>
-<select id="rentList" parameterType="java.util.Map" resultType="goodsRentVO">
-SELECT * FROM rent WHERE
-<if test="carname1 != ''">car_model=#{carResult} AND car_exp=#{carname1} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
-<if test="carname2 != ''">car_model=#{carResult} AND car_exp=#{carname2} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
-<if test="carname3 != ''">car_model=#{carResult} AND car_exp=#{carname3} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
-<if test="carname4 != ''">car_model=#{carResult} AND car_exp=#{carname4} AND car_start_date=#{start} AND car_start_time=#{start_time}</if>
-</select>
-<select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO"> SELECT * FROM rent WHERE car_name=#{car_name} </select>
+      <select id="rentAllList" parameterType="java.util.Map" resultType="goodsRentVO">
+          SELECT * FROM rent 
+      </select>
+      <select id="rentList" parameterType="java.util.Map" resultType="goodsRentVO">
+         SELECT * FROM rent WHERE
+         car_model=#{carResult} OR 
+         car_start_date BETWEEN #{start} AND #{End} OR 
+         car_end_date BETWEEN #{start} AND #{End} OR
+         car_start_time BETWEEN #{start_time} AND #{end_time} OR
+         car_end_time BETWEEN #{start_time} AND #{end_time}
+      </select>
+      <select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO"> 
+         SELECT * FROM rent WHERE car_name=#{car_name}
+       </select>
 </mapper>
