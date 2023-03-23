@@ -108,7 +108,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       return mav;
    }
    
-   @RequestMapping(value= "/search_id.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/searchId.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView search(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -117,7 +117,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    }
    
    /* 아이디 찾기 */
-   @RequestMapping(value= "/find_id.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/findId.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView find(@RequestParam Map<String, String> findIdMap ,HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -131,14 +131,14 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
               HttpSession session=request.getSession();
                session.setAttribute("id", memberId);
                //System.out.println(1);
-            /* mav.setViewName("forward:/joinandlogin/find_id.do"); */
+            /* mav.setViewName("forward:/joinandlogin/findId.do"); */
                //System.out.println(1);
          } else {
             
             String message="이름 또는 이메일이 일치하지 않습니다. 회원정보를 확인해주세요.";
             mav.addObject("id", message);
             /*
-             * mav.setViewName("forward:/joinandlogin/find_id.do"); //forward는 맵핑값이랑 이름 같으면
+             * mav.setViewName("forward:/joinandlogin/findId.do"); //forward는 맵핑값이랑 이름 같으면
              * 오류(찾는거 무한 반복)
              */       
             }
@@ -147,7 +147,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    }
    
    /* 사업체 아이디 찾기 */
-   @RequestMapping(value= "/find_id_com.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/findIdCom.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView findCom(@RequestParam Map<String, String> findIdComMap ,HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -162,14 +162,14 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
               HttpSession session=request.getSession();
                session.setAttribute("comId", comId);
                //System.out.println(1);
-            /* mav.setViewName("forward:/joinandlogin/find_id.do"); */
+            /* mav.setViewName("forward:/joinandlogin/findId.do"); */
                //System.out.println(1);
          } else {
             
             String message="상호명 또는 이메일이 일치하지 않습니다. 사업체 정보를 확인해주세요.";
             mav.addObject("comId", message);
             /*
-             * mav.setViewName("forward:/joinandlogin/find_id.do"); //forward는 맵핑값이랑 이름 같으면
+             * mav.setViewName("forward:/joinandlogin/findId.do"); //forward는 맵핑값이랑 이름 같으면
              * 오류(찾는거 무한 반복)
              */       
             }
@@ -177,7 +177,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
         return mav;
    }
    
-   @RequestMapping(value= "/search_id_com.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/searchIdCom.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView searchIdCom(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -203,7 +203,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       return mav;
    }
    
-   @RequestMapping(value= "/search_pw.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/searchPw.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView searchPw(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -211,7 +211,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       return mav;
    }
    
-   @RequestMapping(value= "/select_login.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/selectLogin.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView selectLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -219,7 +219,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       return mav;
    }
    
-   @RequestMapping(value= "/search_pw_com.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/searchPwCom.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView searchPwCom(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -230,7 +230,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    
    
    /* 비밀번호 찾기 */
-   @RequestMapping(value= "/find_pw.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/findPw.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView findPw(@RequestParam Map<String, String> findPwMap ,HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -244,14 +244,14 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
               HttpSession session=request.getSession();
                session.setAttribute("pw", memberPw);
                //System.out.println(1);
-            /* mav.setViewName("forward:/joinandlogin/find_id.do"); */
+            /* mav.setViewName("forward:/joinandlogin/findId.do"); */
                //System.out.println(1);
          } else {
             
             String message="아이디 또는 주민등록번호가 일치하지 않습니다. 회원정보를 확인해주세요.";
             mav.addObject("pw", message);
             /*
-             * mav.setViewName("forward:/joinandlogin/find_id.do"); //forward는 맵핑값이랑 이름 같으면
+             * mav.setViewName("forward:/joinandlogin/findId.do"); //forward는 맵핑값이랑 이름 같으면
              * 오류(찾는거 무한 반복)
              */       
             }
@@ -260,7 +260,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    }
    
    /* 사업체 비밀번호 찾기 */
-   @RequestMapping(value= "/find_pw_com.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   @RequestMapping(value= "/findPwCom.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView findPwCom(@RequestParam Map<String, String> findPwComMap ,HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
       String viewName = (String)request.getAttribute("viewName");
@@ -274,14 +274,14 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
               HttpSession session=request.getSession();
                session.setAttribute("pw", comPw);
                //System.out.println(1);
-            /* mav.setViewName("forward:/joinandlogin/find_id.do"); */
+            /* mav.setViewName("forward:/joinandlogin/findId.do"); */
                //System.out.println(1);
          } else {
             
             String message="아이디 또는 대표자명 또는 사업자등록번호가 일치하지 않습니다. 사업체 정보를 확인해주세요.";
             mav.addObject("pw", message);
             /*
-             * mav.setViewName("forward:/joinandlogin/find_id.do"); //forward는 맵핑값이랑 이름 같으면
+             * mav.setViewName("forward:/joinandlogin/findId.do"); //forward는 맵핑값이랑 이름 같으면
              * 오류(찾는거 무한 반복)
              */       
             }
@@ -312,19 +312,19 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 			String memberId = memberVO.getMember_id();
 			HttpSession session=request.getSession();
 			session.setAttribute("id", memberId);
-			mav.setViewName("forward:/joinAndLogin/find_id.do"); 
+			mav.setViewName("forward:/joinAndLogin/findId.do"); 
 		} else {
 			String message="아이디가 틀립니다. 다시 한번 입력해주세요.";
 			mav.addObject("id", message);
-			mav.setViewName("forward:/joinAndLogin/find_id.do"); //forward 뒗 留듯븨媛믪씠 옉  씠由  媛숈쑝硫   삤瑜 (李얜뒗嫄  臾댄븳 諛섎났)
+			mav.setViewName("forward:/joinAndLogin/findId.do"); //forward 뒗 留듯븨媛믪씠 옉  씠由  媛숈쑝硫   삤瑜 (李얜뒗嫄  臾댄븳 諛섎났)
 		}
 		return mav;
 	}
 	
 	/*민선*/
 	/* 회원가입 메인페이지 이동 */
-	@RequestMapping(value= "/join_main.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView join_main(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	@RequestMapping(value= "/joinMain.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView joinMain(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
@@ -333,8 +333,8 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 	}
 	
 	/* 개인 회원 가입 이동 */
-	@RequestMapping(value= "/join_member.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView join_member(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	@RequestMapping(value= "/joinMember.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView joinMember(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
@@ -343,8 +343,8 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 	}
 	
 	/* 사업자 회원 가입 이동 */
-	@RequestMapping(value= "/join_com.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView join_com(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	@RequestMapping(value= "/joinCom.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView joinCom(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
@@ -372,7 +372,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 			}catch(Exception e) {
 			message  = "<script>";
 			message +=" alert('작업 중 오류가 발생했습니다. 다시 시도해 주세요');";
-			message += " location.href='"+request.getContextPath()+"/joinAndLogin/join_member.do';";
+			message += " location.href='"+request.getContextPath()+"/joinAndLogin/joinMember.do';";
 			message += " </script>";
 			e.printStackTrace();
 			}
@@ -398,7 +398,7 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
 			}catch(Exception e) {
 			message  = "<script>";
 			message +=" alert('작업 중 오류가 발생했습니다. 다시 시도해 주세요');";
-			message += " location.href='"+request.getContextPath()+"/joinAndLogin/join_com.do';";  
+			message += " location.href='"+request.getContextPath()+"/joinAndLogin/joinCom.do';";  
 			message += " </script>";
 			e.printStackTrace();
 			}

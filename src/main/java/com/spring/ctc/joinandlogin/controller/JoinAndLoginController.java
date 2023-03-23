@@ -25,11 +25,11 @@ public interface JoinAndLoginController {
 	   
 	   /*민선*/
 	   /* 회원가입 메인페이지 이동 */
-	   public ModelAndView join_main(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	   public ModelAndView joinMain(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	   /* 개인회원가입 이동 */
-	   public ModelAndView join_member(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	   public ModelAndView joinMember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	   /* 사업자회원가입 이동 */
-	   public ModelAndView join_com(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	   public ModelAndView joinCom(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	   
 	public ResponseEntity addMember(@ModelAttribute("memberVO") MemberVO _memberVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ResponseEntity overlapped(@RequestParam("id") String id,HttpServletRequest request, HttpServletResponse response) throws Exception;

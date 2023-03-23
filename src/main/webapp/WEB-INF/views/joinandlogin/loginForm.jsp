@@ -168,7 +168,7 @@ form fieldset a:hover { text-decoration: underline; }
 
       <p><input type="password" placeholder="비밀번호" name="member_pw" required></p>
       
-      <p><a href="${contextPath}/joinAndLogin/search_id.do">아이디 찾기</a> | <a href="${contextPath}/joinAndLogin/search_pw.do">비밀번호 찾기</a> | <a href="${contextPath}/member/memberForm.do">회원가입</a></p>
+      <p><a href="${contextPath}/joinAndLogin/searchId.do">아이디 찾기</a> | <a href="${contextPath}/joinAndLogin/searchPw.do">비밀번호 찾기</a> | <a href="${contextPath}/member/memberForm.do">회원가입</a></p>
       <p><input type="submit" value="로그인"></p>
 
     </fieldset>

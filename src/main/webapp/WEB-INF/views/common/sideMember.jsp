@@ -22,9 +22,9 @@
 		   <li>
 				<H3>고객센터</H3>
 				<ul>
-					<li><a href="${contextPath}/admin/goods/adminGoodsMain.do">1:1 문의</a></li>
-					<li><a href="${contextPath}/admin/order/adminOrderMain.do">FAQ</a></li>
-					<li><a href="${contextPath}/admin/member/adminMemberMain.do">공지사항</a></li>
+					<li><a href="${contextPath}/#">1:1 문의</a></li>
+					<li><a href="${contextPath}/#">FAQ</a></li>
+					<li><a href="${contextPath}/#">공지사항</a></li>
 				</ul>
 			</li>
 		</c:when> -->
@@ -33,20 +33,11 @@
 			<li>
 				<h3>마이페이지</h3>
 				<ul>
-					<li><a href="${contextPath}/mypage/listMyOrderHistory.do">나의 문의 내역</a></li>
+					<li><a href="${contextPath}/mypage/myInfo.do">나의 회원정보</a></li>
 					<li><a href="#">마일리지 확인</a></li>
 					<li><a href="#">나의 여행 후기</a></li>
-					<li><a href="#">나의 회원정보</a></li>
+					<li><a href="#">나의 문의 내역</a></li>
 					<li><a href="#">예약 조회</a></li>
-				</ul>
-			</li>
-			<li>
-				<h3>정보내역</h3>
-				<ul>
-					<li><a href="${contextPath}/mypage/myDetailInfo.do">회원정보관리</a></li>
-					<li><a href="#">나의 주소록</a></li>
-					<li><a href="#">개인정보 동의내역</a></li>
-					<li><a href="${contextPath}/member/delForm.do">회원탈퇴</a></li>
 				</ul>
 			</li>
 		</c:when>

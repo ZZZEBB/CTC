@@ -465,8 +465,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <div class="bxTitle">EV6 롱 레인지</div>
                               <div class="bxEvent">자유렌트카</div>
                               <div class="bxPrice">
-                                 <span class="text__price">31,800</span> <span
-                                    class="text__unit">원</span>
+                                 <span class="text__price">31,800</span> <span class="text__unit">원</span>
                               </div>
                               <div class="bxLabel">
                               </div>

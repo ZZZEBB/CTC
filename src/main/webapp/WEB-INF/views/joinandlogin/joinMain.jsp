@@ -11,7 +11,7 @@
 <style>
 </style>
 <!-- css 스타일시트 추가 -->
-<link href="${contextPath}/resources/css/join_main.css" rel="stylesheet" type="text/css">
+<link href="${contextPath}/resources/css/joinMain.css" rel="stylesheet" type="text/css">
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
@@ -26,7 +26,7 @@
 	</div>
 	<div class="joinselect">
 	<div class="member">
-		<a href="${contextPath}/joinAndLogin/join_member.do">
+		<a href="${contextPath}/joinAndLogin/joinMember.do">
 			<img
 				src="${contextPath}/resources/image/member/member1.png"
 				alt="개인회원가입">
@@ -34,7 +34,7 @@
 		</a>
 	</div>
 	<div class="company">
-		<a href="${contextPath}/joinAndLogin/join_com.do">
+		<a href="${contextPath}/joinAndLogin/joinCom.do">
 			<img
 				src="${contextPath}/resources/image/member/member2.png"
 				alt="사업체 회원가입">

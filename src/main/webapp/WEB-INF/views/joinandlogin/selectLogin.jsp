@@ -11,7 +11,7 @@
 <style>
 </style>
 <!-- css 스타일시트 추가 -->
-<link href="${contextPath}/resources/css/join_main.css" rel="stylesheet" type="text/css">
+<link href="${contextPath}/resources/css/joinMain.css" rel="stylesheet" type="text/css">
 
 <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 </head>

@@ -32,7 +32,7 @@ window.onload = function() {
 </head>
 <body>
 	<h3 id="join_member">사업체 아이디 찾기</h3>
-	<form action="${contextPath}/joinAndLogin/find_id_com.do" method="get" name="pfrm">	
+	<form action="${contextPath}/joinAndLogin/findIdCom.do" method="get" name="pfrm">	
 	<div id="detail_table">
 		<table>
 			<tbody>

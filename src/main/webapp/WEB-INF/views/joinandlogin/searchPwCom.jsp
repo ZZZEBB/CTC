@@ -36,7 +36,7 @@ window.onload = function() {
 </head>
 <body>
 	<h3 id="join_member">사업체 비밀번호 찾기</h3>
-	<form action="${contextPath}/joinAndLogin/find_pw_com.do" method="post" name="pfrm">	
+	<form action="${contextPath}/joinAndLogin/findPwCom.do" method="post" name="pfrm">	
 	<div id="detail_table">
 		<table>
 			<tbody>

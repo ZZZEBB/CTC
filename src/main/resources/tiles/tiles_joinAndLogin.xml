@@ -10,22 +10,22 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
-	<definition name="/joinAndLogin/join_main" extends="baseLayout">
+	<definition name="/joinAndLogin/joinMain" extends="baseLayout">
 		<put-attribute name="title" value="회원 가입 페이지"/>
-		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/join_main.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/joinMain.jsp"/>
 	</definition>
-	<definition name="/joinAndLogin/join_member" extends="baseLayout">
+	<definition name="/joinAndLogin/joinMember" extends="baseLayout">
 		<put-attribute name="title" value="개인 회원 가입 페이지"/>
-		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/join_member.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/joinMember.jsp"/>
 	</definition>
-	<definition name="/joinAndLogin/join_com" extends="baseLayout">
+	<definition name="/joinAndLogin/joinCom" extends="baseLayout">
 		<put-attribute name="title" value="사업자 회원 가입 페이지"/>
-		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/join_com.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/joinandlogin/joinCom.jsp"/>
 	</definition>
    
-   <definition name="/joinAndLogin/select_login" extends="baseLayout">
+   <definition name="/joinAndLogin/selectLogin" extends="baseLayout">
       <put-attribute name="title" value="로그인 선택 페이지" />
-      <put-attribute name="body" value="/WEB-INF/views/joinandlogin/select_login.jsp" />
+      <put-attribute name="body" value="/WEB-INF/views/joinandlogin/selectLogin.jsp" />
    </definition>
    
    <definition name="/joinAndLogin/loginForm" extends="baseLayout">
@@ -38,54 +38,44 @@
       <put-attribute name="body" value="/WEB-INF/views/joinandlogin/loginFormCom.jsp" />
    </definition>
    
-   <definition name="/joinAndLogin/search_id" extends="baseLayout">
+   <definition name="/joinAndLogin/searchId" extends="baseLayout">
       <put-attribute name="title" value="사용자 아이디 찾기" />
-      <put-attribute name="body" value="/WEB-INF/views/joinandlogin/search_id.jsp" />
+      <put-attribute name="body" value="/WEB-INF/views/joinandlogin/searchId.jsp" />
    </definition>
    
-   <definition name="/joinAndLogin/find_id" extends="baseLayout">
+   <definition name="/joinAndLogin/findId" extends="baseLayout">
          <put-attribute name="title" value="사용자 아이디 확인" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/find_id.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/findId.jsp" />
       </definition>
       
-      <definition name="/joinAndLogin/select_find_id" extends="baseLayout">
+      <definition name="/joinAndLogin/searchPw" extends="baseLayout">
          <put-attribute name="title" value="아이디 찾기" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/select_find_id.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/searchPw.jsp" />
       </definition>
       
-      <definition name="/joinAndLogin/select_find_pw" extends="baseLayout">
-         <put-attribute name="title" value="아이디 찾기" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/select_find_pw.jsp" />
-      </definition>
-      
-      <definition name="/joinAndLogin/search_pw" extends="baseLayout">
-         <put-attribute name="title" value="아이디 찾기" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/search_pw.jsp" />
-      </definition>
-      
-      <definition name="/joinAndLogin/find_pw" extends="baseLayout">
+      <definition name="/joinAndLogin/findPw" extends="baseLayout">
          <put-attribute name="title" value="비밀번호 확인" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/find_pw.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/findPw.jsp" />
       </definition>
       
-       <definition name="/joinAndLogin/search_id_com" extends="baseLayout">
+       <definition name="/joinAndLogin/searchIdCom" extends="baseLayout">
          <put-attribute name="title" value="사업체 아이디 찾기" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/search_id_com.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/searchIdCom.jsp" />
       </definition>
       
-        <definition name="/joinAndLogin/find_id_com" extends="baseLayout">
+        <definition name="/joinAndLogin/findIdCom" extends="baseLayout">
          <put-attribute name="title" value="사업체 아이디 확인" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/find_id_com.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/findIdCom.jsp" />
       </definition>
       
-        <definition name="/joinAndLogin/search_pw_com" extends="baseLayout">
+        <definition name="/joinAndLogin/searchPwCom" extends="baseLayout">
          <put-attribute name="title" value="사업체 비밀번호 찾기" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/search_pw_com.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/searchPwCom.jsp" />
       </definition>
       
-        <definition name="/joinAndLogin/find_pw_com" extends="baseLayout">
+        <definition name="/joinAndLogin/findPwCom" extends="baseLayout">
          <put-attribute name="title" value="사업체 비밀번호 확인" />
-         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/find_pw_com.jsp" />
+         <put-attribute name="body" value="/WEB-INF/views/joinandlogin/findPwCom.jsp" />
       </definition>
 
 	
