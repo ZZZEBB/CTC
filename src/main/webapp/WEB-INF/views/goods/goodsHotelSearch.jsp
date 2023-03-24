@@ -121,24 +121,22 @@ margin-left: 20px;
 	margin-left: 300px;
 	margin-bottom: 100px;
 }
+
+
 </style>
+
 </head>
 <body>
+
 <form id="search"> 
-      
-       <span>
-      <%--  <img class="icon" alt="car_icon" src="${contextPath}/resources/image/car.png"> --%> <!-- 검색창 왼쪽 자동차아이콘 -->
-       
-      <input type="text" name="search" id="searchtitle"  placeholder="호텔 검색"/>
-      
-       체크인 <span id="searchtitle1"> 
-       <input class="date" type="date" name="start"/> <!-- 출발달력 -->
-        
-      </span>
-      체크아웃 <input class="date" type="date" name="start"/> <!-- 도착달력 -->
-         
-       </span>
-            <button type="submit" class="btn btn-link">
+	<span> 
+		<input type="text" name="search" id="searchtitle"  placeholder="호텔 검색"/> 
+			체크인 <span id="searchtitle1"> 
+       	<input class="date" type="date" name="start"/> <!-- 출발달력 -->
+    </span> 
+    		체크아웃 <input class="date" type="date" name="start"/> <!-- 도착달력 --> 
+    </span>
+    	<button type="submit" class="btn btn-link">
              <img src="${contextPath}/resources/image/search.png" alt="검색" width="20px" height="25px"> <!-- submit 검색버튼 -->
        </button>
 </form>

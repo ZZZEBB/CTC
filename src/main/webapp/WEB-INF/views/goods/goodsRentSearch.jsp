@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>렌트 상품 조회</title>
+<title>호텔 상품 조회</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
@@ -191,7 +191,6 @@
    height:15px;
 }
 .productmap{
-   border:2px solid black;
    float:left;
    width:330px;
    height:400px;
@@ -202,7 +201,7 @@
 .productcar{
    text-align:center;
    margin:15px auto 15px auto;
-   width:750px;
+   width:850px;
    height:260px;
    border:2px solid black;
    border-radius:5px;
@@ -235,7 +234,6 @@
 }
 /* 이벤트칸 조정 */
 #event{
-   border:2px solid black;
    width:350px;
    height:400px;
    float:right;
@@ -275,14 +273,7 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
              <img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> <!-- submit 검색버튼 -->
        </button>
 </form>
-   <!-- 이벤트 -->
-     <div class="productmap">
-       
-    </div>
-    <!-- 이벤트 -->
-     <div id="event">
 
-    </div>
 
     <c:forEach var="product" items="${carList}">
     <form class="productcar" method="get">
@@ -298,19 +289,17 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
           <p style="color:red;">무료취소 [72시간이내]</p>
           <p>연료정책: 인수시와 동일.</p>
        </div>
-       <input type="hidden" name="car_start" value="${product.car_start_date}${product.car_start_time}">
-       <input type="hidden" name="car_end" value="${product.car_end_date}${product.car_end_time}">
        <div id="productprice" class="producttext">
-          <p style="color:blue; font-weight:bold; text-decoration:line-through;">금액 : ${product.car_price} 원.</p>
-          <p style="color:red; font-weight:bold;">금액 : ${product.car_saleprice} 원.</p>
+          <p style="color:blue; font-weight:bold;font-size:14px; text-decoration:line-through;">금액 : ${product.car_price} 원.</p>
+          <p style="color:red; font-weight:bold;font-size:14px;">금액 : ${product.car_saleprice} 원.</p>
           <c:if test="${product.car_status == 1}">
              <div id="buttonstyle">
-                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.car_name}&start=${user_start}&end=${user_end}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
+                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.car_name}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
                 <a href="#"><img src="${contextPath}/resources/image/rent/my_shopbag.jpg" width="70px" height="40px"></a> <!-- 장바구니페이지버튼 -->   
              </div>
           </c:if>
           <c:if test="${product.car_status == 2}">
-             <h5 style="font-weight:bold; margin-top:15px;">예약 불가</h5>
+             <h5 style="font-weight:bold; margin-top:15px;color:red;">예약 불가</h5>
           </c:if>
        </div>
     </form>
