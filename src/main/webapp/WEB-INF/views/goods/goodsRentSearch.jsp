@@ -35,12 +35,12 @@
    
       
       function notnull(){
-         
-         var selectList = document.getElementById("carResult")
-         
-         if(selectList.options[selectList.selectedIndex].value == "del"){
-            alert("차종을 필수로 선택해주세요.");
-         } 
+    	  
+    	  var selectList = document.getElementById("carResult")
+    	  
+    	  if(selectList.options[selectList.selectedIndex].value == "del"){
+    		  alert("차종을 필수로 선택해주세요.");
+    	  } 
       }
       
       
@@ -263,15 +263,15 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
       </select>
       </span>
 
-          <span class="reform">대여일 </span><span id="calendertime1"> 
-          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
-            <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
-         </span>
+	       <span class="reform">대여일 </span><span id="calendertime1"> 
+	       <input class="date" type="date" name="start"/> <!-- 출발달력 -->
+	         <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
+	      </span>
       
-          <span class="reform">반납일 </span><span id="calendertime2"> 
-          <input class="date" type="date" name="End"/> <!-- 도착달력 -->
-            <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
-         </span>
+	       <span class="reform">반납일 </span><span id="calendertime2"> 
+	       <input class="date" type="date" name="End"/> <!-- 도착달력 -->
+	         <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
+	      </span>
             <button type="submit" id="essential3" class="btn btn-link" onclick="notnull()">
              <img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> <!-- submit 검색버튼 -->
        </button>
@@ -286,9 +286,9 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
        <div class="producttext">
           <h6 style="font-weight:bold;margin-top:10px;">${product.car_name}</h6>
           <p>${product.car_model}</p>               <!-- 문자열 앞에서부터자르기 -->
-          <p>대여시작일 : ${user_start} 일</p>
-          <p>반납날 : ${user_end} 일</p>          
-          <p>총 : ${fn:substring(user_end,8,10) - fn:substring(user_start,8,10)}일</p>
+          <c:if test="${user_start} == ''"><p>대여시작일 : ${user_start} 일</p></c:if>
+          <c:if test="${user_end} == ''"><p>반납날 : ${user_end} 일</p></c:if>          
+          <c:if test="${user_start} == '' || ${user_end} == ''"><p>총 : ${fn:substring(user_end,8,10) - fn:substring(user_start,8,10)}일</p></c:if>
           <hr style="margin:5px 0px 5px 0px;">
           <p style="color:red;">무료취소 [72시간이내]</p>
           <p>연료정책: 인수시와 동일.</p>

@@ -4,28 +4,35 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
 <mapper namespace="mapper.flight">
-<resultMap id="flightResult" type="goodsFlightVO">
-<result property="com_id" column="com_id"/>
-<result property="airport_num" column="airport_num"/>
-<result property="flight_code" column="flight_code"/>
-<result property="flight_name" column="flight_name"/>
-<result property="flight_airline" column="flight_airline"/>
-<result property="flight_class" column="flight_class"/>
-<result property="flight_saleprice" column="flight_saleprice"/>
-<result property="flight_departures" column="flight_departures"/>
-<result property="flight_departure_date" column="flight_departure_date"/>
-<result property="flight_departure_time" column="flight_departure_time"/>
-<result property="flight_arrivals" column="flight_arrivals"/>
-<result property="flight_arrival_date" column="flight_arrival_date"/>
-<result property="flight_status" column="flight_status"/>
-<result property="flight_charge" column="flight_charge"/>
-<result property="flight_mileage" column="flight_mileage"/>
-<result property="flight_mileage" column="flight_mileage"/>
-</resultMap>
-<select id="flightList" parameterType="java.util.Map" resultType="goodsFlightVO">
-SELECT * FROM flight WHERE flight_departures =#{searchtitle1}
-<if test="searchtitletwo1 != ''">AND flight_arrivals = #{searchtitletwo1}</if>
-<if test="searchtitletwo2 != ''">AND flight_arrivals = #{searchtitletwo2}</if>
-AND flight_departure_date = #{start}
-</select>
+	<resultMap id="flightResult" type="goodsFlightVO">
+		<result property="com_id" column="com_id"/>
+		<result property="airport_num" column="airport_num"/>
+		<result property="flight_code" column="flight_code"/>
+		<result property="flight_name" column="flight_name"/>
+		<result property="flight_airline" column="flight_airline"/>
+		<result property="flight_class" column="flight_class"/>
+		<result property="flight_saleprice" column="flight_saleprice"/>
+		<result property="flight_departures" column="flight_departures"/>
+		<result property="flight_departure_date" column="flight_departure_date"/>
+		<result property="flight_departure_time" column="flight_departure_time"/>
+		<result property="flight_arrivals" column="flight_arrivals"/>
+		<result property="flight_arrival_date" column="flight_arrival_date"/>
+		<result property="flight_status" column="flight_status"/>
+		<result property="flight_charge" column="flight_charge"/>
+		<result property="flight_mileage" column="flight_mileage"/>
+		<result property="flight_mileage" column="flight_mileage"/>
+	</resultMap>
+	
+	<select id="flightList" parameterType="java.util.Map" resultType="goodsFlightVO">
+		SELECT * FROM flight WHERE flight_departures =#{searchtitle1}
+		<if test="searchtitletwo1 != ''">AND flight_arrivals = #{searchtitletwo1}</if>
+		<if test="searchtitletwo2 != ''">AND flight_arrivals = #{searchtitletwo2}</if>
+		<if test="searchtitletwo3 != ''">AND flight_arrivals = #{searchtitletwo3}</if>
+		<if test="searchtitletwo4 != ''">AND flight_arrivals = #{searchtitletwo4}</if>
+		<if test="searchtitletwo5 != ''">AND flight_arrivals = #{searchtitletwo5}</if>
+		<if test="searchtitletwo6 != ''">AND flight_arrivals = #{searchtitletwo6}</if>
+		<if test="searchtitletwo7 != ''">AND flight_arrivals = #{searchtitletwo7}</if>
+		<if test="searchtitletwo8 != ''">AND flight_arrivals = #{searchtitletwo8}</if>
+		AND flight_departure_date = #{start}
+	</select>
 </mapper>

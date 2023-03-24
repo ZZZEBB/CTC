@@ -62,4 +62,14 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
 	}
 	
+	//고객센터 이동(/faq.do)
+	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
 }

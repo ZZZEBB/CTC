@@ -15,8 +15,6 @@ public class GoodsHotelVO {
 	private String hotel_latitude;
 	private String hotel_longitude;
 	private Date hotel_entered_date;
-	private Date hotel_check_in;
-	private Date hotel_check_out;
 	private int hotel_price;
 	private int room_saleprice;
 	private int hotel_grade;
@@ -78,18 +76,6 @@ public class GoodsHotelVO {
 	}
 	public void setHotel_entered_date(Date hotel_entered_date) {
 		this.hotel_entered_date = hotel_entered_date;
-	}
-	public Date getHotel_check_in() {
-		return hotel_check_in;
-	}
-	public void setHotel_check_in(Date hotel_check_in) {
-		this.hotel_check_in = hotel_check_in;
-	}
-	public Date getHotel_check_out() {
-		return hotel_check_out;
-	}
-	public void setHotel_check_out(Date hotel_check_out) {
-		this.hotel_check_out = hotel_check_out;
 	}
 	public int getHotel_price() {
 		return hotel_price;

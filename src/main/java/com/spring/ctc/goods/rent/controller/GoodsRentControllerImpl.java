@@ -50,21 +50,15 @@ public class GoodsRentControllerImpl implements GoodsRentController{
       request.setCharacterEncoding("utf-8");
       String viewName=(String)request.getAttribute("/goods/goodsRentSearch");
       ModelAndView mav = new ModelAndView(viewName);
-      List<GoodsRentVO> carmodel = goodsrentservice.selectRentList(carResult);
-      String start = carResult.get("start");
-            start += " ";
-            start += carResult.get("start_time");
-      String end = carResult.get("End");
-             end += " ";
-             end += carResult.get("endtime");
-             
-             System.out.println(start);
-             System.out.println(end);
-      
-      mav.addObject("userStart" , start);
-      mav.addObject("userEnd" , end);
-      mav.addObject("carList" , carmodel);
-      
+      try {
+    	  List<GoodsRentVO> carmodel = goodsrentservice.selectRentList(carResult);
+    	  
+    	  mav.addObject("user_start" , carResult.get("start"));
+    	  mav.addObject("user_end" , carResult.get("End"));
+    	  mav.addObject("carList" , carmodel);
+      }catch(Exception e) {
+    	  return mav;  
+      }
       return mav;
    }
 

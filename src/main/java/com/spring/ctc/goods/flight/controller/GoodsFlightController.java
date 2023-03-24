@@ -10,6 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface GoodsFlightController {
 	
-	public ModelAndView goodsAirSearch(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView goodsAirKeywordSearch(@RequestParam Map<String,String> model,  HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView goodsFlightSearch(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView goodsFlightKeywordSearch(@RequestParam Map<String,String> model,  HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

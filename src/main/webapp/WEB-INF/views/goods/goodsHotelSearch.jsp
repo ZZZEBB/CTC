@@ -20,7 +20,7 @@
 <!-- 반응형 웹 -->
 <link rel="stylesheet" type="text/css" media="screen" href="cssscreen.css">
 <link rel="stylesheet" type="text/css" media="print" href="cssprint.css">
-<script>
+<!-- <script>
   $(document).ready(function() {
     $("#datepicker").datepicker({
       dateFormat: "yy-mm-dd"
@@ -33,7 +33,18 @@
       dateFormat: "yy-mm-dd"
     });
   });
-</script>
+</script> -->
+ <script>
+    function printStars() {
+      var num = parseInt(document.getElementById('numInput').value);
+      // 숫자에 따라 별표 출력
+      var stars = '';
+      for (var i = 1; i <= num; i++) {
+        stars += '*';
+      }
+      document.getElementById('starsOutput').innerHTML = stars;
+    }
+  </script>
 <style type="text/css">
 .date{
    padding-left:5px;
@@ -45,8 +56,8 @@
 
 
 #search {
-	margin-bottom: 20px;
-	text-align: center;
+   margin-bottom: 20px;
+   text-align: center;
 }
 
 .imagebox {
@@ -59,12 +70,12 @@ margin-bottom: 10px;
 
 }
 .hotelText1 {
-	font-size:12px;
-	line-height: 12px;
-	margin-top: 10px;
-	margin-left: 20px;
-	width: 500px;
-	font-style: bold;
+   font-size:12px;
+   line-height: 12px;
+   margin-top: 10px;
+   margin-left: 20px;
+   width: 500px;
+   font-style: bold;
 }
 body hr {
 width: 450px;
@@ -78,48 +89,51 @@ margin-left: 20px;
 }
 
 .product{
-	border:2px solid #ccc;
-	height: 170px;
-	position: relative;
-	box-sizing :border-box;
-	float: left;
-	margin-left: 450px;
-	width: 41%;
-	margin-bottom: 20px;
+   border:2px solid #ccc;
+   height: 170px;
+   position: relative;
+   box-sizing :border-box;
+   float: left;
+   margin-left: 450px;
+   width: 41%;
+   margin-bottom: 20px;
 }
 .product1{
-	clear: both;
-	border:2px solid #ccc;
-	height: 170px;
-	box-sizing :border-box;
-	float: left;
-	margin-left: 450px;
-	width: 41%;
+   clear: both;
+   border:2px solid #ccc;
+   height: 170px;
+   box-sizing :border-box;
+   float: left;
+   margin-left: 450px;
+   width: 41%;
 }
 
 .imgBox01 {
-	float: left;
-	height: 170px;
-	padding: 5px;
+   float: left;
+   height: 170px;
+   padding: 5px;
 }
 .eventBox {
-	width: 11%;
-	float:right;
-	border: 2px solid #ccc;
-	height: 600px;
-	margin-right: 455px;
+   width: 11%;
+   float:right;
+   border: 2px solid #ccc;
+   height: 600px;
+   margin-right: 455px;
 }
 .map {
-	width: 10%;
-	float:left;
-	border: 2px solid #ccc;
-	height: 140px;
-	margin-left: 240px;
-	
+   width: 10%;
+   float:left;
+   border: 2px solid #ccc;
+   height: 140px;
+   margin-left: 240px;
+   
 }
 .button {
-	margin-left: 300px;
-	margin-bottom: 100px;
+   margin-left: 300px;
+   margin-bottom: 100px;
+}
+.starSize {
+   font-size: 15px;
 }
 
 
@@ -129,22 +143,22 @@ margin-left: 20px;
 <body>
 
 <form id="search"> 
-	<span> 
-		<input type="text" name="search" id="searchtitle"  placeholder="호텔 검색"/> 
-			체크인 <span id="searchtitle1"> 
-       	<input class="date" type="date" name="start"/> <!-- 출발달력 -->
+   <span> 
+      <input type="text" name="search" id="searchtitle"  placeholder="호텔 검색"/> 
+         체크인 <span id="searchtitle1"> 
+          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
     </span> 
-    		체크아웃 <input class="date" type="date" name="start"/> <!-- 도착달력 --> 
+          체크아웃 <input class="date" type="date" name="start"/> <!-- 도착달력 --> 
     </span>
-    	<button type="submit" class="btn btn-link">
+       <button type="submit" class="btn btn-link">
              <img src="${contextPath}/resources/image/search.png" alt="검색" width="20px" height="25px"> <!-- submit 검색버튼 -->
        </button>
 </form>
 
 <div class="map">
 <!-- 지도를 표시할 div 입니다 -->
-      <div id="map" style="width:100%;height:139px;"></div>
-      
+      <div id="map" style="width:100%;height:139px;">
+      </div>
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e253b59d2cc8f52b94e061355413a9e"></script>
       <script>
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -160,76 +174,45 @@ margin-left: 20px;
 </div>
 
 <div class="imagebox" id="image">
-	<h6>제주도 인기 여행지 <small>top5</small></h6>
+   <h6>제주도 인기 여행지 <small>top5</small></h6>
    <a class="click" href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500309" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuNewstar.jpg" width="170px" height="100px"/></a>
    <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500707" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuPark.jpg" width="170px" height="100px"/></a>
    <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500471" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuDragon.jpg" width="170px" height="100px"/></a>
    <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500693" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuBeach.jpg" width="170px" height="100px"/></a>
    <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500531" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuWaterfall.jpg" width="170px" height="100px"/></a>
 </div>
-
+<c:forEach var="hotel" items="${hotelList}">
 <div class="container mt-3">
-	<div class="row justify-content-center">
-		<div class="col-md-7">
-			<div class="list-group list-group-flush mb-4" style = "border:1px solid #808080;">
-				<a class="list-group-item" href="${contextPath}/goods/goodsHotelDetail.do">
-				<div class="d-flex w-70">
-					<img src="${contextPath}/resources/image/hotel/jeju_shinhwa.jpg" width="30%" height="170px">
-					<h6 class="mb-1 ms-4 p-2" style="height: 15px; line-height: 15px;">
-						<span class = "fs-5 fw-bolder">랜딩관 제주신화월드 호텔앤리조트 01</span>
-						<small class="smallCaption text-secondary">★★★★</small> <hr><br><br>
-						<div class="hotelPrice"><p>회사 이름   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;322,000 원 
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input class="" type="button" value="바로 예약"></p>
-						
-						</div>
-					</h6>
-				</div>
-				</a>
-			</div>
-			<div class="list-group list-group-flush mb-4" style = "border:1px solid #808080;">
-				<a class="list-group-item">
-				<div class="d-flex w-70">
-					<img src="${contextPath}/resources/image/hotel/jeju_shinhwa.jpg" width="30%" height="170px">
-					<h6 class="mb-1 ms-4 p-2" style="height: 15px; line-height: 15px;">
-						<span class = "fs-5 fw-bolder">랜딩관 제주신화월드 호텔앤리조트 02</span>
-						<small class="smallCaption text-secondary">★★★★</small><hr><br><br>
-						<div class="hotelPrice"><p>회사 이름   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;322,000 원 
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input class="" type="button" value="바로 예약"></p>
-						
-						</div>
-						
-						
-					</h6>
-					
-			</div>
-			
-				</a>
-			</div>
-			<div class="list-group list-group-flush mb-4" style = "border:1px solid #808080;">
-				<a class="list-group-item">
-				<div class="d-flex w-70">
-					<img src="${contextPath}/resources/image/hotel/jeju_shinhwa.jpg" width="30%" height="170px">
-					<h6 class="mb-1 ms-4 p-2" style="height: 15px; line-height: 15px;">
-						<span class = "fs-5 fw-bolder">랜딩관 제주신화월드 호텔앤리조트 03</span>
-						<small class="smallCaption text-secondary" >★★★★</small><hr><br><br>
-						<div class="hotelPrice"><p>회사 이름   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;322,000 원 
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input class="" type="button" value="바로 예약"></p>
-						
-						</div>
-					</h6>
-				</div>
-				</a>
-			</div>
-		</div>
-		<div class = "col-md-2" style = "border:1px solid #808080; height : auto;">
-			<h5>이벤트 이미지</h5>
-		</div>
-	</div>
+   <div class="row justify-content-center">
+      <div class="col-md-7">
+         <div class="list-group list-group-flush mb-4" style = "border:1px solid #808080;">
+            <a class="list-group-item" href="${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.hotel_name}">
+               <div class="d-flex w-70">
+                  <img src="${contextPath}/resources/image/hotel/jeju_shinhwa.jpg" width="30%" height="170px">
+                     <h6 class="mb-1 ms-4 p-2" style="height: 15px; line-height: 15px;">
+                        <span class = "fs-5 fw-bolder">${hotel.hotel_name} &nbsp;  
+                        <c:forEach begin="1" end="${hotel.hotel_grade}">
+                        <span class="starSize">★</span>
+                        </c:forEach>
+                         </span><hr><br><br>
+                           <div class="hotelPrice"><p>${hotel.com_id }   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hotel.hotel_price } 원 
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <button type = "button" class=""  onclick="location.href='${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.hotel_name}'">
+                              예약하기
+                                     </button>
+                                 </p>
+                           </div>
+                     </h6>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
 </div>
-
+</c:forEach>   
+   <div class = "col-md-2" style = "border:1px solid #808080; height : auto;">
+      <h5>이벤트 이미지</h5>
+   </div>
 
 </body>
 </html>

@@ -123,7 +123,7 @@
                              <c:otherwise>
                                 <li><a href="${contextPath}/joinAndLogin/selectLogin.do" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
                                 <li><a href="${contextPath}/joinAndLogin/joinMain.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
-                               <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+                               <li><a href="${coptextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
                                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
                              </c:otherwise>
                          </c:choose> 
@@ -166,7 +166,7 @@
                    <a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
                  </li>
                  <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsAirSearch.do">항공</a>
+                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
                  </li>
                  <li class="nav-item fs-4">
                    <a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>

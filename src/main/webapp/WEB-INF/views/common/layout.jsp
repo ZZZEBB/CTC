@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <title><tiles:insertAttribute name="title" /></title>
 <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
    	* {
 		font-family: 'Noto Sans KR', sans-serif;
 	}

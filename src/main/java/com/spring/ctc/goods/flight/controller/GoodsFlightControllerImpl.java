@@ -24,8 +24,8 @@ public class GoodsFlightControllerImpl implements GoodsFlightController{
 	private GoodsFlightService goodsflightservice;
 	
 	@Override
-	@RequestMapping(value="/goodsAirSearch.do" ,method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView goodsAirSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value="/goodsFlightSearch.do" ,method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView goodsFlightSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		HttpSession session=request.getSession();
 		ModelAndView mav = new ModelAndView(viewName);
@@ -33,9 +33,8 @@ public class GoodsFlightControllerImpl implements GoodsFlightController{
 	}
 	
 	@Override
-	@RequestMapping(value="/goodsAirKeyWordSearch.do" ,method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView goodsAirKeywordSearch(
-			 @RequestParam Map<String,String> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value="/goodsFlightKeyWordSearch.do" ,method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView goodsFlightKeywordSearch(@RequestParam Map<String,String> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		HttpSession session=request.getSession();
 		 List<GoodsFlightVO> keyword = goodsflightservice.selectListFlight(model); 

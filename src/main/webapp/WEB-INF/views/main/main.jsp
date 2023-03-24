@@ -10,7 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>입력</title>
 <style>
-@import
    body {
       width : 100%;
    }
