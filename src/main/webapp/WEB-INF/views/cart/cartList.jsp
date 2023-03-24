@@ -45,13 +45,13 @@
 								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
 							</td>
 							<td class = "col-md-5">
-								<p class = "fs-5 fw-bolder">[제주에어텔/프리미엄5성급] 항공+그랜드하얏트호텔+조식뷔페 포함 2박3일</p>
+								<p class = "fs-5 fw-bolder">[제주에어텔/프리미엄5성급] 항공</p>
 								<br>
 								<small class="smallCaption text-secondary"><br>출발기간 : 2023.03.22 ~ 2023.03.25</small>
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">529,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/order.do'">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/flightOrderCheck.do'">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 						<tr>
@@ -61,19 +61,19 @@
 								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
 							</td>
 							<td class = "col-md-5">
-								<p class = "fs-5 fw-bolder">[해양리조트/표선위치] 항공+해비치리조트+렌트카3일</p>
+								<p class = "fs-5 fw-bolder">[해양리조트/표선위치] 호텔</p>
 								<br>
 								<small class="smallCaption text-secondary"><br>출발기간 : 2023.03.22 ~ 2023.03.25</small>
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/order.do'">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class = "container d-flex col-md-12 justify-content-end">
-					<button class = "btn btn-warning btn-md" onclick="location.href='${contextPath}/order/order.do'">예약하기</button>
+					<button class = "btn btn-warning btn-md" onclick="location.href='${contextPath}/order/packOrder.do'">예약하기</button>
 				</div>
 			</div>
 		</div>

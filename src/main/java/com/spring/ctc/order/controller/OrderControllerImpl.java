@@ -9,10 +9,49 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value="/order")
 public class OrderControllerImpl {
 	
-	@RequestMapping(value= "/order/order.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView main(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	//항공 상품 예약정보확인 페이지
+	@RequestMapping(value= "/flightOrderCheck.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView flightOrderCheck(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
+	//항공 상품 약관/결제 페이지
+	@RequestMapping(value= "/flightOrderPay.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView flightOrderPay(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
+	@RequestMapping(value= "/hotelOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView hotelOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
+	@RequestMapping(value= "/packOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView packOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
+	@RequestMapping(value= "/rentOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView rentOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");

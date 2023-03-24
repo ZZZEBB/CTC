@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 
 public interface OrderController {
-	public ModelAndView main(HttpServletRequest request, HttpServletResponse response) throws Exception;
-
+	
+	public ModelAndView flightOrderCheck(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView flightOrderPay(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView hotelOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView packOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView rentOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }
