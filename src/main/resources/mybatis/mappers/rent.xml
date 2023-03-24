@@ -26,22 +26,20 @@
 <result property="car_image_filename" column="car_image_filename"/>
 </resultMap>
       <select id="rentAllList" parameterType="java.util.Map" resultType="goodsRentVO">
-          SELECT *
-          FROM rent 
+          SELECT * FROM rent 
       </select>
       <select id="rentList" parameterType="java.util.Map" resultType="goodsRentVO">
-         SELECT *
-         FROM rent
-         WHERE
-	         car_model=#{carResult} AND 
-	         car_start_date BETWEEN #{start} AND #{End} OR 
-	         car_end_date BETWEEN #{start} AND #{End} OR
-	         car_start_time BETWEEN #{start_time} AND #{end_time} OR
-	         car_end_time BETWEEN #{start_time} AND #{end_time}
+         <if test="carResult == 'all'">SELECT * FROM rent</if>
+         <if test="carResult != 'all'">
+            SELECT * FROM rent WHERE
+            car_model=#{carResult} OR
+            car_start_date BETWEEN #{start} AND #{End} AND 
+            car_end_date BETWEEN #{start} AND #{End} AND
+            car_start_time BETWEEN #{start_time} AND #{end_time} AND
+            car_end_time BETWEEN #{start_time} AND #{end_time}4
+         </if>
       </select>
-      <select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO">
-         SELECT *
-         FROM rent
-         WHERE car_name=#{car_name}
+      <select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO"> 
+         SELECT * FROM rent WHERE car_name=#{car_name}
        </select>
 </mapper>

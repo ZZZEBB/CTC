@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.package">
+	<resultMap id="packResult" type="goodsPackVO">
+		<result property="com_id" column="com_id"/>
+		<result property="airport_num" column="airport_num"/>
+		<result property="package_code" column="package_code"/>
+		<result property="package_name" column="package_name"/>
+		<result property="package_exp" column="package_exp"/>
+		<result property="package_hotel_name" column="package_hotel_name"/>
+		<result property="package_hotel_grade" column="package_hotel_grade"/>
+		<result property="package_price" column="package_price"/>
+		<result property="package_saleprice" column="package_saleprice"/>
+		<result property="package_charge" column="package_charge"/>
+		<result property="package_start_date" column="package_start_date"/>
+		<result property="package_end_date" column="package_end_date"/>
+		<result property="package_entered_date" column="package_entered_date"/>
+		<result property="package_status" column="package_status"/>
+		<result property="package_mileage" column="package_mileage"/>
+	</resultMap>
+</mapper>

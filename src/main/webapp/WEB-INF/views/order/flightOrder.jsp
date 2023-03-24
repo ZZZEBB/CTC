@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>예약/결제</title>
+   <title>항공권 예약/결제</title>
    <!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
 <body>
 <div class = "container">	
 	<div class = "d-flex col-md-9 justify-content-between align-item-center">
-		<h4>예약하기</h4>
+		<h4>항공권 예약하기</h4>
 		<span>예약정보확인 - 옵션정보/약관결제 - 결제완료</span>
 	</div>
 	<hr>
