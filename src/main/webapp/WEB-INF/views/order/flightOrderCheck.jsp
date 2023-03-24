@@ -60,30 +60,32 @@
 			</table>
 		</div>
 	</div>
-	<div class = "row col-md-6">
-		<table class ="table caption-top table table-bordered">
-			<caption class = "fs-5">투숙자 정보</caption>
-			<caption class = "fs-6">객실 1 / 성인 1</caption>
-				<tr>
-					<th class="table-active">성명(한글)</th>
-					<td colspan="4"><input type = "text" value = "장은빈" placeholder="장은빈"></td>
-				</tr>
-				<tr>
-					<th class="table-active">생년월일</th>
-					<td><input type = "date" value = "19980901" placeholder="19980901"></td>
-					<th class="table-active">성별</th>
-					<td><input type = "radio" value = "남성">남성<input type = "radio" value = "여성">여성</td>
-				</tr>
-				<tr>
-					<th class="table-active">연락처</th>
-					<td><input type = "tel"></td>
-					<th class="table-active">이메일</th>
-					<td><input type = "email" value = "dmsqls901@kakao.com" placeholder="dmsqls901@kakao.com"></td>
-				</tr>
-		</table>
+	<div class = "row">
+		<div class = "col-md-6">
+			<table class ="table caption-top table table-bordered">
+				<caption class = "fs-5">투숙자 정보</caption>
+				<caption class = "fs-6">객실 1 / 성인 1</caption>
+					<tr>
+						<th class="table-active">성명(한글)</th>
+						<td colspan="4"><input type = "text" value = "장은빈" placeholder="장은빈"></td>
+					</tr>
+					<tr>
+						<th class="table-active">생년월일</th>
+						<td><input type = "date" value = "19980901" placeholder="19980901"></td>
+						<th class="table-active">성별</th>
+						<td><input type = "radio" value = "남성">남성<input type = "radio" value = "여성">여성</td>
+					</tr>
+					<tr>
+						<th class="table-active">연락처</th>
+						<td><input type = "tel"></td>
+						<th class="table-active">이메일</th>
+						<td><input type = "email" value = "dmsqls901@kakao.com" placeholder="dmsqls901@kakao.com"></td>
+					</tr>
+			</table>
+		</div>
 	</div>
 	<div class = "container col-md-6 d-flex">
-		<a class = "btn btn-primary btn-lg justify-content-center" href = "#">다음단계</a>
+		<a class = "btn btn-primary btn-sm justify-content-center" href = "#">다음단계</a>
 	</div>
 </div>
 	<!-- JavaScript Bundle with Popper -->

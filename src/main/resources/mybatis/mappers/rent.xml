@@ -29,14 +29,18 @@
           SELECT * FROM rent 
       </select>
       <select id="rentList" parameterType="java.util.Map" resultType="goodsRentVO">
-         <if test="carResult == 'all'">SELECT * FROM rent</if>
-         <if test="carResult != 'all'">
-            SELECT * FROM rent WHERE
-            car_model=#{carResult} OR
+         <if test="carResult == 'all'">
+            SELECT * FROM rent WHERE <if test="start != '' || End != ''">
             car_start_date BETWEEN #{start} AND #{End} AND 
-            car_end_date BETWEEN #{start} AND #{End} AND
-            car_start_time BETWEEN #{start_time} AND #{end_time} AND
-            car_end_time BETWEEN #{start_time} AND #{end_time}4
+            car_end_date BETWEEN #{start} AND #{End}
+            </if> 
+         </if>
+         <if test="carResult != 'all'">
+            SELECT * FROM rent  WHERE
+            car_model=#{carResult} <if test="start != '' || End != ''">AND
+            car_start_date BETWEEN #{start} AND #{End} AND 
+            car_end_date BETWEEN #{start} AND #{End}
+            </if> 
          </if>
       </select>
       <select id="rentOneList" parameterType="java.util.Map" resultType="goodsRentVO"> 

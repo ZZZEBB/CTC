@@ -6,6 +6,9 @@
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <c:set var="carsize" value="${carsize}"/>
+<c:set var="start" value="${fn:substring( product.car_start_date,8,10) }"/>
+<c:set var="end" value="${fn:substring( product.car_end_date,8,10) }"/>
+
 
 
 <!DOCTYPE html>
@@ -30,46 +33,46 @@
         }
       }); */
    
-   function cartype(){
+      
+      function notnull(){
+         
+         var selectList = document.getElementById("carResult")
+         
+         if(selectList.options[selectList.selectedIndex].value == "del"){
+            alert("차종을 필수로 선택해주세요.");
+         } 
+      }
+      
+      
+/*    function cartype(){
       var selectList = document.getElementById("carResult")
       
       if(selectList.options[selectList.selectedIndex].value == "all"){
-          document.getElementById('carname').style.display="";
-          document.getElementById('carname1').style.display="none";
-          document.getElementById('carname2').style.display="none";
-          document.getElementById('carname3').style.display="none";
-          document.getElementById('carname4').style.display="none";
+          document.getElementById('essential1').style.display="none";
+          document.getElementById('essential2').style.display="none";
+          document.getElementById('essential3').style.display="";
       }
       if(selectList.options[selectList.selectedIndex].value == "소형"){
-          document.getElementById('carname').style.display="none";
-          document.getElementById('carname1').style.display="";
-          document.getElementById('carname2').style.display="none";
-          document.getElementById('carname3').style.display="none";
-          document.getElementById('carname4').style.display="none";
+          document.getElementById('essential1').style.display="";
+          document.getElementById('essential2').style.display="";
+          document.getElementById('essential3').style.display="";
       }
       if(selectList.options[selectList.selectedIndex].value == "중형"){
-         document.getElementById('carname').style.display="none";
-          document.getElementById('carname1').style.display="none";
-          document.getElementById('carname2').style.display="";
-          document.getElementById('carname3').style.display="none";
-          document.getElementById('carname4').style.display="none";
+          document.getElementById('essential1').style.display="";
+          document.getElementById('essential2').style.display="";
+          document.getElementById('essential3').style.display="";
       }
       if(selectList.options[selectList.selectedIndex].value == "대형"){
-         document.getElementById('carname').style.display="none";
-          document.getElementById('carname1').style.display="none";
-          document.getElementById('carname2').style.display="none";
-          document.getElementById('carname3').style.display="";
-          document.getElementById('carname4').style.display="none";
+          document.getElementById('essential1').style.display="";
+          document.getElementById('essential2').style.display="";
+          document.getElementById('essential3').style.display="";
       }
       if(selectList.options[selectList.selectedIndex].value == "SUV"){
-         document.getElementById('carname').style.display="none";
-          document.getElementById('carname1').style.display="none";
-          document.getElementById('carname2').style.display="none";
-          document.getElementById('carname3').style.display="none";
-          document.getElementById('carname4').style.display="";
+          document.getElementById('essential1').style.display="";
+          document.getElementById('essential2').style.display="";
+          document.getElementById('essential3').style.display="";
       }
-
-   }
+   } */
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -246,30 +249,30 @@
 </style>
 </head>
 <body>
-      <hr id="product_hr">
 <form class = "container" id="search"
 action="${contextPath}/goods/rentsearchWord.do" method="get"> 
        <span id="findSearch">
        <img class="icon" alt="car_icon" src="${contextPath}/resources/image/car.png"> <!-- 검색창 왼쪽 자동차아이콘 -->
-      <select id="carResult" name="carResult" onchange="cartype()">
-           <option value="all">차종</option>
+      <select id="carResult" name="carResult">
+           <option value="del">차종류</option>
+           <option value="all">전체</option>
            <option value="소형">소형</option>
            <option value="중형">중형</option>
            <option value="대형">대형</option>
            <option value="SUV">SUV</option>
       </select>
-      
+      </span>
 
-      </span>
-       <span class="reform">대여일 </span><span id="calendertime1"> 
-       <input class="date" type="date" name="start"/> <!-- 출발달력 -->
-         <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
-      </span>
-       <span class="reform">반납일 </span><span id="calendertime2"> 
-       <input class="date" type="date" name="End"/> <!-- 도착달력 -->
-         <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
-      </span>   
-            <button type="submit" class="btn btn-link">
+          <span class="reform">대여일 </span><span id="calendertime1"> 
+          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
+            <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
+         </span>
+      
+          <span class="reform">반납일 </span><span id="calendertime2"> 
+          <input class="date" type="date" name="End"/> <!-- 도착달력 -->
+            <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
+         </span>
+            <button type="submit" id="essential3" class="btn btn-link" onclick="notnull()">
              <img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> <!-- submit 검색버튼 -->
        </button>
 </form>
@@ -283,9 +286,10 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
        <div class="producttext">
           <h6 style="font-weight:bold;margin-top:10px;">${product.car_name}</h6>
           <p>${product.car_model}</p>               <!-- 문자열 앞에서부터자르기 -->
-          <p>대여가능날짜 : ${ product.car_start_date} ${fn:substring(product.car_start_time,0,5)}</p>
-          <p>반납날짜 : ${product.car_end_date} ${fn:substring(product.car_end_time,0,5)}</p>
-          <hr>
+          <p>대여시작일 : ${user_start} 일</p>
+          <p>반납날 : ${user_end} 일</p>          
+          <p>총 : ${fn:substring(user_end,8,10) - fn:substring(user_start,8,10)}일</p>
+          <hr style="margin:5px 0px 5px 0px;">
           <p style="color:red;">무료취소 [72시간이내]</p>
           <p>연료정책: 인수시와 동일.</p>
        </div>
