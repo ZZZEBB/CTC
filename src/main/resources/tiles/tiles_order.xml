@@ -10,14 +10,9 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
-	<definition name="/order/flightOrderCheck" extends="baseLayout">
+	<definition name="/order/flightOrder" extends="baseLayout">
 		<put-attribute name="title" value="항공권 예약/결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/flightOrderCheck.jsp" />
-	</definition>
-	
-	<definition name="/order/flightOrderPay" extends="baseLayout">
-		<put-attribute name="title" value="항공권 옵션정보/약관결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/flightOrderPay.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/order/flightOrder.jsp" />
 	</definition>
 	
 	<definition name="/order/hotelOrder" extends="baseLayout">

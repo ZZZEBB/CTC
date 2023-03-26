@@ -14,7 +14,14 @@
    <!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+	<style>
+		.btn .btn-sm {
+			background-color : #00aff0;
+		}
+		.btn .btn-md {
+			background-color : #00aff0;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -50,7 +57,7 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">529,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/flightOrderCheck.do'">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/flightOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 						<tr>
@@ -66,13 +73,13 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-warning btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class = "container d-flex col-md-12 justify-content-end">
-					<button class = "btn btn-warning btn-md" onclick="location.href='${contextPath}/order/packOrder.do'">예약하기</button>
+					<button class = "btn btn-md" onclick="location.href='${contextPath}/order/packOrder.do'" style = "background-color : #00aff0;">예약하기</button>
 				</div>
 			</div>
 		</div>

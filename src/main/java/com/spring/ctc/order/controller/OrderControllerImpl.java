@@ -12,19 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/order")
 public class OrderControllerImpl {
 	
-	//항공 상품 예약정보확인 페이지
-	@RequestMapping(value= "/flightOrderCheck.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView flightOrderCheck(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String)request.getAttribute("viewName");
-		mav.setViewName(viewName);
-		return mav;
-	}
-	
-	//항공 상품 약관/결제 페이지
-	@RequestMapping(value= "/flightOrderPay.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView flightOrderPay(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	//항공 상품 예약/결제 페이지
+	@RequestMapping(value= "/flightOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView flightOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
