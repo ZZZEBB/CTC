@@ -60,7 +60,7 @@
 			</table>
 		</div>
 	</div>
-	<div class = "row">
+	<form class = "row">
 		<div class = "col-md-6">
 			<table class ="table caption-top table table-bordered">
 				<caption class = "fs-5">투숙자 정보</caption>
@@ -84,11 +84,11 @@
 						<th class="table-active">연락처</th>
 						<td><input type = "tel"></td>
 						<th class="table-active">이메일</th>
-						<td><input type = "email" placeholder="dmsqls901@kakao.com" required></td>
+						<td><input type = "email" placeholder="dmsqls901@kakao.com" required oninvalid="this.setCustomValidity('이메일을 입럭해주세요')" oninput="this.setCustomValidity('')"></td>
 					</tr>
 			</table>
 		</div>
-	</div>
+	</form>
 	<div class = "container col-md-6 d-flex">
 		<a class = "btn btn-primary btn-sm justify-content-center" href = "#">다음단계</a>
 	</div>
