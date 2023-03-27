@@ -35,12 +35,12 @@
    
       
       function notnull(){
-    	  
-    	  var selectList = document.getElementById("carResult")
-    	  
-    	  if(selectList.options[selectList.selectedIndex].value == "del"){
-    		  alert("차종을 필수로 선택해주세요.");
-    	  } 
+         
+         var selectList = document.getElementById("carResult")
+         
+         if(selectList.options[selectList.selectedIndex].value == "del"){
+            alert("차종을 필수로 선택해주세요.");
+         } 
       }
       
       
@@ -263,15 +263,15 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
       </select>
       </span>
 
-	       <span class="reform">대여일 </span><span id="calendertime1"> 
-	       <input class="date" type="date" name="start"/> <!-- 출발달력 -->
-	         <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
-	      </span>
+          <span class="reform">대여일 </span><span id="calendertime1"> 
+          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
+            <input id="time" type="time" name="start_time"/><!-- 출발시간 -->
+         </span>
       
-	       <span class="reform">반납일 </span><span id="calendertime2"> 
-	       <input class="date" type="date" name="End"/> <!-- 도착달력 -->
-	         <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
-	      </span>
+          <span class="reform">반납일 </span><span id="calendertime2"> 
+          <input class="date" type="date" name="End"/> <!-- 도착달력 -->
+            <input id="time" type="time" name="end_time"/><!-- 도착시간 -->
+         </span>
             <button type="submit" id="essential3" class="btn btn-link" onclick="notnull()">
              <img class="icon" src="${contextPath}/resources/image/search.png" alt="검색"> <!-- submit 검색버튼 -->
        </button>
@@ -298,7 +298,7 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
           <p style="color:red; font-weight:bold;font-size:14px;">금액 : ${product.car_saleprice} 원.</p>
           <c:if test="${product.car_status == 1}">
              <div id="buttonstyle">
-                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.car_name}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
+                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.car_name}&car_date=${user_car.date}&car_time=${user_car.time}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
                 <a href="#"><img src="${contextPath}/resources/image/rent/my_shopbag.jpg" width="70px" height="40px"></a> <!-- 장바구니페이지버튼 -->   
              </div>
           </c:if>

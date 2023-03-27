@@ -152,8 +152,21 @@
 					</tr>
 				</tbody>
 			</table>
-			<table>
-			
+			<table class = "table table-center">
+				<thead class = "table-info">
+					<tr>
+						<th>[성인]성명</th>
+						<td><label>성<input class = "col-md-2" type = "text" value = "1">명</label></td>
+						<td><label>이름<input class = "col-md-2" type = "text" value = "1"><span> ex) 성:홍 / 이름:길동</span></label></td>
+						<th>성별</th>
+						<td>
+							<select class="form-select form-select-sm" aria-label="sex">
+								<option value="m">남자</option>
+								<option value="w">여자</option>
+							</select>
+						</td>
+					</tr>
+				</thead>
 			</table>
 		</div>
 	</div>
