@@ -1,5 +1,6 @@
 package com.spring.ctc.goods.rent.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,10 +37,15 @@ public class GoodsRentControllerImpl implements GoodsRentController{
    
    @Override
    @RequestMapping(value="/goodsRentDetail.do" ,method = {RequestMethod.GET,RequestMethod.POST})
-   public ModelAndView goodsRentDetail(@RequestParam("car_name") String car_name , HttpServletRequest request, HttpServletResponse response) throws Exception {
+   public ModelAndView goodsRentDetail(@RequestParam("car_name") String car_name ,
+                                 @RequestParam("car_date") String user_date ,
+                                 @RequestParam("car_time") String user_time ,
+         HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsRentVO> car_imt = goodsrentservice.selectRentDetail(car_name); 
+      List<GoodsRentVO> car_imt = goodsrentservice.selectRentDetail(car_name);
       ModelAndView mav = new ModelAndView(viewName);
+      mav.addObject("user_date",user_date);
+      mav.addObject("user_time",user_time);      
       mav.addObject("carList", car_imt);
       return mav;
    }
@@ -51,13 +57,19 @@ public class GoodsRentControllerImpl implements GoodsRentController{
       String viewName=(String)request.getAttribute("/goods/goodsRentSearch");
       ModelAndView mav = new ModelAndView(viewName);
       try {
-    	  List<GoodsRentVO> carmodel = goodsrentservice.selectRentList(carResult);
-    	  
-    	  mav.addObject("user_start" , carResult.get("start"));
-    	  mav.addObject("user_end" , carResult.get("End"));
-    	  mav.addObject("carList" , carmodel);
+         List<GoodsRentVO> carmodel = goodsrentservice.selectRentList(carResult);
+         Map carInfo = new HashMap();
+         String date = (String)carResult.get("start");
+                date += (" " + (String)carResult.get("End"));
+         String time = (String)carResult.get("start_time");
+                time +=(" " + (String)carResult.get("end_time"));
+         carInfo.put("date", date);
+         carInfo.put("time", time);
+         
+         mav.addObject("user_car" , carInfo);
+         mav.addObject("carList" , carmodel);
       }catch(Exception e) {
-    	  return mav;  
+         return mav;  
       }
       return mav;
    }

@@ -132,8 +132,8 @@ hr{
          </tr>
       </table>
       <ul class="minititle1">
-         <li><img alt="캘린더" src="${contextPath}/resources/image/rent/calender.png" width="20px" height="15px">이용일 : <span>날짜</span></li>         
-         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">이용 시간 : <span>시간</span></li>
+         <li><img alt="캘린더" src="${contextPath}/resources/image/rent/calender.png" width="20px" height="15px">이용일 : <span>${user_date}</span></li>         
+         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">이용 시간 : <span>${user_time}</span></li>
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">인수 장소 : <span>${product.car_location}</span></li>
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">반납 장소 : <span>${product.car_location}</span></li>
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">대여가능 나이 : <span>26세이상</span></li>

@@ -99,18 +99,18 @@
 					<th>예약자</th>
 					<td>장은빈</td>
 					<th>이메일</th>
-					<td><input type = "text" value = "zzz@zzz.com"></td>
+					<td><input class = "col-md-9" type = "text" value = "zzz@zzz.com"></td>
 				</tr>
 				<tr>
 					<th>휴대전화</th>
-					<td><input type = "tel" value = "01012345678"></td>
+					<td><input class = "col-md-9" type = "tel" value = "01012345678"></td>
 					<th>생년월일</th>
-					<td><input type = "text" value = "990909"></td>
+					<td><input class = "col-md-9" type = "text" value = "990909"></td>
 				</tr>
 				<tr>
 					<th>휴대전화확인</th>
 					<td colspan="4">
-						<input type = "tel" value = "01012345678" placeholder="연락처를 입력해주세요.">
+						<input class = "col-md-4" type = "tel" value = "01012345678" placeholder="연락처를 입력해주세요.">
 						<label>휴대전화 번호를 오입력 방지를 위해 다시 입력해주세요.</label>
 					</td>
 				</tr>
@@ -129,10 +129,10 @@
 				<thead>	
 					<tr>
 						<th class = "col-md-1">여행자인원</th>
-						<td>
-							<label>성인<input type = "text" value = "1">명</label>
-							<label>소아(만 2세~만13세 미만)<input type = "text" value = "0">명</label>
-							<label>유아(만 2세 미만)<input type = "text" value = "0">명</label>
+						<td colspan="4">
+							<label>성인<input class = "col-md-2" type = "text" value = "1">명</label>
+							<label>소아<span style = "font-size : 14px; color : #808080;">(만 2세~만13세 미만)</span><input class = "col-md-2" type = "text" value = "0">명</label>
+							<label>유아<span style = "font-size : 14px; color : #808080;">(만 2세 미만)</span><input class = "col-md-2" type = "text" value = "0">명</label>
 						</td>
 					</tr>
 				</thead>
@@ -146,11 +146,14 @@
 								<li>탑승자 이름과 신분증상의 이름이 다를경우 탑승이 거절될 수 있습니다.</li>
 								<li>항공권은 타인에게 양도가 불가하며, 탑승자 이름 오기입시 수정이 불가하오니 작성 후 다시한번 확인하시기 바랍니다.</li>
 								<li>모든 항공사는 정상운영을 기준으로 한 할인운임이 일부 제공되며, 신분할인과 이중으로 적용한 중복할인은 불가합니다.</li>
-								<li class="text-decoration-underline">제주항공 동반보호자 선택시 국가유공상이자, 독립유공자, 장애인이 같은 예약번호 내에 있을 경우에만 동반자 할인 적용이 가능하오니 대상자 본인이 같은 예약번호 내에 있는지 확인하시어 동반보호자 할인 선택바랍니다.</li>
+								<li class="text-decoration-underline" style = "color : #ff0000;">제주항공 동반보호자 선택시 국가유공상이자, 독립유공자, 장애인이 같은 예약번호 내에 있을 경우에만 동반자 할인 적용이 가능하오니 대상자 본인이 같은 예약번호 내에 있는지 확인하시어 동반보호자 할인 선택바랍니다.</li>
 							</ol>
 						</td>
 					</tr>
 				</tbody>
+			</table>
+			<table>
+			
 			</table>
 		</div>
 	</div>
