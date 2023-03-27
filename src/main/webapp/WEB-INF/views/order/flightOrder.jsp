@@ -31,7 +31,7 @@
 			<h6>국내항공 <span style="color: #ff0000;" class = "fs-5 fw-bolder">실시간 예약</span></h6>
 			<span style = "color : #808080;"><span style="color: #0070c0; font-size: 18px;">예약하기</span> > 결제하기 > 결제완료</span>
 		</div>
-		<div class = "row col-md-10">
+		<div class = "col-md-10">
 			<ul class="nav nav-tabs">
 				<li class="nav-item mt-3">
 					<p class="nav-link active fw-bolder">내가 선택한 여정</p>
@@ -89,6 +89,69 @@
 					<li>가는편 수하물 정보 : 무료위탁수하물 : 15KG, 기내수하물 : 10KG / 오는편 수하물 정보 : 무료위탁수하물 : 15KG, 기내수하물 : 10KG</li>
 				</ol>
 			</div>
+			<ul class="nav nav-tabs">
+				<li class="nav-item mt-3">
+					<p class="nav-link active fw-bolder">예약자 연락처 및 개인정보</p>
+				</li>
+			</ul>
+			<table class = "table table-center table table-bordered">
+				<tr>
+					<th>예약자</th>
+					<td>장은빈</td>
+					<th>이메일</th>
+					<td><input type = "text" value = "zzz@zzz.com"></td>
+				</tr>
+				<tr>
+					<th>휴대전화</th>
+					<td><input type = "tel" value = "01012345678"></td>
+					<th>생년월일</th>
+					<td><input type = "text" value = "990909"></td>
+				</tr>
+				<tr>
+					<th>휴대전화확인</th>
+					<td colspan="4">
+						<input type = "tel" value = "01012345678" placeholder="연락처를 입력해주세요.">
+						<label>휴대전화 번호를 오입력 방지를 위해 다시 입력해주세요.</label>
+					</td>
+				</tr>
+			</table>
+			<ol>
+				<li>예약자 정보는, 결항 또는 긴급상황 발생 시 즉시 연락이 가능해야 하며, 불가능한 경우 발생되는 불이익에 대해 당사는 책임지지 않사오니 유의하시어 정확히 입력바랍니다.</li>
+				<li>예약자와 탑승자의 정보가 다를 경우, 탑승자의 연락가능한 전화번호와 이메일을 기입해주십시오.</li>
+				<li>항공권 예매완료 후 가입하신 휴대폰번호/이메일로 항공권 예약내역이 발송됩니다.</li>
+			</ol>
+			<ul class="nav nav-tabs">
+				<li class="nav-item mt-3">
+					<p class="nav-link active fw-bolder">탑승자 연락처 및 개인정보</p>
+				</li>
+			</ul>
+			<table class = "table table-center">
+				<thead>	
+					<tr>
+						<th class = "col-md-1">여행자인원</th>
+						<td>
+							<label>성인<input type = "text" value = "1">명</label>
+							<label>소아(만 2세~만13세 미만)<input type = "text" value = "0">명</label>
+							<label>유아(만 2세 미만)<input type = "text" value = "0">명</label>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class = "col-md-1">예약 안내</th>
+						<td class = "p-3">
+							<p class = "fw-bolder" style = "color : #ff0000;">탑승자명 입력 시 유의사항</p>
+							<ol>
+								<li>탑승자명 기입 시 실제 탑승하는 사람의 신분증상 이름, 국적, 생년월일을 정확하게 기입하셔야 합니다.(시민권자/외국인 : 여권상의 영문성함, 내국인 : 한글성함)</li>
+								<li>탑승자 이름과 신분증상의 이름이 다를경우 탑승이 거절될 수 있습니다.</li>
+								<li>항공권은 타인에게 양도가 불가하며, 탑승자 이름 오기입시 수정이 불가하오니 작성 후 다시한번 확인하시기 바랍니다.</li>
+								<li>모든 항공사는 정상운영을 기준으로 한 할인운임이 일부 제공되며, 신분할인과 이중으로 적용한 중복할인은 불가합니다.</li>
+								<li class="text-decoration-underline">제주항공 동반보호자 선택시 국가유공상이자, 독립유공자, 장애인이 같은 예약번호 내에 있을 경우에만 동반자 할인 적용이 가능하오니 대상자 본인이 같은 예약번호 내에 있는지 확인하시어 동반보호자 할인 선택바랍니다.</li>
+							</ol>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 	<!-- JavaScript Bundle with Popper -->
