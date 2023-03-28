@@ -123,7 +123,7 @@
                              <c:otherwise>
                                 <li><a href="${contextPath}/joinAndLogin/selectLogin.do" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
                                 <li><a href="${contextPath}/joinAndLogin/joinMain.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
-                               <li><a href="${coptextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
                                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
                              </c:otherwise>
                          </c:choose> 
