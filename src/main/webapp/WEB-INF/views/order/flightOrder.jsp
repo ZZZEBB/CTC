@@ -189,7 +189,38 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							Hide this modal and show the first with the button below.
+							<p style = "color : #808080; font-size : 0.8em;">
+								※ 입력하신 정보가 모두 정확한지 마지막으로 다시 확인해주시기 바랍니다.
+							</p>
+							<table class="table caption-top table table-bordered">
+								<caption class="fs-5">탑승자 정보<span style = "color : #808080; font-size : 0.8em;">총 1명</span></caption>
+								<tr>
+									<th class="table-active">구분</th>
+									<th class="table-active">성함</th>
+									<th class="table-active">생년월일</th>
+									<th class="table-active">성별</th>
+								</tr>
+								<tr>
+									<td>성인1</td>
+									<td>장은빈</td>
+									<td>1998-09-01</td>
+									<td>여</td>
+								</tr>
+							</table>
+							<table class="table caption-top table table-bordered">
+								<caption class="fs-5">예약자 연락정보 확인</caption>
+								<tr>
+									<th class="table-active">휴대폰 번호</th>
+									<td>010-1234-5678</td>
+									<th class="table-active">이메일</th>
+									<td>zzz@zzz.com</td>
+								</tr>
+							</table>
+							<h5>중복(이중)예약 안내</h5>
+							<ul  style = "color : #808080; font-size : 0.8em;">
+								<li>해당 항공사는 규정 상 중복 예약이 있는 경우, 사전경고 없이 모든 예약이 취소될 수 있으므로 주의하시기 바랍니다.</li>
+								<li>이름이 신분증 또는 본인확인서류와 다른 경우 이용 및 탑승이 거절되며, 수수료가 부과될 수 있습니다.</li>
+							</ul>
 						</div>
 						<div class="modal-footer">
 							<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button> -->
