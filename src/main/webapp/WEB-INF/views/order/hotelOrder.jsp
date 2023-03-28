@@ -17,11 +17,10 @@
 <div class = "container">	
 	<div class = "d-flex col-md-9 justify-content-between align-item-center">
 		<h4>예약하기</h4>
-		<span>예약정보확인 - 옵션정보/약관결제 - 결제완료</span>
 	</div>
 	<hr>
 	<div class="d-flex">
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<table class="table caption-top table table-bordered">
 					<caption class="fs-5">세인트존스 호텔</caption>
 					<tr>
@@ -38,16 +37,16 @@
 					</tr>
 				</table>
 			</div>
-			<div class="col-md-3 ms-3">
+			<div class="col-md-4 ms-3">
 				<table class="table table-sm table-secondary caption-top">
 					<caption class="fs-5">결제 정보</caption>
 					<tbody>
 						<tr>
-							<th>최종 결제 금액</th>
+							<th class = "col-md-2">최종 결제 금액</th>
 							<td>성인 2 / 아동 0</td>
 						</tr>
 						<tr>
-							<th></th>
+							<th class = "col-md-2">
 							<td>108,900 원<br>
 								<span class="smallCaption text-secondary">
 									마일리지 108 적립<br>
@@ -56,21 +55,21 @@
 							</td>
 						</tr>
 						<tr>
-							<th>총 상품 금액</th>
-							<td>108,900 원</td>
+							<th class = "col-md-2">마일리지 사용</th>
+							<td>1,500</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>총 상품 금액</th>
+							<th class = "col-md-2">총 상품 금액</th>
 							<td>108,900 원</td>
 						</tr>
 					</tfoot>
 				</table>
 			</div>
 		</div>
-		<form class="row">
-			<div class="col-md-9 mt-3">
+		<form class="row col-md-8">
+			<div class="mt-3">
 				<table class="table caption-top table table-bordered">
 					<caption class="fs-5">투숙자 정보</caption>
 					<caption class="fs-6">객실 1 성인 1</caption>
@@ -95,7 +94,7 @@
 					</tr>
 				</table>
 			</div>
-			<div class="col-md-9 mt-3">
+			<div class="mt-3">
 				<p class="fs-5 border-bottom">마일리지</p>
 				<div class = "d-flex mt-1 align-middle p-4" style = "background-color : #f5f5f5;">
 					<div class = "col-md-2 col align-self-center">
@@ -113,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-9 mt-3">
+			<div class="mt-3">
 				<p class="fs-5 border-bottom">결제수단</p>
 				<button type = "button" class = "btn btn btn-outline-dark btn-lg">신용카드</button>
 				<button type = "button" class = "btn btn btn-outline-dark btn-lg">무통장입금</button>
