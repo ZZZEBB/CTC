@@ -10,19 +10,22 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
+	<!-- 이벤트 목록 페이지 -->
 	<definition name="/board/eventList" extends="baseLayout">
 		<put-attribute name="title" value="이벤트 목록 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/board/eventList.jsp" />
 	</definition>
 	
+	<!-- 이벤트 상세 페이지 -->
 	<definition name="/board/eventDetail" extends="baseLayout">
 		<put-attribute name="title" value="이벤트 상세 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/board/eventDetail.jsp" />
 	</definition>
 	
+	<!-- 고객센터 - FAQ 페이지 -->
 	<definition name="/board/faq" extends="baseLayout">
-		<put-attribute name="title" value="자주묻는질문"/>
-		<put-attribute name="body" value="/WEB-INF/views/board/oneQnaForm.jsp"/>
+		<put-attribute name="title" value="자주묻는질문 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/faq.jsp"/>
 	<!-- 1:1문의여서 주소 바꿔야함  -->
 	<!--  <put-attribute name="side" value="/WEB-INF/views/common/sideCustomerCenter.jsp" />  -->
 	</definition>

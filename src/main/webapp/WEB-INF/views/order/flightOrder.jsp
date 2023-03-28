@@ -151,16 +151,14 @@
 						</tr>
 				</table>
 				<!-- 모달창 버튼 -->
-				<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-					  0원 결제하기
-				</button>
+				<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">0원 결제하기</a>
 			</div>
 			<!-- 모달 -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
 				<div class="modal-dialog modal-dialog-centered modal-lg">
 					<div class="modal-content p-3">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">결제정보 최종 확인</h5>
+							<h5 class="modal-title" id="exampleModalToggleLabel">결제정보 최종 확인</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
@@ -176,8 +174,26 @@
 							</ul>
 						</div>
 						<div class="modal-footer">
+							<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">다시 확인하기</button>
-							<button type="button" class="btn btn-primary">결제하기</button>
+							<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">결제하기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content p-3">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalToggleLabel2">예약내역 최종 확인</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							Hide this modal and show the first with the button below.
+						</div>
+						<div class="modal-footer">
+							<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button> -->
+							<button class="btn btn-primary" data-bs-toggle="modal" onclick="location.href='${contextPath}/order/flightOrder.do'">결제가 완료되었습니다.</button>
 						</div>
 					</div>
 				</div>
