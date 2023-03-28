@@ -38,31 +38,35 @@
 				</table>
 			</div>
 			<div class="col-md-4 ms-3">
-				<table class="table table-sm table-secondary caption-top">
+				<table class="table table-secondary caption-top p-3">
 					<caption class="fs-5">결제 정보</caption>
 					<tbody>
 						<tr>
-							<th class = "col-md-2">최종 결제 금액</th>
-							<td>성인 2 / 아동 0</td>
+							<th class = "col-md-4">최종 결제 금액</th>
+							<td class = "text-end">성인 2 / 아동 0</td>
 						</tr>
 						<tr>
-							<th class = "col-md-2">
-							<td>108,900 원<br>
-								<span class="smallCaption text-secondary">
-									마일리지 108 적립<br>
-									호텔은 대표 투숙객1인 에게 마일리지 적립이 됩니다.
+							<th class = "col-md-4">
+							<td class = "text-end">
+								<p><span style = "font-size : 20px; color : #0070c0; font-weight: bolder;">108,900</span> 원</p>
+								<span class="smallCaption text-secondary fw-light" style = "color : #808080; font-size : 12px;">
+									CornerToCorner 마일리지 108 적립
 								</span>
 							</td>
 						</tr>
 						<tr>
-							<th class = "col-md-2">마일리지 사용</th>
-							<td>1,500</td>
+							<th class = "col-md-4">총 상품 금액</th>
+							<td class = "text-end">108,900 원</td>
+						</tr>
+						<tr>
+							<th class = "col-md-4">마일리지 사용</th>
+							<td class = "text-end">1,500</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
-							<th class = "col-md-2">총 상품 금액</th>
-							<td>108,900 원</td>
+							<th class = "col-md-4">결제할 금액</th>
+							<td class = "text-end">107,400 원</td>
 						</tr>
 					</tfoot>
 				</table>

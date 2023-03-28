@@ -85,7 +85,7 @@
 					<tr>
 						<th></th>
 						<td class = "text-end align-middle">
-							<h3 style = "font-size : 18px; color : #0070c0;">0 원</h3>
+							<h3 style = "font-size : 18px; color : #0070c0; font-weight: bolder;">0 원</h3>
 							<br>
 							<small class="smallCaption text-secondary">유류할증료/제세공과금 포함</small>
 						</td>
