@@ -10,6 +10,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ctc.board.vo.EventVO;
+import com.spring.ctc.board.vo.FaqVO;
+import com.spring.ctc.board.vo.NoticeVO;
 
 @Repository("boardDAO")
 public class BoardDAOImpl implements BoardDAO {
@@ -28,5 +30,22 @@ public class BoardDAOImpl implements BoardDAO {
 	   return sqlSession.selectOne("mapper.board.selectEventDetail", event_num);
 	  
 	}
+	
+	@Override
+	public List<FaqVO> selectfaqList(int classification)throws DataAccessException{
+		return sqlSession.selectList("mapper.board.selectFaqList", classification);
+	}
+	
+	@Override
+   public List<NoticeVO> noticeList() throws DataAccessException {
+      List<NoticeVO> noticeList = sqlSession.selectList("mapper.board.noticeAllList");
+      return noticeList;
+   }
+	   
+   @Override
+   public Map selectNoticeDetail(int notice_num) throws DataAccessException {
+      return sqlSession.selectOne("mapper.board.selectNoticeDetail", notice_num);
+     
+   }
 
 }

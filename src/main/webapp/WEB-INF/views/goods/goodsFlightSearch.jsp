@@ -201,7 +201,7 @@ function active(id){
 
 
 
-<form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsAirKeyWordSearch.do" method="get"> 
+<form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get"> 
    <div class = "container">
        <span>
         <select id="tikey" name="tikey" style="width:7%;">

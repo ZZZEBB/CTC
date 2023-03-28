@@ -11,4 +11,5 @@ public interface OrderController {
 	public ModelAndView hotelOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView packOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView rentOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	
 }

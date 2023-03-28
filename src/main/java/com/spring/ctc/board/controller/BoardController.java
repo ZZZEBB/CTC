@@ -11,4 +11,6 @@ public interface BoardController {
 	public ModelAndView eventList(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView eventDetail(@RequestParam("event_num") int event_num, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView noticeList(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView noticeDetail(@RequestParam("notice_num") int notice_num, HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

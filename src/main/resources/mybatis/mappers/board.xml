@@ -21,13 +21,15 @@
 		<result property="faq_title" column="faq_title" />
 		<result property="faq_content" column="faq_content" />
 		<result property="faq_write_date" column="faq_write_date" />
+		<result property="faq_category" column="faq_category"/>
 	</resultMap>	
 	
 	<resultMap id="noticeResult" type="noticeVO">
-		<result property="notice_title" column="notice_title" />
-		<result property="notice_content" column="notice_content" />
-		<result property="notice_write_date" column="notice_write_date" />
-	</resultMap>
+      <result property="notice_title" column="notice_title" />
+      <result property="notice_content" column="notice_content" />
+      <result property="notice_write_date" column="notice_write_date" />
+      <result property="notice_category" column="notice_category" />
+   </resultMap>
 	
 	<resultMap id="qnaResult" type="qnaVO">
 		<result property="member_id" column="member_id" />
@@ -66,4 +68,26 @@
 			where event_num = #{event_num}
 		]]>
    </select>
+   
+   <!--  FAQ 목록 출력  -->
+	<select id="selectFaqList" resultType="java.util.Map" parameterType="faqVO">
+		<![CDATA[
+			select * from faq where faq_category = #{faq_category}
+		]]>
+	</select>
+	
+   <!-- 공지사항 목록 조회 -->
+   <select id="noticeAllList" parameterType="java.util.Map" resultType="noticeVO">
+      SELECT * FROM notice
+   </select>
+   
+   <!-- 공지사항 상세 조회 -->
+   <select id="selectNoticeDetail" resultType="java.util.Map" parameterType="int" >
+      <![CDATA[
+         select *
+         from notice
+         where notice_num = #{notice_num}
+      ]]>
+   </select>
+   
 </mapper>

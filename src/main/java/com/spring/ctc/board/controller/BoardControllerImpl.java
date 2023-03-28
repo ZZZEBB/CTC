@@ -1,6 +1,5 @@
 package com.spring.ctc.board.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.board.service.BoardService;
 import com.spring.ctc.board.vo.EventVO;
+import com.spring.ctc.board.vo.FaqVO;
+import com.spring.ctc.board.vo.NoticeVO;
 
 //@Controller("boardController")
 @Controller
@@ -62,24 +63,52 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
 	}
 	
-	//고객센터 이동(/faq.do)
+	//고객센터(고객센터 메인 - 자주묻는질문 페이지) 이동(/faq.do)
 	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
-		mav.setViewName(viewName);
-		return mav;
-	}
-	
-	//고객센터 이동(/notice.do)
-	@RequestMapping(value= "/notice.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView notice(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		int hotel = 1; 
+		int flight = 2; 
+		int rent = 3; 
+		int packages = 4; 
+		List<FaqVO> faqhotel = boardService.faqList(hotel);
+		List<FaqVO> faqflight = boardService.faqList(flight);
+		List<FaqVO> faqrent = boardService.faqList(rent);
+		List<FaqVO> faqpackage = boardService.faqList(packages);
 		
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String)request.getAttribute("viewName");
+		System.out.println(faqpackage.toString());
+		
 		mav.setViewName(viewName);
+		mav.addObject("faqhotel" , faqhotel);
+		mav.addObject("faqflight" , faqflight);
+		mav.addObject("faqrent" , faqrent);
+		mav.addObject("faqpackage" , faqpackage);
 		return mav;
 	}
+
+	//공지사항 목록 조회 이동(/noticeList.do)
+   @Override
+   @RequestMapping(value= "/noticeList.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   public ModelAndView noticeList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+      String viewName = (String)request.getAttribute("viewName");
+  List<NoticeVO> noticeList = boardService.noticeList();
+  ModelAndView mav = new ModelAndView(viewName);
+  mav.addObject("noticeList", noticeList);
+      return mav;
+   }
+   
+   //공지사항 목록 조회 이동(/noticeDetail.do)
+   @Override
+   @RequestMapping(value= "/noticeDetail.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   public ModelAndView noticeDetail(@RequestParam("notice_num") int notice_num, HttpServletRequest request, HttpServletResponse response) throws Exception {
+  
+  String viewName = (String)request.getAttribute("viewName");
+  ModelAndView mav = new ModelAndView(viewName);
+  Map noticeMap = boardService.noticeDetail(notice_num);
+  mav.addObject("noticeMap", noticeMap);
+  NoticeVO noticeVO = (NoticeVO) noticeMap.get("noticeVO");
+      return mav;
+   }
 	
 }

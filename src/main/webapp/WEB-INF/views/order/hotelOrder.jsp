@@ -14,13 +14,13 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class = "container">	
-	<div class = "d-flex col-md-9 justify-content-between align-item-center">
-		<h4>예약하기</h4>
-	</div>
-	<hr>
-	<div class="d-flex">
-			<div class="col-md-8">
+	<div class = "container">	
+		<div class = "d-flex col-md-9 justify-content-between align-item-center">
+			<h4>예약하기</h4>
+		</div>
+		<hr>
+		<div class="d-flex">
+			<div class="col-md-9">
 				<table class="table caption-top table table-bordered">
 					<caption class="fs-5">세인트존스 호텔</caption>
 					<tr>
@@ -37,7 +37,7 @@
 					</tr>
 				</table>
 			</div>
-			<div class="col-md-4 ms-3">
+			<div class="col-md-2 ms-3">
 				<table class="table table-secondary caption-top p-3">
 					<caption class="fs-5">결제 정보</caption>
 					<tbody>
@@ -72,7 +72,7 @@
 				</table>
 			</div>
 		</div>
-		<form class="row col-md-8">
+		<form class="col-md-9">
 			<div class="mt-3">
 				<table class="table caption-top table table-bordered">
 					<caption class="fs-5">투숙자 정보</caption>

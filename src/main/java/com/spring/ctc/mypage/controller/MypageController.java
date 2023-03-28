@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value="/mypage")
 public class MypageController {
 	
 		//마이페이지 클릭시(/myInfo.do)
@@ -18,7 +19,21 @@ public class MypageController {
 		public ModelAndView myInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			HttpSession session = request.getSession();
 			session = request.getSession();
-			session.setAttribute("side_menu", "member"); //사용자 사이드메뉴
+//			session.setAttribute("side_menu", "member"); //사용자 사이드메뉴
+			
+			ModelAndView mav = new ModelAndView();
+			String viewName = (String)request.getAttribute("viewName");
+			mav.setViewName(viewName);
+			return mav;
+		}
+		
+		//마이페이지 클릭시(/myInfo.do)
+		//나의 문의내역 페이지 조회
+		@RequestMapping(value= "/myQna.do" ,method={RequestMethod.POST,RequestMethod.GET})
+		public ModelAndView myQna(HttpServletRequest request, HttpServletResponse response) throws Exception {
+			HttpSession session = request.getSession();
+			session = request.getSession();
+//			session.setAttribute("side_menu", "member"); //사용자 사이드메뉴
 			
 			ModelAndView mav = new ModelAndView();
 			String viewName = (String)request.getAttribute("viewName");

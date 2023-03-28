@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.package">
+	<resultMap id="orderResult" type="orderVO">
+		<result property="member_id" column="member_id"/>
+		<result property="flight_code" column="flight_code"/>
+		<result property="hotel_code" column="hotel_code"/>
+		<result property="package_code" column="package_code"/>
+		<result property="car_code" column="car_code"/>
+		<result property="order_num" column="order_num"/>
+		<result property="flight_name" column="flight_name"/>
+		<result property="hotel_name" column="hotel_name"/>
+		<result property="package_name" column="package_name"/>
+		<result property="car_name" column="car_name"/>
+		<result property="order_goods_count" column="order_goods_count"/>
+		<result property="order_date" column="order_date"/>
+		<result property="pay_order_time" column="pay_order_time"/>
+		<result property="pay_method" column="pay_method"/>
+		<result property="card_com_name" column="card_com_name"/>
+		<result property="card_pay_month" column="card_pay_month"/>
+		<result property="order_status" column="order_status"/>
+		<result property="pay_price" column="pay_price"/>
+		<result property="refund_price" column="refund_price"/>
+		<result property="pay_status" column="pay_status"/>
+		<result property="total_charge_price" column="total_charge_price"/>
+		<result property="total_pay_price" column="total_pay_price"/>
+		<result property="total_mileage" column="total_mileage"/>
+		<result property="license_id" column="license_id"/>
+		<result property="license_date" column="license_date"/>
+		<result property="reser_start_date" column="reser_start_date"/>
+		<result property="reser_end_date" column="reser_end_date"/>
+		<result property="reser_period" column="reser_period"/>
+		<result property="reser_headcount" column="reser_headcount"/>
+	</resultMap>
+	
+	<!-- 주문리스트 -->
+	<select id="orderList" parameterType="java.util.Map" resultType="orderVO">
+	SELECT * FROM order
+	</select>
+	
+</mapper>
+

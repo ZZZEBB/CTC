@@ -29,8 +29,15 @@
 	</definition>
 	
 	<!-- 고객센터 - 공지사항 페이지 -->
-	<definition name="/board/notice" extends="baseLayout">
+	<definition name="/board/noticeList" extends="baseLayout">
 		<put-attribute name="title" value="공지사항 목록 페이지"/>
-		<put-attribute name="body" value="/WEB-INF/views/board/notice.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/noticeList.jsp"/>
 	</definition>
+	
+   <!-- 고객센터 - 공지사항 상세 페이지 -->
+   <definition name="/board/noticeDetail" extends="baseLayout">
+      <put-attribute name="title" value="공지사항 페이지" />
+      <put-attribute name="body" value="/WEB-INF/views/board/noticeDetail.jsp" />
+   </definition>
+   
 </tiles-definitions>
