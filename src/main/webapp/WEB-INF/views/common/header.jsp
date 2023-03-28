@@ -172,7 +172,7 @@
                    <a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
                  </li>
                  <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="#">패키지</a>
+                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
                  </li> 
                  <li class="nav-item fs-4">
                    <a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>

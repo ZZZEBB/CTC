@@ -51,6 +51,15 @@
 		<put-attribute name="body" value="/WEB-INF/views/kakaologin/kakaologin.jsp"/>
 	</definition>
 	
+	<definition name="/goods/goodsPackageSearch" extends="baseLayout">
+      <put-attribute name="title" value="패키지 목록 조회"/>
+      <put-attribute name="body" value="/WEB-INF/views/goods/goodsPackageSearch.jsp"/>
+   </definition>
+   
+   <definition name="/goods/goodsPackageDetail" extends="baseLayout">
+      <put-attribute name="title" value="패키지 상세 조회"/>
+      <put-attribute name="body" value="/WEB-INF/views/goods/goodsPackageDetail.jsp"/>
+   </definition>
 </tiles-definitions>
 
 

@@ -1,5 +1,27 @@
 package com.spring.ctc.goods.pack.service;
 
-public class GoodsPackServiceImpl {
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.ctc.goods.pack.dao.GoodsPackDAO;
+import com.spring.ctc.goods.pack.vo.GoodsPackVO;
+
+@Service("packService")
+public class GoodsPackServiceImpl implements GoodsPackService {
+   @Autowired
+   private GoodsPackDAO goodsPackDAO;
+
+   @Override
+   public List<GoodsPackVO> selectPackageAllList() throws Exception {
+      return goodsPackDAO.selectPackageAllList();
+   }
+
+   @Override
+   public List<GoodsPackVO> selectPackageDetailList(String package_name) throws Exception {
+      return goodsPackDAO.selectPackageDetailList(package_name);
+   }
+   
+   
 }

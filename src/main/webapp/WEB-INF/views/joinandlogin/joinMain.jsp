@@ -21,7 +21,7 @@
 <body>
 	<div class="join_main">
 		<p class="join_ment">안녕하세요!<br>
-		<strong>Corner To Corner</strong>&nbsp;입니다.
+		<strong>Corner To Corner</strong>&nbsp;회원가입 페이지입니다.
 		</p>
 	</div>
 	<div class="joinselect">

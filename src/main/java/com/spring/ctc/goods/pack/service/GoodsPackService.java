@@ -1,5 +1,12 @@
 package com.spring.ctc.goods.pack.service;
 
-public class GoodsPackService {
+import java.util.List;
+
+import com.spring.ctc.goods.pack.vo.GoodsPackVO;
+
+public interface GoodsPackService {
+   
+   public List<GoodsPackVO> selectPackageAllList() throws Exception;
+   public List<GoodsPackVO> selectPackageDetailList(String package_name) throws Exception;
 
 }
