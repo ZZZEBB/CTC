@@ -26,7 +26,11 @@
 	<definition name="/board/faq" extends="baseLayout">
 		<put-attribute name="title" value="자주묻는질문 페이지"/>
 		<put-attribute name="body" value="/WEB-INF/views/board/faq.jsp"/>
-	<!-- 1:1문의여서 주소 바꿔야함  -->
-	<!--  <put-attribute name="side" value="/WEB-INF/views/common/sideCustomerCenter.jsp" />  -->
+	</definition>
+	
+	<!-- 고객센터 - 공지사항 페이지 -->
+	<definition name="/board/notice" extends="baseLayout">
+		<put-attribute name="title" value="공지사항 목록 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/notice.jsp"/>
 	</definition>
 </tiles-definitions>

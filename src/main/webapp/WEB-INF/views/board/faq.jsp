@@ -207,33 +207,160 @@ EARLY CHECK-IN, LATE CHECK-OUT은 호텔객실사정에 따라 배정되는 관�
 </div>
 </div>
 
-<div id="accordionExample2" style="display:none;">
-<div class="accordion" id="accordionExample">
+<div id="accordionExample2" style="display:none;margin:1% auto 1% auto;">
+<div class="container col-md-5 accordion" id="new-accordion">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Question 1
+    <h2 class="accordion-header" id="new-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#new-collapseOne" aria-expanded="true" aria-controls="new-collapseOne">
+        첫 번째 아코디언 제목
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div id="new-collapseOne" class="accordion-collapse collapse show" aria-labelledby="new-headingOne" data-bs-parent="#new-accordion">
       <div class="accordion-body">
-        Answer 1
+        첫 번째 아코디언 내용
       </div>
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Question 2
+    <h2 class="accordion-header" id="new-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#new-collapseTwo" aria-expanded="false" aria-controls="new-collapseTwo">
+        두 번째 아코디언 제목
       </button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div id="new-collapseTwo" class="accordion-collapse collapse" aria-labelledby="new-headingTwo" data-bs-parent="#new-accordion">
       <div class="accordion-body">
-        Answer 2
+        두 번째 아코디언 내용
       </div>
     </div>
   </div>
 </div>
+</div>
+
+<div id="accordionExample3" style="display:none;margin:1% auto 1% auto;">
+<div class="container col-md-5 accordion" id="my-accordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+        아코디언 메뉴 1
+      </button>
+    </h2>
+    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#my-accordion">
+      <div class="accordion-body">
+        이곳에 메뉴 내용을 입력하세요.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+        아코디언 메뉴 2
+      </button>
+    </h2>
+    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#my-accordion">
+      <div class="accordion-body">
+        이곳에 메뉴 내용을 입력하세요.
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+        아코디언 메뉴 3
+      </button>
+    </h2>
+    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#my-accordion">
+      <div class="accordion-body">
+        이곳에 메뉴 내용을 입력하세요.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="accordionExample4" style="display:none;margin:1% auto 1% auto;">
+   <div class="container col-md-5 accordion" id="newAccordion">
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingOneNew">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneNew" aria-expanded="false" aria-controls="collapseOneNew">
+           첫 번째 질문
+         </button>
+       </h2>
+       <div id="collapseOneNew" class="accordion-collapse collapse" aria-labelledby="headingOneNew" data-bs-parent="#newAccordion">
+         <div class="accordion-body">
+           첫 번째 답변 내용이 들어갑니다.
+         </div>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingTwoNew">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoNew" aria-expanded="false" aria-controls="collapseTwoNew">
+           두 번째 질문
+         </button>
+       </h2>
+       <div id="collapseTwoNew" class="accordion-collapse collapse" aria-labelledby="headingTwoNew" data-bs-parent="#newAccordion">
+         <div class="accordion-body">
+           두 번째 답변 내용이 들어갑니다.
+         </div>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingThreeNew">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeNew" aria-expanded="false" aria-controls="collapseThreeNew">
+           세 번째 질문
+         </button>
+       </h2>
+       <div id="collapseThreeNew" class="accordion-collapse collapse" aria-labelledby="headingThreeNew" data-bs-parent="#newAccordion">
+         <div class="accordion-body">
+           세 번째 답변 내용이 들어갑니다.
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
+
+<div id="accordionExample5" style="display:none;margin:1% auto 1% auto;">
+   <div class="container col-md-5 accordion" id="customAccordion">
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingOne">
+         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           첫 번째 질문
+         </button>
+       </h2>
+       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#customAccordion">
+         <div class="accordion-body">
+           첫 번째 답변 내용입니다.
+         </div>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingTwo">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           두 번째 질문
+         </button>
+       </h2>
+       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#customAccordion">
+         <div class="accordion-body">
+           두 번째 답변 내용입니다.
+         </div>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <h2 class="accordion-header" id="headingThree">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           세 번째 질문
+         </button>
+       </h2>
+       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#customAccordion">
+         <div class="accordion-body">
+           세 번째 답변 내용입니다.
+         </div>
+       </div>
+     </div>
+   </div>
 </div>
 
    <!-- JavaScript Bundle with Popper -->

@@ -27,9 +27,6 @@
 	ol {
 		font-size : 14px;
 	}
-	#payPrice {
-	    transform: translate(-90%,-70%)!important;
-	}
 </style>
 <script>
 	var myModal = document.getElementById('myModal')
@@ -246,26 +243,22 @@
 					<caption class="fs-6">탑승자 정보 1 (성인)</caption>
 					<tr>
 						<th class="table-active">성명(한글)</th>
-						<td colspan="4"><input type="text" placeholder="성함을 입력해주세요."
-							required></td>
+						<td colspan="4"><input type="text" placeholder="성함을 입력해주세요." required></td>
 					</tr>
 					<tr>
 						<th class="table-active">생년월일</th>
-						<td><input type="text" placeholder="생년월일 8자리를 입력해주세요."
-							required></td>
+						<td><input type="text" placeholder="생년월일 8자리를 입력해주세요." required></td>
 						<th class="table-active">성별</th>
-						<td><input type="radio" id="man" name="gender" value="man"
-							required /> <label for="man">남성</label> <input type="radio"
-							id="woman" name="gender" value="woman" /> <label for="woman">여성</label>
+						<td>
+							<input type="radio" id="man" name="gender" value="man" required /><label for="man">남성</label>
+							<input type="radio"	id="woman" name="gender" value="woman" /> <label for="woman">여성</label>
 						</td>
 					</tr>
 					<tr>
 						<th class="table-active">연락처</th>
 						<td><input type="tel"></td>
 						<th class="table-active">이메일</th>
-						<td><input type="email" placeholder="dmsqls901@kakao.com"
-							required oninvalid="this.setCustomValidity('이메일을 입럭해주세요')"
-							oninput="this.setCustomValidity('')"></td>
+						<td><input type="email" placeholder="dmsqls901@kakao.com" required oninvalid="this.setCustomValidity('이메일을 입럭해주세요')" oninput="this.setCustomValidity('')"></td>
 					</tr>
 				</table>
 			</div>
