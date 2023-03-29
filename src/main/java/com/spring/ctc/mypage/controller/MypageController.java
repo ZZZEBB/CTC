@@ -58,4 +58,18 @@ public class MypageController {
 			mav.setViewName(viewName);
 			return mav;
 		}
+		
+		//나의 문의내역 페이지 조회(/myMileage.do)
+		@RequestMapping(value= "/myMileage.do" ,method={RequestMethod.POST,RequestMethod.GET})
+		public ModelAndView myMileage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+			HttpSession session = request.getSession();
+			session = request.getSession();
+			//마이페이지 사이드메뉴
+			session.setAttribute("side_menu", "my_page"); 
+			
+			ModelAndView mav = new ModelAndView();
+			String viewName = (String)request.getAttribute("viewName");
+			mav.setViewName(viewName);
+			return mav;
+		}
 }
