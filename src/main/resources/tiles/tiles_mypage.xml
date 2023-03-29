@@ -11,10 +11,16 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
-		<!-- 마이페이지 메인 - 나의 회원정보 페이지 -->
+	<!-- 마이페이지 메인 - 나의 회원정보 페이지 -->
 	<definition name="/mypage/myInfo" extends="side">
-		<put-attribute name="title" value="회원정보 페이지"/>
+		<put-attribute name="title" value="마이페이지 - 나의 회원정보"/>
 		<put-attribute name="body" value="/WEB-INF/views/mypage/myInfo.jsp"/>
+	</definition>
+	
+	<!-- 마이페이지 메인 - 나의 마일리지 페이지 -->
+	<definition name="/mypage/myMileage" extends="side">
+		<put-attribute name="title" value="마이페이지 - 나의 마일리지"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/myMileage.jsp"/>
 	</definition>
 	
 	<!-- 마이페이지 메인 - 나의 문의내역 페이지 -->

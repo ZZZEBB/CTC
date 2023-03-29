@@ -23,7 +23,10 @@
    <!-- 개인이미지 칸-->
    <div>
       <div style="float:left;margin-left:50px;background-color:#D1D1D1;width:100px;height:100px;border-radius:50px;text-align:center;padding-top:35px;">
-         ${member.member_name}
+			<c:choose>
+				<c:when test="${not empty member.member_name}">${member.member_name}</c:when>
+				<c:when test="${not empty com.com_name}">${com.com_name}</c:when>
+			</c:choose>
       </div>
       <div style="float:right; margin-right:20%;">
          <table>

@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 import com.spring.ctc.mypage.service.MypageService;
 
@@ -21,6 +21,7 @@ public class MypageController {
 		MypageService mypageService;
 		@Autowired
 		MemberVO memberVO;
+		CompanyVO comVO;
 		
 	      //마이페이지 클릭시(/myInfo.do)
 	      //나의 회원정보 페이지가 출력됨
@@ -28,13 +29,17 @@ public class MypageController {
 	      public ModelAndView myInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	         String viewName = (String)request.getAttribute("viewName");
 	         HttpSession session = request.getSession();
-	         memberVO = (MemberVO)session.getAttribute("memberInfo");
-	         String member_id = memberVO.getMember_id();
-	         MemberVO memberInfo = mypageService.selectMember(member_id);
 	         ModelAndView mav = new ModelAndView();
 	         mav.setViewName(viewName);
-	         mav.addObject("member", memberInfo);
+	         memberVO = (MemberVO)session.getAttribute("memberInfo");
+	         comVO = (CompanyVO)session.getAttribute("comInfo");
 	         
+	         if(memberVO != null) {
+		         mav.addObject("member", memberVO);
+	         }
+	         else if(comVO != null) {
+	        	 mav.addObject("com", comVO);
+	         }
 	         //마이페이지 사이드메뉴
 	         session.setAttribute("side_menu", "my_page"); 
 	         return mav;

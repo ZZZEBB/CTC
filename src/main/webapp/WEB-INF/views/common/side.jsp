@@ -30,7 +30,7 @@
 			<c:when test="${side_menu=='my_page'}">
 				<ul class="list-group list-group-flush sideUl">
 					<li class="list-group-item"><a href="${contextPath}/mypage/myInfo.do">나의 회원정보</a></li>
-					<li class="list-group-item"><a href="#">마일리지 확인</a></li>
+					<li class="list-group-item"><a href="${contextPath}/mypage/myMileage.do">마일리지 확인</a></li>
 					<li class="list-group-item"><a href="#">나의 여행 후기</a></li>
 					<li class="list-group-item"><a href="${contextPath}/mypage/myQna.do">나의 문의 내역</a></li>
 					<li class="list-group-item"><a href="#">예약 조회</a></li>

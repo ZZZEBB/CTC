@@ -10,10 +10,6 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <style>
-   .qnament{
-      /* margin-left: 10%; */
-      /* margin-top: 5%; */
-   }
    .tbl table{
       width: 100%; 
       border-top-color:#bed0d9; 
@@ -52,12 +48,14 @@
 
 </head>
 <body>
+<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
+			<li class="breadcrumb-item active" aria-current="page">1:1 문의하기</li>
+		</ol>
+	</nav>
 <div class="container">
 <div id="contents" class="contents">
-    <div class= "qnament">  
-      <div class="text_wrap big top">
-        <strong class="tit h4">1:1 문의</strong><br><br>
-      </div>
       <div class="notice_wrap mt0">
         <strong class="tit">문의하시기 전 확인해 주세요.</strong>
         <div class="clearfix">
@@ -96,13 +94,9 @@
                       <option value="100101116">법인여행</option>
                     </select>
                   </div>
-                  <!---->
-                  <!---->
-                  <!---->
                 </div>
               </td>
             </tr>
-            <!---->
 
            <tr>
            <th>작성자</th>
@@ -118,7 +112,6 @@
                    <input type="text" placeholder="예약코드를 입력해주세요." value="" class="inpt_text v-placeholder" size="25px;">
                    <button type="submit" class="btn">예약확인</button>
                   </div>
-                  <!---->
                 <p class="check_message">예약코드를 등록해 주세요.(예약코드: 영문 2글자 + 숫자 조합)</p>
                 <p class="txt billiard">문의내용과 관련된 예약코드를 입력해 주세요. 문의내용과 무관할 경우 입력하지 않으셔도 됩니다.</p>
               </td>
@@ -174,9 +167,8 @@
               <td colspan="3">
                 <div class="file_attach_wrap">
                   <ul>
-                    <div class="file_attach_wrap mt20" >
-                      <ul >
-                        <li >
+                      <ul>
+                        <li>
                           <span class="img">
                             <img src="" alt="" style="display:none;">
                           </span>
@@ -185,7 +177,7 @@
                           <a class="add" style="cursor:pointer;display:;" >추가</a>
                           <input type="file" style="display:none;"  >
                         </li>
-                        <li    >
+                        <li>
                           <span class="img">
                             <img src="" alt="" style="display:none;" >
                           </span>
@@ -204,17 +196,14 @@
                           <input type="file" style="display:none;" >
                         </li>
                       </ul>
-                    </div>
                   </ul>
                 </div>
                 <p class="txt billiard">&there4;&nbsp;개당 3MB 미만의 <strong>BMP, GIF, JPG, JPEG, PNG, TIF</strong> 파일만 등록 가능합니다. </p>
                 <p class="txt billiard">&there4;&nbsp;상품과 무관한 내용이거나 음란 및 불법적인 내용은 통보 없이 삭제될 수 있습니다.</p>
               </td>
             </tr>
-            <!---->
           </tbody>
         </table>
-        <!---->
       </div>
       
       <div class="btn_wrap" align="center" >
@@ -222,7 +211,6 @@
         <button class="btn big pink">등록</button>
       </div>
     </div>
-  </div>  
    <!-- JavaScript Bundle with Popper -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
