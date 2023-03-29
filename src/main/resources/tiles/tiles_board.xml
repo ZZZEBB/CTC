@@ -30,6 +30,12 @@
 		<put-attribute name="body" value="/WEB-INF/views/board/eventDetail.jsp" />
 	</definition>
 	
+	<!-- 고객센터 - 1:1 문의 페이지 -->
+	<definition name="/board/oneQnaForm" extends="side">
+		<put-attribute name="title" value="1:1문의 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/oneQnaForm.jsp"/>
+	</definition>
+	
 	<!-- 고객센터 - FAQ 페이지 -->
 	<definition name="/board/faq" extends="side">
 		<put-attribute name="title" value="자주묻는질문 페이지"/>

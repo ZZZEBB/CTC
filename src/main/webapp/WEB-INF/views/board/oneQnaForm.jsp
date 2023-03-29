@@ -12,7 +12,7 @@
 <style>
    .qnament{
       /* margin-left: 10%; */
-      margin-top: 5%;
+      /* margin-top: 5%; */
    }
    .tbl table{
       width: 100%; 

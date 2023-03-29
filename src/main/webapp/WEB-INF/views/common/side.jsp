@@ -23,7 +23,7 @@
 				<ul class="list-group">
 					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
 					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
-					<li class="list-group-item"><a href="#">1:1 문의</a></li>
+					<li class="list-group-item"><a href="${contextPath}/board/oneQnaForm.do">1:1 문의</a></li>
 				</ul>
 			</c:when>
 			<%-- 마이페이지 사이드바 --%>

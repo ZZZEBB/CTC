@@ -63,7 +63,23 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
 	}
 	
-	//고객센터(고객센터 메인 - 자주묻는질문 페이지) 이동(/faq.do)
+	//고객센터 - 1:1 문의 페이지 이동 (/oneQnaForm.do)
+	@Override
+	@RequestMapping(value= "/oneQnaForm.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView oneQnaForm(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		HttpSession session = request.getSession();
+		session = request.getSession();
+		
+		//마이페이지 사이드메뉴
+		session.setAttribute("side_menu", "customercenter_mode");
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String)request.getAttribute("viewName");
+		mav.setViewName(viewName);
+		return mav;
+	}
+	
+	//고객센터 메인 - 자주묻는질문 페이지 이동(/faq.do)
 	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ModelAndView mav = new ModelAndView();
@@ -92,7 +108,7 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
 	}
 
-	//공지사항 목록 조회 이동(/noticeList.do)
+	//고객센터 - 공지사항 목록페이지 이동(/noticeList.do)
    @Override
    @RequestMapping(value= "/noticeList.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView noticeList(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -109,7 +125,7 @@ public class BoardControllerImpl implements BoardController {
 		return mav;
    }
    
-   //공지사항 목록 조회 이동(/noticeDetail.do)
+   //고객센터 - 공지사항 상세페이지 이동(/noticeDetail.do)
    @Override
    @RequestMapping(value= "/noticeDetail.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView noticeDetail(@RequestParam("notice_num") int notice_num, HttpServletRequest request, HttpServletResponse response) throws Exception {
