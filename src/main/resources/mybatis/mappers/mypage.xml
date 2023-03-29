@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.mypage">
+   <resultMap id="memberResult" type="memberVO">
+      <result property="member_num" column="member_num" />
+      <result property="member_id" column="member_id" />
+      <result property="member_pw" column="member_pw" />
+      <result property="member_name" column="member_name" />
+      <result property="member_ph1" column="member_ph1" />
+      <result property="member_ph2" column="member_ph2" />
+      <result property="member_rrn1" column="member_rrn1" />
+      <result property="member_rrn2" column="member_rrn2" />
+      <result property="member_email" column="member_email" />
+      <result property="member_email_yn" column="member_email_yn" />
+      <result property="member_zipcode" column="member_zipcode" />
+      <result property="member_road_address" column="member_road_address" />
+      <result property="member_local_address" column="member_local_address" />
+      <result property="member_rest_address" column="member_rest_address" />
+      <result property="member_joindate" column="member_joindate" />
+      <result property="member_status" column="member_status" />
+      <result property="member_unregister_date" column="member_unregister_date" />
+      <result property="member_deldate" column="member_deldate" />
+   </resultMap>
+   
+   <resultMap id="comResult" type="companyVO">
+      <result property="com_num" column="com_num" />
+      <result property="com_id" column="com_id" />
+      <result property="com_pw" column="com_pw" />
+      <result property="com_name" column="com_name" />
+      <result property="com_ceo" column="com_ceo" />
+      <result property="com_tel1" column="com_tel1" />
+      <result property="com_tel2" column="com_tel2" />
+      <result property="com_tel3" column="com_tel3" />
+      <result property="com_email" column="com_email" />
+      <result property="com_crn1" column="com_crn1" />
+      <result property="com_crn2" column="com_crn2" />
+      <result property="com_crn3" column="com_crn3" />
+      <result property="com_email_yn" column="com_email_yn" />
+      <result property="com_zipcode" column="com_zipcode" />
+      <result property="com_road_address" column="com_road_address" />
+      <result property="com_local_address" column="com_local_address" />
+      <result property="com_rest_address" column="com_rest_address" />
+      <result property="com_joindate" column="com_joindate" />
+      <result property="com_status" column="com_status" />
+      <result property="com_unregister_date" column="com_unregister_date" />
+      <result property="com_deldate" column="com_deldate" />
+   </resultMap>
+   
+    <select id="selectMyMember" resultType="memberVO" parameterType="java.util.Map" >
+         <![CDATA[
+            SELECT * FROM member 
+            WHERE member_id = #{member_id}
+         ]]>
+   </select> 
+   
+   </mapper>

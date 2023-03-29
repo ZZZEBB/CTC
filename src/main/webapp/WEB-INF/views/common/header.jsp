@@ -101,7 +101,7 @@
                      <img src="${contextPath}/resources/image/logo.png" alt="로고" width="40" height="30">
                      <img src="${contextPath}/resources/image/ctc.png" alt="이름" width="250" height="30">
                   </a>
-                  <div class=" col-lg-8 d-flex justify-content-center">
+                  <div class=" col-lg-6 d-flex justify-content-center">
                          <input class="form-control" type="search" placeholder="검색어를 입력해주세요" aria-label="Search" style="margin-left : 30px;">
                   </div>  
                       <button type = "button" class="btn btn-link"  onclick="location.href='${contextPath}/main/totalSearch.do'">
@@ -111,12 +111,12 @@
                  <!-- 기본 상단 헤더 -->
                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                          <c:choose>
-                            <c:when test="${isLogon==true and not empty memberInfo}">
+                            <c:when test="${isLogOn==true and not empty memberInfo}">
                             
-                               <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
-                               <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
+                               <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark fw-lighter">${memberInfo.member_name}님 로그아웃</a></li>
+                               <li><a href="${contextPath}/mypage/myInfo.do" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
                                <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
-                               <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
+                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
                                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
                             
                              </c:when>

@@ -7,8 +7,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <style>
 	div > ul > li {
-		font-size : 1.2em;
-		font-weight : bold;
+		/* font-size : 1.2em;
+		font-weight : bold; */
 	}
 	
 	div > ul > li > a {
@@ -29,7 +29,7 @@
 			<%-- 마이페이지 사이드바 --%>
 			<c:when test="${side_menu=='my_page'}">
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item"><a href="#">나의 회원정보</a></li>
+					<li class="list-group-item"><a href="${contextPath}/mypage/myInfo.do">나의 회원정보</a></li>
 					<li class="list-group-item"><a href="#">마일리지 확인</a></li>
 					<li class="list-group-item"><a href="#">나의 여행 후기</a></li>
 					<li class="list-group-item"><a href="${contextPath}/mypage/myQna.do">나의 문의 내역</a></li>
