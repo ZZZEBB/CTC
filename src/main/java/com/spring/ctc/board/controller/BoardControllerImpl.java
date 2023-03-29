@@ -67,6 +67,8 @@ public class BoardControllerImpl implements BoardController {
 	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		session = request.getSession();
 		String viewName = (String)request.getAttribute("viewName");
 		int hotel = 1; 
 		int flight = 2; 
@@ -78,6 +80,9 @@ public class BoardControllerImpl implements BoardController {
 		List<FaqVO> faqpackage = boardService.faqList(packages);
 		
 		System.out.println(faqpackage.toString());
+		
+		//고객센터 사이드메뉴
+		session.setAttribute("side_menu", "customercenter_mode");
 		
 		mav.setViewName(viewName);
 		mav.addObject("faqhotel" , faqhotel);
@@ -91,24 +96,35 @@ public class BoardControllerImpl implements BoardController {
    @Override
    @RequestMapping(value= "/noticeList.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView noticeList(HttpServletRequest request, HttpServletResponse response) throws Exception{
-      String viewName = (String)request.getAttribute("viewName");
-  List<NoticeVO> noticeList = boardService.noticeList();
-  ModelAndView mav = new ModelAndView(viewName);
-  mav.addObject("noticeList", noticeList);
-      return mav;
+		HttpSession session = request.getSession();
+		session = request.getSession();
+		String viewName = (String)request.getAttribute("viewName");
+		List<NoticeVO> noticeList = boardService.noticeList();
+		ModelAndView mav = new ModelAndView(viewName);
+		
+		//고객센터 사이드메뉴
+		session.setAttribute("side_menu", "customercenter_mode");
+		
+		mav.addObject("noticeList", noticeList);
+		return mav;
    }
    
    //공지사항 목록 조회 이동(/noticeDetail.do)
    @Override
    @RequestMapping(value= "/noticeDetail.do" ,method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView noticeDetail(@RequestParam("notice_num") int notice_num, HttpServletRequest request, HttpServletResponse response) throws Exception {
-  
-  String viewName = (String)request.getAttribute("viewName");
-  ModelAndView mav = new ModelAndView(viewName);
-  Map noticeMap = boardService.noticeDetail(notice_num);
-  mav.addObject("noticeMap", noticeMap);
-  NoticeVO noticeVO = (NoticeVO) noticeMap.get("noticeVO");
-      return mav;
+	   	HttpSession session = request.getSession();
+		session = request.getSession();
+		String viewName = (String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		
+		//고객센터 사이드메뉴
+		session.setAttribute("side_menu", "customercenter_mode");
+				
+		Map noticeMap = boardService.noticeDetail(notice_num);
+		mav.addObject("noticeMap", noticeMap);
+		NoticeVO noticeVO = (NoticeVO) noticeMap.get("noticeVO");
+		return mav;
    }
 	
 }

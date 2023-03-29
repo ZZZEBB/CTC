@@ -19,7 +19,9 @@ public class MypageController {
 		public ModelAndView myInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			HttpSession session = request.getSession();
 			session = request.getSession();
-//			session.setAttribute("side_menu", "member"); //사용자 사이드메뉴
+			
+			//마이페이지 사이드메뉴
+			session.setAttribute("side_menu", "my_page");
 			
 			ModelAndView mav = new ModelAndView();
 			String viewName = (String)request.getAttribute("viewName");
@@ -33,7 +35,8 @@ public class MypageController {
 		public ModelAndView myQna(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			HttpSession session = request.getSession();
 			session = request.getSession();
-//			session.setAttribute("side_menu", "member"); //사용자 사이드메뉴
+			//마이페이지 사이드메뉴
+			session.setAttribute("side_menu", "my_page"); 
 			
 			ModelAndView mav = new ModelAndView();
 			String viewName = (String)request.getAttribute("viewName");

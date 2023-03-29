@@ -30,28 +30,4 @@
 		<put-attribute name="body" value="/WEB-INF/views/cart/cartList.jsp" />
 	</definition>
 	
-	<!-- 사용자 레이아웃 -->
-	<definition name="sideMember" template="/WEB-INF/views/common/memberLayout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="sideMember" value="/WEB-INF/views/common/sideMember.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
-	</definition>
-
-	
-	<!-- 사업체 레이아웃 -->
-	<definition name="sideCompany" template="/WEB-INF/views/common/companyLayout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="sideCompany" value="/WEB-INF/views/common/sideCompany.jsp" />
-	</definition>
-	
-	<!-- 관리자 레이아웃 -->
-	<definition name="sideAdmin" template="/WEB-INF/views/common/adminLayout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="sideAdmin" value="/WEB-INF/views/common/sideAdmin.jsp" />
-	</definition>
-	
-	
 </tiles-definitions>

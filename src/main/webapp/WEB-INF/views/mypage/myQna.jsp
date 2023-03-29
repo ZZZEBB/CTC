@@ -46,7 +46,7 @@
 </style>   
 </head>
 <body>
-<div class= "container">
+<div class= "col-md-10">
    <div id="contents" class="contents">
      <div class="text_wrap big fix">
        <strong class="tit h4">1:1 문의내역</strong>
