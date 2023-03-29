@@ -20,7 +20,7 @@
 		<c:choose>
 			<%-- 고객센터 사이드바 --%>
 			<c:when test="${side_menu=='customercenter_mode'}">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
 					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
 					<li class="list-group-item"><a href="${contextPath}/board/oneQnaForm.do">1:1 문의</a></li>
@@ -28,7 +28,7 @@
 			</c:when>
 			<%-- 마이페이지 사이드바 --%>
 			<c:when test="${side_menu=='my_page'}">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">나의 회원정보</a></li>
 					<li class="list-group-item"><a href="#">마일리지 확인</a></li>
 					<li class="list-group-item"><a href="#">나의 여행 후기</a></li>
@@ -38,50 +38,50 @@
 			</c:when>
 			<%-- 사업체 모드 - 예약관리 사이드바 --%>
 			<c:when test="${side_menu =='reservationManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">예약관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 사업체 모드 - 상품관리 사이드바 --%>
 			<c:when test="${side_menu =='goodsManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">상품관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 사업체 모드 - 이벤트관리 사이드바 --%>
 			<c:when test="${side_menu =='eventManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">이벤트관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 사업체 모드 - 후기관리 사이드바 --%>
 			<c:when test="${side_menu =='reviewManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">후기관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 사업체 모드 - 문의관리 사이드바 --%>
 			<c:when test="${side_menu =='qnaManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">문의 관리</a></li>
 					<li class="list-group-item"><a href="#">문의 답변 관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 사업체 모드 - 매출관리 사이드바 --%>
 			<c:when test="${side_menu =='salesManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">사업체 매출관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 관리자 모드 - 매출관리 사이드바 --%>
 			<c:when test="${side_menu =='salesManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">관리자 매출관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 관리자 모드 - 상품관리 사이드바 --%>
 			<c:when test="${side_menu =='goodsManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">전체 상품조회</a></li>
 					<li class="list-group-item"><a href="#">숙박</a></li>
 					<li class="list-group-item"><a href="#">렌트</a></li>
@@ -92,7 +92,7 @@
 			</c:when>
 			<%-- 관리자 모드 - 상품관리 사이드바 --%>
 			<c:when test="${side_menu =='reservationManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">전체 주문조회</a></li>
 					<li class="list-group-item"><a href="#">숙박</a></li>
 					<li class="list-group-item"><a href="#">렌트</a></li>
@@ -102,14 +102,14 @@
 			</c:when>
 			<%-- 관리자 모드 - 가입자관리 사이드바 --%>
 			<c:when test="${side_menu =='memberManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">회원 관리</a></li>
 					<li class="list-group-item"><a href="#">사업체 관리</a></li>
 				</ul>
 			</c:when>
 			<%-- 관리자 모드 - 게시글관리 사이드바 --%>
 			<c:when test="${side_menu =='reviewManage_mode' }">
-				<ul class="list-group">
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">공지사항 관리</a></li>
 					<li class="list-group-item"><a href="#">FAQ 관리</a></li>
 					<li class="list-group-item"><a href="#">이벤트 관리</a></li>
