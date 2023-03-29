@@ -284,7 +284,9 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       ModelAndView mav = new ModelAndView();
       HttpSession session=request.getSession();
       session.setAttribute("isLogOn", false);
+      session.setAttribute("isLogOnCom", false);
       session.removeAttribute("memberInfo");
+      session.removeAttribute("comInfo");
       mav.setViewName("redirect:/main/main.do");
       return mav;
    }
