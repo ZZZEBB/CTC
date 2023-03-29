@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<title>항공 목록 조회</title>
 <!-- CSS only -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
@@ -201,7 +201,8 @@ function active(id){
 
 
 
-<form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get"> 
+<%-- <form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get"> --%> 
+<form style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get">
    <div class = "container">
        <span>
         <select id="tikey" name="tikey" style="width:7%;">

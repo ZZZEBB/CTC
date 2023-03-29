@@ -113,49 +113,39 @@
                          <c:choose>
                             <c:when test="${isLogOn==true and not empty memberInfo}">
                             
-                               <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark fw-lighter">${memberInfo.member_name}님 로그아웃</a></li>
-                               <li><a href="${contextPath}/mypage/myInfo.do" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
-                               <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
-                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-                               <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+                               <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
+                               <li><a href="${contextPath}/mypage/myInfo.do" class="nav-link px-2 text-dark">마이페이지</a></li>
+                               <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark">장바구니</a></li>
+                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark">고객센터</a></li>
+                               <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
                             
                              </c:when>
+                             <c:when test="${isLogonCom==true and not empty comInfo}">
+                               <%-- <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${comInfo.com_name}님 로그아웃</a></li> --%>
+                               <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">로그아웃</a></li>
+                               <li><a href="${contextPath}/mypage/myInfo.do" class="nav-link px-2 text-dark">마이페이지</a></li>
+                               <li><a href="#" class="nav-link px-2 text-dark">고객센터</a></li>
+                               <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
+                               <li><a href="#" class="nav-link px-2 text-dark">사업자</a></li>
+                             </c:when>
+                             
                              <c:otherwise>
-                                <li><a href="${contextPath}/joinAndLogin/selectLogin.do" class="nav-link px-2 text-dark fw-lighter">로그인</a></li>
-                                <li><a href="${contextPath}/joinAndLogin/joinMain.do" class="nav-link px-2 text-dark fw-lighter">회원가입</a></li>
-                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-                               <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
+                                <li><a href="${contextPath}/joinAndLogin/selectLogin.do" class="nav-link px-2 text-dark">로그인</a></li>
+                                <li><a href="${contextPath}/joinAndLogin/joinMain.do" class="nav-link px-2 text-dark">회원가입</a></li>
+                               <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark">고객센터</a></li>
+                               <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
                              </c:otherwise>
                          </c:choose> 
 
                    </ul>
                    
-                   <!-- 사용자 로그인 상태 상단 헤더 -->
-              <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">장덕배님</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">마이페이지</a></li>
-                      <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark fw-lighter">장바구니</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-                      <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
-                   </ul> -->  
-                   
-                   <!-- 사업체 로그인 상태 상단 헤더 -->
-              <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">사업체님</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-                      <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">사업체</a></li>
-                   </ul>      
-                   
                    <!-- 관리자 로그인 상태 상단 헤더 -->
               <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">관리자님</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">로그아웃</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">고객센터</a></li>
-                      <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark fw-lighter">회사소개</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark fw-lighter">관리자</a></li>
+                      <li><a href="#" class="nav-link px-2 text-dark">관리자님</a></li>
+                      <li><a href="#" class="nav-link px-2 text-dark">로그아웃</a></li>
+                      <li><a href="#" class="nav-link px-2 text-dark">고객센터</a></li>
+                      <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
+                      <li><a href="#" class="nav-link px-2 text-dark">관리자</a></li>
                    </ul> -->
                </div>
             </div>

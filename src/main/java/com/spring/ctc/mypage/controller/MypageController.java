@@ -25,9 +25,11 @@ public class MypageController {
 	      //마이페이지 클릭시(/myInfo.do)
 	      //나의 회원정보 페이지가 출력됨
 	      @RequestMapping(value= "/myInfo.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	      public ModelAndView myInfo(@RequestParam("member") String member_id , HttpServletRequest request, HttpServletResponse response) throws Exception {
+	      public ModelAndView myInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	         String viewName = (String)request.getAttribute("viewName");
 	         HttpSession session = request.getSession();
+	         memberVO = (MemberVO)session.getAttribute("memberInfo");
+	         String member_id = memberVO.getMember_id();
 	         MemberVO memberInfo = mypageService.selectMember(member_id);
 	         ModelAndView mav = new ModelAndView();
 	         mav.setViewName(viewName);

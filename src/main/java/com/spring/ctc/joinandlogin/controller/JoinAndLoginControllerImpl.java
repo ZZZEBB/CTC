@@ -42,21 +42,15 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    public ModelAndView login(@RequestParam Map<String, String> loginMap, 
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView mav = new ModelAndView();
-      System.out.println(loginMap.toString());
-       memberVO=joinAndLoginService.login(loginMap);
+      //System.out.println(loginMap.toString());
+       MemberVO memberVO=joinAndLoginService.login(loginMap);
       if(memberVO!= null && memberVO.getMember_id()!=null){
          HttpSession session=request.getSession();
          session=request.getSession();
+         session.setAttribute("isLogOn", true);
+	     session.setAttribute("memberInfo", memberVO);
+	     mav.setViewName("redirect:/main/main.do");   
          
-	       session.setAttribute("isLogOn", true);
-	       session.setAttribute("memberInfo",memberVO);
-          
-         String action=(String)session.getAttribute("action");
-         if(action!=null && action.equals("/order/orderEachGoods.do")){
-            mav.setViewName("forward:"+action);
-         }else{
-            mav.setViewName("redirect:/main/main.do");   
-         }
       }else{
          String message="메세지";
          mav.addObject("message", message);
@@ -74,15 +68,10 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
       if (companyVO!=null && companyVO.getCom_id()!=null) {
          HttpSession session=request.getSession();
          session=request.getSession();
-         session.setAttribute("isLogon", true);
-         session.setAttribute("memberInfo", companyVO);
+         session.setAttribute("isLogonCom", true);
+         session.setAttribute("comInfo", companyVO);
+         mav.setViewName("redirect:/main/main.do");
          
-         String action=(String)session.getAttribute("action");
-         if (action!=null && action.equals("/order/orderEachGoods.do")) {
-            mav.setViewName("forward:" + action);
-         } else {
-            mav.setViewName("redirect:/main/main.do");
-         } 
       } else {
          String message="메세지";
          mav.addObject("message", message);
