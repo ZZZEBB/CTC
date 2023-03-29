@@ -19,7 +19,7 @@ public class EventVO {
 	private Date event_end_date;
 	private Date event_write_date;
 	private int event_status;
-	private int event_category;
+	private String event_category;
 
 	public EventVO() {
 		
@@ -110,10 +110,10 @@ public class EventVO {
 	public void setEvent_status(int event_status) {
 		this.event_status = event_status;
 	}
-	public int getEvent_category() {
+	public String getEvent_category() {
 		return event_category;
 	}
-	public void setEvent_category(int event_category) {
+	public void setEvent_category(String event_category) {
 		this.event_category = event_category;
 	}
 	

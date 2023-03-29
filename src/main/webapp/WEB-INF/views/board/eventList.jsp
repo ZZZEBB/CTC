@@ -60,7 +60,7 @@
 								</c:when>
 								<c:otherwise>
 									<c:forEach var = "event" items = "${eventLists}">
-										<div class="d-flex w-70 list-group-item">
+										<div class="d-flex w-70 list-group-item border-0">
 											<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
 											<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
 											<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
@@ -92,17 +92,20 @@
 								</c:when>
 								<c:otherwise>
 									<c:forEach var = "event" items = "${eventLists}">
-										<a href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}" class="list-group-item">
-											<div class="d-flex w-70">
+										<c:if test="${event.event_category == '호텔'}">
+											<div class="d-flex w-70 list-group-item border-0">
 												<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
 												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
 												<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
-													<small class="smallCaption text-secondary"><br>${event.event_content}<br>${event.event_start_date} ~ ${event.event_end_date}</small>
+													<small class="smallCaption text-secondary"><br>${event.event_content}<br><fmt:formatDate value="${event.event_start_date}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${event.event_end_date}" pattern="yyyy-MM-dd"/></small>
 												</h6>
 												<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
 											</div>
-										</a>
-										<hr class = "event_hr col-md-12">
+											<div class="d-flex justify-content-end">
+												<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
+											</div>
+											<hr class = "event_hr col-md-12">
+										</c:if>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
@@ -111,13 +114,103 @@
 	        	</div>
 		  </div>
 		  <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="flight-tab">
-		  
+				<h6 class = "col-md-7 fs-6 fw-bold">호텔 프로모션 n 개</h6>
+			  	<hr class = "event_hr">
+				  	<div class="row justify-content-center">
+				  		<div class="col-md-9">
+				  			<div class="list-group list-group-flush">
+				  				<c:choose>
+									<c:when test="${empty eventLists}">
+										<h3>등록된 이벤트가 없습니다.</h3>
+									</c:when>
+									<c:otherwise>
+										<c:forEach var = "event" items = "${eventLists}">
+											<c:if test="${event.event_category == '항공권'}">
+												<div class="d-flex w-70 list-group-item border-0">
+													<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+													<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+														<small class="smallCaption text-secondary"><br>${event.event_content}<br><fmt:formatDate value="${event.event_start_date}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${event.event_end_date}" pattern="yyyy-MM-dd"/></small>
+													</h6>
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+												</div>
+												<div class="d-flex justify-content-end">
+													<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
+												</div>
+												<hr class = "event_hr col-md-12">
+											</c:if>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</div>
+		            	</div>
+		        	</div>
 		  </div>
 		  <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="rent-tab">
-		  
+				<h6 class = "col-md-7 fs-6 fw-bold">호텔 프로모션 n 개</h6>
+			  	<hr class = "event_hr">
+				  	<div class="row justify-content-center">
+				  		<div class="col-md-9">
+				  			<div class="list-group list-group-flush">
+				  				<c:choose>
+									<c:when test="${empty eventLists}">
+										<h3>등록된 이벤트가 없습니다.</h3>
+									</c:when>
+									<c:otherwise>
+										<c:forEach var = "event" items = "${eventLists}">
+											<c:if test="${event.event_category == '렌트'}">
+												<div class="d-flex w-70 list-group-item border-0">
+													<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+													<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+														<small class="smallCaption text-secondary"><br>${event.event_content}<br><fmt:formatDate value="${event.event_start_date}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${event.event_end_date}" pattern="yyyy-MM-dd"/></small>
+													</h6>
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+												</div>
+												<div class="d-flex justify-content-end">
+													<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
+												</div>
+												<hr class = "event_hr col-md-12">
+											</c:if>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</div>
+		            	</div>
+		        	</div>
 		  </div>
 		  <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
-		  
+				<h6 class = "col-md-7 fs-6 fw-bold">호텔 프로모션 n 개</h6>
+			  	<hr class = "event_hr">
+				  	<div class="row justify-content-center">
+				  		<div class="col-md-9">
+				  			<div class="list-group list-group-flush">
+				  				<c:choose>
+									<c:when test="${empty eventLists}">
+										<h3>등록된 이벤트가 없습니다.</h3>
+									</c:when>
+									<c:otherwise>
+										<c:forEach var = "event" items = "${eventLists}">
+											<c:if test="${event.event_category == '패키지'}">
+												<div class="d-flex w-70 list-group-item border-0">
+													<img src="${contextPath}/resources/image/event/eventImage01.png" width="30%">
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_category}</span>
+													<h6 class="mb-1 ms-5" style="height: 15px; line-height: 15px;"><span class = "fs-5 fw-bolder">${event.event_title}</span>
+														<small class="smallCaption text-secondary"><br>${event.event_content}<br><fmt:formatDate value="${event.event_start_date}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${event.event_end_date}" pattern="yyyy-MM-dd"/></small>
+													</h6>
+													<span class="badge badge-pill badge-light ms-3" style="color: #004680; border: 1px solid #004680; height: 10%;">${event.event_status}</span>
+												</div>
+												<div class="d-flex justify-content-end">
+													<a class = "btn btn-primary btn-sm" href="${contextPath}/board/eventDetail.do?event_num=${event.event_num}">자세히 보기</a>
+												</div>
+												<hr class = "event_hr col-md-12">
+											</c:if>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
+							</div>
+		            	</div>
+		        	</div>
 		  </div>
 		</div>
 	</div>
