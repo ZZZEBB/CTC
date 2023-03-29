@@ -60,6 +60,7 @@ function toggleTagVisibility() {
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
+		<div class = "col-md-11">
 			<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
 			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
@@ -71,7 +72,7 @@ function toggleTagVisibility() {
 		    		<img alt="faq" src="${contextPath}/resources/image/faq/faq.png" width="200px" height="200px">
 		    	</h3>
 			</div>
-			<div class="container col-md-7">
+			<div class="container">
 			<div class="btn-group container col-md-7" role="group" aria-label="Basic radio toggle button group" style="margin-left:20%;">
 			  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="hotel" onclick="toggleTagVisibility()" checked>
 			  <label class="btn btn-outline-primary" for="btnradio1">호텔관련</label>
@@ -165,6 +166,7 @@ function toggleTagVisibility() {
 		    </div>
 		  </div>
 		</c:forEach>
+		</div>
 		</div>
 		</div>
 	<!-- JavaScript Bundle with Popper -->

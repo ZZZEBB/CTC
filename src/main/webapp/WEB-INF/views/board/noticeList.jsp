@@ -20,13 +20,13 @@
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-   <nav class="container col-md-7" style="margin-top:0.5%;" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-         <li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
-         <li class="breadcrumb-item active" aria-current="page">공지사항</li>
-      </ol>
-   </nav>
-   <div class="container col-md-9">
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
+			<li class="breadcrumb-item active" aria-current="page">공지사항</li>
+		</ol>
+	</nav>
+	<div class = "col-md-11">
       <ul class="nav nav-tabs nav-fill justify-content-center mt-3" id="myTab" role="tablist">
          <li class="nav-item" role="presentation">
            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">전체</button>

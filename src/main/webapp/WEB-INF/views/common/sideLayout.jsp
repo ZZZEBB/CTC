@@ -35,7 +35,7 @@
 				<tiles:insertAttribute name="side" />
 			</aside>
 			<article class = "p-2 flex-fill bd-highlight">
-				<div class = "container">
+				<div class = "container-fluid">
 					<tiles:insertAttribute name="body" />
 				</div>
 			</article>
