@@ -20,9 +20,6 @@
 		<c:choose>
 			<%-- 고객센터 사이드바 --%>
 			<c:when test="${side_menu=='customercenter_mode'}">
-				<div class="panel-heading">
-					<h4 class="panel-title">고객센터</h4>
-				</div>
 				<ul class="list-group">
 					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
 					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
@@ -31,9 +28,6 @@
 			</c:when>
 			<%-- 마이페이지 사이드바 --%>
 			<c:when test="${side_menu=='my_page'}">
-				<div class="panel-heading">
-					<h4 class="panel-title">마이페이지</h4>
-				</div>
 				<ul class="list-group">
 					<li class="list-group-item"><a href="#">나의 회원정보</a></li>
 					<li class="list-group-item"><a href="#">마일리지 확인</a></li>
