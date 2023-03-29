@@ -6,9 +6,9 @@
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <style>
-	div > ul > li {
-		/* font-size : 1.2em;
-		font-weight : bold; */
+	.panel.panel-default.sideBox .list-group.list-group-flush > li {
+		font-size : 1.2em;
+		font-weight : bold;
 	}
 	
 	div > ul > li > a {
@@ -16,7 +16,7 @@
 	}
 	
 </style>
-	<div class="panel panel-default">
+	<div class="panel panel-default sideBox">
 		<c:choose>
 			<%-- 고객센터 사이드바 --%>
 			<c:when test="${side_menu=='customercenter_mode'}">
@@ -28,7 +28,7 @@
 			</c:when>
 			<%-- 마이페이지 사이드바 --%>
 			<c:when test="${side_menu=='my_page'}">
-				<ul class="list-group list-group-flush">
+				<ul class="list-group list-group-flush sideUl">
 					<li class="list-group-item"><a href="${contextPath}/mypage/myInfo.do">나의 회원정보</a></li>
 					<li class="list-group-item"><a href="#">마일리지 확인</a></li>
 					<li class="list-group-item"><a href="#">나의 여행 후기</a></li>
