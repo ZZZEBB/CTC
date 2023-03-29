@@ -25,14 +25,33 @@
    </style>
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script>
-   	
+		// 메뉴가 선택되어 active가 되기 전 이벤트
+		$('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+		  e.target // 현재 설정된 tab
+		  e.relatedTarget // 이전에 설정된 탭
+		});
+		// 메뉴가 선택되어 active가 된 후 이벤트
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		  e.target // 현재 설정된 tab
+		  e.relatedTarget // 이전에 설정된 탭
+		});
+		// 다른 메뉴가 선택되어 active가 remove 되기 전 이벤트
+		$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+		  e.target // 현재 설정된 tab
+		  e.relatedTarget // 이전에 설정된 탭
+		});
+		// 다른 메뉴가 선택되어 active가 remove 된 후 이벤트
+		$('a[data-toggle="tab"]').on('hidden.bs.tab', function (e) {
+		  e.target // 현재 설정된 tab
+		  e.relatedTarget // 이전에 설정된 탭
+		});
    </script>
 </head>
 <body>
 	<div class="container">
 		<ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
 		  <li class="nav-item" role="presentation">
-		    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="home" aria-selected="true">전체</button>
+		    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">전체</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
 		    <button class="nav-link" id="hotel-tab" data-bs-toggle="tab" data-bs-target="#hotel" type="button" role="tab" aria-controls="hotel" aria-selected="false">호텔</button>
@@ -226,6 +245,13 @@
             <li class="page-item"><a class="page-link text-dark" href="#">다음</a></li>
         </ul>
     </nav>
+    
+    <script>
+	  var firstTabEl = document.querySelector('#myTab li:last-child button')
+	  var firstTab = new bootstrap.Tab(firstTabEl)
+	
+	  firstTab.show()
+	</script>
     <!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
