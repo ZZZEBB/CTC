@@ -121,7 +121,7 @@ public class CompanyVO {
    public String getCom_email_yn() {
       return com_email_yn;
    }
-   public void setCom_crn_yn(String com_email_yn) {
+   public void setCom_email_yn(String com_email_yn) {
       this.com_email_yn = com_email_yn;
    }
    public String getCom_zipcode() {
