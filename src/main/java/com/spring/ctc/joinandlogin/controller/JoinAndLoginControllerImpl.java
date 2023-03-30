@@ -40,23 +40,28 @@ public class JoinAndLoginControllerImpl implements JoinAndLoginController {
    @Override
    @RequestMapping(value = "/login.do", method={RequestMethod.POST,RequestMethod.GET})
    public ModelAndView login(@RequestParam Map<String, String> loginMap, 
-                        HttpServletRequest request, HttpServletResponse response) throws Exception {
-      ModelAndView mav = new ModelAndView();
-      //System.out.println(loginMap.toString());
+                              HttpServletRequest request, HttpServletResponse response) throws Exception {
+       ModelAndView mav = new ModelAndView();
        MemberVO memberVO=joinAndLoginService.login(loginMap);
-      if(memberVO!= null && memberVO.getMember_id()!=null){
-         HttpSession session=request.getSession();
-         session=request.getSession();
-         session.setAttribute("isLogOn", true);
-	     session.setAttribute("memberInfo", memberVO);
-	     mav.setViewName("redirect:/main/main.do");   
-         
-      }else{
-         String message="메세지";
-         mav.addObject("message", message);
-         mav.setViewName("/joinAndLogin/loginForm");
-      }
-      return mav;
+       if(memberVO!= null && memberVO.getMember_id()!=null){
+           HttpSession session=request.getSession();
+           session.setAttribute("isLogOn", true);
+           session.setAttribute("memberInfo", memberVO);
+
+        // returnUrl 정보가 있는 경우 이전 페이지로 리다이렉트
+           String returnUrl = (String) session.getAttribute("returnUrl");
+           if (returnUrl != null && !returnUrl.isEmpty()) {
+               session.removeAttribute("returnUrl");
+               mav.setViewName("redirect:" + returnUrl);
+           } else {
+               mav.setViewName("redirect:/main/main.do");
+           }
+       } else {
+           String message="메세지";
+           mav.addObject("message", message);
+           mav.setViewName("/joinAndLogin/loginForm");
+       }
+       return mav;
    }
    
    @Override

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.spring.ctc.goods.hotel.vo.GoodsHotelVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Repository("hotelDAO")
 public class GoodsHotelDAOImpl implements GoodsHotelDAO {
@@ -17,14 +17,14 @@ public class GoodsHotelDAOImpl implements GoodsHotelDAO {
    private SqlSession sqlsession;
 
    @Override
-   public List<GoodsHotelVO> selectHotelAllList() throws DataAccessException {
-      List<GoodsHotelVO> hotel = sqlsession.selectList("mapper.hotel.hotelAllList");
+   public List<GoodsVO> selectHotelAllList() throws DataAccessException {
+      List<GoodsVO> hotel = sqlsession.selectList("mapper.goods.hotelAllList");
       return hotel;
    }
 
    @Override
-   public List<GoodsHotelVO> selectHotelDetailList(String hotel_name) throws DataAccessException {
-      List<GoodsHotelVO> hotel = sqlsession.selectList("mapper.hotel.hotelDetailList", hotel_name);
+   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws DataAccessException {
+      List<GoodsVO> hotel = sqlsession.selectList("mapper.goods.hotelDetailList", hotel_name);
       return hotel;
    }
    

@@ -29,4 +29,5 @@
 		<put-attribute name="title" value="렌트 예약/결제" />
 		<put-attribute name="body" value="/WEB-INF/views/order/rentOrder.jsp" />
 	</definition>
+	
 </tiles-definitions>

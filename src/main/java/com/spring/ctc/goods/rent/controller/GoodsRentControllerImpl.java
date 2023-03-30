@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.goods.rent.service.GoodsRentService;
-import com.spring.ctc.goods.rent.vo.GoodsRentVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Controller("rentController")
 @RequestMapping(value="/goods")
@@ -27,7 +27,7 @@ public class GoodsRentControllerImpl implements GoodsRentController{
    @RequestMapping(value="/goodsRentSearch.do" ,method =  {RequestMethod.GET,RequestMethod.POST})
    public ModelAndView goodsRentSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsRentVO> carmodel = goodsrentservice.selectRentAllList();
+      List<GoodsVO> carmodel = goodsrentservice.selectRentAllList();
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("carList" , carmodel);
       /* Date car_start_date = request.getAttribute("car_start_date"); */
@@ -42,7 +42,7 @@ public class GoodsRentControllerImpl implements GoodsRentController{
                                  @RequestParam("car_time") String user_time ,
          HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsRentVO> car_imt = goodsrentservice.selectRentDetail(car_name);
+      List<GoodsVO> car_imt = goodsrentservice.selectRentDetail(car_name);
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("user_date",user_date);
       mav.addObject("user_time",user_time);      
@@ -57,7 +57,7 @@ public class GoodsRentControllerImpl implements GoodsRentController{
       String viewName=(String)request.getAttribute("/goods/goodsRentSearch");
       ModelAndView mav = new ModelAndView(viewName);
       try {
-         List<GoodsRentVO> carmodel = goodsrentservice.selectRentList(carResult);
+         List<GoodsVO> carmodel = goodsrentservice.selectRentList(carResult);
          Map carInfo = new HashMap();
          String date = (String)carResult.get("start");
                 date += (" " + (String)carResult.get("End"));

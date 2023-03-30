@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.goods.flight.service.GoodsFlightService;
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Controller("flightController")
 @RequestMapping(value="/goods")
@@ -37,7 +37,7 @@ public class GoodsFlightControllerImpl implements GoodsFlightController{
 	public ModelAndView goodsFlightKeywordSearch(@RequestParam Map<String,String> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		HttpSession session=request.getSession();
-		 List<GoodsFlightVO> keyword = goodsflightservice.selectListFlight(model); 
+		 List<GoodsVO> keyword = goodsflightservice.selectListFlight(model); 
 		 
 		ModelAndView mav = new ModelAndView(viewName);
 		 mav.addObject("keyword" , keyword); 

@@ -18,6 +18,7 @@ import com.spring.ctc.board.service.BoardService;
 import com.spring.ctc.board.vo.EventVO;
 import com.spring.ctc.board.vo.FaqVO;
 import com.spring.ctc.board.vo.NoticeVO;
+import com.spring.ctc.goods.GoodsVO;
 
 //@Controller("boardController")
 @Controller
@@ -35,12 +36,10 @@ public class BoardControllerImpl implements BoardController {
 	public ModelAndView eventList(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		session = request.getSession();
-		/* session.setAttribute("side_menu", "member"); -> 사이드메뉴*/
 		
 		String viewName = (String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		eventVO = (EventVO)session.getAttribute("eventLists");
-		
 		List<EventVO> eventLists = boardService.eventList();
 		for(int i = 0; i < eventLists.size(); i++) {
 			System.out.println("##" + eventLists.get(i).getEvent_num());
@@ -71,7 +70,7 @@ public class BoardControllerImpl implements BoardController {
 		session = request.getSession();
 		
 		//마이페이지 사이드메뉴
-		session.setAttribute("side_menu", "customercenter_mode");
+		session.setAttribute("side_menu", "mem_customercenter_mode");
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
@@ -98,7 +97,7 @@ public class BoardControllerImpl implements BoardController {
 		System.out.println(faqpackage.toString());
 		
 		//고객센터 사이드메뉴
-		session.setAttribute("side_menu", "customercenter_mode");
+		session.setAttribute("side_menu", "mem_customercenter_mode");
 		
 		mav.setViewName(viewName);
 		mav.addObject("faqhotel" , faqhotel);
@@ -119,7 +118,7 @@ public class BoardControllerImpl implements BoardController {
 		ModelAndView mav = new ModelAndView(viewName);
 		
 		//고객센터 사이드메뉴
-		session.setAttribute("side_menu", "customercenter_mode");
+		session.setAttribute("side_menu", "mem_customercenter_mode");
 		
 		mav.addObject("noticeList", noticeList);
 		return mav;
@@ -135,7 +134,7 @@ public class BoardControllerImpl implements BoardController {
 		ModelAndView mav = new ModelAndView(viewName);
 		
 		//고객센터 사이드메뉴
-		session.setAttribute("side_menu", "customercenter_mode");
+		session.setAttribute("side_menu", "mem_customercenter_mode");
 				
 		Map noticeMap = boardService.noticeDetail(notice_num);
 		mav.addObject("noticeMap", noticeMap);

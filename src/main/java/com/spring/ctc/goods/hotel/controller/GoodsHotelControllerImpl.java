@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.goods.hotel.dao.GoodsHotelDAO;
 import com.spring.ctc.goods.hotel.service.GoodsHotelService;
-import com.spring.ctc.goods.hotel.vo.GoodsHotelVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Controller("HotelController")
 @RequestMapping(value = "/goods")
@@ -30,7 +30,7 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
    @RequestMapping(value ="/goodsHotelSearch.do", method = {RequestMethod.GET,RequestMethod.POST}  )
    public ModelAndView goodsHotelSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsHotelVO> hotel = goodsHotelService.selectHotelAllList();
+      List<GoodsVO> hotel = goodsHotelService.selectHotelAllList();
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotel);
       return mav;
@@ -41,7 +41,7 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
    @RequestMapping(value ="/goodsHotelDetail.do", method = {RequestMethod.GET,RequestMethod.POST}  )
    public ModelAndView goodsHotelDetail(@RequestParam("hotel_name") String hotel_name, HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsHotelVO> hotelDetail = goodsHotelService.selectHotelDetailList(hotel_name);
+      List<GoodsVO> hotelDetail = goodsHotelService.selectHotelDetailList(hotel_name);
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotelDetail);
       return mav;

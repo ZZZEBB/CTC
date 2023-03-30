@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.spring.ctc.goods.pack.vo.GoodsPackVO;
+import com.spring.ctc.goods.GoodsVO;
 
 public interface GoodsPackDAO {
-   public List<GoodsPackVO> selectPackageAllList() throws DataAccessException;
-   public List<GoodsPackVO> selectPackageDetailList(String package_name) throws DataAccessException;
+   public List<GoodsVO> selectPackageAllList() throws DataAccessException;
+   public List<GoodsVO> selectPackageDetailList(String package_name) throws DataAccessException;
 
 }

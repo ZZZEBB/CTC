@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
-import com.spring.ctc.goods.rent.vo.GoodsRentVO;
+import com.spring.ctc.goods.GoodsVO;
+
 
 public interface GoodsFlightDAO {
-	public List<GoodsFlightVO> selectListFlight(Map keyword) throws DataAccessException;
+	public List<GoodsVO> selectListFlight(Map keyword) throws DataAccessException;
 }

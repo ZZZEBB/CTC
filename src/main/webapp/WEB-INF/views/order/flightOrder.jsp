@@ -97,134 +97,105 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-		</div>
-		<div class = "d-flex">
-			<div class = "row col-md-9">
-				<h4>오는 항공편<span class = "fs-6 mx-3">제주 -> 서울 </span></h4>
-				<div class = "border text-center align-middle">
-					<div class = "d-flex">
-						<div class = "col-md-1">
-							<p>아시아나항공<br><span class = "smallCaption text-secondary">OZ1155</span></p>
-						</div>
-						<div class = "col-md-4">
-							<p>
-								<span class = "smallCaption text-secondary">2023.05.24(수)</span>
-								20:40
-								<span class = "smallCaption text-secondary">제주 국제공항 - 터미널 1</span>
-							</p>
-						</div>
-						<div class = "col-md-2 text-center">
-							<img src = "${contextPath}/resources/image/totheright.png" width="50%;">
-							<p>1시간 45분</p>
-						</div>
-						<div class = "col-md-4">
-							<p>
-								<span class = "smallCaption text-secondary">2023.05.24(수)</span>
-								22:25
-								<span class = "smallCaption text-secondary">김포 국제공항 - 터미널 1</span>
-							</p>
-						</div>
-						<div class = "col-md-1">
-							<p>일반석</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 ms-3">
-				<table class="table table-sm table-secondary caption-top">
-				<caption class="fs-5">인원 별 운임 정보</caption>
-					<tr>
-							<th>성인 1명</th>
-							<td>0 원</td>
-						</tr>
-						<tr>
-							<th>소아 1명</th>
-							<td>0 원</td>
-						</tr>
-						<tr>
-							<th>유아 1명</th>
-							<td>0 원</td>
-						</tr>
-				</table>
 				<!-- 모달창 버튼 -->
 				<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">0원 결제하기</a>
-			</div>
-			<!-- 모달 -->
-			<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-				<div class="modal-dialog modal-dialog-centered modal-lg">
-					<div class="modal-content p-3">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalToggleLabel">결제정보 최종 확인</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<!-- 모달 -->
+				<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content p-3">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalToggleLabel">결제정보 최종 확인</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p>
+									결제요청 이후에는 패널티가 발생 될 수 있으니 반드시 영문명과 일정을 확인하시기 바랍니다.<br>
+									결제를 진행하시겠습니까?
+								</p>
+								<ul  style = "color : #808080; font-size : 0.8em;">
+									<li>평일 업무시간 (09:00~17:00) 이외에는 취소, 변경, 환불, 상담 등의 업무처리가 불가합니다.</li>
+									<li>결제 후 변경 및 취소 시 항공사의 규정에 따라 취소/변경 수수료가 부과되기에 구매하시는 항공권의 항공사 요금 규정 및 이용약관을 반드시 숙지하셔야 합니다.</li>
+									<li>평일 업무시간 (09:00~17:00) 이후 결제 요청 시 확인이 필요한 일부 운임의 경우 영업일 내 처리되며 항공사 사정에 따라 기존 예약하신 요금이 인상되거나 항공권 발행이 불가할 수 있습니다.</li>
+									<li>일부 항공권의 경우 당일취소가 불가능하고 정상업무시간에 환불로 접수되므로 결제 진행 시 신중하게 결제 부탁드립니다.</li>
+								</ul>
+							</div>
+							<div class="modal-footer">
+								<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">다시 확인하기</button>
+								<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">결제하기</button>
+							</div>
 						</div>
-						<div class="modal-body">
-							<p>
-								결제요청 이후에는 패널티가 발생 될 수 있으니 반드시 영문명과 일정을 확인하시기 바랍니다.<br>
-								결제를 진행하시겠습니까?
-							</p>
-							<ul  style = "color : #808080; font-size : 0.8em;">
-								<li>평일 업무시간 (09:00~17:00) 이외에는 취소, 변경, 환불, 상담 등의 업무처리가 불가합니다.</li>
-								<li>결제 후 변경 및 취소 시 항공사의 규정에 따라 취소/변경 수수료가 부과되기에 구매하시는 항공권의 항공사 요금 규정 및 이용약관을 반드시 숙지하셔야 합니다.</li>
-								<li>평일 업무시간 (09:00~17:00) 이후 결제 요청 시 확인이 필요한 일부 운임의 경우 영업일 내 처리되며 항공사 사정에 따라 기존 예약하신 요금이 인상되거나 항공권 발행이 불가할 수 있습니다.</li>
-								<li>일부 항공권의 경우 당일취소가 불가능하고 정상업무시간에 환불로 접수되므로 결제 진행 시 신중하게 결제 부탁드립니다.</li>
-							</ul>
+					</div>
+				</div>
+				<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content p-3">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalToggleLabel2">예약내역 최종 확인</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p style = "color : #808080; font-size : 0.8em;">
+									※ 입력하신 정보가 모두 정확한지 마지막으로 다시 확인해주시기 바랍니다.
+								</p>
+								<table class="table caption-top table table-bordered">
+									<caption class="fs-5">탑승자 정보<span style = "color : #808080; font-size : 0.8em;">총 1명</span></caption>
+									<tr>
+										<th class="table-active">구분</th>
+										<th class="table-active">성함</th>
+										<th class="table-active">생년월일</th>
+										<th class="table-active">성별</th>
+									</tr>
+									<tr>
+										<td>성인1</td>
+										<td>장은빈</td>
+										<td>1998-09-01</td>
+										<td>여</td>
+									</tr>
+								</table>
+								<table class="table caption-top table table-bordered">
+									<caption class="fs-5">예약자 연락정보 확인</caption>
+									<tr>
+										<th class="table-active">휴대폰 번호</th>
+										<td>010-1234-5678</td>
+										<th class="table-active">이메일</th>
+										<td>zzz@zzz.com</td>
+									</tr>
+								</table>
+								<h5>중복(이중)예약 안내</h5>
+								<ul  style = "color : #808080; font-size : 0.8em;">
+									<li>해당 항공사는 규정 상 중복 예약이 있는 경우, 사전경고 없이 모든 예약이 취소될 수 있으므로 주의하시기 바랍니다.</li>
+									<li>이름이 신분증 또는 본인확인서류와 다른 경우 이용 및 탑승이 거절되며, 수수료가 부과될 수 있습니다.</li>
+								</ul>
+							</div>
+							<div class="modal-footer">
+								<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button> -->
+								<button class="btn btn-primary" data-bs-toggle="modal" onclick="location.href='${contextPath}/order/flightOrder.do'">결제하기</button>
+							</div>
 						</div>
-						<div class="modal-footer">
-							<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">다시 확인하기</button>
-							<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">결제하기</button>
+					</div>
+				</div>
+				<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content p-3">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalToggleLabel2">결제하기</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="mt-3">
+								<p class="fs-5 border-bottom">결제수단</p>
+								<button type = "button" class = "btn btn btn-outline-dark btn-lg">신용카드</button>
+								<button type = "button" class = "btn btn btn-outline-dark btn-lg">무통장입금</button>
+								<button type = "button" class = "btn btn btn-outline-dark btn-lg">핸드폰결제</button>
+							</div>
+							<div class="modal-footer">
+								<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button> -->
+								<button class="btn btn-primary" data-bs-toggle="modal" onclick="location.href='${contextPath}/order/flightOrder.do'">결제페이지로 이동합니다.</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-				<div class="modal-dialog modal-dialog-centered modal-lg">
-					<div class="modal-content p-3">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalToggleLabel2">예약내역 최종 확인</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<p style = "color : #808080; font-size : 0.8em;">
-								※ 입력하신 정보가 모두 정확한지 마지막으로 다시 확인해주시기 바랍니다.
-							</p>
-							<table class="table caption-top table table-bordered">
-								<caption class="fs-5">탑승자 정보<span style = "color : #808080; font-size : 0.8em;">총 1명</span></caption>
-								<tr>
-									<th class="table-active">구분</th>
-									<th class="table-active">성함</th>
-									<th class="table-active">생년월일</th>
-									<th class="table-active">성별</th>
-								</tr>
-								<tr>
-									<td>성인1</td>
-									<td>장은빈</td>
-									<td>1998-09-01</td>
-									<td>여</td>
-								</tr>
-							</table>
-							<table class="table caption-top table table-bordered">
-								<caption class="fs-5">예약자 연락정보 확인</caption>
-								<tr>
-									<th class="table-active">휴대폰 번호</th>
-									<td>010-1234-5678</td>
-									<th class="table-active">이메일</th>
-									<td>zzz@zzz.com</td>
-								</tr>
-							</table>
-							<h5>중복(이중)예약 안내</h5>
-							<ul  style = "color : #808080; font-size : 0.8em;">
-								<li>해당 항공사는 규정 상 중복 예약이 있는 경우, 사전경고 없이 모든 예약이 취소될 수 있으므로 주의하시기 바랍니다.</li>
-								<li>이름이 신분증 또는 본인확인서류와 다른 경우 이용 및 탑승이 거절되며, 수수료가 부과될 수 있습니다.</li>
-							</ul>
-						</div>
-						<div class="modal-footer">
-							<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button> -->
-							<button class="btn btn-primary" data-bs-toggle="modal" onclick="location.href='${contextPath}/order/flightOrder.do'">결제가 완료되었습니다.</button>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class = "row col-md-9 mt-3 p-2">
@@ -311,7 +282,6 @@
 				</div>
 			</div>
 		</form>
-	</div>
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

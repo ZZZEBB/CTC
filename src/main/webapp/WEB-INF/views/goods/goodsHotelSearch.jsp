@@ -182,22 +182,23 @@ margin-left: 20px;
    <a href="https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500531" target="_blank"><img class="mainimage" src="${contextPath}/resources/image/hotel/jejuWaterfall.jpg" width="170px" height="100px"/></a>
 </div>
 <c:forEach var="hotel" items="${hotelList}">
+<c:if test="${hotel.goods_category == '숙박'}">
 <div class="container mt-3">
    <div class="row justify-content-center">
       <div class="col-md-7">
          <div class="list-group list-group-flush mb-4" style = "border:1px solid #808080;">
-            <a class="list-group-item" href="${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.hotel_name}">
+            <a class="list-group-item" href="${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.goods_name}">
                <div class="d-flex w-70">
                   <img src="${contextPath}/resources/image/hotel/jeju_shinhwa.jpg" width="30%" height="170px">
                      <h6 class="mb-1 ms-4 p-2" style="height: 15px; line-height: 15px;">
-                        <span class = "fs-5 fw-bolder">${hotel.hotel_name} &nbsp;  
-                        <c:forEach begin="1" end="${hotel.hotel_grade}">
+                        <span class = "fs-5 fw-bolder">${hotel.goods_name} &nbsp;  
+                        <c:forEach begin="1" end="${hotel.class_grade}">
                         <span class="starSize">★</span>
                         </c:forEach>
                          </span><hr><br><br>
-                           <div class="hotelPrice"><p>${hotel.com_id }   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hotel.hotel_price } 원 
+                           <div class="hotelPrice"><p>${hotel.com_id }   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hotel.goods_price } 원 
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                              <button type = "button" class=""  onclick="location.href='${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.hotel_name}'">
+                              <button type = "button" class=""  onclick="location.href='${contextPath}/goods/goodsHotelDetail.do?hotel_name=${hotel.goods_name}'">
                               예약하기
                                      </button>
                                  </p>
@@ -209,6 +210,7 @@ margin-left: 20px;
       </div>
    </div>
 </div>
+</c:if>
 </c:forEach>   
    <div class = "col-md-2" style = "border:1px solid #808080; height : auto;">
       <h5>이벤트 이미지</h5>

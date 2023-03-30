@@ -2,6 +2,9 @@ package com.spring.ctc.cart.vo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component("cartVO")
 public class CartVO {
 
 	private String member_id;
@@ -40,5 +43,4 @@ public class CartVO {
 	public void setCart_credate(Date cart_credate) {
 		this.cart_credate = cart_credate;
 	}
-	
 }

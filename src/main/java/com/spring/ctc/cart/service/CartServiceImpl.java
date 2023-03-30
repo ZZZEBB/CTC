@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ctc.cart.dao.CartDAO;
 import com.spring.ctc.cart.vo.CartVO;
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
-import com.spring.ctc.goods.hotel.vo.GoodsHotelVO;
-import com.spring.ctc.goods.pack.vo.GoodsPackVO;
-import com.spring.ctc.goods.rent.vo.GoodsRentVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Service("cartService")
 public class CartServiceImpl implements CartService {

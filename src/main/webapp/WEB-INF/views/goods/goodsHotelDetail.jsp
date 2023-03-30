@@ -101,10 +101,10 @@ hr {
 </form> --%>
 <c:forEach var="hotel" items="${hotelList}">
 <div class="mainText">
-   <h3>${hotel.hotel_name}</h3>
+   <h3>${hotel.goods_name}</h3>
 </div>
 <div class="mainPrice">
-   <p><strong>${hotel.hotel_price}</strong>&nbsp;<small>총 금액</small>&nbsp;&nbsp;
+   <p><strong>${hotel.goods_price}</strong>&nbsp;<small>총 금액</small>&nbsp;&nbsp;
 <div class="select">
    <select>
        <option value="" disabled selected>룸 타입 선택</option>
@@ -153,7 +153,7 @@ hr {
 <div class="explain">
 <hr style = "margin: 0 auto;">
 <p>
-${hotel.hotel_exp}
+${hotel.goods_exp}
 </p>
 </div>
 </c:forEach>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.ctc.goods.hotel.dao.GoodsHotelDAO;
-import com.spring.ctc.goods.hotel.vo.GoodsHotelVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Service("hotelService")
 public class GoodsHotelServiceImpl implements GoodsHotelService {
@@ -14,12 +14,12 @@ public class GoodsHotelServiceImpl implements GoodsHotelService {
    private GoodsHotelDAO goodsHotelDAO;
 
    @Override
-   public List<GoodsHotelVO> selectHotelAllList() throws Exception {
+   public List<GoodsVO> selectHotelAllList() throws Exception {
       return goodsHotelDAO.selectHotelAllList();
    }
 
    @Override
-   public List<GoodsHotelVO> selectHotelDetailList(String hotel_name) throws Exception {
+   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws Exception {
       return goodsHotelDAO.selectHotelDetailList(hotel_name);
    }
    

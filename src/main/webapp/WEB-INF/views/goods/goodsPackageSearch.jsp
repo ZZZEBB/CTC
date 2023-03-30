@@ -38,16 +38,18 @@
    <div class="container">
        <div class = "row row-cols-1 row-cols-md-4 g-4">
          <c:forEach var="pack" items="${packList}">
+         <c:if test="${pack.goods_category == '패키지'}">
                 <div class = "col">
                    <div class = "card h-100">
                       <img src="${contextPath}/resources/image/package/pckItem01.jpg" class="card-img-top" alt="이벤트상품이미지">
                       <div class = "card-body">
-                        <p class = "card-text">${pack.package_name}</p>
-                           <h5 class = "card-title">${pack.package_price} 원</h5>
-                        <a href="${contextPath}/goods/goodsPackageDetail.do?package_name=${pack.package_name}" class = "btn btn-secondary btn-sm">자세히보기</a>
+                        <p class = "card-text">${pack.goods_name}</p>
+                           <h5 class = "card-title">${pack.goods_price} 원</h5>
+                        <a href="${contextPath}/goods/goodsPackageDetail.do?package_name=${pack.goods_name}" class = "btn btn-secondary btn-sm">자세히보기</a>
                       </div>
                    </div>
                 </div>
+         </c:if>
          </c:forEach> 
          </div>
     </div>

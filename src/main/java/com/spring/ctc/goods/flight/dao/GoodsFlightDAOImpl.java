@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Repository("flightDAO")
 public class GoodsFlightDAOImpl implements GoodsFlightDAO{
@@ -17,8 +17,8 @@ public class GoodsFlightDAOImpl implements GoodsFlightDAO{
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<GoodsFlightVO> selectListFlight(Map keyword) throws DataAccessException{
-		List<GoodsFlightVO> flight = sqlSession.selectList("mapper.flight.flightList",keyword);
+	public List<GoodsVO> selectListFlight(Map keyword) throws DataAccessException{
+		List<GoodsVO> flight = sqlSession.selectList("mapper.goods.flightList",keyword);
 		return flight;
 	}	
 }

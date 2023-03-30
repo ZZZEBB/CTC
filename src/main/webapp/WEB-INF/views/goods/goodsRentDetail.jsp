@@ -91,7 +91,7 @@ hr{
 <body>
  <c:forEach var="product" items="${carList}">
     <div class="rentDetailtitle">
-       <h4>${product.car_name}</h4>
+       <h4>${product.goods_name}</h4>
        <hr>
    </div>
     <div class="rentmaintitle">
@@ -104,17 +104,17 @@ hr{
       <script>
       var markers = [
           {
-              position: new kakao.maps.LatLng(${product.car_latitude},${product.car_logitude})
+              position: new kakao.maps.LatLng(${product.goods_latitude},${product.goods_longitude})
           },
           {
-              position: new kakao.maps.LatLng(${product.car_latitude},${product.car_logitude}), 
-              text: '${product.car_name} 위치입니다.' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+              position: new kakao.maps.LatLng(${product.goods_latitude},${product.goods_longitude}), 
+              text: '${product.goods_name} 위치입니다.' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
           }
       ];
 
       var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
           staticMapOption = { 
-              center: new kakao.maps.LatLng(${product.car_latitude},${product.car_logitude}), // 이미지 지도의 중심좌표
+              center: new kakao.maps.LatLng(${product.goods_latitude},${product.goods_longitude}), // 이미지 지도의 중심좌표
               level: 3, // 이미지 지도의 확대 레벨
               marker: markers // 이미지 지도에 표시할 마커 
           };    
@@ -134,8 +134,8 @@ hr{
       <ul class="minititle1">
          <li><img alt="캘린더" src="${contextPath}/resources/image/rent/calender.png" width="20px" height="15px">이용일 : <span>${user_date}</span></li>         
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">이용 시간 : <span>${user_time}</span></li>
-         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">인수 장소 : <span>${product.car_location}</span></li>
-         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">반납 장소 : <span>${product.car_location}</span></li>
+         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">인수 장소 : <span>${product.goods_location}</span></li>
+         <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">반납 장소 : <span>${product.goods_location}</span></li>
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">대여가능 나이 : <span>26세이상</span></li>
          <li><img alt="시계" src="${contextPath}/resources/image/rent/watch.png" width="20px" height="15px">대여가능 운전경력 : <span>1년이상</span></li>
       </ul>

@@ -18,14 +18,29 @@
 </style>
 	<div class="panel panel-default sideBox">
 		<c:choose>
-			<%-- 고객센터 사이드바 --%>
-			<c:when test="${side_menu=='customercenter_mode'}">
+			<%-- 사용자 - 고객센터 사이드바 --%>
+			<c:when test="${side_menu=='mem_customercenter_mode'}">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
 					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
 					<li class="list-group-item"><a href="${contextPath}/board/oneQnaForm.do">1:1 문의</a></li>
 				</ul>
 			</c:when>
+			<%-- 사업체 - 고객센터 사이드바 --%>
+			<c:when test="${side_menu=='com_customercenter_mode'}">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
+					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
+				</ul>
+			</c:when>
+			<%-- 관리자 - 고객센터 사이드바 --%>
+			<%-- <c:when test="${side_menu=='customercenter_mode'}">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
+					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
+					<li class="list-group-item"><a href="${contextPath}/board/oneQnaForm.do">1:1 문의</a></li>
+				</ul>
+			</c:when> --%>
 			<%-- 마이페이지 사이드바 --%>
 			<c:when test="${side_menu=='my_page'}">
 				<ul class="list-group list-group-flush sideUl">

@@ -5,11 +5,11 @@ import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
-import com.spring.ctc.goods.rent.vo.GoodsRentVO;
+
+import com.spring.ctc.goods.GoodsVO;
 
 public interface GoodsRentDAO {
-	public List<GoodsRentVO> selectListRent(Map keyword) throws DataAccessException;
-	 public List<GoodsRentVO> selectRentAllList() throws DataAccessException;
-	 public List<GoodsRentVO> selectRentDetailList(String car_name) throws DataAccessException;
+	public List<GoodsVO> selectListRent(Map keyword) throws DataAccessException;
+	 public List<GoodsVO> selectRentAllList() throws DataAccessException;
+	 public List<GoodsVO> selectRentDetailList(String car_name) throws DataAccessException;
 }

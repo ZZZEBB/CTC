@@ -48,7 +48,7 @@
 							<th scope="row"><input type = "checkbox" /></th>
 							<td class = "col-md-3">
 								<img src="${contextPath}/resources/image/package/pckItem01.jpg" width="60%">
-								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
+								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;">항공</span>
 							</td>
 							<td class = "col-md-5">
 								<p class = "fs-5 fw-bolder">[제주에어텔/프리미엄5성급] 항공</p>
@@ -57,14 +57,14 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">529,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/flightOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/Order.do'" style = "background-color : #00aff0;">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 						<tr>
 							<th scope="row"><input type = "checkbox" /></th>
 							<td class = "col-md-3">
 								<img src="${contextPath}/resources/image/package/pckItem02.jpg" width="60%">
-								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
+								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;">숙박</span>
 							</td>
 							<td class = "col-md-5">
 								<p class = "fs-5 fw-bolder">[해양리조트/표선위치] 호텔</p>
@@ -73,13 +73,29 @@
 								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/Order.do'" style = "background-color : #00aff0;">즉시예약</button></td>
+							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
+						</tr>
+						<tr>
+							<th scope="row"><input type = "checkbox" /></th>
+							<td class = "col-md-3">
+								<img src="${contextPath}/resources/image/car/car01.jpg" width="60%">
+								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;">렌트</span>
+							</td>
+							<td class = "col-md-5">
+								<p class = "fs-5 fw-bolder">[제주공항렌트카] 더 뉴레이</p>
+								<br>
+								<small class="smallCaption text-secondary"><br>휘발유 | 자차포함-고급자차</small>
+								<small class="smallCaption text-secondary"><br>2023.03.30 12:00 ~ 2023.03.31 12:00</small>
+							</td>
+							<td class = "col-md-2"><p class = "fs-5">62,000<small class="smallCaption text-secondary"> 원</small></p></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/Order.do'" style = "background-color : #00aff0;">즉시예약</button></td>
 							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class = "container d-flex col-md-12 justify-content-end">
-					<button class = "btn btn-md" onclick="location.href='${contextPath}/order/packOrder.do'" style = "background-color : #00aff0;">예약하기</button>
+					<button class = "btn btn-md" onclick="location.href='${contextPath}/order/Order.do'" style = "background-color : #00aff0;">예약하기</button>
 				</div>
 			</div>
 		</div>

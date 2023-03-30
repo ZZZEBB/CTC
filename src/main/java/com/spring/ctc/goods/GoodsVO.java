@@ -14,8 +14,8 @@ public class GoodsVO {
 	private String goods_exp;
 	private int class_grade;
 	private String goods_location;
-	private int goods_latitude;
-	private int goods_longitude;
+	private String goods_latitude;
+	private String goods_longitude;
 	private String room_type;
 	private String car_model;
 	private int goods_price;
@@ -85,16 +85,16 @@ public class GoodsVO {
 	public void setGoods_location(String goods_location) {
 		this.goods_location = goods_location;
 	}
-	public int getGoods_latitude() {
+	public String getGoods_latitude() {
 		return goods_latitude;
 	}
-	public void setGoods_latitude(int goods_latitude) {
+	public void setGoods_latitude(String goods_latitude) {
 		this.goods_latitude = goods_latitude;
 	}
-	public int getGoods_longitude() {
+	public String getGoods_longitude() {
 		return goods_longitude;
 	}
-	public void setGoods_longitude(int goods_longitude) {
+	public void setGoods_longitude(String goods_longitude) {
 		this.goods_longitude = goods_longitude;
 	}
 	public String getRoom_type() {

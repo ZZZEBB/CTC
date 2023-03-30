@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<c:set var="carsize" value="${carsize}"/>
+<c:set var="carsize" value="${car_model}"/>
 <c:set var="start" value="${fn:substring( product.car_start_date,8,10) }"/>
 <c:set var="end" value="${fn:substring( product.car_end_date,8,10) }"/>
 
@@ -279,12 +279,13 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
 
 
     <c:forEach var="product" items="${carList}">
+    <c:if test="${product.goods_category == '렌트'}">
     <form class="productcar" method="get">
        <div>
           <img src="${contextPath}/resources/image/rent/car.png" alt="자동차이미지" width="250px" height="200">
        </div>
        <div class="producttext">
-          <h6 style="font-weight:bold;margin-top:10px;">${product.car_name}</h6>
+          <h6 style="font-weight:bold;margin-top:10px;">${product.goods_name}</h6>
           <p>${product.car_model}</p>               <!-- 문자열 앞에서부터자르기 -->
           <c:if test="${user_start} == ''"><p>대여시작일 : ${user_start} 일</p></c:if>
           <c:if test="${user_end} == ''"><p>반납날 : ${user_end} 일</p></c:if>          
@@ -294,19 +295,20 @@ action="${contextPath}/goods/rentsearchWord.do" method="get">
           <p>연료정책: 인수시와 동일.</p>
        </div>
        <div id="productprice" class="producttext">
-          <p style="color:blue; font-weight:bold;font-size:14px; text-decoration:line-through;">금액 : ${product.car_price} 원.</p>
-          <p style="color:red; font-weight:bold;font-size:14px;">금액 : ${product.car_saleprice} 원.</p>
-          <c:if test="${product.car_status == 1}">
+          <p style="color:blue; font-weight:bold;font-size:14px; text-decoration:line-through;">금액 : ${product.goods_price} 원.</p>
+          <p style="color:red; font-weight:bold;font-size:14px;">금액 : ${product.goods_saleprice} 원.</p>
+          <c:if test="${product.goods_status == 1}">
              <div id="buttonstyle">
-                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.car_name}&car_date=${user_car.date}&car_time=${user_car.time}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
+                <a href="${contextPath}/goods/goodsRentDetail.do?car_name=${product.goods_name}&car_date=${user_car.date}&car_time=${user_car.time}"><img src="${contextPath}/resources/image/rent/check.jpg" width="70px" height="40px"></a> <!-- 상세페이지버튼 -->
                 <a href="#"><img src="${contextPath}/resources/image/rent/my_shopbag.jpg" width="70px" height="40px"></a> <!-- 장바구니페이지버튼 -->   
              </div>
           </c:if>
-          <c:if test="${product.car_status == 2}">
+          <c:if test="${product.goods_status == 2}">
              <h5 style="font-weight:bold; margin-top:15px;color:red;">예약 불가</h5>
           </c:if>
        </div>
     </form>
+    </c:if>
     </c:forEach>
 </body>
 </html>

@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ctc.goods.pack.dao.GoodsPackDAO;
 import com.spring.ctc.goods.pack.service.GoodsPackService;
-import com.spring.ctc.goods.pack.vo.GoodsPackVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Controller("PackController")
 @RequestMapping(value = "/goods")
@@ -29,7 +29,7 @@ public class GoodsPackControllerImpl implements GoodsPackController {
    @RequestMapping(value = "/goodsPackageSearch.do", method = {RequestMethod.GET,RequestMethod.POST} )
    public ModelAndView goodsPackageSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName = (String)request.getAttribute("viewName");
-      List<GoodsPackVO> pack = goodsPackService.selectPackageAllList();
+      List<GoodsVO> pack = goodsPackService.selectPackageAllList();
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("packList", pack);
       return mav;
@@ -41,7 +41,7 @@ public class GoodsPackControllerImpl implements GoodsPackController {
    public ModelAndView goodsPackageDetail(@RequestParam("package_name") String package_name, HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
       String viewName = (String)request.getAttribute("viewName");
-      List<GoodsPackVO> packD = goodsPackService.selectPackageDetailList(package_name);
+      List<GoodsVO> packD = goodsPackService.selectPackageDetailList(package_name);
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("packList", packD);
       return mav;

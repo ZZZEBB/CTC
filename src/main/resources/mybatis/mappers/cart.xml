@@ -14,10 +14,9 @@
 	
 	<select id = "selectCartList" parameterType = "cartVO" resultMap = "cartResult">
 		<![CDATA[
-			select cart_id, goods_id, member_id, cart_headcount, cart_credate
+			select cart_id, goods_code, member_id, cart_headcount, cart_credate
 			from cart
 			where member_id = #{member_id}
-			order by goods_id	
 		]]>
 	</select>
 </mapper>

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.ctc.goods.flight.dao.GoodsFlightDAO;
-import com.spring.ctc.goods.flight.vo.GoodsFlightVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Service("flightService")
 @Transactional(propagation=Propagation.REQUIRED)
@@ -18,7 +18,7 @@ public class GoodsFlightServiceImpl implements GoodsFlightService{
 	private GoodsFlightDAO goodsflightDAO;
 	
 	@Override
-	public List<GoodsFlightVO> selectListFlight(Map keyword)throws Exception{
+	public List<GoodsVO> selectListFlight(Map keyword)throws Exception{
 		return goodsflightDAO.selectListFlight(keyword);
 	}
 }

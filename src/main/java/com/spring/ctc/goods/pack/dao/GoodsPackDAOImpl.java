@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.spring.ctc.goods.pack.vo.GoodsPackVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Repository("packDAO")
 public class GoodsPackDAOImpl implements GoodsPackDAO{
@@ -16,14 +16,14 @@ public class GoodsPackDAOImpl implements GoodsPackDAO{
    SqlSession sqlsession;
 
    @Override
-   public List<GoodsPackVO> selectPackageAllList() throws DataAccessException {
-      List<GoodsPackVO> pack = sqlsession.selectList("mapper.package.packageAllList");
+   public List<GoodsVO> selectPackageAllList() throws DataAccessException {
+      List<GoodsVO> pack = sqlsession.selectList("mapper.goods.packageAllList");
       return pack;
    }
 
    @Override
-   public List<GoodsPackVO> selectPackageDetailList(String package_name) throws DataAccessException {
-      List<GoodsPackVO> pack = sqlsession.selectList("mapper.package.packageDetailList", package_name);
+   public List<GoodsVO> selectPackageDetailList(String package_name) throws DataAccessException {
+      List<GoodsVO> pack = sqlsession.selectList("mapper.goods.packageDetailList", package_name);
       return pack;
    }
 
