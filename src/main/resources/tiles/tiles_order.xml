@@ -10,24 +10,9 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
-	<definition name="/order/flightOrder" extends="baseLayout">
-		<put-attribute name="title" value="항공권 예약/결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/flightOrder.jsp" />
-	</definition>
-	
-	<definition name="/order/hotelOrder" extends="baseLayout">
-		<put-attribute name="title" value="숙박 예약/결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/hotelOrder.jsp" />
-	</definition>
-	
-	<definition name="/order/packOrder" extends="baseLayout">
-		<put-attribute name="title" value="패키지 예약/결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/packOrder.jsp" />
-	</definition>
-	
-	<definition name="/order/rentOrder" extends="baseLayout">
-		<put-attribute name="title" value="렌트 예약/결제" />
-		<put-attribute name="body" value="/WEB-INF/views/order/rentOrder.jsp" />
+	<definition name="/order/order" extends="baseLayout">
+		<put-attribute name="title" value="상품 예약/결제" />
+		<put-attribute name="body" value="/WEB-INF/views/order/order.jsp" />
 	</definition>
 	
 </tiles-definitions>

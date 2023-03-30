@@ -7,5 +7,5 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface CartController {
 	
-	public ModelAndView cartList(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView myCartMain(HttpServletRequest request, HttpServletResponse response)  throws Exception;
 }

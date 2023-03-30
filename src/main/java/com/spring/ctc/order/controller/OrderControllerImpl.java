@@ -22,43 +22,11 @@ public class OrderControllerImpl implements OrderController {
 	
 	//항공 상품 예약/결제 페이지
 	@Override
-	@RequestMapping(value= "/flightOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView flightOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	@RequestMapping(value= "/order.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView order(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String viewName = (String)request.getAttribute("viewName");
-		//List<OrderVO> flight = orderService.orderList();
 		ModelAndView mav = new ModelAndView(viewName);
-		//mav.addObject("flightList", flight);
 		return mav;
 	}
 	
-	@Override
-	@RequestMapping(value= "/hotelOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView hotelOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String)request.getAttribute("viewName");
-		mav.setViewName(viewName);
-		return mav;
-	}
-	
-	@Override
-	@RequestMapping(value= "/packOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView packOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String)request.getAttribute("viewName");
-		mav.setViewName(viewName);
-		return mav;
-	}
-	
-	@Override
-	@RequestMapping(value= "/rentOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView rentOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String)request.getAttribute("viewName");
-		mav.setViewName(viewName);
-		return mav;
-	}
-
 }
