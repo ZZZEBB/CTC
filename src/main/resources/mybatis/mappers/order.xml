@@ -15,7 +15,6 @@
 		<result property="hotel_name" column="hotel_name"/>
 		<result property="package_name" column="package_name"/>
 		<result property="car_name" column="car_name"/>
-		<result property="order_goods_count" column="order_goods_count"/>
 		<result property="order_date" column="order_date"/>
 		<result property="pay_order_time" column="pay_order_time"/>
 		<result property="pay_method" column="pay_method"/>

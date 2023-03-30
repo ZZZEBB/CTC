@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
-/*@Component("eventVO")*/
 public class EventVO {
 
 	private String com_id;

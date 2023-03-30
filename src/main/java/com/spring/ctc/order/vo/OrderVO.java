@@ -16,7 +16,6 @@ public class OrderVO {
 	private String hotel_name;
 	private String package_name;
 	private String car_name;
-	private int order_goods_count;
 	private Date order_date;
 	private Date pay_order_time;
 	private String pay_method;
@@ -35,6 +34,7 @@ public class OrderVO {
 	private Date reser_end_date;
 	private Date reser_period;
 	private int reser_headcount;
+	
 	public String getMember_id() {
 		return member_id;
 	}
@@ -94,12 +94,6 @@ public class OrderVO {
 	}
 	public void setCar_name(String car_name) {
 		this.car_name = car_name;
-	}
-	public int getOrder_goods_count() {
-		return order_goods_count;
-	}
-	public void setOrder_goods_count(int order_goods_count) {
-		this.order_goods_count = order_goods_count;
 	}
 	public Date getOrder_date() {
 		return order_date;
