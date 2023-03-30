@@ -19,88 +19,44 @@
 			<h4>예약하기</h4>
 		</div>
 		<hr>
-		<div class="d-flex">
-			<div class="col-md-9">
-				<table class="table caption-top table table-bordered">
-					<caption class="fs-5">상품 정보</caption>
-					<tr>
-						<th class="col-md-2">구분</th>
-						<th class="col-md-5">상품정보</th>
-						<th class="col-md-2">상품금액</th>
-						<th class="col-md-3">최종금액</th>
-					</tr>
-					<tr>
-						<td>렌터카</td>
-						<td>
-							<p>
-								<span class = "fw-bolder">[제주공항렌트카] 더 뉴 레이</span>
-								휘발유 | 자차포함-고급자차
-								2023.03.30 12:00 ~ 2023.03.31 12:00
-							</p>
-						</td>
-						<td>62,000 원</td>
-						<td>62,000 원</td>
-					</tr>
-				</table>
-			</div>
-			<div class="col-md-2 ms-3">
-				<table class="table table-secondary caption-top p-3">
-					<caption class="fs-5">결제 정보</caption>
-					<tbody>
-						<tr>
-							<th class = "col-md-4">최종 결제 금액</th>
-							<td class = "text-end">성인 2 / 아동 0</td>
-						</tr>
-						<tr>
-							<th class = "col-md-4">
-							<td class = "text-end">
-								<p><span style = "font-size : 20px; color : #0070c0; font-weight: bolder;">108,900</span> 원</p>
-								<span class="smallCaption text-secondary fw-light" style = "color : #808080; font-size : 12px;">
-									CornerToCorner 마일리지 108 적립
-								</span>
-							</td>
-						</tr>
-						<tr>
-							<th class = "col-md-4">총 상품 금액</th>
-							<td class = "text-end">108,900 원</td>
-						</tr>
-						<tr>
-							<th class = "col-md-4">마일리지 사용</th>
-							<td class = "text-end">1,500</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-							<th class = "col-md-4">결제할 금액</th>
-							<td class = "text-end">107,400 원</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
+		<div class="col-md-9">
+			<table class="table caption-top table table-bordered">
+				<caption class="fs-5">상품 정보</caption>
+				<tr>
+					<th class="col-md-2">구분</th>
+					<th class="col-md-5">상품정보</th>
+					<th class="col-md-2">상품금액</th>
+					<th class="col-md-3">최종금액</th>
+				</tr>
+				<tr>
+					<td>렌터카</td>
+					<td>
+						<p>
+							<span class = "fw-bolder">[제주공항렌트카] 더 뉴 레이</span>
+							휘발유 | 자차포함-고급자차
+							2023.03.30 12:00 ~ 2023.03.31 12:00
+						</p>
+					</td>
+					<td>62,000 원</td>
+					<td>62,000 원</td>
+				</tr>
+			</table>
 		</div>
 		<form class="col-md-9">
 			<div class="mt-3">
 				<table class="table caption-top table table-bordered">
-					<caption class="fs-5">투숙자 정보</caption>
-					<caption class="fs-6">객실 1 성인 1</caption>
+					<caption class="fs-5">예약자 정보</caption>
 					<tr>
-						<th class="table-active">성명(한글)</th>
-						<td colspan="4"><input type="text" placeholder="성함을 입력해주세요." required></td>
+						<th class="table-active">이름</th>
+						<td colspan="4"><input type="text" placeholder="이영민"></td>
 					</tr>
 					<tr>
-						<th class="table-active">생년월일</th>
-						<td><input type="text" placeholder="생년월일 8자리를 입력해주세요." 	required></td>
-						<th class="table-active">성별</th>
-						<td>
-							<input type="radio" id="man" name="gender" value="man" required /> <label for="man">남성</label>
-							<input type="radio"	id="woman" name="gender" value="woman" /> <label for="woman">여성</label>
-						</td>
-					</tr>
-					<tr>
-						<th class="table-active">연락처</th>
-						<td><input type="tel"></td>
 						<th class="table-active">이메일</th>
-						<td><input type="email" placeholder="dmsqls901@kakao.com" required oninvalid="this.setCustomValidity('이메일을 입럭해주세요')" oninput="this.setCustomValidity('')"></td>
+						<td><input type="text" placeholder="zzz.zzz@com"></td>
+					</tr>
+					<tr>
+						<th class="table-active">휴대폰</th>
+						<td><input type="text" placeholder="010-1234-5678"></td>
 					</tr>
 				</table>
 			</div>
@@ -124,9 +80,18 @@
 			</div>
 			<div class="mt-3">
 				<p class="fs-5 border-bottom">결제수단</p>
-				<button type = "button" class = "btn btn btn-outline-dark btn-lg">신용카드</button>
-				<button type = "button" class = "btn btn btn-outline-dark btn-lg">무통장입금</button>
-				<button type = "button" class = "btn btn btn-outline-dark btn-lg">핸드폰결제</button>
+				<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+				</div>
 			</div>
 		</form>
 	</div>
