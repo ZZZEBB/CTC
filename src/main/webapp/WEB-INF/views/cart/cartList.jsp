@@ -9,6 +9,7 @@
 <html>
 <head>
 <script type="text/javascript">
+
 window.onpageshow = function(event) {
     if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
    // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
@@ -298,6 +299,17 @@ function fn_order_all_cart_goods(){
 			</div>
 		</div>
 	</div>
+			
+			<!-- <c:choose>
+				<c:when test="${empty eventLists}">
+					<h3>장바구니에 추가된 상품이 없습니다.</h3>
+				</c:when>
+				<c:otherwise>
+					<c:forEach var = "event" items = "${eventLists}">
+						
+					</c:forEach>
+				</c:otherwise>
+			</c:choose> -->
 
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

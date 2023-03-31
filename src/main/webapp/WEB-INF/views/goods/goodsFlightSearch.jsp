@@ -26,177 +26,179 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-//출발지에따라 도착지가 변경되는창
- function chageStartSelect(){ 
-   
-   var selectList = document.getElementById("searchtitle1")
-   
-   if(selectList.options[selectList.selectedIndex].value == "김포"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "김해"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "제주"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "대구"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "사천" || selectList.options[selectList.selectedIndex].value ==  "포항/경주" ||
-         selectList.options[selectList.selectedIndex].value == "광주" || selectList.options[selectList.selectedIndex].value == "무안" || 
-         selectList.options[selectList.selectedIndex].value == '울산' ){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "횡성/원주" || selectList.options[selectList.selectedIndex].value == "군산" ||
-         selectList.options[selectList.selectedIndex].value == "청주" ){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "여수"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="";
-      document.getElementById('searchtitletwo8').style.display="none";
-   }
-   if(selectList.options[selectList.selectedIndex].value == "양양"){
-      alert("출발지가 설정되었습니다.");
-      document.getElementById('searchtitletwo').style.display="none";
-      document.getElementById('searchtitletwo1').style.display="none";
-      document.getElementById('searchtitletwo2').style.display="none";
-      document.getElementById('searchtitletwo3').style.display="none";
-      document.getElementById('searchtitletwo4').style.display="none";
-      document.getElementById('searchtitletwo5').style.display="none";
-      document.getElementById('searchtitletwo6').style.display="none";
-      document.getElementById('searchtitletwo7').style.display="none";
-      document.getElementById('searchtitletwo8').style.display="";
-   }
-  
-} 
-/* 왕복을눌렀을때 */
-function changelong(){
-   
-   var selectList = document.getElementById("search1")
-        
-      
-}
 
-/* 편도를 눌렀을때 */
-function changesort(){
-   
-   var selectList = document.getElementById("search1")
-   
-}
-/* 편도 왕복 버튼 */
-function active(id){
-     if(activebutton != null){
-       document.getElementById(activebutton).style['background-color'] = '#eee';
-       document.getElementById(activebutton).style['color'] = '#000';
-     }
-    document.getElementById(id).style['background-color'] = '#8DE4FC';
-     document.getElementById(id).style['color'] = 'white';
-  
-     activebutton = id;
-     
-
-}
+	//출발지에따라 도착지가 변경되는창
+	 function chageStartSelect(){ 
+	   
+	   var selectList = document.getElementById("searchtitle1")
+	   
+	   if(selectList.options[selectList.selectedIndex].value == "김포"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "김해"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "제주"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "대구"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "사천" || selectList.options[selectList.selectedIndex].value ==  "포항/경주" ||
+	         selectList.options[selectList.selectedIndex].value == "광주" || selectList.options[selectList.selectedIndex].value == "무안" || 
+	         selectList.options[selectList.selectedIndex].value == '울산' ){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "횡성/원주" || selectList.options[selectList.selectedIndex].value == "군산" ||
+	         selectList.options[selectList.selectedIndex].value == "청주" ){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "여수"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="";
+	      document.getElementById('searchtitletwo8').style.display="none";
+	   }
+	   if(selectList.options[selectList.selectedIndex].value == "양양"){
+	      alert("출발지가 설정되었습니다.");
+	      document.getElementById('searchtitletwo').style.display="none";
+	      document.getElementById('searchtitletwo1').style.display="none";
+	      document.getElementById('searchtitletwo2').style.display="none";
+	      document.getElementById('searchtitletwo3').style.display="none";
+	      document.getElementById('searchtitletwo4').style.display="none";
+	      document.getElementById('searchtitletwo5').style.display="none";
+	      document.getElementById('searchtitletwo6').style.display="none";
+	      document.getElementById('searchtitletwo7').style.display="none";
+	      document.getElementById('searchtitletwo8').style.display="";
+	   }
+	  
+	} 
+	
+	/* 왕복을눌렀을때 */
+	function changelong(){
+	   
+	   var selectList = document.getElementById("search1")
+	        
+	}
+	
+	/* 편도를 눌렀을때 */
+	function changesort(){
+	   
+	   var selectList = document.getElementById("search1")
+	   
+	}
+	
+	/* 편도 왕복 버튼 */
+	function active(id){
+	     if(activebutton != null){
+	       document.getElementById(activebutton).style['background-color'] = '#eee';
+	       document.getElementById(activebutton).style['color'] = '#000';
+	     }
+	    document.getElementById(id).style['background-color'] = '#8DE4FC';
+	     document.getElementById(id).style['color'] = 'white';
+	  
+	     activebutton = id;
+	
+	}
 
 </script>
 
 <style>
 
-#searchtitle1 , #searchtitletwo,#searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3
-, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 , #tikey{
-   width:250px;
-   margin-right:30px;
-   border:2px solid #4DD7F9;
-   border-radius:5px;
-   height:33px;
-   text-align: center;
-}
-
-#searchtitle1,#searchtitletwo , #searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3 , #tikey
-, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 ,#searchtitletwo option{
-   background-color:#8DE4FC;
-}
-#seatclass{
-   background-color:#8DE4FC;
-   border:2px solid #4DD7F9;
-   border-radius:5px;
-   height:33px;
-   text-align: center;
-   vertical-align:center;
-   color:black;
-}
-#calender{
-   background-color:#8DE4FC;
-   border:2px solid #4DD7F9;
-   border-radius:5px;
-   height:33px;
-   text-align: center;
-}
-.productTag{
-   margin:auto 10px;
-}
+	#searchtitle1 , #searchtitletwo,#searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 , #tikey {
+		width:250px;
+		margin-right:30px;
+		border:2px solid #4DD7F9;
+		border-radius:5px;
+		height:33px;
+		text-align: center;
+	}
+	
+	#searchtitle1,#searchtitletwo , #searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3 , #tikey, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 ,#searchtitletwo option {
+		background-color:#8DE4FC;
+	}
+	
+	#seatclass {
+		background-color:#8DE4FC;
+		border:2px solid #4DD7F9;
+		border-radius:5px;
+		height:33px;
+		text-align: center;
+		vertical-align:center;
+		color:black;
+	}
+	
+	#calender {
+		background-color:#8DE4FC;
+		border:2px solid #4DD7F9;
+		border-radius:5px;
+		height:33px;
+		text-align: center;
+	}
+	
+	.productTag {
+		margin:auto 10px;
+	}
 </style>
 </head>
 <body>
@@ -311,26 +313,26 @@ function active(id){
 
 <!-- 본문 상품 -->
 <c:forEach var="product" items="${keyword}" >
-<c:if test="${product.goods_category == '항공' }">
-<form class="container row col" style="text-align:center; margin-left:11%;">
-   <div id="product_center" class="container d-flex align-items-end justify-content-center" style="margin:10px auto;">
-   <p style="margin:0px;">${product.goods_name}</p> <!-- 항공사이름 -->
-   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale.png" width="30px" height="25px"> <!-- 가격 할인 이미지 -->
-   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/Mileagelogo.jpg" width="100px" height="25px"> <!-- 가격 할인 이미지 -->
-   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale2.png" width="25px;" height="25px"> <!-- 가격 할인 이미지 -->
-    <span class="product_time"><span class="productTag"><fmt:formatDate value="${product.goods_departure_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_departure_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_departures}공항</span>
-    <img alt="air_mini" src="${contextPath}/resources/image/flight/air.png" width="15px" height="15px">
-    <span class="productTag"><fmt:formatDate value="${product.goods_arrival_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_arrival_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_arrivals}공항</span>
-    <span class="product_price">가격 : ${product.goods_saleprice}원</span>
-       <span class="button_css">
-         <button type="submit">지금예약</button>
-         <button type="submit">장바구니</button>
-      </span>
-   </span>
-   </div>
-   <hr id="product_hr">
-</form>   
-</c:if>
+	<c:if test="${product.goods_category == '항공' }">
+		<form class="container row col" style="text-align:center; margin-left:11%;">
+		   <div id="product_center" class="container d-flex align-items-end justify-content-center" style="margin:10px auto;">
+			   <p style="margin:0px;">${product.goods_name}</p> <!-- 항공사이름 -->
+			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale.png" width="30px" height="25px"> <!-- 가격 할인 이미지 -->
+			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/Mileagelogo.jpg" width="100px" height="25px"> <!-- 가격 할인 이미지 -->
+			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale2.png" width="25px;" height="25px"> <!-- 가격 할인 이미지 -->
+			    <span class="product_time"><span class="productTag"><fmt:formatDate value="${product.goods_departure_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_departure_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_departures}공항</span>
+				    <img alt="air_mini" src="${contextPath}/resources/image/flight/air.png" width="15px" height="15px">
+				    <span class="productTag"><fmt:formatDate value="${product.goods_arrival_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_arrival_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_arrivals}공항</span>
+				    <span class="product_price">가격 : ${product.goods_saleprice}원</span>
+				       <span class="button_css">
+				         <button type="submit">지금예약</button>
+				         <button type="submit">장바구니</button>
+				      </span>
+			   </span>
+		   </div>
+		   <hr id="product_hr">
+		</form>   
+	</c:if>
 </c:forEach>
    
    <!-- JavaScript Bundle with Popper -->
