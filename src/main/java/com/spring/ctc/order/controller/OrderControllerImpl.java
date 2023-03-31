@@ -20,7 +20,7 @@ public class OrderControllerImpl implements OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	//항공 상품 예약/결제 페이지
+	//상품 예약/결제 페이지
 	@Override
 	@RequestMapping(value= "/order.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView order(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -28,5 +28,14 @@ public class OrderControllerImpl implements OrderController {
 		ModelAndView mav = new ModelAndView(viewName);
 		return mav;
 	}
+	
+	//상품 예약/결제 완료 페이지
+		@Override
+		@RequestMapping(value= "/finishOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+		public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+			String viewName = (String)request.getAttribute("viewName");
+			ModelAndView mav = new ModelAndView(viewName);
+			return mav;
+		}
 	
 }

@@ -8,4 +8,5 @@ import org.springframework.web.servlet.ModelAndView;
 public interface OrderController {
 	
 	public ModelAndView order(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

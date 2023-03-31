@@ -201,10 +201,8 @@ function active(id){
 </head>
 <body>
 
-
-
 <%-- <form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get"> --%> 
-<form style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get">
+<form id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get">
    <div class = "container">
        <span>
         <select id="tikey" name="tikey" style="width:7%;">
@@ -315,7 +313,7 @@ function active(id){
 <c:forEach var="product" items="${keyword}" >
 <c:if test="${product.goods_category == '항공' }">
 <form class="container row col" style="text-align:center; margin-left:11%;">
-   <div id="product_center" class="container container d-flex align-items-end justify-content-center" style="margin:10px auto;">
+   <div id="product_center" class="container d-flex align-items-end justify-content-center" style="margin:10px auto;">
    <p style="margin:0px;">${product.goods_name}</p> <!-- 항공사이름 -->
    <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale.png" width="30px" height="25px"> <!-- 가격 할인 이미지 -->
    <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/Mileagelogo.jpg" width="100px" height="25px"> <!-- 가격 할인 이미지 -->

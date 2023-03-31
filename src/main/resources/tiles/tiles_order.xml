@@ -15,4 +15,9 @@
 		<put-attribute name="body" value="/WEB-INF/views/order/order.jsp" />
 	</definition>
 	
+	<definition name="/order/finishOrder" extends="baseLayout">
+		<put-attribute name="title" value="상품 예약/결제 완료" />
+		<put-attribute name="body" value="/WEB-INF/views/order/finishOrder.jsp" />
+	</definition>
+	
 </tiles-definitions>
