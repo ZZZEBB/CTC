@@ -115,7 +115,7 @@
                             
                                <li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
                                <li><a href="${contextPath}/mypage/myInfo.do" class="nav-link px-2 text-dark">마이페이지</a></li>
-                               <li><a href="${contextPath}/cart/myCartList.do" class="nav-link px-2 text-dark">장바구니</a></li>
+                               <li><a href="${contextPath}/cart/cartList.do" class="nav-link px-2 text-dark">장바구니</a></li>
                                <li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark">고객센터</a></li>
                                <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
                             

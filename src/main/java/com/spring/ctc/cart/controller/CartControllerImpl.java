@@ -22,89 +22,89 @@ import com.spring.ctc.joinandlogin.vo.MemberVO;
 @Controller("cartController")
 @RequestMapping(value = "/cart")
 public class CartControllerImpl implements CartController {
-   @Autowired
-   private CartService cartService;
-   @Autowired
-   private CartVO cartVO;
-   @Autowired
-   private MemberVO memberVO;
+	@Autowired
+	private CartService cartService;
+	@Autowired
+	private CartVO cartVO;
+	@Autowired
+	private MemberVO memberVO;
 
-   // 장바구니 페이지 이동(/cartList.do)
-   @Override
-   @RequestMapping(value = "/cartList.do", method = { RequestMethod.POST, RequestMethod.GET })
-   public ModelAndView myCartMain(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	// 장바구니 페이지 이동(/cartList.do)
+	@Override
+	@RequestMapping(value = "/cartList.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public ModelAndView myCartMain(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-      String viewName = (String) request.getAttribute("viewName");
-      ModelAndView mav = new ModelAndView(viewName);
-      HttpSession session = request.getSession();
-      MemberVO memberVO = (MemberVO) session.getAttribute("memberInfo");
-      String member_id = memberVO.getMember_id();
-      cartVO.setMember_id(member_id);
-      System.out.println(member_id);
-      System.out.println(memberVO.getMember_id());
-      Map<String, List> cartMap = cartService.cartList(cartVO);
-      session.setAttribute("cartMap", cartMap);
-      
-      return mav;
-   }
-   
-   @Override
-   @RequestMapping(value="/modifyCartQty.do" ,method = RequestMethod.POST)
-   public @ResponseBody String  modifyCartQty(@RequestParam("goods_code") String goods_code,
-                                            @RequestParam("cart_headcount") int cart_headcount,
-                                             HttpServletRequest request, HttpServletResponse response)  throws Exception{
-      HttpSession session=request.getSession();
-      memberVO=(MemberVO)session.getAttribute("memberInfo");
-      String member_id=memberVO.getMember_id();
-      cartVO.setGoods_code(goods_code);
-      cartVO.setMember_id(member_id);
-      cartVO.setCart_headcount(cart_headcount);
-      boolean result=cartService.modifyCartQty(cartVO);
-      
-      if(result==true){
-         return "modify_success";
-      }else{
-           return "modify_failed";   
-      }
-      
-   }
-
-
-
-   @Override
-   @RequestMapping(value="/addGoodsInCart.do" ,method = RequestMethod.POST,produces = "application/text; charset=utf8")
-   public @ResponseBody String addGoodsInCart(
-         @RequestParam("goods_code")   String goods_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
-      HttpSession session=request.getSession();
-      memberVO=(MemberVO)session.getAttribute("memberInfo");
-      String member_id=memberVO.getMember_id();
-      cartVO.setGoods_code(goods_code);
-      cartVO.setMember_id(member_id); 
-      boolean isAreadyExisted=cartService.findCartGoods(cartVO);
-      System.out.println("isAreadyExisted:"+isAreadyExisted);
-      if(isAreadyExisted==false){
-         return "already_existed";
-      }else{
-         cartService.addGoodsInCart(cartVO);
-         return "add_success";
-      }
-   }
+		String viewName = (String) request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		HttpSession session = request.getSession();
+		MemberVO memberVO = (MemberVO) session.getAttribute("memberInfo");
+		String member_id = memberVO.getMember_id();
+		cartVO.setMember_id(member_id);
+		System.out.println(member_id);
+		System.out.println(memberVO.getMember_id());
+		Map<String, List> cartMap = cartService.cartList(cartVO);
+		session.setAttribute("cartMap", cartMap);
+		
+		return mav;
+	}
+	
+	@Override
+	@RequestMapping(value="/modifyCartQty.do" ,method = RequestMethod.POST)
+	public @ResponseBody String  modifyCartQty(@RequestParam("goods_code") String goods_code,
+			                                   @RequestParam("cart_headcount") int cart_headcount,
+			                                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
+		HttpSession session=request.getSession();
+		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		String member_id=memberVO.getMember_id();
+		cartVO.setGoods_code(goods_code);
+		cartVO.setMember_id(member_id);
+		cartVO.setCart_headcount(cart_headcount);
+		boolean result=cartService.modifyCartQty(cartVO);
+		
+		if(result==true){
+		   return "modify_success";
+		}else{
+			  return "modify_failed";	
+		}
+		
+	}
 
 
 
-   @Override
-   @RequestMapping(value="/removeCartGoods.do" ,method = RequestMethod.POST)
-   public ModelAndView removeCartGoods(@RequestParam("cart_id") int cart_id, HttpServletRequest request, HttpServletResponse response)
-         throws Exception {
-      ModelAndView mav=new ModelAndView();
-      cartService.removeCartGoods(cart_id);
-      mav.setViewName("redirect:/cart/myCartList.do");
-      return mav;
-   }
-   
-   
-   
-   
+	@Override
+	@RequestMapping(value="/addGoodsInCart.do" ,method = RequestMethod.POST,produces = "application/text; charset=utf8")
+	public @ResponseBody String addGoodsInCart(
+			@RequestParam("goods_code")	String goods_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session=request.getSession();
+		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		String member_id=memberVO.getMember_id();
+		cartVO.setGoods_code(goods_code);
+		cartVO.setMember_id(member_id); 
+		boolean isAreadyExisted=cartService.findCartGoods(cartVO);
+		System.out.println("isAreadyExisted:"+isAreadyExisted);
+		if(isAreadyExisted==true){
+			return "already_existed";
+		}else{
+			cartService.addGoodsInCart(cartVO);
+			return "add_success";
+		}
+	}
 
-   
+
+
+	@Override
+	@RequestMapping(value="/removeCartGoods.do" ,method = RequestMethod.POST)
+	public ModelAndView removeCartGoods(@RequestParam("cart_id") int cart_id, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		ModelAndView mav=new ModelAndView();
+		cartService.removeCartGoods(cart_id);
+		mav.setViewName("redirect:/cart/myCartList.do");
+		return mav;
+	}
+	
+	
+	
+	
+
+	
 }

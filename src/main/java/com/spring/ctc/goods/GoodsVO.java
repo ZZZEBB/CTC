@@ -31,6 +31,9 @@ public class GoodsVO {
 	private int goods_mileage;
 	private Date goods_entered_date;
 	
+	public GoodsVO() {
+	}
+	
 	public String getCom_id() {
 		return com_id;
 	}
@@ -182,5 +185,6 @@ public class GoodsVO {
 		this.goods_entered_date = goods_entered_date;
 	}
 	
+
 	
 }
