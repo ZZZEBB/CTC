@@ -66,8 +66,8 @@
 		<![CDATA[ update cart set cart_headcount=#{cart_headcount} where member_id=#{member_id} and goods_code=#{goods_code} ]]>
 	</update>
 	
-	<delete id="deleteCartGoods" parameterType="int">
-		<![CDATA[ delete from cart where cart_id=#{cart_id} ]]>
+	<delete id="deleteCartGoods" parameterType="java.util.Map">
+		<![CDATA[ delete from cart where goods_code=#{goods_code} and member_id = #{member_id} ]]>
 	</delete>
 	
 	<select id="selectMaxCartId" resultType="int">

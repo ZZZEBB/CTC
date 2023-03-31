@@ -50,8 +50,8 @@ public class CartServiceImpl implements CartService {
 	 
 
 	@Override
-	public void removeCartGoods(int cart_id) throws Exception {
-		cartDAO.deleteCartGoods(cart_id);
+	public void removeCartGoods(Map <String,String> goods) throws Exception {
+		cartDAO.deleteCartGoods(goods);
 		
 	}
 	

@@ -9,7 +9,6 @@
 <html>
 <head>
 <script type="text/javascript">
-
 window.onpageshow = function(event) {
     if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
    // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
@@ -120,19 +119,6 @@ function modify_cart_qty(goods_id,bookPrice,index){
 	}); //end ajax	
 }
 
-function delete_cart_goods(cart_id){
-	var cart_id=Number(cart_id);
-	var formObj=document.createElement("form");
-	var i_cart = document.createElement("input");
-	i_cart.name="cart_id";
-	i_cart.value=cart_id;
-	
-	formObj.appendChild(i_cart);
-    document.body.appendChild(formObj); 
-    formObj.method="post";
-    formObj.action="${contextPath}/cart/removeCartGoods.do";
-    formObj.submit();
-}
 
 function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	var total_price,final_total_price,_goods_qty;
@@ -205,6 +191,7 @@ function fn_order_all_cart_goods(){
 }
 
 
+
 </script>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -255,6 +242,7 @@ function fn_order_all_cart_goods(){
 					<c:otherwise>
 					<c:forEach var="cart" items="${myCartList}">
 					${cart.goods_code}
+					${cart.member_id}
 					<tbody>
 						<tr>
 							<th scope="row"><input type = "checkbox" /></th>
@@ -286,7 +274,7 @@ function fn_order_all_cart_goods(){
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
 							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
-							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
+							<td class = "col"><a href="${contextPath}/cart/removeCartGoods.do?goods_code=${cart.goods_code}&member_id=${cart.member_id}"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 					</c:forEach>

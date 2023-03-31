@@ -91,14 +91,12 @@ public class CartControllerImpl implements CartController {
 	}
 
 
-
 	@Override
-	@RequestMapping(value="/removeCartGoods.do" ,method = RequestMethod.POST)
-	public ModelAndView removeCartGoods(@RequestParam("cart_id") int cart_id, HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
+	@RequestMapping(value="/removeCartGoods.do" ,method = {RequestMethod.POST , RequestMethod.GET})
+	public ModelAndView removeCartGoods(@RequestParam Map<String,String> goods , HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav=new ModelAndView();
-		cartService.removeCartGoods(cart_id);
-		mav.setViewName("redirect:/cart/myCartList.do");
+		cartService.removeCartGoods(goods);
+		mav.setViewName("redirect:/cart/cartList.do");
 		return mav;
 	}
 	

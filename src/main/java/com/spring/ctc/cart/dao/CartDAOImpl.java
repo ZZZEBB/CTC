@@ -1,14 +1,15 @@
 package com.spring.ctc.cart.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.spring.ctc.goods.GoodsVO;
 import com.spring.ctc.cart.vo.CartVO;
+import com.spring.ctc.goods.GoodsVO;
 
 @Repository("cartDAO")
 public class CartDAOImpl implements CartDAO {
@@ -48,8 +49,8 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Override
-	public void deleteCartGoods(int cart_id) throws DataAccessException {
-		sqlSession.delete("mapper.cart.deleteCartGoods",cart_id);
+	public void deleteCartGoods(Map <String,String> goods) throws DataAccessException {
+		sqlSession.delete("mapper.cart.deleteCartGoods",goods);
 		
 	}
 	
