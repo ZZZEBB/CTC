@@ -25,7 +25,7 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
    @Autowired
    private GoodsHotelDAO goodsHotelDAO;
 
-   /* 호텔페이지 */
+   /* 호텔 목록 조회 페이지 */
    @Override
    @RequestMapping(value ="/goodsHotelSearch.do", method = {RequestMethod.GET,RequestMethod.POST}  )
    public ModelAndView goodsHotelSearch(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -33,15 +33,17 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
       List<GoodsVO> hotel = goodsHotelService.selectHotelAllList();
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotel);
+      System.out.println("!@@@@@@@@@@@@@@@@@@" + hotel);
+      System.out.println("@@@@@@@@@@#!#!#!@#!@#" + mav);
       return mav;
    }
 
    /* 호텔상세페이지 */
    @Override
    @RequestMapping(value ="/goodsHotelDetail.do", method = {RequestMethod.GET,RequestMethod.POST}  )
-   public ModelAndView goodsHotelDetail(@RequestParam("hotel_name") String hotel_name, HttpServletRequest request, HttpServletResponse response) throws Exception {
+   public ModelAndView goodsHotelDetail(@RequestParam("hotel_code") String hotel_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsVO> hotelDetail = goodsHotelService.selectHotelDetailList(hotel_name);
+      List<GoodsVO> hotelDetail = goodsHotelService.selectHotelDetailList(hotel_code);
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotelDetail);
       return mav;

@@ -19,8 +19,8 @@ public class GoodsHotelServiceImpl implements GoodsHotelService {
    }
 
    @Override
-   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws Exception {
-      return goodsHotelDAO.selectHotelDetailList(hotel_name);
+   public List<GoodsVO> selectHotelDetailList(String hotel_code) throws Exception {
+      return goodsHotelDAO.selectHotelDetailList(hotel_code);
    }
    
    

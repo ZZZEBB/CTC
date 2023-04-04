@@ -7,6 +7,6 @@ import com.spring.ctc.goods.GoodsVO;
 public interface GoodsHotelService {
    
    public List<GoodsVO> selectHotelAllList() throws Exception;
-   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws Exception; 
+   public List<GoodsVO> selectHotelDetailList(String hotel_code) throws Exception; 
 
 }

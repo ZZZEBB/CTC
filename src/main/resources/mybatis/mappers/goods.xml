@@ -50,12 +50,12 @@
 	
 	<!-- 호텔 목록 조회 -->
 	<select id="hotelAllList" parameterType="java.util.Map" resultType="goodsVO">
-		SELECT goods_code, goods_name, goods_exp, class_grade  FROM goods
+		SELECT * FROM goods
 	</select>
 	
 	<!-- 호텔 상세페이지 -->
 	<select id="hotelDetailList" parameterType="java.util.Map" resultType="goodsVO">
-		SELECT * FROM goods WHERE goods_name = #{goods_name}
+		SELECT * FROM goods WHERE hotel_code = #{hotel_code}
 	</select>
 	
 	<!-- 패키지 목록 조회 -->

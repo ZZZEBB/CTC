@@ -184,7 +184,4 @@ public class GoodsVO {
 	public void setGoods_entered_date(Date goods_entered_date) {
 		this.goods_entered_date = goods_entered_date;
 	}
-	
-
-	
 }

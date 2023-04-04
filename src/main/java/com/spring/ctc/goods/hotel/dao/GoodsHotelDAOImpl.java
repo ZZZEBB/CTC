@@ -23,8 +23,8 @@ public class GoodsHotelDAOImpl implements GoodsHotelDAO {
    }
 
    @Override
-   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws DataAccessException {
-      List<GoodsVO> hotel = sqlsession.selectList("mapper.goods.hotelDetailList", hotel_name);
+   public List<GoodsVO> selectHotelDetailList(String hotel_code) throws DataAccessException {
+      List<GoodsVO> hotel = sqlsession.selectList("mapper.goods.hotelDetailList", hotel_code);
       return hotel;
    }
    

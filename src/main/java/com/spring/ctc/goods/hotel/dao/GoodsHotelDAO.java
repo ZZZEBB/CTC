@@ -8,6 +8,6 @@ import com.spring.ctc.goods.GoodsVO;
 
 public interface GoodsHotelDAO {
    public List<GoodsVO> selectHotelAllList() throws DataAccessException;
-   public List<GoodsVO> selectHotelDetailList(String hotel_name) throws DataAccessException; 
+   public List<GoodsVO> selectHotelDetailList(String hotel_code) throws DataAccessException; 
 
 }
