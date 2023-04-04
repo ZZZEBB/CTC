@@ -11,7 +11,6 @@
 		<result property="cart_headcount" column="cart_headcount"/>
 		<result property="creDate" column="creDate"/>
 	</resultMap>
-	
 	<resultMap id="goodsResult" type="goodsVO">
 		<result property="com_id" column="com_id"/>
 		<result property="airport_num" column="airport_num"/>
@@ -41,16 +40,14 @@
 	</resultMap>
 	
 	<select id="selectCartList" parameterType="cartVO" resultMap="cartResult">
-		<![CDATA[ select * from cart where member_id = #{member_id} ]]>
+		<![CDATA[ select cart_id, goods_code, member_id, cart_headcount, cart_credate from cart where member_id=#{member_id} order by goods_code ]]>
 	</select>
 	
 	<!--  장바구니 테이블에 등록된 상품 번호를 이용해 상품 정보를 조회  -->
 	<select id="selectGoodsList" resultMap="goodsResult" parameterType="java.util.Map">
-		<![CDATA[ select * from goods g, cart c where g.goods_code = c.goods_code ]]>
-	<!--  <foreach item="item" collection="list" open="(" separator="," close=")">
-				#{item.goods_code}
-			</foreach>
-			order by goods_code  -->
+		<![CDATA[ SELECT g.* FROM goods g WHERE g.goods_code IN ]]>
+		<foreach item="item" collection="list" open="(" separator="," close=")"> #{item.goods_code} </foreach>
+		ORDER BY g.goods_code
 	</select>
 	
 	<!--  장바구니 테이블에 추가하기전에 그 상품 번호가 장바구니에 담겨있는지 조회  -->

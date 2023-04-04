@@ -215,14 +215,14 @@ function fn_order_all_cart_goods(){
 		<div class="row justify-content-center">
 			<span class = "d-flex mt-2 fs-3 fw-bold">장바구니</span>
 			<div class = "container d-flex col-md-12 justify-content-end">
-				<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">선택삭제</a>
+				<!-- 구현 불가능<a href="#" class = "btn btn-outline-dark btn-sm my-2 mx-1">선택삭제</a> -->
 			</div>
 			<hr class = "event_hr col-md-12">
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-						<th scope="col"><input type = "checkbox"></th>
+						<th scope="col"><!-- 구현불가능 <input type = "checkbox"> --></th>
 						<th scope="col">구분</th>
 						<th scope="col">상품정보</th>
 						<th scope="col">금액</th>
@@ -240,41 +240,24 @@ function fn_order_all_cart_goods(){
 				     </tr>
 				    </c:when>
 					<c:otherwise>
-					<c:forEach var="cart" items="${myCartList}">
-					${cart.goods_code}
-					${cart.member_id}
+					<c:forEach var="item" items="${myGoodsList}" varStatus="status">
+					<c:set var="cart_headcount" value="${myCartList[status.count-1].cart_headcount}"/>
 					<tbody>
 						<tr>
-							<th scope="row"><input type = "checkbox" /></th>
+							<th scope="row"></th>
 							<td class = "col-md-3">
 								<img src="${contextPath}/resources/image/package/pckItem01.jpg" width="60%">
-								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
+								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >${item.goods_category}</span>
 							</td>
 							<td class = "col-md-5">
-								<p class = "fs-5 fw-bolder">${item.goods_code}</p>
+								<p class = "fs-5 fw-bolder">${item.goods_name}</p>
 								<br>
-								<small class="smallCaption text-secondary"><br>출발기간 : 2023.03.22 ~ 2023.03.25</small>
-								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
+								<small class="smallCaption text-secondary"><br>출발기간 :<fmt:formatDate value="${item.goods_departure_date}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${item.goods_arrival_date}" pattern="yyyy-MM-dd"/></small>
+								<small class="smallCaption text-secondary"><br>예약인원 : ${cart_headcount}명</small>
 							</td>
-							<td class = "col-md-2"><p class = "fs-5">529,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/flightOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
-							<td class = "col"><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td>
-						</tr>
-						<tr>
-							<th scope="row"><input type = "checkbox" /></th>
-							<td class = "col-md-3">
-								<img src="${contextPath}/resources/image/package/pckItem02.jpg" width="60%">
-								<span class="badge badge-light" style = "font-size : 15px; color : black; border : 1px solid grey;" >패키지</span>
-							</td>
-							<td class = "col-md-5">
-								<p class = "fs-5 fw-bolder">${item.goods_name }</p>
-								<br>
-								<small class="smallCaption text-secondary"><br>출발기간 : 2023.03.22 ~ 2023.03.25</small>
-								<small class="smallCaption text-secondary"><br>예약인원 : 2명</small>
-							</td>
-							<td class = "col-md-2"><p class = "fs-5">399,000<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/hotelOrder.do'" style = "background-color : #00aff0;">즉시예약</button></td>
-							<td class = "col"><a href="${contextPath}/cart/removeCartGoods.do?goods_code=${cart.goods_code}&member_id=${cart.member_id}"><img src = "${contextPath}/resources/image/x.png"></a></td>
+							<td class = "col-md-2"><p class = "fs-5">${cart_headcount != 0 ? item.goods_saleprice * cart_headcount : item.goods_saleprice}<small class="smallCaption text-secondary"> 원</small></p></td>
+							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/order.do'" style = "background-color : #00aff0;">즉시예약</button></td>
+							<td class = "col"><a href="${contextPath}/cart/removeCartGoods.do?goods_code=${item.goods_code}&member_id=${myCartList[status.index].member_id}"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>
 					</c:forEach>
@@ -282,23 +265,12 @@ function fn_order_all_cart_goods(){
 					</c:choose>
 				</table>
 				<div class = "container d-flex col-md-12 justify-content-end">
-					<button class = "btn btn-md" onclick="location.href='${contextPath}/order/packOrder.do'" style = "background-color : #00aff0;">예약하기</button>
+					<button class = "btn btn-md" onclick="location.href='${contextPath}/order/order.do'" style = "background-color : #00aff0;">예약하기</button>
 				</div>
 			</div>
 		</div>
 	</div>
 			
-			<!-- <c:choose>
-				<c:when test="${empty eventLists}">
-					<h3>장바구니에 추가된 상품이 없습니다.</h3>
-				</c:when>
-				<c:otherwise>
-					<c:forEach var = "event" items = "${eventLists}">
-						
-					</c:forEach>
-				</c:otherwise>
-			</c:choose> -->
-
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
