@@ -55,7 +55,7 @@
 	
 	<!-- 호텔 상세페이지 -->
 	<select id="hotelDetailList" parameterType="java.util.Map" resultType="goodsVO">
-		SELECT * FROM goods WHERE hotel_code = #{hotel_code}
+		SELECT * FROM goods WHERE goods_code = #{goods_code}
 	</select>
 	
 	<!-- 패키지 목록 조회 -->

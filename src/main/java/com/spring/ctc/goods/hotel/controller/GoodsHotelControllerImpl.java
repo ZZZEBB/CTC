@@ -33,17 +33,15 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
       List<GoodsVO> hotel = goodsHotelService.selectHotelAllList();
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotel);
-      System.out.println("!@@@@@@@@@@@@@@@@@@" + hotel);
-      System.out.println("@@@@@@@@@@#!#!#!@#!@#" + mav);
       return mav;
    }
 
    /* 호텔상세페이지 */
    @Override
    @RequestMapping(value ="/goodsHotelDetail.do", method = {RequestMethod.GET,RequestMethod.POST}  )
-   public ModelAndView goodsHotelDetail(@RequestParam("hotel_code") String hotel_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
+   public ModelAndView goodsHotelDetail(@RequestParam("goods_code") String goods_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
       String viewName=(String)request.getAttribute("viewName");
-      List<GoodsVO> hotelDetail = goodsHotelService.selectHotelDetailList(hotel_code);
+      List<GoodsVO> hotelDetail = goodsHotelService.selectHotelDetailList(goods_code);
       ModelAndView mav = new ModelAndView(viewName);
       mav.addObject("hotelList", hotelDetail);
       return mav;

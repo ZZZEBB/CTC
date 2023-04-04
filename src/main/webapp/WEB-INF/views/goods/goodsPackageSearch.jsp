@@ -22,19 +22,19 @@
 </style>
 </head>
 <body>
-<form id="search"> 
-   <span> 
-      <input type="text" name="search" id="searchtitle"  placeholder="패키지 검색"/> 
-         출발일 <span id="searchtitle1"> 
-          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
-    </span> 
-          도착일 <input class="date" type="date" name="start"/> <!-- 도착달력 --> 
-    </span>
-       <button type="submit" class="btn btn-link">
-             <img src="${contextPath}/resources/image/search.png" alt="검색" width="20px" height="25px"> <!-- submit 검색버튼 -->
-       </button>
-</form>
-
+	<form id="search"> 
+	   <span> 
+	      <input type="text" name="search" id="searchtitle"  placeholder="패키지 검색"/> 
+	         출발일 <span id="searchtitle1"> 
+	          <input class="date" type="date" name="start"/> <!-- 출발달력 -->
+	    </span> 
+	          도착일 <input class="date" type="date" name="start"/> <!-- 도착달력 --> 
+	    </span>
+	       <button type="submit" class="btn btn-link">
+	             <img src="${contextPath}/resources/image/search.png" alt="검색" width="20px" height="25px"> <!-- submit 검색버튼 -->
+	       </button>
+	</form>
+	
    <div class="container">
        <div class = "row row-cols-1 row-cols-md-4 g-4">
          <c:forEach var="pack" items="${packList}">
