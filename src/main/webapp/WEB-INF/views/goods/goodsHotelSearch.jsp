@@ -140,7 +140,7 @@
 					<c:if test="${hotel.goods_location == '제주'}">
 						<div class = "col">
 							<div class = "card h-100 border-0">
-								<img src="${contextPath}/resources/image/hotel/CADO220013_4.jpg" class="card-img-top" alt="이벤트상품이미지">
+								<img src="${contextPath}/resources/image/hotel/jejuHtList01.jpg" class="card-img-top" alt="이벤트상품이미지">
 								<div class = "card-body">
 									<p class = "card-text">${hotel.goods_name}</p>
 									<h5 class = "card-title">${hotel.goods_price}<span class = "fs-6"> 원 ~</span></h5>
@@ -173,7 +173,7 @@
 									</div>
 									<div class = "d-flex col-md-3">
 							 			<p>${hotel.goods_saleprice}<span class = "fs-6"> 원 ~</span> 
-										<button type = "button" class=""  onclick="location.href='${contextPath}/goods/goodsHotelDetail.do?goods_code=${hotel.goods_code}'">예약하기</button>
+										<button type = "button" onclick="location.href='${contextPath}/goods/goodsHotelDetail.do?goods_code=${hotel.goods_code}'">예약하기</button>
 									</div>
 								</a>
 							</div>
