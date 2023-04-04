@@ -50,9 +50,7 @@ public class CartControllerImpl implements CartController {
 	
 	@Override
 	@RequestMapping(value="/modifyCartQty.do" ,method = RequestMethod.POST)
-	public @ResponseBody String  modifyCartQty(@RequestParam("goods_code") String goods_code,
-			                                   @RequestParam("cart_headcount") int cart_headcount,
-			                                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
+	public @ResponseBody String  modifyCartQty(@RequestParam("goods_code") String goods_code,@RequestParam("cart_headcount") int cart_headcount, HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
@@ -64,17 +62,15 @@ public class CartControllerImpl implements CartController {
 		if(result==true){
 		   return "modify_success";
 		}else{
-			  return "modify_failed";	
+		  return "modify_failed";	
 		}
 		
 	}
 
 
-
 	@Override
 	@RequestMapping(value="/addGoodsInCart.do" ,method = RequestMethod.POST,produces = "application/text; charset=utf8")
-	public @ResponseBody String addGoodsInCart(
-			@RequestParam("goods_code")	String goods_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public @ResponseBody String addGoodsInCart(@RequestParam("goods_code")	String goods_code, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
@@ -100,9 +96,5 @@ public class CartControllerImpl implements CartController {
 		return mav;
 	}
 	
-	
-	
-	
-
 	
 }

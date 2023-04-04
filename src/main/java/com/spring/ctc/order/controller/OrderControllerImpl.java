@@ -30,12 +30,12 @@ public class OrderControllerImpl implements OrderController {
 	}
 	
 	//상품 예약/결제 완료 페이지
-		@Override
-		@RequestMapping(value= "/finishOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
-		public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
-			String viewName = (String)request.getAttribute("viewName");
-			ModelAndView mav = new ModelAndView(viewName);
-			return mav;
-		}
-	
+	@Override
+	@RequestMapping(value= "/finishOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		String viewName = (String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		return mav;
+	}
+
 }

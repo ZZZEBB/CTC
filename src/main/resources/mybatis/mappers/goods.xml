@@ -50,7 +50,7 @@
 	
 	<!-- 호텔 목록 조회 -->
 	<select id="hotelAllList" parameterType="java.util.Map" resultType="goodsVO">
-		SELECT * FROM goods
+		SELECT goods_code, goods_name, goods_exp, class_grade  FROM goods
 	</select>
 	
 	<!-- 호텔 상세페이지 -->
