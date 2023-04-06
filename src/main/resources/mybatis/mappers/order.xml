@@ -31,12 +31,8 @@
       <result property="goods_category" column="goods_category"/>
       <result property="goods_price" column="goods_price"/>
       <result property="goods_saleprice" column="goods_saleprice"/>
-      
-      
-      
    </resultMap>
-   
-   <!-- 주문리스트 -->
+
    <select id="orderList" parameterType="java.util.Map" resultType="orderVO">
    SELECT * FROM reservation
    </select>
@@ -50,12 +46,12 @@
       ]]>
    </select>
    
-   <insert id="insertNewOrder" parameterType="orderVO">
-   <![CDATA[
-         insert into reservation(member_id, order_num)
-         			 values(#{member_id}, #{order_num})
-     ]]>
-  	</insert>
+	 <insert id="insertNewOrder" parameterType="orderVO">
+         <![CDATA[
+         	insert into reservation(member_id, order_num, goods_code, goods_name)
+                   values(#{member_id}, #{order_num}, #{goods_code}, #{goods_name})
+     	]]>
+     </insert>
   	
    <select id="selectOrderID" resultType="int"  >
        <![CDATA[
@@ -78,7 +74,5 @@
         where goods_code=#{goods_code}
       ]]>
    </delete>
-   
-   
    
 </mapper>

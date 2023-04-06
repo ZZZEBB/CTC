@@ -23,22 +23,24 @@
          <p>예약/결제 내역 상세 확인 및 취소, 변경 등의 서비스는 <a href = "${contextPath}/mypage/myInfo.do">마이페이지 > 나의 예약조회</a>에서 확인하실 수 있습니다.</p>
       </div>
       <table class="mt-5 table caption-top table table-bordered align-middle">
-         <caption class="fs-5">주문 번호 <span style = "color : #808080; font-size : 0.8em;">MHJ-OD23032302471GQP001</span></caption>
+         <%-- <caption class="fs-5">주문 번호 <span style = "color : #808080; font-size : 0.8em;">MHJ-OD23032302471GQP001</span></caption> --%>
          <tr>
-            <th class="col-md-2">판매자 정보</th>
-            <th class="col-md-5">상품 주문번호</th>
-            <th class="col-md-2">상품명</th>
+            <th class="col-md-2">상품 코드</th>
+            <th class="col-md-5">상품명</th>
+            <th class="col-md-2">결제 방법</th>
             <th class="col-md-3">결제 금액</th>
          </tr>
          <tr>
          <c:forEach var="item" items="${myOrderList}">
+         
             <th class="col-md-2">${item.goods_code}</th>
-            <th class="col-md-5">MHJ-OD23032302471GQP001</th>
-            <th class="col-md-2">
-               롯데 시티호텔 제주<br>
-               <span class = "fw-bolder" style = "color : #808080; font-size : 0.8em;">상품구분 <span>숙박</span></span>
+            <th class="col-md-5">
+               ${item.goods_name}<br>
+               <span class = "fw-bolder" style = "color : #808080; font-size : 0.8em;">상품구분 <span>${item.goods_category}</span></span>
             </th>
-            <th class="col-md-3" style = "color : #ff0000;">140,100 원</th>
+            <th class="col-md-2">${item.pay_method}</th>
+            <th class="col-md-3" style = "color : #ff0000;">${item.goods_saleprice} 원</th>
+            
             </c:forEach>
          </tr>
       </table>

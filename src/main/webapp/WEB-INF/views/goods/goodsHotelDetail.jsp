@@ -55,7 +55,7 @@
             },
             error : function(data, textStatus) {
                alert("로그인 후 이용해주세요.");
-               location.href = "${contextPath}/joinandlogin/loginForm.do";
+               location.href = "${contextPath}/joinAndLogin/loginForm.do";
             },
             complete : function(data, textStatus) {
                //alert("작업을완료 했습니다");

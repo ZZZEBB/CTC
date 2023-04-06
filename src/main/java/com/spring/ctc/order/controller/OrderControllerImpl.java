@@ -74,7 +74,7 @@ public class OrderControllerImpl implements OrderController {
       @Override
       @RequestMapping(value = "/orderAllCartGoods.do", method={RequestMethod.POST,RequestMethod.GET})
       public ModelAndView orderAllCartGoods(@RequestParam("cart_headcount") String[] cart_headcount, HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+         HttpServletResponse response) throws Exception {
          String viewName = (String)request.getAttribute("viewName");
          ModelAndView mav = new ModelAndView(viewName);
          HttpSession session = request.getSession();
@@ -121,10 +121,10 @@ public class OrderControllerImpl implements OrderController {
          String orderer_name = memberVO.getMember_name();
          //String orderer_hp = memberVO.getMember_ph1()+"-"+memberVO.getMember_ph2()+"-"+memberVO.getMember_ph3();
          List<OrderVO> myOrderList = (List<OrderVO>)session.getAttribute("myOrderList");
-         
          for(int i=0; i<myOrderList.size();i++) {
             OrderVO orderVO = (OrderVO)myOrderList.get(i);
             orderVO.setMember_id(member_id);
+            orderVO.setPay_method("카드");
             myOrderList.set(i, orderVO);
             
          }

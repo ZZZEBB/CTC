@@ -89,8 +89,8 @@
       </div>
       <div class="map">
          <!-- 지도를 표시할 div 입니다 -->
-         <!-- <div id = "map" style = "width:100%; height:139px;">
-         </div> -->
+         <div id = "map" style = "width:100%; height:139px;">
+         </div>
          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e253b59d2cc8f52b94e061355413a9e"></script>
          <script>
          var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

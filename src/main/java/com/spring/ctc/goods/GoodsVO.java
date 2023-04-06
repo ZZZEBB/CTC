@@ -33,7 +33,6 @@ public class GoodsVO {
 	
 	public GoodsVO() {
 	}
-	
 	public String getCom_id() {
 		return com_id;
 	}
