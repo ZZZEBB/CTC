@@ -111,7 +111,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                   class="ConEvnt swiper-container swiper-container-horizontal">
                   <ul class="swiper-wrapper">
                      <li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="" style="width: 295px;">
-                        <a href="#">
+                        <a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0005">
                            <div class="ConTx">
                               <pre>24시간 롱스테이</pre>
                               <span>호텔 브릿지 서귀포</span>
@@ -192,7 +192,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                <div id="ADctgr" class="categoryPopularItems">
                   <ul class="col_3">
                      <li>
-                        <a href="#" class="bx_list">
+                        <a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0006" class="bx_list">
                            <div class="bxPhoto">
                               <img
                                  src="${contextPath}/resources/image/hotel/CADO210049_3.jpg"
@@ -213,7 +213,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                            </div>
                         </a>
                      </li>
-                     <li><a href="#" class="bx_list">
+                     <li><a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0007" class="bx_list">
                            <div class="bxPhoto">
                               <img src="${contextPath}/resources/image/hotel/CADO210031_1.jpg" alt="product">
                            </div>
@@ -231,7 +231,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               </div>
                            </div>
                      </a></li>
-                     <li><a href="#" class="bx_list">
+                     <li><a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0008" class="bx_list">
                            <div class="bxPhoto">
                               <img
                                  src="${contextPath}/resources/image/hotel/C160000058_1.jpg"
@@ -251,7 +251,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               </div>
                            </div>
                      </a></li>
-                     <li><a href="#" class="bx_list">
+                     <li><a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0009" class="bx_list">
                            <div class="bxPhoto">
                               <img
                                  src="${contextPath}/resources/image/hotel/CADO200017_6.jpg"
@@ -271,7 +271,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               </div>
                            </div>
                      </a></li>
-                     <li><a href="#" class="bx_list">
+                     <li><a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0010" class="bx_list">
                            <div class="bxPhoto">
                               <img
                                  src="${contextPath}/resources/image/hotel/C160000461_9.jpg"
@@ -291,7 +291,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               </div>
                            </div>
                      </a></li>
-                     <li><a href="#" class="bx_list">
+                     <li><a href="${contextPath}/goods/goodsHotelDetail.do?goods_code=HT0011" class="bx_list">
                            <div class="bxPhoto">
                               <img
                                  src="${contextPath}/resources/image/hotel/C160000139_9.jpg"

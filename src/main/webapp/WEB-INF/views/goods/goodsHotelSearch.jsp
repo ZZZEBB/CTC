@@ -136,7 +136,7 @@
          <img src = "${contextPath}/resources/image/hotel/recomHotelList.jpg" alt = "제주호텔추천" width = "90%" class = "w-100">
          <div class = "row row-cols-1 row-cols-md-4 g-4 mt-4">
             <c:forEach var="hotel" items="${hotelList}">
-               <c:if test="${hotel.goods_location == '제주'}">
+               <c:if test="${hotel.goods_location == '제주' and hotel.goods_category == '숙박'}">
                   <div class = "col">
                      <div class = "card h-100 border-0">
                         <img src="${contextPath}/resources/image/hotel/jejuHtList01.jpg" class="card-img-top" alt="이벤트상품이미지">

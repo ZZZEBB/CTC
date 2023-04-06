@@ -76,7 +76,8 @@
 	<!-- 렌트 검색 결과 조회 -->
 	<select id="rentList" parameterType="java.util.Map" resultType="goodsVO">
 		<if test="carResult == 'all'">
-			SELECT * FROM goods WHERE
+			SELECT * 
+			FROM goods
 			<if test="start != '' || End != ''">
 				goods_departure_date BETWEEN #{start} AND #{End} AND goods_arrival_date BETWEEN #{start} AND #{End}
 			</if>
