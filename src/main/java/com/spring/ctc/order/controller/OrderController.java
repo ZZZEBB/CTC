@@ -13,8 +13,6 @@ import com.spring.ctc.order.vo.OrderVO;
 
 public interface OrderController {
    
-   public ModelAndView order(HttpServletRequest request, HttpServletResponse response) throws Exception;
-   public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception;
    public ModelAndView orderEachGoods(@ModelAttribute("orderVO") OrderVO _orderVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
    public ModelAndView orderAllCartGoods(@RequestParam String[] cart_headcount, HttpServletRequest request, HttpServletResponse response) throws Exception;
    public ModelAndView payToOrderGoods(@RequestParam Map<String, String> orderMap, HttpServletRequest request, HttpServletResponse response) throws Exception;
