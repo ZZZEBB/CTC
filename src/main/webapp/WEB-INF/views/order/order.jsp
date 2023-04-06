@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="Tel" value="${orderer.member_ph1}-${orderer.member_ph2}-${orderer.member_ph3}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +25,47 @@
 		  myInput.focus()
 		})
 		
+function fn_process_pay_order(){
+   alert("확인을 누르시면 최종결제가 완료됩니다.");
+    var i_hp1=document.getElementById("hp1");
+    var i_hp2=document.getElementById("hp2");
+    var i_hp3=document.getElementById("hp3");
+    var i_pay_method=document.getElementById("pay_method");
+ 		  
+    var hp1=i_hp1.value;
+    var hp2=i_hp2.value;
+    var hp3=i_hp3.value;
+    
+    var formObj=document.createElement("form");
+    var i_receiver_name=document.createElement("input");
+    
+    var i_receiver_hp1=document.createElement("input");
+    var i_receiver_hp2=document.createElement("input");
+    var i_receiver_hp3=document.createElement("input");
+    
+    var i_pay_method=document.createElement("input");
+    var i_card_com_name=document.createElement("input");
+    var i_card_pay_month=document.createElement("input");
+  
+    i_receiver_hp1.name="receiver_hp1";
+    i_receiver_hp2.name="receiver_hp2";
+    i_receiver_hp3.name="receiver_hp3";
+     
+    i_receiver_hp1.value=hp1;
+    i_receiver_hp2.value=hp2;
+    i_receiver_hp3.value=hp3;
+    
+    formObj.appendChild(i_receiver_name);
+    formObj.appendChild(i_receiver_hp1);
+    formObj.appendChild(i_receiver_hp2);
+    formObj.appendChild(i_receiver_hp3);
+    
+    document.body.appendChild(formObj); 
+    formObj.method="post";
+    formObj.action="${contextPath}/order/payToOrderGoods.do";
+    formObj.submit();
+}
+		
 		
 	</script>
 	<div class = "container justify-content-center mt-3">	
@@ -40,42 +82,18 @@
 					<th class="col-md-2">상품금액</th>
 					<th class="col-md-3">최종금액</th>
 				</tr>
+				<c:forEach var="item" items="${myOrderList}">
 				<tr>
-					<td>숙박</td>
+					<td>${item.goods_category}</td>
 					<td>
 						<p>
-							<span class = "fw-bolder">롯데 호텔 제주</span>
-							<br>Double room - De Luxe - Mountain view | 객실 1 - 성인 2명
-							<br>2023-03-31(금) 15:00 ~ 2023.03.31(금) 11:00
+							<span class = "fw-bolder">${item.goods_name}</span>
 						</p>
 					</td>
-					<td>62,000 원</td>
-					<td>62,000 원</td>
+					<td>${item.goods_saleprice} 원</td>
+					<td>${item.goods_saleprice} 원</td>
 				</tr>
-				<tr>
-					<td>항공</td>
-					<td>
-						<p>
-							<span class = "fw-bolder">김포→제주 에어서울 RS901편</span>
-							<br>일반석 1석
-							<br>2023-03-31(금) 06:00 ~ 2023.03.31(금) 07:00
-						</p>
-					</td>
-					<td>62,000 원</td>
-					<td>62,000 원</td>
-				</tr>
-				<tr>
-					<td>렌터카</td>
-					<td>
-						<p>
-							<span class = "fw-bolder">[제주공항렌트카] 더 뉴 레이</span>
-							<br>휘발유 | 자차포함-고급자차
-							<br>2023.03.30(목) 12:00 ~ 2023.03.31(금) 12:00
-						</p>
-					</td>
-					<td>62,000 원</td>
-					<td>62,000 원</td>
-				</tr>
+				</c:forEach>
 			</table>
 		</div>
 		<form class="col-md-12 needs-validation" novalidate">
@@ -83,16 +101,18 @@
 				<table class="table caption-top table table-bordered">
 					<caption class="fs-5">예약자 정보</caption>
 					<tr>
-						<th class="table-active">이름</th>
-						<td colspan="4"><input type="text" placeholder="이영민"></td>
+						<th class="table-active" name="reservationName">이름</th>
+						<td colspan="4"><input type="text" value="${orderer.member_name}" readonly="readonly"></td>
 					</tr>
 					<tr>
-						<th class="table-active">이메일</th>
-						<td><input type="text" placeholder="zzz.zzz@com"></td>
+						<th class="table-active" name="reservationEmail">이메일</th>
+						<td><input type="text" value="${orderer.member_email}" readonly="readonly"></td>
 					</tr>
 					<tr>
-						<th class="table-active">휴대폰</th>
-						<td><input type="text" placeholder="010-1234-5678"></td>
+						<th class="table-active" name="reservationTel">휴대폰</th>
+						<td><input type="text" value="${orderer.member_ph1}" name="hp1" id="hp1" readonly="readonly">
+						    <input type="text" value="${orderer.member_ph2}" name="hp2" id="hp2" readonly="readonly">
+						    <input type="text" value="${orderer.member_ph3}" name="hp3" id="hp3" readonly="readonly"></td>
 					</tr>
 				</table>
 			</div>
@@ -103,7 +123,7 @@
 						<p>사용할 마일리지</p>
 					</div>
 					<div class = "col">
-						<p>장은빈님 사용가능 마일리지 <span>0 원</span></p>
+						<p>장은빈님 사용가능 마일리지 <span>${orderer.member_mileage} 원</span></p>
 						<input type = "text" placeholder="1,000 이상 보유시 사용가능">
 						<button type = "button" class = "btn btn btn-outline-dark btn-sm">모두 사용</button>
 						<p style = "font-size : 12px;">
@@ -119,15 +139,15 @@
 					<caption class="fs-5">결제 정보</caption>
 					<tr>
 						<th class="col-md-2">총상품금액</th>
-						<td>62,000 원</td>
+						<td><c:forEach var="item" items="${myOrderList}">${item.goods_saleprice}</c:forEach> 원</td>
 					</tr>
 					<tr>
 						<th>마일리지</th>
-						<td>-0 원</td>
+						<td>${orderer.member_mileage} 마일리지</td>
 					</tr>
 					<tr>
 						<th>최종결제금액</th>
-						<td>62,000 원</td>
+						<td><c:forEach var="item" items="${myOrderList}">${item.goods_saleprice}</c:forEach> 원</td>
 					</tr>
 				</table>
 			</div>
@@ -157,27 +177,23 @@
 						※ 입력하신 정보가 모두 정확한지 마지막으로 다시 확인해주시기 바랍니다.
 					</p>
 					<table class="table caption-top table table-bordered">
-						<caption class="fs-5">탑승자 정보<span style = "color : #808080; font-size : 0.8em;">총 1명</span></caption>
+						<caption class="fs-5">예약자 정보<span style = "color : #808080; font-size : 0.8em;"></span></caption>
 						<tr>
-							<th class="table-active">구분</th>
 							<th class="table-active">성함</th>
 							<th class="table-active">생년월일</th>
-							<th class="table-active">성별</th>
 						</tr>
 						<tr>
-							<td>성인1</td>
-							<td>장은빈</td>
-							<td>1998-09-01</td>
-							<td>여</td>
+							<td>${orderer.member_name} 님</td>
+							<td>${orderer.member_rrn1}</td>
 						</tr>
 					</table>
 					<table class="table caption-top table table-bordered">
 						<caption class="fs-5">예약자 연락정보 확인</caption>
 						<tr>
 							<th class="table-active">휴대폰 번호</th>
-							<td>010-1234-5678</td>
+							<td>${orderer.member_ph1}-${orderer.member_ph2}-${orderer.member_ph3}</td>
 							<th class="table-active">이메일</th>
-							<td>zzz@zzz.com</td>
+							<td>${orderer.member_email}</td>
 						</tr>
 					</table>
 					<h5>중복(이중)예약 안내</h5>
@@ -281,13 +297,13 @@
 								<th>할부선택</th>
 								<td>
 									<div class="col">
-										<select id="installment" class="form-select">
-											<option selected>일시불</option>
-											<option>2개월</option>
-											<option>3개월</option>
-											<option>4개월</option>
-											<option>5개월</option>
-											<option>6개월</option>
+										<select id="card_pay_month" name="card_pay_month" class="form-select">
+						                     <option value="일시불" selected>일시불</option>
+						                     <option value="2개월">2개월</option>
+						                     <option value="3개월">3개월</option>
+						                     <option value="4개월">4개월</option>
+						                     <option value="5개월">5개월</option>
+						                     <option value="6개월">6개월</option>
 									    </select>
 								  	</div>
 								</td>
@@ -313,7 +329,7 @@
 					</form>
 		      </div>
 		      <div class="modal-footer">
-		        <button class="btn btn-primary" data-bs-toggle="modal" onclick="location.href='${contextPath}/order/finishOrder.do'">결제하기</button>
+		        <input class = "btn btn-primary" name="btn_process_pay_order" type="button" onClick="fn_process_pay_order()" value="최종결제하기">
 		      </div>
 		    </div>
 		  </div>

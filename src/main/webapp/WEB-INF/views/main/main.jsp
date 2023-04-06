@@ -335,7 +335,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>청정제주와 함께하는 제주여행</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_1.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_1.png"
                                  alt="전기차이미지">
                            </div>
                      </a></li>
@@ -345,7 +345,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>넉넉한 공간, 합리적인 선택</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_2.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_2.png"
                                  alt="중형차이미지">
                            </div>
                      </a></li>
@@ -355,7 +355,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>럭셔리하고 편안한 제주여행</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_3.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_3.png"
                                  alt="고급차이미지">
                            </div>
                      </a></li>
@@ -365,7 +365,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>다같이 함께하는 즐거운 드라이빙</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_4.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_4.png"
                                  alt="SUV/승합차이미지">
                            </div>
                      </a></li>
@@ -375,7 +375,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>새로운 경험, 특별한 제주여행!</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_5.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_5.png"
                                  alt="오픈카/수입차이미지">
                            </div>
                      </a></li>
@@ -385,7 +385,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                               <span>합리적인 당신, 실속있는 선택!</span>
                            </div>
                            <div class="ConPhoto">
-                              <img src="${contextPath}/resources/image/car/cardiv_6.png"
+                              <img src="${contextPath}/resources/image/rent/cardiv_6.png"
                                  alt="경차/소형차이미지">
                            </div>
                      </a></li>
@@ -403,7 +403,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                   <ul class="col_3">
                      <li><a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD01R10005.png"
+                              <img src="${contextPath}/resources/image/rent/rent01.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">
@@ -421,7 +421,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                      </a></li>
                      <li><a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD01R20028.png"
+                              <img src="${contextPath}/resources/image/rent/rent02.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">
@@ -439,7 +439,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                      </a></li>
                      <li><a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD01R40070.webp"
+                              <img src="${contextPath}/resources/image/rent/rent07.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">
@@ -457,7 +457,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                      </a></li>
                      <li><a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD02R10018.png"
+                              <img src="${contextPath}/resources/image/rent/rent05.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">
@@ -472,7 +472,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                      </a></li>
                      <li><a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD25R50001.png"
+                              <img src="${contextPath}/resources/image/rent/rent06.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">
@@ -491,7 +491,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
                      <li>
                         <a href="#" class="bx_list">
                            <div class="bxPhoto">
-                              <img src="${contextPath}/resources/image/car/RD01R40002.png"
+                              <img src="${contextPath}/resources/image/rent/rent03.png"
                                  alt="product">
                            </div>
                            <div class="bxInfo">

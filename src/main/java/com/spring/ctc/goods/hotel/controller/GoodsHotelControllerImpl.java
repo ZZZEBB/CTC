@@ -46,9 +46,5 @@ public class GoodsHotelControllerImpl implements GoodsHotelController{
       mav.addObject("hotelList", hotelDetail);
       return mav;
    }
-   
-   
-   
-   
 
 }

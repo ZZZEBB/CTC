@@ -26,8 +26,21 @@ public class MemberVO {
    private int status;
    private Date member_unregister_date;
    private Date member_deldate;
+   private int member_mileage;
    
-   public MemberVO() {
+   
+   
+   
+   
+   public int getMember_mileage() {
+	return member_mileage;
+}
+
+public void setMember_mileage(int member_mileage) {
+	this.member_mileage = member_mileage;
+}
+
+public MemberVO() {
       
    }
    

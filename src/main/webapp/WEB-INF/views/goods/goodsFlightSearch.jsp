@@ -7,334 +7,391 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<title>항공 목록 조회</title>
-<!-- CSS only -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
-<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>호텔 목록 페이지</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.0/tailwind.min.css'>
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-
-	//출발지에따라 도착지가 변경되는창
-	 function chageStartSelect(){ 
-	   
-	   var selectList = document.getElementById("searchtitle1")
-	   
-	   if(selectList.options[selectList.selectedIndex].value == "김포"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "김해"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "제주"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "대구"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "사천" || selectList.options[selectList.selectedIndex].value ==  "포항/경주" ||
-	         selectList.options[selectList.selectedIndex].value == "광주" || selectList.options[selectList.selectedIndex].value == "무안" || 
-	         selectList.options[selectList.selectedIndex].value == '울산' ){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "횡성/원주" || selectList.options[selectList.selectedIndex].value == "군산" ||
-	         selectList.options[selectList.selectedIndex].value == "청주" ){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "여수"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="";
-	      document.getElementById('searchtitletwo8').style.display="none";
-	   }
-	   if(selectList.options[selectList.selectedIndex].value == "양양"){
-	      alert("출발지가 설정되었습니다.");
-	      document.getElementById('searchtitletwo').style.display="none";
-	      document.getElementById('searchtitletwo1').style.display="none";
-	      document.getElementById('searchtitletwo2').style.display="none";
-	      document.getElementById('searchtitletwo3').style.display="none";
-	      document.getElementById('searchtitletwo4').style.display="none";
-	      document.getElementById('searchtitletwo5').style.display="none";
-	      document.getElementById('searchtitletwo6').style.display="none";
-	      document.getElementById('searchtitletwo7').style.display="none";
-	      document.getElementById('searchtitletwo8').style.display="";
-	   }
-	  
-	} 
-	
-	/* 왕복을눌렀을때 */
-	function changelong(){
-	   
-	   var selectList = document.getElementById("search1")
-	        
-	}
-	
-	/* 편도를 눌렀을때 */
-	function changesort(){
-	   
-	   var selectList = document.getElementById("search1")
-	   
-	}
-	
-	/* 편도 왕복 버튼 */
-	function active(id){
-	     if(activebutton != null){
-	       document.getElementById(activebutton).style['background-color'] = '#eee';
-	       document.getElementById(activebutton).style['color'] = '#000';
-	     }
-	    document.getElementById(id).style['background-color'] = '#8DE4FC';
-	     document.getElementById(id).style['color'] = 'white';
-	  
-	     activebutton = id;
-	
-	}
-
-</script>
-
-<style>
-
-	#searchtitle1 , #searchtitletwo,#searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 , #tikey {
-		width:250px;
-		margin-right:30px;
-		border:2px solid #4DD7F9;
-		border-radius:5px;
-		height:33px;
-		text-align: center;
-	}
-	
-	#searchtitle1,#searchtitletwo , #searchtitletwo1 , #searchtitletwo2 , #searchtitletwo3 , #tikey, #searchtitletwo4 , #searchtitletwo5 , #searchtitletwo6 , #searchtitletwo7 , #searchtitletwo8 ,#searchtitletwo option {
-		background-color:#8DE4FC;
-	}
-	
-	#seatclass {
-		background-color:#8DE4FC;
-		border:2px solid #4DD7F9;
-		border-radius:5px;
-		height:33px;
-		text-align: center;
-		vertical-align:center;
-		color:black;
-	}
-	
-	#calender {
-		background-color:#8DE4FC;
-		border:2px solid #4DD7F9;
-		border-radius:5px;
-		height:33px;
-		text-align: center;
-	}
-	
-	.productTag {
-		margin:auto 10px;
-	}
-</style>
+   <script type="text/javascript">
+      $('.dropdown').on('hide.bs.dropdown', function (evt) {
+           if (!evt.clickEvent) { return }
+           let clickTarget = evt.clickEvent.target
+           if (clickTarget.getAttribute('data-dismiss') == 'dropdown') { return }
+           let dropdownMenu = this.querySelector('.dropdown-menu')
+   
+           if (dropdownMenu.contains(clickTarget)) {
+             evt.preventDefault();
+           }
+      })
+   </script>
+   <style type="text/css">
+   </style>
 </head>
 <body>
-
-<%-- <form class="container row col" style="text-align:center; margin-left:11%;" id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get"> --%> 
-<form id="search1" action="${contextPath}/goods/goodsFlightKeyWordSearch.do" method="get">
-   <div class = "container">
-       <span>
-        <select id="tikey" name="tikey" style="width:7%;">
-           <option value="1">왕복</option>
-           <option value="2">편도</option>
-      </select>
-       
-       <img class="icon" alt="car_icon" src="${contextPath}/resources/image/flight/air.png" width = "25px"> <!-- 검색창 왼쪽 비행기아이콘 -->
-       <select id="searchtitle1" name="searchtitle1" onchange="chageStartSelect()">
-           <option value="1" selected>출발지를 선택해주세요.</option>
-           <option value="김포">김포</option>
-           <option value="김해">김해</option>
-           <option value="제주">제주</option>
-           <option value="대구">대구</option>
-           <option value="울산">울산</option>
-           <option value="청주">청주</option>
-           <option value="무안">무안</option>
-           <option value="광주">광주</option>
-           <option value="여수">여수</option>
-           <option value="포항/경주">포항경주</option>
-           <option value="양양">양양</option>
-           <option value="사천">사천</option>
-           <option value="군산">군산</option>
-           <option value="횡성/원주">횡성/원주</option>
-      </select>
-       
-        <img class="icon" alt="car_icon" src="${contextPath}/resources/image/flight/air.png" width = "25px">
-       <select id="searchtitletwo" name="searchtitletwo">
-           <option selected>도착지를 선택해주세요.</option>
-      </select>
-           <select id="searchtitletwo1" name="searchtitletwo1" style="display:none;" onchange="seoul()">
-           <option value="" selected>도착지를 선택해주세요.</option><!-- 서울이였을경우 -->
-             <option value="광주">광주</option>
-           <option value="무안">무안</option>
-           <option value="부산/김해">부산/김해</option>
-           <option value="여수">여수</option>
-           <option value="울산">울산</option>
-           <option value="제주">제주</option>
-           <option value="진주/사천">진주/사천</option>
-           <option value="포항/경주">포항/경주</option>
-      </select> 
-    <select class="container" id="searchtitletwo2" name="searchtitletwo2" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 부산이였을경우 -->
-           <option value="서울/김포">서울/김포</option>
-           <option value="제주">제주</option>
-      </select>
-      
-      <select id="searchtitletwo3" name="searchtitletwo3" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 제주일경우 -->
-             <option value="광주">광주</option>
-           <option value="군산">군산</option>
-           <option value="대구">대구</option>
-           <option value="무안">무안</option>
-           <option value="울산">울산</option>
-           <option value="부산/김해">부산/김해</option>
-           <option value="서울/김포">서울/김포</option>
-           <option value="양양">양양</option>
-           <option value="여수">여수</option>
-           <option value="울산">울산</option>
-           <option value="원주">원주</option>
-           <option value="진주/사천">진주/사천</option>
-           <option value="청주">청주</option>
-           <option value="포항/경주">포항/경주</option>
-      </select>  
-          
-      <select id="searchtitletwo4" name="searchtitletwo4" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 대구일경우 -->
-             <option value="제주">제주</option>
-      </select>      
-      <select id="searchtitletwo5" name="searchtitletwo5" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 사천 , 포항/경주 , 광주 , 무안 , 울산일경우 -->
-             <option value="서울/김포">서울/김포</option>
-             <option value="제주">제주</option>
-      </select>      
-      <select id="searchtitletwo6" name="searchtitletwo6" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 횡성/원주 ,  군산, 청주일경우 -->
-             <option value="제주">제주</option>
-      </select>      
-      <select id="searchtitletwo7" name="searchtitletwo7" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 여수일경우 -->
-             <option value="서울/김포">서울/김포</option>
-             <option value="양양">양양</option>
-             <option value="제주">제주</option>
-      </select>      
-      <select id="searchtitletwo8" name="searchtitletwo8" style="display:none;">
-           <option value="" selected>도착지를 선택해주세요.</option> <!-- 양양일경우 -->
-             <option value="여수">여수</option>
-             <option value="제주">제주</option>
-      </select>      
-       출발일 : <input id="calender" class="date" type="date" name="start"/>
-     <!--   <input id="calender" type="time" name="time"/> 출발시간 -->
-       </span>
-      <select id="seatclass" name="seatclass">
-            <option selected>좌석등급</option>
-             <option value="1">일등석</option>
-             <option value="2">비즈니스</option>
-             <option value="3">이코노미</option>
-      </select> 
-       
-            <button type="submit" class="btn btn-link" id="lastbtn">
-             <img class="icon" src="${contextPath}/resources/image/flight/search.png" alt="검색"    width="20px" height="20px"> <!-- submit 검색버튼 -->
-       </button>
-   </div>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <form class = "container">
+      <ul class="nav nav-pills" id="myTab" role="tablist">
+         <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="round-tab" data-bs-toggle="tab" data-bs-target="#round" type="button" role="tab" aria-controls="round" aria-selected="true">왕복</button>
+         </li>
+         <li class="nav-item" role="presentation">
+            <button class="nav-link" id="oneway-tab" data-bs-toggle="tab" data-bs-target="#oneway" type="button" role="tab" aria-controls="oneway" aria-selected="false">편도</button>
+         </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+         <div class="tab-pane fade show active" id="round" role="tabpanel" aria-labelledby="round-tab">
+              <div class="dropdown text-left">
+               <button class="btn btn-secondary dropdown-togglex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 출발지 선택
+               </button>
+               <div class="dropdown-menu py-0">
+                  <div class="modal-header">
+                     <h5 class="modal-title">출발지 선택</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="SEL" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="SEL">서울</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJU">제주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="PUS" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="PUS">김해</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="GMP" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="GMP">김포</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="ICN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="ICN">인천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KWJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KWJ">광주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="MWX" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="MWX">무안</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KUV" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KUV">군산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="TAE" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="TAE">대구</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="HIN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="HIN">사천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="RSU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="RSU">여수</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="USN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="USN">울산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="WJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="WJU">원주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJJ">청주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KPO" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KPO">포항</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="YNY" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="YNY">양양</label>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Save">
+                  </div>
+               </div>
+            </div>
+            <div class="dropdown text-left">
+               <button class="btn btn-secondary dropdown-togglex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 도착지 선택
+               </button>
+               <div class="dropdown-menu py-0">
+                  <div class="modal-header">
+                     <h5 class="modal-title">도착지 선택</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="SEL" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="SEL">서울</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJU">제주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="PUS" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="PUS">김해</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="GMP" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="GMP">김포</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="ICN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="ICN">인천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KWJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KWJ">광주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="MWX" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="MWX">무안</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KUV" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KUV">군산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="TAE" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="TAE">대구</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="HIN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="HIN">사천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="RSU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="RSU">여수</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="USN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="USN">울산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="WJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="WJU">원주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJJ">청주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KPO" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KPO">포항</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="YNY" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="YNY">양양</label>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Save">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+       <div class="tab-pane fade" id="oneway" role="tabpanel" aria-labelledby="oneway-tab">
+          <div class="dropdown text-left">
+               <button class="btn btn-secondary dropdown-togglex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 출발지 선택
+               </button>
+               <div class="dropdown-menu py-0">
+                  <div class="modal-header">
+                     <h5 class="modal-title">출발지 선택</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="SEL" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="SEL">서울</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJU">제주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="PUS" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="PUS">김해</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="GMP" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="GMP">김포</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="ICN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="ICN">인천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KWJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KWJ">광주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="MWX" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="MWX">무안</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KUV" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KUV">군산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="TAE" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="TAE">대구</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="HIN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="HIN">사천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="RSU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="RSU">여수</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="USN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="USN">울산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="WJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="WJU">원주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJJ">청주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KPO" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KPO">포항</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="YNY" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="YNY">양양</label>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Save">
+                  </div>
+               </div>
+            </div>
+            <div class="dropdown text-left">
+               <button class="btn btn-secondary dropdown-togglex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 도착지 선택
+               </button>
+               <div class="dropdown-menu py-0">
+                  <div class="modal-header">
+                     <h5 class="modal-title">도착지 선택</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="SEL" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="SEL">서울</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJU">제주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="PUS" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="PUS">김해</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="GMP" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="GMP">김포</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="ICN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="ICN">인천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KWJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KWJ">광주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="MWX" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="MWX">무안</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KUV" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KUV">군산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="TAE" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="TAE">대구</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="HIN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="HIN">사천</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="RSU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="RSU">여수</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="USN" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="USN">울산</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="WJU" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="WJU">원주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="CJJ" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="CJJ">청주</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="KPO" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="KPO">포항</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="YNY" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="YNY">양양</label>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <input type="submit" name="commit" value="Save" class="btn btn-primary" data-disable-with="Save">
+                  </div>
+               </div>
+            </div>
+       </div>
+       <form id="search" class = "d-flex align-middle justify-content-between">
+         <div class = "col-md-5 ms-3 p-1">
+            <div class="input-daterange input-group" id="datepicker">
+               <input type="text" id="date-picker1" class="form-control bg-white border-1 small" aria-label="Search" aria-describedby="basic-addon2" th:value="|${year}-${month}|" name = "start">
+               <span class="input-group-addon">&nbsp;~&nbsp;</span>
+               <input type="text" id="date-picker2" class="form-control bg-white border-1 small" aria-label="Search" aria-describedby="basic-addon2" th:value="|${year}-${month}|" name = "end">
+            </div>
+            <script type = "text/javascript">
+               $(document).ready(function() {
+                   $('#date-picker1').datepicker({
+                       format: "yyyy-m",
+                       minViewMode: 1,
+                       language: "ko",
+                       autoclose: true
+                   })
+                   
+                   $('#date-picker2').datepicker({
+                       format: "yyyy-m",
+                       minViewMode: 1,
+                       language: "ko",
+                       autoclose: true
+                   })
+               
+                   $('#get-history').on('click', function() {
+                       const dateArr = $('#date-picker').val().split('-')
+                       location.href = '/history?year=' + dateArr[0] + '&month=' + dateArr[1]
+                   })
+               })
+            </script>
+         </div>
+         <div class = "col-md-2 ms-3 p-1">
+            <button type="submit" class="btn btn-primary">검색</button>
+         </div>
+   </form>
+   <div class="map">
+      <!-- 지도를 표시할 div 입니다 -->
+   <!-- <div id = "map" style = "width:100%; height:139px;">
+   </div> -->
+   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e253b59d2cc8f52b94e061355413a9e"></script>
+   <script>
+   var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+       mapOption = { 
+           center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+           level: 3 // 지도의 확대 레벨
+       };
    
-</form>
-
-<!-- 본문 상품 -->
-<c:forEach var="product" items="${keyword}" >
-	<c:if test="${product.goods_category == '항공' }">
-		<form class="container row col" style="text-align:center; margin-left:11%;">
-		   <div id="product_center" class="container d-flex align-items-end justify-content-center" style="margin:10px auto;">
-			   <p style="margin:0px;">${product.goods_name}</p> <!-- 항공사이름 -->
-			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale.png" width="30px" height="25px"> <!-- 가격 할인 이미지 -->
-			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/Mileagelogo.jpg" width="100px" height="25px"> <!-- 가격 할인 이미지 -->
-			   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale2.png" width="25px;" height="25px"> <!-- 가격 할인 이미지 -->
-			    <span class="product_time"><span class="productTag"><fmt:formatDate value="${product.goods_departure_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_departure_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_departures}공항</span>
-				    <img alt="air_mini" src="${contextPath}/resources/image/flight/air.png" width="15px" height="15px">
-				    <span class="productTag"><fmt:formatDate value="${product.goods_arrival_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_arrival_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_arrivals}공항</span>
-				    <span class="product_price">가격 : ${product.goods_saleprice}원</span>
-				       <span class="button_css">
-				         <button type="submit">지금예약</button>
-				         <button type="submit">장바구니</button>
-				      </span>
-			   </span>
-		   </div>
-		   <hr id="product_hr">
-		</form>   
-	</c:if>
-</c:forEach>
+   // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+   var map = new kakao.maps.Map(mapContainer, mapOption); 
+   </script>
+        </div>
+   </form>
    
+   <!-- 본문 상품 -->
+   <form class="container row col" style="text-align:center; margin-left:11%;">
+   <div id="product_center" class="container d-flex align-items-end justify-content-center" style="margin:10px auto;">
+   <p style="margin:0px;">${product.goods_name}</p> <!-- 항공사이름 -->
+   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale.png" width="30px" height="25px"> <!-- 가격 할인 이미지 -->
+   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/Mileagelogo.jpg" width="100px" height="25px"> <!-- 가격 할인 이미지 -->
+   <img alt="가격할인배너이미지" src="${contextPath}/resources/image/flight/sale2.png" width="25px;" height="25px"> <!-- 가격 할인 이미지 -->
+   <span class="product_time"><span class="productTag"><fmt:formatDate value="${product.goods_departure_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_departure_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_departures}공항</span>
+   <img alt="air_mini" src="${contextPath}/resources/image/flight/air.png" width="15px" height="15px">
+   <span class="productTag"><fmt:formatDate value="${product.goods_arrival_date}" pattern="yyyy-MM-dd"/></span><span class="productTag"><fmt:formatDate value="${product.goods_arrival_time}" pattern="HH-SS"/></span><span class="productTag">${product.goods_arrivals}공항</span>
+   <span class="product_price">가격 : ${product.goods_saleprice}원</span>
+                <span class="button_css">
+                  <button type="submit">지금예약</button>
+                  <button type="submit">장바구니</button>
+               </span>
+         </span>
+      </div>
+      <hr id="product_hr">
+   </form>   
+    
+   <!-- partial -->
+   <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js'></script>
+   <script src='https://unpkg.com/stimulus/dist/stimulus.umd.js'></script><script  src="./script.js"></script>
    <!-- JavaScript Bundle with Popper -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

@@ -7,10 +7,7 @@ import org.springframework.stereotype.Component;
 public class EventVO {
 
 	private String com_id;
-	private String flight_code;
-	private String hotel_code;
-	private String package_code;
-	private String rent_code;
+	private String goods_code;
 	private int event_num;
 	private String event_title;
 	private String event_content;
@@ -43,29 +40,11 @@ public class EventVO {
 	public void setCom_id(String com_id) {
 		this.com_id = com_id;
 	}
-	public String getFlight_code() {
-		return flight_code;
+	public String getGoods_code() {
+		return goods_code;
 	}
-	public void setFlight_code(String flight_code) {
-		this.flight_code = flight_code;
-	}
-	public String getHotel_code() {
-		return hotel_code;
-	}
-	public void setHotel_code(String hotel_code) {
-		this.hotel_code = hotel_code;
-	}
-	public String getPackage_code() {
-		return package_code;
-	}
-	public void setPackage_code(String package_code) {
-		this.package_code = package_code;
-	}
-	public String getRent_code() {
-		return rent_code;
-	}
-	public void setRent_code(String rent_code) {
-		this.rent_code = rent_code;
+	public void setGoods_code(String goods_code) {
+		this.goods_code = goods_code;
 	}
 	public int getEvent_num() {
 		return event_num;

@@ -30,8 +30,23 @@ public class OrderVO {
 	private Date reser_end_date;
 	private String reser_period;
 	private int reser_headcount;
+	private int goods_saleprice;
+	private String goods_category;
 	
 	
+	
+	public String getGoods_category() {
+		return goods_category;
+	}
+	public void setGoods_category(String goods_category) {
+		this.goods_category = goods_category;
+	}
+	public int getGoods_saleprice() {
+		return goods_saleprice;
+	}
+	public void setGoods_saleprice(int goods_saleprice) {
+		this.goods_saleprice = goods_saleprice;
+	}
 	public String getMember_id() {
 		return member_id;
 	}

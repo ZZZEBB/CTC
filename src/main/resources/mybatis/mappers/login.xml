@@ -23,6 +23,7 @@
       <result property="member_status" column="member_status" />
       <result property="member_unregister_date" column="member_unregister_date" />
       <result property="member_deldate" column="member_deldate" />
+      <result property="member_mileage" column="member_mileage" />
    </resultMap>
    
    <resultMap id="comResult" type="companyVO">

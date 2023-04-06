@@ -119,34 +119,38 @@ function modify_cart_qty(goods_id,bookPrice,index){
 }
 
 
-function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
+function fn_order_each_goods(goods_code,goods_name,goods_saleprice,goods_category,cart_headcount){
 	var total_price,final_total_price,_goods_qty;
-	var cart_goods_qty=document.getElementById("cart_goods_qty"+goods_id);
+	var cart_goods_qty=document.getElementById("cart_headcount"+goods_code);
 	
-	_order_goods_qty=cart_goods_qty.value; //장바구니에 담긴 개수 만큼 주문한다.
+	/* _order_goods_qty=cart_goods_qty.value; */ //장바구니에 담긴 개수 만큼 주문한다.
 	var formObj=document.createElement("form");
-	var i_goods_id = document.createElement("input"); 
-    var i_goods_title = document.createElement("input");
-    var i_goods_sales_price=document.createElement("input");
-    var i_fileName=document.createElement("input");
+	var i_goods_code = document.createElement("input"); 
+    var i_goods_name = document.createElement("input");
+    var i_goods_saleprice=document.createElement("input");
+    var i_goods_category=document.createElement("input");
+    /* var i_fileName=document.createElement("input"); */
     var i_order_goods_qty=document.createElement("input");
     
-    i_goods_id.name="goods_id";
-    i_goods_title.name="goods_title";
-    i_goods_sales_price.name="goods_sales_price";
-    i_fileName.name="goods_fileName";
-    i_order_goods_qty.name="order_goods_qty";
+    i_goods_code.name="goods_code";
+    i_goods_name.name="goods_name";
+    i_goods_saleprice.name="goods_saleprice";
+    i_goods_category.name="goods_category";
+    /* i_fileName.name="goods_fileName"; */
+    i_order_goods_qty.name="reser_headcount";
     
-    i_goods_id.value=goods_id;
-    i_order_goods_qty.value=_order_goods_qty;
-    i_goods_title.value=goods_title;
-    i_goods_sales_price.value=goods_sales_price;
-    i_fileName.value=fileName;
+    i_goods_code.value=goods_code;
+    i_goods_category.value=goods_category;
+    i_order_goods_qty.value=cart_headcount; 
+    i_goods_name.value=goods_name;
+    i_goods_saleprice.value=goods_saleprice;
+    /* i_fileName.value=fileName; */
     
-    formObj.appendChild(i_goods_id);
-    formObj.appendChild(i_goods_title);
-    formObj.appendChild(i_goods_sales_price);
-    formObj.appendChild(i_fileName);
+    formObj.appendChild(i_goods_code);
+    formObj.appendChild(i_goods_name);
+    formObj.appendChild(i_goods_saleprice);
+    formObj.appendChild(i_goods_category);
+    /* formObj.appendChild(i_fileName); */
     formObj.appendChild(i_order_goods_qty);
 
     document.body.appendChild(formObj); 
@@ -255,7 +259,11 @@ function fn_order_all_cart_goods(){
 								<small class="smallCaption text-secondary"><br>예약인원 : ${cart_headcount}명</small>
 							</td>
 							<td class = "col-md-2"><p class = "fs-5">${cart_headcount != 0 ? item.goods_saleprice * cart_headcount : item.goods_saleprice}<small class="smallCaption text-secondary"> 원</small></p></td>
-							<td class = "col"><button class = "btn btn-sm" onclick="location.href='${contextPath}/order/order.do'" style = "background-color : #00aff0;">즉시예약</button></td>
+							<td class = "col">
+								<a href="javascript:fn_order_each_goods('${item.goods_code }','${item.goods_name }','${item.goods_saleprice}','${item.goods_category}','${cart_headcount}');">
+					     		  	<button class = "btn btn-sm" style = "background-color : #00aff0;">즉시예약</button>
+								</a><br>
+							</td>
 							<td class = "col"><a href="${contextPath}/cart/removeCartGoods.do?goods_code=${item.goods_code}&member_id=${myCartList[status.index].member_id}"><img src = "${contextPath}/resources/image/x.png"></a></td>
 						</tr>
 					</tbody>

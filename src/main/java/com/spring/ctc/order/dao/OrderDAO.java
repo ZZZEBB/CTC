@@ -8,5 +8,9 @@ import com.spring.ctc.order.vo.OrderVO;
 
 
 public interface OrderDAO {
-	public List<OrderVO> orderList() throws DataAccessException;
+   public List<OrderVO> orderList() throws DataAccessException;
+   public List<OrderVO> listMyOrderGoods(OrderVO orderVO) throws DataAccessException;
+   public void insertNewOrder(List<OrderVO> myOrderList) throws DataAccessException;
+   public OrderVO findMyOrder(String order_num) throws DataAccessException;
+   public void removeGoodsFromCart(List<OrderVO> myOrderList) throws DataAccessException;
 }
