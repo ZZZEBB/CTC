@@ -208,18 +208,18 @@
                  </div>
                  <div class="col-md-6">
                      <h2>${hotel.goods_name}</h2>
-                     <h3>${hotel.goods_price}</strong><small>&nbsp;원 ~</small></h3>
+                     <h3>${hotel.goods_price}<small>&nbsp;원 ~</small></h3>
                      <p>${hotel.goods_exp}</p>
                      <div class="row g-2">
                      <div class="col-md">
                           <div class="form-floating">
                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                              <option value="1">싱글</option>
-                              <option value="2">더블</option>
-                              <option value="3">디럭스 싱글</option>
-                              <option value="4">디럭스 더블</option>
-                              <option value="5">스위트 싱글</option>
-                              <option value="6">스위트 더블</option>
+								<option value="1">싱글</option>
+								<option value="2">더블</option>
+								<option value="3">디럭스 싱글</option>
+								<option value="4">디럭스 더블</option>
+								<option value="5">스위트 싱글</option>
+								<option value="6">스위트 더블</option>
                            </select>
                            <label for="floatingSelect">객실 선택</label>
                         </div>
