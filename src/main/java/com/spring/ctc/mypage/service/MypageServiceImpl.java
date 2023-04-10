@@ -31,4 +31,10 @@ public class MypageServiceImpl implements MypageService {
    public void difyMember(Map memberInfo) throws Exception{
 	   mypageDAO.updateMember(memberInfo);
    }
+   
+   @Override
+   public List<OrderVO> checkMileage() throws Exception {
+      return mypageDAO.checkMileage();
+   }
+   
 }

@@ -15,4 +15,5 @@ public interface MypageDAO {
 	public CompanyVO selectCompany(String company_id) throws DataAccessException;
 	public List<OrderVO> selectOrder(MemberVO memberInfo) throws DataAccessException;
 	public void updateMember(Map memberInfo) throws DataAccessException;
+	public List<OrderVO> checkMileage() throws DataAccessException;
 }

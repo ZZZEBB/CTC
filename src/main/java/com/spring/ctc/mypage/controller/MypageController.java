@@ -65,20 +65,6 @@ public class MypageController {
 			return mav;
 		}
 		
-		//나의 문의내역 페이지 조회(/myMileage.do)
-		@RequestMapping(value= "/myMileage.do" ,method={RequestMethod.POST,RequestMethod.GET})
-		public ModelAndView myMileage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			HttpSession session = request.getSession();
-			session = request.getSession();
-			//마이페이지 사이드메뉴
-			session.setAttribute("side_menu", "my_page"); 
-			
-			ModelAndView mav = new ModelAndView();
-			String viewName = (String)request.getAttribute("viewName");
-			mav.setViewName(viewName);
-			return mav;
-		}
-		
 		//나의 예약내역 조회(/myOrder.do)
 		@RequestMapping(value= "/myOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
 		public ModelAndView myOrder(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -113,7 +99,23 @@ public class MypageController {
 			mypageService.difyMember(memberDify);
 			ModelAndView mav = new ModelAndView("/main/main");
 			return mav;
-		}	
+		}
+		
+		//나의 마일리지 페이지 조회(/myMileage.do)
+		@RequestMapping(value= "/myMileage.do" ,method={RequestMethod.POST,RequestMethod.GET})
+		public ModelAndView myMileage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		 HttpSession session = request.getSession();
+		 session = request.getSession();
+		 //마이페이지 사이드메뉴
+		 session.setAttribute("side_menu", "my_page"); 
+		 String viewName = (String)request.getAttribute("viewName");
+		 ModelAndView mav = new ModelAndView(viewName);
+		 List<OrderVO> mileage = mypageService.checkMileage();
+		 memberVO = (MemberVO)session.getAttribute("memberInfo");
+		 mav.addObject("mileageList", mileage);
+		 mav.addObject("member", memberVO);
+		     return mav;
+		  }
 		
 		
 }

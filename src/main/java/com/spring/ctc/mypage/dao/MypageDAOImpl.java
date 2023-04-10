@@ -41,4 +41,10 @@ public class MypageDAOImpl implements MypageDAO {
    public void updateMember(Map memberInfo) throws DataAccessException{
 	   sqlSession.update("mapper.mypage.updateMember",memberInfo);
    }
+   
+   @Override
+   public List<OrderVO> checkMileage() throws DataAccessException {
+      List<OrderVO> mileage = sqlSession.selectList("mapper.order.checkMileage");
+      return mileage;
+   }
  }

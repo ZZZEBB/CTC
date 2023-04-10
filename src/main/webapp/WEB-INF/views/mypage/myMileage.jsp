@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="member" value="${member}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +25,11 @@
 </head>
 <body>
 <div class = "container">
+   
    <h4 class="mainText">마일리지 확인</h4>
-   <p class="Text">배한솔님의 사용가능한 마일리지는 0 입니다.</p>
+   
+   <p class="Text">${member.member_name}님의 사용가능한 마일리지는 ${member.member_mileage}M 입니다.</p>
+   
    <div class="align-baseline" id="mainContent">
       <span class="fs-6">최근 내역 조회</span>
       <a href="#"><span><input type="button" class="btn btn-light btn-outline-dark" value="1개월"></span></a>
@@ -43,24 +47,22 @@
     <tr>
       <th scope="col">일자</th>
       <th scope="col">적립 및 사용처</th>
-      <th scope="col">거래구분</th>
-      <th scope="col">마일리지</th>
-      <th scope="col">예약번호</th>
+      <th scope="col">사용 마일리지</th>
+      <!-- <th scope="col">예약번호</th> -->
       <th scope="col">상품코드</th>
-      <th scope="col">비고</th>
+      
     </tr>
   </thead>
+  <c:forEach var="mileage" items="${mileageList}">
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
+      <th scope="row"><fmt:formatDate value="${mileage.order_date }" pattern="yyyy-MM-dd" />  </th>
+      <td>${mileage.goods_name}</td>
+      <td>${mileage.use_mileage}</td>
+      <td>${mileage.goods_code}</td>
+      
+     </tr>
+<!--     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
@@ -77,8 +79,9 @@
       <td>@mdo</td>
       <td>@mdo</td>
        <td>@mdo</td>
-    </tr>
+    </tr> -->
   </tbody>
+  </c:forEach>
 </table>
    
 </div>

@@ -35,7 +35,7 @@ request.setCharacterEncoding("UTF-8");
 			<hr>
 			<div class ="row justify-content-center">
 				<img id="introicon" alt="회사이미지" src="${contextPath}/resources/image/company_front.jpg" width="70%" height="500px">
-				<img id="introicon" alt="회사이미지" src="${contextPath}/resources/image/company_main.jpg" width="70%" height="500px">
+				<img id="introicon" alt="회사이미지" src="${contextPath}/resources/image/company_main.png" width="70%" height="500px">
 			</div>
 		</div>
 	</div>

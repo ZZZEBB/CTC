@@ -28,7 +28,7 @@
 	<!-- 상단 간략화 메뉴 -->
 	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">마이페이지</a></li>
+			<li class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
 			<li class="breadcrumb-item active" aria-current="page">예약 조회</li>
 		</ol>
 	</nav>

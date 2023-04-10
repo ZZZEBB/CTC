@@ -13,4 +13,5 @@ public interface MypageService {
 	public CompanyVO selectCompany(String company_id) throws Exception;
 	public List<OrderVO> selectOrder(MemberVO memberInfo) throws Exception;
 	public void difyMember(Map memberInfo) throws Exception;
+	public List<OrderVO> checkMileage() throws Exception;
 }
