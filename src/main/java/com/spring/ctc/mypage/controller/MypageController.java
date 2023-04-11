@@ -1,6 +1,5 @@
 package com.spring.ctc.mypage.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.ctc.board.vo.QnaVO;
 import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 import com.spring.ctc.mypage.service.MypageService;
@@ -52,19 +52,24 @@ public class MypageController {
 	      }
 		
 		//나의 문의내역 페이지 조회(/myQna.do)
-		@RequestMapping(value= "/myQna.do" ,method={RequestMethod.POST,RequestMethod.GET})
+      @RequestMapping(value= "/myQna.do", method={RequestMethod.POST, RequestMethod.GET})
 		public ModelAndView myQna(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			HttpSession session = request.getSession();
-			session = request.getSession();
-			//마이페이지 사이드메뉴
-			session.setAttribute("side_menu", "my_page"); 
-			
-			ModelAndView mav = new ModelAndView();
-			String viewName = (String)request.getAttribute("viewName");
-			mav.setViewName(viewName);
-			return mav;
+		    String viewName = (String) request.getAttribute("viewName");
+		    ModelAndView mav = new ModelAndView(viewName);
+		    HttpSession session = request.getSession();
+		    MemberVO memberVO = (MemberVO) session.getAttribute("memberInfo");
+		    String member_id = memberVO.getMember_id();
+		    
+		    // QnaVO 객체를 생성하고 초기화합니다.
+		    QnaVO qnaVO = new QnaVO();
+		    qnaVO.setMember_id(member_id);
+		    
+		    List myQnaList = mypageService.myQnaList(qnaVO);
+		    session.setAttribute("myQnaList", myQnaList);
+		    
+		    return mav;
 		}
-		
+      
 		//나의 예약내역 조회(/myOrder.do)
 		@RequestMapping(value= "/myOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
 		public ModelAndView myOrder(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -140,6 +145,5 @@ public class MypageController {
 		 mav.addObject("member", memberVO);
 		     return mav;
 		  }
-		
 		
 }

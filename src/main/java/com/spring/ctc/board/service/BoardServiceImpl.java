@@ -1,5 +1,6 @@
 package com.spring.ctc.board.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.ctc.board.dao.BoardDAO;
+import com.spring.ctc.board.vo.BoardDetailImageVO;
 import com.spring.ctc.board.vo.EventVO;
 import com.spring.ctc.board.vo.FaqVO;
 import com.spring.ctc.board.vo.NoticeVO;
@@ -19,6 +21,9 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	private BoardDAO boardDAO;
+	
+	BoardDetailImageVO boardDetailImageVO;
+
 
 	public List<EventVO> eventList() throws Exception {
 		List<EventVO> eventLists = boardDAO.eventLists();
@@ -44,5 +49,16 @@ public class BoardServiceImpl implements BoardService {
    @Override
    public Map noticeDetail(int notice_num) throws Exception {
        return boardDAO.selectNoticeDetail(notice_num);
+   }
+   
+   @Override
+   public int addNewQna(Map<String, Object> newQnaMap) throws Exception {
+       Integer qna_num = boardDAO.writeNewQna(newQnaMap);
+       ArrayList<BoardDetailImageVO> imageFileList = (ArrayList<BoardDetailImageVO>) newQnaMap.get("imageFileList");
+       for (BoardDetailImageVO boardDetailImageVO : imageFileList) {
+           boardDetailImageVO.setQna_num(qna_num);
+       }
+       boardDAO.insertQnaImageFile(imageFileList);
+       return qna_num;
    }
 }

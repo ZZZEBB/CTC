@@ -47,5 +47,20 @@ public class BoardDAOImpl implements BoardDAO {
       return sqlSession.selectOne("mapper.board.selectNoticeDetail", notice_num);
      
    }
+   
+   @Override
+   public Integer writeNewQna(Map<String, Object> newQnaMap) throws DataAccessException {
+       sqlSession.insert("mapper.board.writeNewQna", newQnaMap);
+       Integer qna_num = (Integer) newQnaMap.get("qna_num");
+       return qna_num;
+   }
+
+   
+   @Override
+	public void insertQnaImageFile(List fileList) throws DataAccessException {
+	   if(fileList != null && !fileList.isEmpty()) {
+		    sqlSession.insert("mapper.board.insertQnaImageFile", fileList);
+		}
+	}
 
 }

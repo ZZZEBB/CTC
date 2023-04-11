@@ -13,4 +13,6 @@ public interface BoardService {
 	public List<FaqVO> faqList(int classification)throws Exception;
 	public List<NoticeVO> noticeList() throws Exception;
 	public Map noticeDetail(int notice_num) throws Exception;
+	
+	public int addNewQna(Map<String, Object> newQnaMap) throws Exception;
 }

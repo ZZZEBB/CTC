@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.spring.ctc.board.vo.QnaVO;
 import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 import com.spring.ctc.order.vo.OrderVO;
@@ -30,6 +31,12 @@ public class MypageDAOImpl implements MypageDAO {
 	   CompanyVO com = sqlSession.selectOne("mapper.mypage.selectMyCompany", company_id);
 	   return com;
    }
+   
+   //나의 문의내역
+   public List<QnaVO> myQnaList(QnaVO qnaVO) throws DataAccessException {
+	   List<QnaVO> myQnaList = sqlSession.selectList("mapper.board.myQnaList", qnaVO);
+	   return myQnaList;
+	}
    
    //상품결제목록 출력
    @Override

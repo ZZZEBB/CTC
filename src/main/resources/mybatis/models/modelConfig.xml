@@ -8,6 +8,7 @@
 		<typeAlias type="com.spring.ctc.board.vo.FaqVO" alias="faqVO" />
 		<typeAlias type="com.spring.ctc.board.vo.NoticeVO" alias="noticeVO" />
 		<typeAlias type="com.spring.ctc.board.vo.QnaVO" alias="qnaVO" />
+		<typeAlias type="com.spring.ctc.board.vo.BoardDetailImageVO" alias="boardDetailImageVO"/>
 		<typeAlias type="com.spring.ctc.cart.vo.CartVO" alias="cartVO" />
 		<typeAlias type="com.spring.ctc.goods.GoodsVO" alias="goodsVO" />
 		<typeAlias type="com.spring.ctc.goods.ReviewVO" alias="reviewVO" />

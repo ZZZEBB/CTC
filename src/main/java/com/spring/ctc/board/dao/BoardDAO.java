@@ -16,4 +16,7 @@ public interface BoardDAO {
 	public List<FaqVO> selectfaqList(int classification)throws DataAccessException;
 	public List<NoticeVO> noticeList() throws DataAccessException;
 	public Map selectNoticeDetail(int notice_num) throws DataAccessException;
+	
+	public void insertQnaImageFile(List fileList) throws DataAccessException;
+	public Integer writeNewQna(Map<String, Object> newQnaMap) throws DataAccessException;
 }
