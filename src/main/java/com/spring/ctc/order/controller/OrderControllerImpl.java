@@ -30,6 +30,25 @@ public class OrderControllerImpl implements OrderController {
    @Autowired
    private OrderVO orderVO;
    
+   
+   //상품 예약/결제 페이지
+   @Override
+   @RequestMapping(value= "/order.do" ,method={RequestMethod.POST,RequestMethod.GET})
+   public ModelAndView order(HttpServletRequest request, HttpServletResponse response) throws Exception{
+      String viewName = (String)request.getAttribute("viewName");
+      ModelAndView mav = new ModelAndView(viewName);
+      return mav;
+   }
+   
+   //상품 예약/결제 완료 페이지
+      @Override
+      @RequestMapping(value= "/finishOrder.do" ,method={RequestMethod.POST,RequestMethod.GET})
+      public ModelAndView finishOrder(HttpServletRequest request, HttpServletResponse response) throws Exception{
+         String viewName = (String)request.getAttribute("viewName");
+         ModelAndView mav = new ModelAndView(viewName);
+         return mav;
+      }
+
       @Override
       @RequestMapping(value = "/orderEachGoods.do", method = RequestMethod.POST)
       public ModelAndView orderEachGoods(@ModelAttribute("orderVO") OrderVO _orderVO, HttpServletRequest request, HttpServletResponse response)
@@ -71,45 +90,38 @@ public class OrderControllerImpl implements OrderController {
       }
       
 
-      @Override
-      @RequestMapping(value = "/orderAllCartGoods.do", method={RequestMethod.POST,RequestMethod.GET})
-      public ModelAndView orderAllCartGoods(@RequestParam("cart_headcount") String[] cart_headcount, HttpServletRequest request,
-         HttpServletResponse response) throws Exception {
-         String viewName = (String)request.getAttribute("viewName");
-         ModelAndView mav = new ModelAndView(viewName);
-         HttpSession session = request.getSession();
-         Map cartMap=(Map)session.getAttribute("cartMap");
-         List myOrderList = new ArrayList<OrderVO>();
-         
-         List<GoodsVO> myGoodList = (List<GoodsVO>)cartMap.get("myGoodsLsit");
-         MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
-         
-         for(int i=0; i<=cart_headcount.length;i++) {
-            String[] cart_goods=cart_headcount[i].split(":");
-            for(int j=0; j<myGoodList.size();j++) {
-               GoodsVO goodsVO = myGoodList.get(j);
-               String goods_code = goodsVO.getGoods_code();
-               if (goods_code==(cart_goods[0])) {
-                  OrderVO _orderVO = new OrderVO();
-                  String goods_name = goodsVO.getGoods_name();
-                  int goods_saleprice = goodsVO.getGoods_saleprice();
-                  _orderVO.setGoods_code(goods_code);
-                  _orderVO.setGoods_name(goods_name);
-                  _orderVO.setPay_price(goods_saleprice);
-                  myOrderList.add(_orderVO);
-                  break;
-         
-               }
-            }
-         }
-         session.setAttribute("myGoodsList", myGoodList);
-         session.setAttribute("myOrderList", myOrderList);
-         session.setAttribute("orderer", memberVO);
-         return mav;
-      }
+		/*
+		 * @Override
+		 * 
+		 * @RequestMapping(value = "/orderAllCartGoods.do",
+		 * method={RequestMethod.POST,RequestMethod.GET}) public ModelAndView
+		 * orderAllCartGoods(@RequestParam("cart_headcount") String[] cart_headcount,
+		 * HttpServletRequest request, HttpServletResponse response) throws Exception {
+		 * String viewName = (String)request.getAttribute("viewName"); ModelAndView mav
+		 * = new ModelAndView(viewName); HttpSession session = request.getSession(); Map
+		 * cartMap=(Map)session.getAttribute("cartMap"); List myOrderList = new
+		 * ArrayList<OrderVO>();
+		 * 
+		 * List<GoodsVO> myGoodList = (List<GoodsVO>)cartMap.get("myGoodsLsit");
+		 * MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
+		 * 
+		 * for(int i=0; i<=cart_headcount.length;i++) { String[]
+		 * cart_goods=cart_headcount[i].split(":"); for(int j=0;
+		 * j<myGoodList.size();j++) { GoodsVO goodsVO = myGoodList.get(j); String
+		 * goods_code = goodsVO.getGoods_code(); if (goods_code==(cart_goods[0])) {
+		 * OrderVO _orderVO = new OrderVO(); String goods_name =
+		 * goodsVO.getGoods_name(); int goods_saleprice = goodsVO.getGoods_saleprice();
+		 * _orderVO.setGoods_code(goods_code); _orderVO.setGoods_name(goods_name);
+		 * _orderVO.setGoods_saleprice(goods_saleprice); myOrderList.add(_orderVO);
+		 * break;
+		 * 
+		 * } } } session.setAttribute("myGoodsList", myGoodList);
+		 * session.setAttribute("myOrderList", myOrderList);
+		 * session.setAttribute("orderer", memberVO); return mav; }
+		 */
 
 
-      @Override
+      @Override //ppt18번 - 2
       @RequestMapping(value = "/payToOrderGoods.do", method = RequestMethod.POST)
       public ModelAndView payToOrderGoods(@RequestParam Map<String, String> receiverMap, HttpServletRequest request,
             HttpServletResponse response) throws Exception {
@@ -124,9 +136,9 @@ public class OrderControllerImpl implements OrderController {
          for(int i=0; i<myOrderList.size();i++) {
             OrderVO orderVO = (OrderVO)myOrderList.get(i);
             orderVO.setMember_id(member_id);
-            orderVO.setPay_method("카드");
-            myOrderList.set(i, orderVO);
-            
+            orderVO.setCard_pay_month(receiverMap.get("card_pay_month"));
+            orderVO.setCard_com_name(receiverMap.get("card_com_name"));
+            myOrderList.set(i, orderVO);  
          }
          
          orderService.addNewOrder(myOrderList);

@@ -25,20 +25,18 @@
       <table class="mt-5 table caption-top table table-bordered align-middle">
          <%-- <caption class="fs-5">주문 번호 <span style = "color : #808080; font-size : 0.8em;">MHJ-OD23032302471GQP001</span></caption> --%>
          <tr>
-            <th class="col-md-2">상품 코드</th>
-            <th class="col-md-5">상품명</th>
-            <th class="col-md-2">결제 방법</th>
+            <th class="col-md-5">상품 코드</th>
+            <th class="col-md-2">상품명</th>
             <th class="col-md-3">결제 금액</th>
          </tr>
          <tr>
          <c:forEach var="item" items="${myOrderList}">
-         
-            <th class="col-md-2">${item.goods_code}</th>
-            <th class="col-md-5">
+               
+            <th class="col-md-5">${item.goods_code}</th>
+            <th class="col-md-2">
                ${item.goods_name}<br>
                <span class = "fw-bolder" style = "color : #808080; font-size : 0.8em;">상품구분 <span>${item.goods_category}</span></span>
             </th>
-            <th class="col-md-2">${item.pay_method}</th>
             <th class="col-md-3" style = "color : #ff0000;">${item.goods_saleprice} 원</th>
             
             </c:forEach>

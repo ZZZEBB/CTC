@@ -11,42 +11,24 @@ public class OrderVO {
 	private String goods_code;
 	private int order_num;
 	private String goods_name;
+	private String goods_category;
+	private int goods_saleprice;
 	private Date order_date;
+	private int order_status;
 	private Date pay_order_time;
-	private String pay_method;
 	private String card_com_name;
 	private String card_pay_month;
-	private int order_status;
-	private int pay_price;
 	private int refund_price;
-	private int pay_status;
 	private int total_charge_price;
 	private int use_mileage;
 	private int plus_mileage;
-	private int total_pay_price;
 	private String license_id;
 	private Date license_date;
 	private Date reser_start_date;
 	private Date reser_end_date;
 	private String reser_period;
 	private int reser_headcount;
-	private int goods_saleprice;
-	private String goods_category;
 	
-	
-	
-	public String getGoods_category() {
-		return goods_category;
-	}
-	public void setGoods_category(String goods_category) {
-		this.goods_category = goods_category;
-	}
-	public int getGoods_saleprice() {
-		return goods_saleprice;
-	}
-	public void setGoods_saleprice(int goods_saleprice) {
-		this.goods_saleprice = goods_saleprice;
-	}
 	public String getMember_id() {
 		return member_id;
 	}
@@ -71,11 +53,23 @@ public class OrderVO {
 	public void setGoods_name(String goods_name) {
 		this.goods_name = goods_name;
 	}
+	public String getGoods_category() {
+		return goods_category;
+	}
+	public void setGoods_category(String goods_category) {
+		this.goods_category = goods_category;
+	}
 	public Date getOrder_date() {
 		return order_date;
 	}
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
+	}
+	public int getOrder_status() {
+		return order_status;
+	}
+	public void setOrder_status(int order_status) {
+		this.order_status = order_status;
 	}
 	public Date getPay_order_time() {
 		return pay_order_time;
@@ -83,11 +77,11 @@ public class OrderVO {
 	public void setPay_order_time(Date pay_order_time) {
 		this.pay_order_time = pay_order_time;
 	}
-	public String getPay_method() {
-		return pay_method;
+	public int getGoods_saleprice() {
+		return goods_saleprice;
 	}
-	public void setPay_method(String pay_method) {
-		this.pay_method = pay_method;
+	public void setGoods_saleprice(int goods_saleprice) {
+		this.goods_saleprice = goods_saleprice;
 	}
 	public String getCard_com_name() {
 		return card_com_name;
@@ -101,29 +95,11 @@ public class OrderVO {
 	public void setCard_pay_month(String card_pay_month) {
 		this.card_pay_month = card_pay_month;
 	}
-	public int getOrder_status() {
-		return order_status;
-	}
-	public void setOrder_status(int order_status) {
-		this.order_status = order_status;
-	}
-	public int getPay_price() {
-		return pay_price;
-	}
-	public void setPay_price(int pay_price) {
-		this.pay_price = pay_price;
-	}
 	public int getRefund_price() {
 		return refund_price;
 	}
 	public void setRefund_price(int refund_price) {
 		this.refund_price = refund_price;
-	}
-	public int getPay_status() {
-		return pay_status;
-	}
-	public void setPay_status(int pay_status) {
-		this.pay_status = pay_status;
 	}
 	public int getTotal_charge_price() {
 		return total_charge_price;
@@ -142,12 +118,6 @@ public class OrderVO {
 	}
 	public void setPlus_mileage(int plus_mileage) {
 		this.plus_mileage = plus_mileage;
-	}
-	public int getTotal_pay_price() {
-		return total_pay_price;
-	}
-	public void setTotal_pay_price(int total_pay_price) {
-		this.total_pay_price = total_pay_price;
 	}
 	public String getLicense_id() {
 		return license_id;
@@ -185,4 +155,6 @@ public class OrderVO {
 	public void setReser_headcount(int reser_headcount) {
 		this.reser_headcount = reser_headcount;
 	}
+	
+	
 }
