@@ -56,7 +56,8 @@
        <![CDATA[
          select * from member 
           where member_id=#{member_id}
-          and member_pw=#{member_pw}         
+          and member_pw=#{member_pw}
+          and member_status = 1
       ]]>   
    </select>
    

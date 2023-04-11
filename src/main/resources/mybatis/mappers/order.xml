@@ -46,12 +46,26 @@
       ]]>
    </select>
    
-	 <insert id="insertNewOrder" parameterType="orderVO">
-         <![CDATA[
-         	insert into reservation(member_id, order_num, goods_code, goods_name)
-                   values(#{member_id}, #{order_num}, #{goods_code}, #{goods_name})
-     	]]>
-     </insert>
+	<insert id="insertNewOrder" parameterType="orderVO">
+		<![CDATA[
+			insert into reservation(member_id,
+		                   order_num,
+		                   goods_name,
+		                   goods_code,
+		                   goods_category,
+		                   goods_saleprice,
+		                   card_pay_month,
+		                   card_com_name)
+	          values(#{member_id},
+	                #{order_num},
+	                #{goods_name},
+	                #{goods_code},
+	                #{goods_category},
+	                #{goods_saleprice},
+	                #{card_pay_month},
+	                #{card_com_name})
+		]]>
+	</insert>
   	
    <select id="selectOrderID" resultType="int"  >
        <![CDATA[

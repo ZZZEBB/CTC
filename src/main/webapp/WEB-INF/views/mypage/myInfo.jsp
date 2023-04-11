@@ -34,7 +34,7 @@
                <td style="padding-top:30px;width:500px;">
                <a style="font-size:24px;text-decoration:none;color:black;" href="${contextPath}/mypage/myDetailInfo.do">
                <img alt="사람아이콘"src="${contextPath}/resources/image/mypage/user.png" width="25px" height="25px"> 회원정보 수정</a>
-               <a style="font-size:24px;text-decoration:none;margin-left:100px;color:black;" href="#">
+               <a style="font-size:24px;text-decoration:none;margin-left:100px;color:black;" href="${contextPath}/mypage/mypageDelete.do">
                <img alt="사람아이콘"src="${contextPath}/resources/image/mypage/user.png" width="25px" height="25px"> 회원정보 탈퇴</a></td>
             </tr>
          </table>

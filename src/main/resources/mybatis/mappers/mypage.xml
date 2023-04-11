@@ -89,22 +89,51 @@
 		<![CDATA[ SELECT * FROM reservation WHERE member_id = #{member_id} ]]>
 	</select>
 	
-	<!--  회원정보 수정  -->
-	<update id="updateMember" parameterType="java.util.Map">
-		update member
-		<set>
-		<if test=" member_pw!='' and member_pw!=null"> member_pw=#{member_pw}, </if>
-		<if test=" member_rrn1 !='' and member_rrn1 !=null"> member_rrn1 =#{member_rrn1}, </if>
-		<if test=" member_rrn2 !='' and member_rrn2 !=null"> member_rrn2 =#{member_rrn2}, </if>
-		<if test=" member_ph1 !='' and member_ph1 !=null"> member_ph1 = #{member_ph1}, </if>
-		<if test=" member_ph2 !='' and member_ph2 !=null"> member_ph2 = #{member_ph2}, </if>
-		<if test=" member_ph3!='' and member_ph3 !=null"> member_ph3 = #{member_ph3}, </if>
-		<if test=" member_email !='' and member_email !=null"> member_email =#{member_email}, </if>
-		<if test=" member_zipcode!='' and member_zipcode!=null"> member_zipcode=#{member_zipcode}, </if>
-		<if test=" member_roadAddress!='' and member_roadAddress!=null"> member_roadAddress=#{member_roadAddress}, </if>
-		<if test=" member_local_address !='' and member_local_address !=null"> member_local_address =#{member_local_address}, </if>
-		<if test=" member_rest_address!='' and member_rest_address!=null"> member_rest_address=#{member_rest_address} </if>
-		</set>
-		where member_id = #{member_id}
-	</update>
+	<!-- 회원정보 수정 -->
+   <update id="updateMember" parameterType="java.util.Map">
+         update member
+            <set>
+               <if test=" member_pw!='' and member_pw!=null">
+                 member_pw=#{member_pw},
+               </if>
+                <if test=" member_rrn1 !='' and member_rrn1 !=null">
+                  member_rrn1 =#{member_rrn1},
+               </if>
+                <if test=" member_rrn2 !='' and member_rrn2 !=null">
+                  member_rrn2 =#{member_rrn2},
+               </if>
+               <if test=" member_ph1 !='' and member_ph1 !=null">
+                  member_ph1 = #{member_ph1},
+               </if>
+               <if test=" member_ph2 !='' and member_ph2 !=null">
+                  member_ph2 = #{member_ph2},
+               </if>
+               <if test=" member_ph3!='' and member_ph3 !=null">
+                  member_ph3 = #{member_ph3},
+               </if>
+               <if test=" member_email !='' and member_email !=null">
+                  member_email =#{member_email},
+               </if>
+               <if test=" member_zipcode!='' and member_zipcode!=null">
+                  member_zipcode=#{member_zipcode},
+               </if>
+               <if test=" member_roadAddress!='' and member_roadAddress!=null">
+                  member_roadAddress=#{member_roadAddress},
+               </if>              
+               <if test=" member_local_address !='' and member_local_address !=null">
+                  member_local_address =#{member_local_address},
+               </if>
+               <if test=" member_rest_address!='' and member_rest_address!=null">
+                  member_rest_address=#{member_rest_address}
+               </if>
+            </set>
+         where member_id = #{member_id}
+   </update>
+   
+      <update id="deleteMember" parameterType="java.util.Map">
+      update member 
+      set member_status = 2
+       where member_id = #{member_id} AND
+              member_pw = #{member_pw}
+   </update>
 </mapper>

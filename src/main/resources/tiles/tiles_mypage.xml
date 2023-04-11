@@ -19,6 +19,12 @@
 		<put-attribute name="body" value="/WEB-INF/views/mypage/myInfo.jsp"/>
 	</definition>
 	
+	<!--  마이페이지 메인 - 회원 탈퇴 페이지 이동  -->
+	<definition name="/mypage/mypageDelete" extends="side">
+		<put-attribute name="title" value="마이페이지 - 회원 탈퇴 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/delMember.jsp"/>
+	</definition>
+	
 	<!--  마이페이지 메인 - 나의 마일리지 페이지  -->
 	<definition name="/mypage/myMileage" extends="side">
 		<put-attribute name="title" value="마이페이지 - 나의 마일리지"/>

@@ -29,7 +29,11 @@ public class MypageServiceImpl implements MypageService {
    }
    
    public void difyMember(Map memberInfo) throws Exception{
-	   mypageDAO.updateMember(memberInfo);
+	      mypageDAO.updateMember(memberInfo);
+	   }
+	   
+   public void deleteMember(Map member) throws Exception{
+      mypageDAO.deleteMember(member);
    }
    
    @Override

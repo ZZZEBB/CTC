@@ -20,7 +20,6 @@ import com.spring.ctc.board.vo.FaqVO;
 import com.spring.ctc.board.vo.NoticeVO;
 import com.spring.ctc.goods.GoodsVO;
 
-//@Controller("boardController")
 @Controller
 @RequestMapping(value="/board")
 public class BoardControllerImpl implements BoardController {
@@ -93,8 +92,6 @@ public class BoardControllerImpl implements BoardController {
 		List<FaqVO> faqflight = boardService.faqList(flight);
 		List<FaqVO> faqrent = boardService.faqList(rent);
 		List<FaqVO> faqpackage = boardService.faqList(packages);
-		
-		System.out.println(faqpackage.toString());
 		
 		//고객센터 사이드메뉴
 		session.setAttribute("side_menu", "mem_customercenter_mode");

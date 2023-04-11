@@ -76,9 +76,6 @@
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-*{
-   font-family: 'OTWelcomeRA';
-}
 /* 차종류 크기및 조정 */
 #carname,#carname1,#carname2,#carname3,#carname4{
    background-color:#8DE4FC;

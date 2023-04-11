@@ -101,6 +101,30 @@ public class MypageController {
 			return mav;
 		}
 		
+		//회원 정보 탈퇴 페이지 이동(/mypageDelete.do)
+		@RequestMapping(value="/mypageDelete.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	      public ModelAndView mypageDelete(HttpServletRequest request, HttpServletResponse response)  throws Exception {
+	         HttpSession session = request.getSession();
+	         MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
+	         String viewName=(String)request.getAttribute("viewName");
+	         ModelAndView mav = new ModelAndView(viewName);
+	         mav.addObject("memberInfo" , memberVO);
+	         return mav;
+	      }   
+
+	      
+	      //회원 정보 탈퇴 (/delMember.do)
+	      @RequestMapping(value="/delMember.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	      public ModelAndView delMember(@RequestParam Map<String,String> member , HttpServletRequest request, HttpServletResponse response)  throws Exception {
+	         HttpSession session = request.getSession();
+	         MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
+	         mypageService.deleteMember(member);
+	         String viewName=(String)request.getAttribute("viewName");
+	         ModelAndView mav = new ModelAndView("/main/main");
+	         return mav;
+	      }   
+
+		
 		//나의 마일리지 페이지 조회(/myMileage.do)
 		@RequestMapping(value= "/myMileage.do" ,method={RequestMethod.POST,RequestMethod.GET})
 		public ModelAndView myMileage(HttpServletRequest request, HttpServletResponse response) throws Exception {
