@@ -19,4 +19,9 @@ public interface MypageDAO {
 	public void updateMember(Map memberInfo) throws DataAccessException;
 	public void deleteMember(Map member) throws DataAccessException;
 	public List<OrderVO> checkMileage() throws DataAccessException;
+	public List<OrderVO> selectMyOrderHistory(Map dateMap) throws DataAccessException;
+	/*
+	 * public List<ReviewVO> reviewList(String member_id) throws DataAccessException;
+	 */
+
 }

@@ -17,4 +17,6 @@ public interface MypageService {
 	public void difyMember(Map memberInfo) throws Exception;
 	public void deleteMember(Map member) throws Exception;
 	public List<OrderVO> checkMileage() throws Exception;
+	public List<OrderVO> listMyOrderHistory(Map dateMap) throws Exception;
+	/* public List<ReviewVO> reviewList(String member_id) throws Exception; */
 }

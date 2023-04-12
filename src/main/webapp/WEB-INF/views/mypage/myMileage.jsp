@@ -13,6 +13,19 @@
    <!-- CSS only -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   <script>
+   function search_order_history(fixedSearchPeriod){
+      var formObj=document.createElement("form");
+      var i_fixedSearch_period = document.createElement("input");
+      i_fixedSearch_period.name="fixedSearchPeriod";
+      i_fixedSearch_period.value=fixedSearchPeriod;
+       formObj.appendChild(i_fixedSearch_period);
+       document.body.appendChild(formObj); 
+       formObj.method="get";
+       formObj.action="${contextPath}/mypage/listMyOrderHistory.do";
+       formObj.submit();
+   }
+   </script>
    <style type="text/css">
       .mainText {
       margin-bottom: 100px;
@@ -24,6 +37,7 @@
    </style>
 </head>
 <body>
+<form action="post">
 <div class = "container">
    
    <h4 class="mainText">마일리지 확인</h4>
@@ -32,14 +46,18 @@
    
    <div class="align-baseline" id="mainContent">
       <span class="fs-6">최근 내역 조회</span>
-      <a href="#"><span><input type="button" class="btn btn-light btn-outline-dark" value="1개월"></span></a>
-      <span><input type="button" class="btn btn-light btn-outline-dark" value="3개월"></span>
-      <span><input type="button" class="btn btn-light btn-outline-dark" value="6개월"></span>
+      <a href="javascript:search_order_history('today')"><span><input type="button" class="btn btn-light btn-outline-dark" value="당일"></span></a>
+      <a href="javascript:search_order_history('one_week')"><span><input type="button" class="btn btn-light btn-outline-dark" value="1주"></span></a>
+      <!-- <span><input type="button" class="btn btn-light btn-outline-dark" value="2주"></span> -->
+      <a href="javascript:search_order_history('one_month')"><span><input type="button" class="btn btn-light btn-outline-dark" value="1개월"></span></a>
+      <!-- <span><input type="button" class="btn btn-light btn-outline-dark" value="2개월"></span> -->
+      <a href="javascript:search_order_history('three_month')"><span><input type="button" class="btn btn-light btn-outline-dark" value="3개월"></span></a>
+      <!-- <span><input type="button" class="btn btn-light btn-outline-dark" value="4개월"></span> -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
-      <span class="fs-6">기간 조회</span>
+      <!-- <span class="fs-6">기간 조회</span>
       <span><input class="date" type="date" name="start"/></span>~
       <span><input class="date" type="date" name="start"/></span>
-      <span><input type="submit" class="btn btn-light btn-outline-dark" value="조회"></span>
+      <span><input type="submit" class="btn btn-light btn-outline-dark" value="조회"></span> -->
    </div>
    <br>
    <table class="table" style="width: 80%">
@@ -53,10 +71,10 @@
       
     </tr>
   </thead>
-  <c:forEach var="mileage" items="${mileageList}">
+  <c:forEach var="mileage" items="${myOrderHistList}">
   <tbody>
     <tr>
-      <th scope="row"><fmt:formatDate value="${mileage.order_date }" pattern="yyyy-MM-dd" />  </th>
+      <th scope="row"><fmt:formatDate value="${mileage.pay_order_time}" pattern="yyyy-MM-dd" />  </th>
       <td>${mileage.goods_name}</td>
       <td>${mileage.use_mileage}</td>
       <td>${mileage.goods_code}</td>
@@ -85,7 +103,7 @@
 </table>
    
 </div>
-
+</form>
 <!-- JavaScript Bundle with Popper -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

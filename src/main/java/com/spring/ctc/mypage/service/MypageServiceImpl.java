@@ -49,5 +49,16 @@ public class MypageServiceImpl implements MypageService {
    public List<OrderVO> checkMileage() throws Exception {
       return mypageDAO.checkMileage();
    }
+
+   @Override
+   public List<OrderVO> listMyOrderHistory(Map dateMap) throws Exception {
+      return mypageDAO.selectMyOrderHistory(dateMap);
+   }
+
+	/*
+	 * @Override public List<ReviewVO> reviewList(String member_id) throws Exception
+	 * { return mypageDAO.reviewList(member_id); }
+	 */
+
    
 }

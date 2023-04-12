@@ -58,4 +58,18 @@ public class MypageDAOImpl implements MypageDAO {
       List<OrderVO> mileage = sqlSession.selectList("mapper.order.checkMileage");
       return mileage;
    }
+
+   @Override
+   public List<OrderVO> selectMyOrderHistory(Map dateMap) throws DataAccessException {
+      List<OrderVO> myOrderHistList = (List)sqlSession.selectList("mapper.order.selectMyOrderHistoryList", dateMap);
+      return myOrderHistList;
+   }
+
+	/*
+	 * @Override 
+	 * public List<ReviewVO> reviewList(String member_id) throws DataAccessException { 
+	 * List<ReviewVO> review sqlSession.selectList("mapper.mypage.reviewList", member_id); return review;
+	 * }
+	 */
+
  }

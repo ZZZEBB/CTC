@@ -84,10 +84,13 @@
       ]]>
    </delete>
    
-   <!-- 마일리지 조회 -->
-   <select id="checkMileage" resultType="orderVO" parameterType="java.util.Map">
-      <![CDATA[ 
-      SELECT * FROM reservation
+	<!-- 마일리지 조회 -->
+    <select id="selectMyOrderHistoryList" resultMap="orderGoodsResult"   parameterType="java.util.Map"  >
+       <![CDATA[
+        select * from reservation
+          where member_id=#{member_id}
+          and DATE_FORMAT(pay_order_time, '%Y-%m-%d') between date_format(#{beginDate},'%Y-%m-%d') and date_format(#{endDate},'%Y-%m-%d')
+           order by pay_order_time desc
        ]]>
    </select>
 </mapper>
