@@ -22,7 +22,7 @@ public class CompanyBoardControllerImpl implements CompanyBoardController {
 		session = request.getSession();
 		
 		//사업체 이벤트 관리 사이드메뉴
-		session.setAttribute("side_menu", "goodsManage_mode");
+		session.setAttribute("side_menu", "com_mode");
 		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");

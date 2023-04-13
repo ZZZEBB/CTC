@@ -125,10 +125,61 @@
          where member_id = #{member_id}
    </update>
    
-      <update id="deleteMember" parameterType="java.util.Map">
+   <!-- 회원 탈퇴 -->
+    <update id="deleteMember" parameterType="java.util.Map">
       update member 
       set member_status = 2
        where member_id = #{member_id} AND
               member_pw = #{member_pw}
    </update>
+   
+   <!-- 사업체회원정보 수정 -->
+   <update id="updatecompany" parameterType="java.util.Map">
+         update company
+            <set>
+               <if test=" com_pw!='' and com_pw!=null">
+                 com_pw=#{com_pw},
+               </if>
+                <if test=" com_crn1 !='' and com_crn1 !=null">
+                  com_rrn1 =#{com_rrn1},
+               </if>
+                <if test=" com_rrn2 !='' and com_rrn2 !=null">
+                  com_rrn2 =#{com_rrn2},
+               </if>
+               <if test=" com_tel1 !='' and com_tel1 !=null">
+                  com_tel1 = #{com_tel1},
+               </if>
+               <if test=" com_tel2 !='' and com_tel2 !=null">
+                  com_tel2 = #{com_tel2},
+               </if>
+               <if test=" com_tel3!='' and com_tel3 !=null">
+                  com_tel3 = #{com_tel3},
+               </if>
+               <if test=" com_email !='' and com_email !=null">
+                  com_email =#{com_email},
+               </if>
+               <if test=" com_zipcode!='' and com_zipcode!=null">
+                  com_zipcode=#{com_zipcode},
+               </if>
+               <if test=" com_roadAddress!='' and com_roadAddress!=null">
+                  com_roadAddress=#{com_roadAddress},
+               </if>              
+               <if test=" com_local_address !='' and com_local_address !=null">
+                  com_local_address =#{com_local_address},
+               </if>
+               <if test=" com_rest_address!='' and com_rest_address!=null">
+                  com_rest_address=#{com_rest_address}
+               </if>
+            </set>
+         where com_id = #{com_id}
+   </update>
+   
+   <!-- 사업체 회원 탈퇴 -->
+      <update id="deleteCompany" parameterType="java.util.Map">
+      update company 
+      set com_status = 2
+       where com_id = #{com_id} AND
+              com_pw = #{com_pw}
+   </update>
+   
 </mapper>

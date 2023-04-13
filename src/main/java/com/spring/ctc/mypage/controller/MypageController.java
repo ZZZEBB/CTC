@@ -120,17 +120,22 @@ public class MypageController {
 	      }   
 
 	      
-	      //회원 정보 탈퇴 (/delMember.do)
-	      @RequestMapping(value="/delMember.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	      public ModelAndView delMember(@RequestParam Map<String,String> member , HttpServletRequest request, HttpServletResponse response)  throws Exception {
-	         HttpSession session = request.getSession();
-	         MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
-	         mypageService.deleteMember(member);
-	         String viewName=(String)request.getAttribute("viewName");
-	         ModelAndView mav = new ModelAndView("/main/main");
-	         return mav;
-	      }   
-
+		//회원 정보 탈퇴 (/delMember.do)
+        @RequestMapping(value="/delMember.do" ,method={RequestMethod.POST,RequestMethod.GET})
+        public ModelAndView delMember(@RequestParam Map<String,String> member , HttpServletRequest request, HttpServletResponse response)  throws Exception {
+           HttpSession session = request.getSession();
+           MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
+           CompanyVO companyVO = (CompanyVO)session.getAttribute("comInfo");
+           if(memberVO != null) {
+              mypageService.deleteMember(member);
+           }
+           else if(companyVO != null) {
+              mypageService.deleteCompany(member);
+           }
+           String viewName=(String)request.getAttribute("viewName");
+           ModelAndView mav = new ModelAndView("/main/main");
+           return mav;
+        }   
 		
 		 @RequestMapping(value = "/listMyOrderHistory.do", method={RequestMethod.POST,RequestMethod.GET})
 	      public ModelAndView listMyOrderHistory(@RequestParam Map<String, String> dateMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -204,6 +209,5 @@ public class MypageController {
 	         
 	         return beginDate+","+endDate;
 	      }
-
-		
+	      
 }

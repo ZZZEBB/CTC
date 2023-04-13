@@ -25,7 +25,7 @@
 <body>
 	<div class = "container">
 		<header>
-			<tiles:insertAttribute name="comHeader" />
+			<tiles:insertAttribute name="header" />
 		</header>
 		
 		<div class="clear"></div>

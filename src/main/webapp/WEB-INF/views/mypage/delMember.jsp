@@ -318,6 +318,8 @@
       <div class = "d-flex col-md-9 justify-content-between align-item-center">
          <h4>회원탈퇴</h4>
       </div>
+       <!-- 일반 회원탈퇴 -->
+      <c:if test="${not empty memberInfo}">
       <form action="${contextPath}/mypage/delMember.do" method="post" class = "col-md-8">   
          <table class="table table align-middle">
       <tr>
@@ -352,6 +354,45 @@
          <input type="reset"  value="다시입력">
       </div>
       </form>
+      </c:if>
+ 
+       <!-- 사업자 회원탈퇴 -->
+      <c:if test="${not empty comInfo}">
+      <form action="${contextPath}/mypage/delMember.do" method="post" class = "col-md-8">   
+         <table class="table table align-middle">
+      <tr>
+         <th class = "col-md-2">아이디</th>
+         <td><input class = "form-control" type="text" name="com_id"  id="id" value="${comInfo.com_id}" readonly = "readonly"/></td>
+      </tr>
+      <tr>
+         <th>비밀번호</th>
+         <td>
+            <div class="row g-3">
+               <div class="col">
+                  <input type="password" id="com_pw" name="com_pw" class="form-control" oninput="validatePassword()" required><!-- minlength="8" maxlength="16" -->
+                  <span id="password-warn"></span>
+               </div>
+            </div>
+         </td>
+      </tr>
+      <tr>
+         <th>비밀번호 확인</th>
+         <td>
+            <div class="row g-3">
+               <div class="col">
+                  <input type="password" id="password-confirm" name="password-confirm" class="form-control" placeholder="비밀번호 재입력" oninput="validatePasswordConfirm()" required><!-- minlength="8" maxlength="16"  -->
+                  <span id="password-confirm-warn"></span>
+               </div>
+            </div>
+         </td>
+      </tr>
+         </table>
+      <div class="col-md-11 justify-content-center">
+         <input type="submit"  value="회원탈퇴">
+         <input type="reset"  value="다시입력">
+      </div>
+      </form>
+      </c:if>
    </div>
    <!-- JavaScript Bundle with Popper -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

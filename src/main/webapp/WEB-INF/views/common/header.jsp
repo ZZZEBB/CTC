@@ -148,27 +148,78 @@
                    </ul> -->
                </div>
             </div>
-            <div class="container-fluid">
-               <div class="d-flex flex-wrap align-items-center justify-content-center">
-                   <ul class="nav justify-content-center">
-                 <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
-                 </li>
-                 <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
-                 </li>
-                 <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
-                 </li>
-                 <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
-                 </li> 
-                 <li class="nav-item fs-4">
-                   <a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>
-                 </li>
-               </ul>
-               </div>
-            </div>
+            <c:choose>
+            	<c:when test="${side_menu=='com_mode'}">
+		            <div class="container-fluid">
+						<div class="d-flex flex-wrap align-items-center justify-content-center">
+							<ul class="nav justify-content-center">
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
+								</li> 
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>
+								</li>
+							</ul>
+						</div>
+		            </div>
+		            <nav class="navbar bg-light" style="background-color: #00aff0;">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="#">
+								<img src="${contextPath}/resources/image/booking.png" alt="Logo" width="20%" class="align-text-top">
+							예약 관리
+							</a>
+							<a class="navbar-brand" href="#">
+								<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
+								상품 관리
+							</a>
+							<a class="navbar-brand" href="#">
+								<img src="${contextPath}/resources/image/event.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
+								이벤트 관리
+							</a>
+							<a class="navbar-brand" href="#">
+								<img src="${contextPath}/resources/image/review.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
+								후기 관리
+							</a>
+							<a class="navbar-brand" href="#">
+								<img src="${contextPath}/resources/image/qna.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
+								문의 관리
+							</a>
+						</div>
+					</nav>
+            	</c:when>
+            	<c:otherwise>
+            		<div class="container-fluid">
+						<div class="d-flex flex-wrap align-items-center justify-content-center">
+							<ul class="nav justify-content-center">
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
+								</li>
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
+								</li> 
+								<li class="nav-item fs-4">
+									<a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>
+								</li>
+							</ul>
+						</div>
+		            </div>
+            	</c:otherwise>
+            </c:choose>
         </header>
     </div>
     <hr class = "main_hr">

@@ -65,7 +65,8 @@
        <![CDATA[
          select * from company 
           where com_id=#{com_id}
-          and com_pw=#{com_pw}         
+          and com_pw=#{com_pw}  
+          and com_status = 1       
       ]]>   
    </select>
 

@@ -40,10 +40,16 @@ public class MypageServiceImpl implements MypageService {
    public void difyMember(Map memberInfo) throws Exception{
 	      mypageDAO.updateMember(memberInfo);
 	   }
-	   
+   
+	/* 회원 탈퇴 */
    public void deleteMember(Map member) throws Exception{
       mypageDAO.deleteMember(member);
    }
+   
+   /* 사업체 탈퇴 */
+   public void deleteCompany(Map comInfo) throws Exception{
+	      mypageDAO.deleteCompany(comInfo);
+	   }
    
    @Override
    public List<OrderVO> checkMileage() throws Exception {
