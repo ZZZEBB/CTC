@@ -1,5 +1,10 @@
 package com.spring.ctc.company.board.controller;
 
-public interface CompanyBoardController {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.ModelAndView;
+
+public interface CompanyBoardController {
+	public ModelAndView comEventForm(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }
