@@ -48,7 +48,6 @@
       <td class="col-md-3"><a class="textnone" href="#">${item.goods_name}</a></td>
       <td class="textal col-md-1">
       <c:if test="${item.goods_saleprice != ''}">결제금액 : ${item.goods_saleprice}<br></c:if>
-      <c:if test="${item.pay_price != 0}">카드 결제금액 : ${item.pay_price}</c:if>
       </td>
       <td class="textal col-md-1">
       <c:if test="${item.order_status == 1}">결제완료</c:if>

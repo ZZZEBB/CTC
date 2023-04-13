@@ -109,15 +109,23 @@
       ]]>
    </select>
    
+   <!-- 나의 문의 내역 목록 조회 -->
 	<select id="myQnaList" resultMap="qnaResult">
-		<![CDATA[ select qna_type, qna_title, qna_write_date, qna_status from qna where member_id = #{member_id} order by qna_write_date desc ]]>
-	</select>
-	
-	<insert id="writeNewQna" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="qna_num">
-		<![CDATA[ insert into qna(member_id, qna_type, qna_title, qna_content, board_fileName) values(#{member_id},#{qna_type},#{qna_title},#{qna_content},#{board_fileName}) ]]>
-	</insert>
-	
-	<insert id="insertQnaImageFile" parameterType="java.util.List">
-		<foreach item="item" collection="list" separator=";"> INSERT INTO board_detail_image (board_fileName, qna_num, board_reg_id) VALUES (#{item.board_fileName}, #{item.qna_num}, #{item.board_reg_id}) </foreach>
-	</insert>
+      <![CDATA[
+         select qna_num, qna_type, qna_title, qna_content, board_fileName, qna_write_date, qna_status 
+         from qna 
+         where member_id = #{member_id} 
+         order by qna_write_date desc
+      ]]>
+   </select>
+
+	<!-- 문의글 작성 - 글 등록 -->
+   <insert id="writeNewQna" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="qna_num">
+      <![CDATA[ insert into qna(member_id, qna_type, qna_title, qna_content, board_fileName) values(#{member_id},#{qna_type},#{qna_title},#{qna_content},#{board_fileName}) ]]>
+   </insert>
+   
+   <!-- 문의글 작성 - 이미지등록 -->
+   <insert id="insertQnaImageFile" parameterType="java.util.List">
+      <foreach item="item" collection="list" separator=";"> INSERT INTO board_detail_image (board_fileName, qna_num, board_reg_id) VALUES (#{item.board_fileName}, #{item.qna_num}, #{item.board_reg_id}) </foreach>
+   </insert>
 </mapper>

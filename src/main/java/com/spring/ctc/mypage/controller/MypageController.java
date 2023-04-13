@@ -44,12 +44,14 @@ public class MypageController {
 	         
 	         if(memberVO != null) {
 		         mav.addObject("member", memberVO);
+		         //고객 - 마이페이지 사이드메뉴
+		         session.setAttribute("side_menu", "my_page"); 
 	         }
 	         else if(comVO != null) {
 	        	 mav.addObject("com", comVO);
+	        	 //사업체 - 마이페이지 사이드메뉴
+	        	 session.setAttribute("side_menu", "com_my_page"); 
 	         }
-	         //마이페이지 사이드메뉴
-	         session.setAttribute("side_menu", "my_page"); 
 	         return mav;
 	      }
 		

@@ -18,19 +18,6 @@
 </style>
 	<div class="panel panel-default sideBox">
 		<c:choose>
-			<%-- 사업체 - 고객센터 사이드바 --%>
-			<c:when test="${side_menu=='com_customercenter_mode'}">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item"><a href="${contextPath}/board/faq.do">FAQ</a>
-					<li class="list-group-item"><a href="${contextPath}/board/noticeList.do">공지사항</a></li>
-				</ul>
-			</c:when>
-			<%-- 마이페이지 사이드바 --%>
-			<c:when test="${side_menu=='com_my_page'}">
-				<ul class="list-group list-group-flush sideUl">
-					<li class="list-group-item"><a href="${contextPath}/mypage/myInfo.do">나의 정보</a></li>
-				</ul>
-			</c:when>
 			<%-- 사업체 모드 - 예약관리 사이드바 --%>
 			<c:when test="${side_menu =='reservationManage_mode' }">
 				<ul class="list-group list-group-flush">

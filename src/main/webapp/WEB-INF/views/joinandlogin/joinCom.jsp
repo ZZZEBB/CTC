@@ -108,7 +108,7 @@ function fn_overlapped(){
               alert("사용할 수 있는 ID입니다.");
               $('#btnOverlapped').prop("disabled", true);
               $('#id').prop("disabled", true);
-              $('#member_id').val(_id);
+              $('#com_id').val(_id);
           }else{
              alert("사용할 수 없는 ID입니다.");
           }

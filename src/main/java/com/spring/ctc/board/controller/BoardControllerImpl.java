@@ -30,6 +30,7 @@ import com.spring.ctc.board.vo.BoardDetailImageVO;
 import com.spring.ctc.board.vo.EventVO;
 import com.spring.ctc.board.vo.FaqVO;
 import com.spring.ctc.board.vo.NoticeVO;
+import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 
 @Controller
@@ -39,10 +40,50 @@ public class BoardControllerImpl implements BoardController {
 	
 	@Autowired
 	private BoardService boardService;
-	
 	private EventVO eventVO;
+	MemberVO memberVO;
+	CompanyVO comVO;
 	
 	BoardDetailImageVO boardDetailImageVO;
+	
+	//고객센터 메인 - 자주묻는질문 페이지 이동(/faq.do)
+	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
+	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		session = request.getSession();
+		String viewName = (String)request.getAttribute("viewName");
+		int hotel = 1; 
+		int flight = 2; 
+		int rent = 3; 
+		int packages = 4; 
+		List<FaqVO> faqhotel = boardService.faqList(hotel);
+		List<FaqVO> faqflight = boardService.faqList(flight);
+		List<FaqVO> faqrent = boardService.faqList(rent);
+		List<FaqVO> faqpackage = boardService.faqList(packages);
+		
+		memberVO = (MemberVO)session.getAttribute("memberInfo");
+		comVO = (CompanyVO)session.getAttribute("comInfo");
+		
+		mav.setViewName(viewName);
+		mav.addObject("faqhotel" , faqhotel);
+		mav.addObject("faqflight" , faqflight);
+		mav.addObject("faqrent" , faqrent);
+		mav.addObject("faqpackage" , faqpackage);
+		
+        if(memberVO != null) {
+	         mav.addObject("member", memberVO);
+	         //고객 - 마이페이지 사이드메뉴
+	         session.setAttribute("side_menu", "mem_customercenter_mode"); 
+        }
+        else if(comVO != null) {
+			 mav.addObject("com", comVO);
+			 //사업체 - 마이페이지 사이드메뉴
+			 session.setAttribute("side_menu", "com_customercenter_mode"); 
+        }
+        
+        return mav;
+	}
 	
 	//이벤트 목록 조회(/eventList.do)
 	@Override
@@ -82,42 +123,27 @@ public class BoardControllerImpl implements BoardController {
 	public ModelAndView oneQnaForm(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
 		session = request.getSession();
-		
-		//마이페이지 사이드메뉴
-		session.setAttribute("side_menu", "mem_customercenter_mode");
-		
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
 		mav.setViewName(viewName);
-		return mav;
+		
+		memberVO = (MemberVO)session.getAttribute("memberInfo");
+		comVO = (CompanyVO)session.getAttribute("comInfo");
+		
+		if(memberVO != null) {
+	         mav.addObject("member", memberVO);
+	         //고객 - 마이페이지 사이드메뉴
+	         session.setAttribute("side_menu", "mem_customercenter_mode"); 
+       }
+       else if(comVO != null) {
+			 mav.addObject("com", comVO);
+			 //사업체 - 마이페이지 사이드메뉴
+			 session.setAttribute("side_menu", "com_customercenter_mode"); 
+       }
+       
+        return mav;
 	}
 	
-	//고객센터 메인 - 자주묻는질문 페이지 이동(/faq.do)
-	@RequestMapping(value= "/faq.do" ,method={RequestMethod.POST,RequestMethod.GET})
-	public ModelAndView faq(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		ModelAndView mav = new ModelAndView();
-		HttpSession session = request.getSession();
-		session = request.getSession();
-		String viewName = (String)request.getAttribute("viewName");
-		int hotel = 1; 
-		int flight = 2; 
-		int rent = 3; 
-		int packages = 4; 
-		List<FaqVO> faqhotel = boardService.faqList(hotel);
-		List<FaqVO> faqflight = boardService.faqList(flight);
-		List<FaqVO> faqrent = boardService.faqList(rent);
-		List<FaqVO> faqpackage = boardService.faqList(packages);
-		
-		//고객센터 사이드메뉴
-		session.setAttribute("side_menu", "mem_customercenter_mode");
-		
-		mav.setViewName(viewName);
-		mav.addObject("faqhotel" , faqhotel);
-		mav.addObject("faqflight" , faqflight);
-		mav.addObject("faqrent" , faqrent);
-		mav.addObject("faqpackage" , faqpackage);
-		return mav;
-	}
 
 	//고객센터 - 공지사항 목록페이지 이동(/noticeList.do)
    @Override
@@ -133,7 +159,22 @@ public class BoardControllerImpl implements BoardController {
 		session.setAttribute("side_menu", "mem_customercenter_mode");
 		
 		mav.addObject("noticeList", noticeList);
-		return mav;
+		
+		memberVO = (MemberVO)session.getAttribute("memberInfo");
+		comVO = (CompanyVO)session.getAttribute("comInfo");
+		
+		if(memberVO != null) {
+	         mav.addObject("member", memberVO);
+	         //고객 - 마이페이지 사이드메뉴
+	         session.setAttribute("side_menu", "mem_customercenter_mode"); 
+       }
+       else if(comVO != null) {
+			 mav.addObject("com", comVO);
+			 //사업체 - 마이페이지 사이드메뉴
+			 session.setAttribute("side_menu", "com_customercenter_mode"); 
+       }
+       
+        return mav;
    }
    
    //고객센터 - 공지사항 상세페이지 이동(/noticeDetail.do)
@@ -145,8 +186,20 @@ public class BoardControllerImpl implements BoardController {
 		String viewName = (String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		
-		//고객센터 사이드메뉴
-		session.setAttribute("side_menu", "mem_customercenter_mode");
+		memberVO = (MemberVO)session.getAttribute("memberInfo");
+		comVO = (CompanyVO)session.getAttribute("comInfo");
+		
+		if(memberVO != null) {
+	         mav.addObject("member", memberVO);
+	         //고객 - 마이페이지 사이드메뉴
+	         session.setAttribute("side_menu", "mem_customercenter_mode"); 
+       }
+       else if(comVO != null) {
+			 mav.addObject("com", comVO);
+			 //사업체 - 마이페이지 사이드메뉴
+			 session.setAttribute("side_menu", "com_customercenter_mode"); 
+       }
+       
 				
 		Map noticeMap = boardService.noticeDetail(notice_num);
 		mav.addObject("noticeMap", noticeMap);

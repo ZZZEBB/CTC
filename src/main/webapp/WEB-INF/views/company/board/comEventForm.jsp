@@ -16,6 +16,67 @@
 </head>
 <body>
 	<div class = "container">
+		<nav class="text-start" aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">이벤트 관리</li>
+			</ol>
+		</nav>
+		<table class = "table table-hover table-bordered text-center">
+			<thead>	
+				<tr>
+					<th><input type = "checkbox"></th>
+					<th>번호</th>
+					<th>등록일자</th>
+					<th>제목</th>
+					<th>본문</th>
+					<th>게시글상태</th>
+					<th colspan="2"><button type = "button" class = "btn btn-secondary btn-sm">선택삭제</button></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type = "checkbox"></td>
+					<td>1</td>
+					<td>2023-02-27</td>
+					<td>모두와 함께하는 코너투...</td>
+					<td>코너투코너 1주년 감사제에 여러분을...</td>
+					<td>승인 대기중</td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">수정</button></td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">삭제</button></td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox"></td>
+					<td>2</td>
+					<td>2023-03-27</td>
+					<td>모두와 함께하는 코너투...</td>
+					<td>코너투코너 1주년 감사제에 여러분을...</td>
+					<td>게시중</td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">수정</button></td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">삭제</button></td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox"></td>
+					<td>3</td>
+					<td>2023-03-27</td>
+					<td>모두와 함께하는 코너투...</td>
+					<td>코너투코너 1주년 감사제에 여러분을...</td>
+					<td>수정 요청중</td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">수정</button></td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">삭제</button></td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox"></td>
+					<td>4</td>
+					<td>2023-04-05</td>
+					<td>모두와 함께하는 코너투...</td>
+					<td>코너투코너 1주년 감사제에 여러분을...</td>
+					<td>삭제 요청중</td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">수정</button></td>
+					<td><button type = "button" class = "btn btn-secondary btn-sm">삭제</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type = "button" class = "btn btn-primary btn-md justify-content-end">이벤트 등록</button>
 	</div>
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
