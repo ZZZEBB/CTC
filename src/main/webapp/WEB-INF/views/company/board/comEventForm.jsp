@@ -21,14 +21,34 @@
 				<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">이벤트 등록</li>
 			</ol>
 		</nav>
-		<form class="row g-3">
-			<div class="col-md-6">
-				<label for="inputEmail4" class="form-label">Email</label>
-				<input type="email" class="form-control" id="inputEmail4">
+		<form class="row g-3 col-md-10 justify-content-center is-invalid">
+			<div class="mb-3 row">
+				<label for="inputEventTitle" class="col-sm-2 col-form-label">제목</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="inputEventTitle" placeholder="등록하실 이벤트의 제목을 입력해주세요." required>
+				</div>
 			</div>
-			<div class="col-md-6">
-				<label for="inputPassword4" class="form-label">Password</label>
-				<input type="password" class="form-control" id="inputPassword4">
+			<div class="col-md-5">
+				<label for="inputState" class="col-sm-5 col-form-label">카테고리</label>
+				<select id="inputState" class="form-select form-control">
+					<option selected>선택</option>
+					<option value = "호텔">호텔</option>
+					<option value = "항공">항공</option>
+					<option value = "렌트">렌트</option>
+					<option value = "패키지">패키지</option>
+				</select>
+				<div class="invalid-feedback">카테고리를 선택해주세요.</div>
+			</div>
+			<div class="col-md-7">
+				<label for="inputState" class="col-sm-7 col-form-label">상품선택</label>
+				<select id="inputState" class="form-select form-control">
+					<option selected>선택</option>
+					<option value = "호텔">호텔</option>
+					<option value = "항공">항공</option>
+					<option value = "렌트">렌트</option>
+					<option value = "패키지">패키지</option>
+				</select>
+				<div class="invalid-feedback">이벤트와 연결할 상품을 선택해주세요.</div>
 			</div>
 			<div class="col-12">
 				<label for="inputAddress" class="form-label">Address</label>
