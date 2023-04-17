@@ -182,4 +182,16 @@
               com_pw = #{com_pw}
    </update>
    
+   <!-- 나의 이용후기 목록 조회 -->
+   <select id="reviewList" resultType="reviewVO" parameterType="java.util.Map">
+      <![CDATA[ SELECT * FROM review WHERE member_id=#{member_id} ]]>
+   </select>
+   
+   <!-- 나의 이용후기 상세 조회 -->
+   <select id="reviewDetail" resultType="java.util.Map" parameterType="int" >
+      <![CDATA[
+         select * from review where review_num = #{review_num}
+      ]]>
+   </select>
+   
 </mapper>

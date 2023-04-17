@@ -133,38 +133,35 @@
                              </c:otherwise>
                    		</c:choose>
                    </ul>
-					<div class="container-fluid">
-						<div class="d-flex flex-wrap align-items-center justify-content-center">
-							<ul class="nav justify-content-center">
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
-								</li> 
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-                   <!-- 관리자 로그인 상태 상단 헤더 -->
-              <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                      <li><a href="#" class="nav-link px-2 text-dark">관리자님</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark">로그아웃</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark">고객센터</a></li>
-                      <li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
-                      <li><a href="#" class="nav-link px-2 text-dark">관리자</a></li>
-                   </ul> -->
                </div>
             </div>
         </header>
+		<div class="container col-md-9 mt-3 pt-2">
+			<nav class="navbar mt-3 text-center justify-content-center" style="background-color: #dce4f0;">
+				<div class="container-fluid align-items-center">
+					<a class="navbar-brand" href="${contextPath}/comGoods/reservation.do">
+						<img src="${contextPath}/resources/image/booking.png" alt="Logo" width="30%" class="align-center">
+						<p>예약 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
+						<p>상품 관리</p>
+					</a>
+					<a class="navbar-brand" href="${contextPath}/comBoard/comEventForm.do">
+						<img src="${contextPath}/resources/image/event.png" alt="Logo" width="30%" class="align-center">
+						<p>이벤트 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/review.png" alt="Logo" width="30%" class="align-center">
+						<p>후기 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/qna.png" alt="Logo" width="30%" class="align-center">
+						<p>문의 관리</p>
+					</a>
+				</div>
+			</nav>
+		</div>
     </div>
     <hr class = "main_hr">
     <!-- JavaScript Bundle with Popper -->

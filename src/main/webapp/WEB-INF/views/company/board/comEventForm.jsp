@@ -15,13 +15,13 @@
 	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class = "container">
+	<div class = "container ms-2">
 		<nav class="text-start" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">이벤트 관리</li>
 			</ol>
 		</nav>
-		<table class = "table table-hover table-bordered text-center">
+		<table class = "table table-hover table-bordered text-center col-md-10 justify-content-center">
 			<thead>	
 				<tr>
 					<th><input type = "checkbox"></th>
