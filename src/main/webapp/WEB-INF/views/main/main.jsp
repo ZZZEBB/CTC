@@ -13,6 +13,10 @@
    body {
       width : 100%;
    }
+input:focus, button:focus {
+  outline: none;
+}
+    
 </style>
 <!-- css 스타일시트 추가 -->
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet" type="text/css">
@@ -21,6 +25,13 @@
 <script type="text/javascript" src="${contextPath}/resources/jquery/swiper.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
+<!-- moment.js 로딩 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
+
+<!-- Pikaday 로딩 -->
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
@@ -34,11 +45,212 @@ new Swiper('#ConEvnt2', {
     autoplay: 3000,
     loop: true
 });
-</script>
 
+document.addEventListener('DOMContentLoaded', () => {
+     const menuItems = document.querySelectorAll('.tab-menu-item');
+     const tabs = document.querySelectorAll('.tab-pane');
+
+     menuItems.forEach(item => {
+       item.addEventListener('click', () => {
+         // 모든 메뉴 아이템에서 active 클래스 제거
+         menuItems.forEach(item => item.classList.remove('active'));
+         // 클릭한 메뉴 아이템에 active 클래스 추가
+         item.classList.add('active');
+
+         // 모든 탭 내용에서 active 클래스 제거
+         tabs.forEach(tab => tab.classList.remove('active'));
+         // 클릭한 메뉴 아이템에 해당하는 탭 내용에 active 클래스 추가
+         const target = item.dataset.target;
+         document.querySelector(target).classList.add('active');
+       });
+     });
+   });
+
+document.addEventListener('DOMContentLoaded', () => {
+     const dropdownMenu = document.querySelector('.dropdown-menu');
+     const dropdownInput = document.querySelector('#departure-input');
+     const startdateInput = document.getElementById('startdate');
+
+     dropdownMenu.addEventListener('click', (event) => {
+       if (event.target.classList.contains('dropdown-item')) {
+         dropdownInput.value = event.target.dataset.value;
+         dropdownMenu.style.display = 'none';
+       }
+     });
+
+     dropdownInput.addEventListener('click', () => {
+       if (dropdownMenu.style.display === 'none') {
+         dropdownMenu.style.display = 'block';
+       } else {
+         dropdownMenu.style.display = 'none';
+       }
+     });
+
+     // 드롭다운 메뉴를 <div class="dropdown"> 안에 추가
+     dropdownInput.parentElement.appendChild(dropdownMenu);
+
+     const today = new Date();
+
+     // 이전에 선택할 수 없는 날짜 비활성화
+     const disablePreviousDays = (day) => {
+       return day.getTime() < today.getTime();
+     }
+
+     const startdatePicker = new Pikaday({
+       field: startdateInput,
+       format: 'YYYY-MM-DD',
+       i18n: {
+         previousMonth: '이전달',
+         nextMonth: '다음달',
+         months: moment.months(),
+         weekdays: moment.weekdays(),
+         weekdaysShort: moment.weekdaysShort()
+       },
+       disableDayFn: disablePreviousDays, // 이전 날짜 비활성화
+       onSelect: function() {
+         startdateInput.value = startdatePicker.toString();
+       }
+     });
+   });
+
+</script>
 </head>
 <body>
-<!-- 메인 슬라이더 -->
+<div class="submain" id="sliderdiv">
+<div class= "item item01" id="sliderdiv_center">
+<div class="inr lywrap">
+   <div class="inr left">
+   <p class="ment">고객님, <br>
+  <strong>어떤 여행을 꿈꾸시나요?</strong>
+</p>
+  <div class="tab-wrap">
+    <ul class="tab-menu">
+      <li class="tab-menu-item active" data-target="#package">패키지</li>
+      <li class="tab-menu-item" data-target="#flight">항공</li>
+      <li class="tab-menu-item" data-target="#hotel">호텔</li>
+    </ul>
+    <div class="tab-content">
+    
+      <div class="tab-pane active" id="package">
+        <!-- 패키지 검색 폼 -->
+      <form class="package-search-form">
+        <input type="text" name="destination" class="form-control mb-3" placeholder="어디로 떠나시나요?">
+        <div class="d-flex justify-content-between">
+          <div class="dropdown">
+            <input type="text" name="departure" class="form-control" placeholder="여행 출발지" readonly="readonly" style="width: 118px;" id="departure-input">
+            <ul class="dropdown-menu" aria-labelledby="departure-dropdown">
+              <li class="dropdown-item" data-value="인천">인천</li>
+              <li class="dropdown-item" data-value="김포">김포</li>
+              <li class="dropdown-item" data-value="부산">부산</li>
+              <li class="dropdown-item" data-value="제주">제주</li>
+            </ul>
+          </div>
+          <input type="text" name="startdate" id="startdate" class="form-control" placeholder="여행시작일" readonly="readonly" style="width: 118px;">
+        </div>        
+        <button type="submit" class="btn btn-primary opacity-75 w-100 my-3">패키지 검색</button>
+      </form>
+      </div>
+      
+      
+      <div class="tab-pane" id="flight">
+  <!-- 항공 검색 폼 -->
+  <form class="flight-search-form">
+
+    <input type="radio" class="btn-check mx-3" name="tripType" id="roundtrip" value="roundtrip" autocomplete="off" checked>
+   <label class="btn btn-light" for="roundtrip">왕복</label>
+    <input type="radio" class="btn-check " name="tripType" id="oneway"  value="oneway" autocomplete="off">
+   <label class="btn btn-light" for="oneway">편도</label>
+    
+    <div class="d-flex justify-content-between">
+    <input type="text" name="departure" placeholder="출발지 선택" class="form-control my-3 mx-3"  readonly="readonly" style="width: 118px;">
+    <input type="text" name="arrival" placeholder="도착지 선택" class="form-control my-3"  readonly="readonly" style="width: 118px;">
+    </div>
+    <div class="d-flex justify-content-between">
+    <input type="text" name="departDate" placeholder="가는 날 선택" class="form-control mb-3 mx-3" readonly="readonly" style="width: 118px;">
+    <input type="text" name="returnDate" placeholder="오는 날 선택" class="form-control mb-3" readonly="readonly" style="width: 118px;">
+    </div>
+    <button type="submit" class="btn btn-primary opacity-75 w-100 my-3">항공권 검색</button>
+  </form>
+</div>
+
+<script>
+    // 왕복/편도 선택에 따라 오는 날짜 입력란을 표시/숨김 처리
+    const tripTypeRadios = document.querySelectorAll('input[name="tripType"]');
+    const returnDateInput = document.querySelector('input[name="returnDate"]');
+
+    for (let i = 0; i < tripTypeRadios.length; i++) {
+        tripTypeRadios[i].addEventListener('change', function() {
+            if (this.value === 'oneway') {
+                returnDateInput.style.display = 'none';
+            } else {
+                returnDateInput.style.display = 'inline-block';
+            }
+        });
+    }
+</script>
+      
+      <div class="tab-pane" id="hotel">
+        <!-- 호텔 검색 폼 -->
+        <form class="hotel-search-form">
+          <input type="text" name="location" placeholder="지역, 명소, 호텔명 검색">
+          <input type="text" name="checkin" placeholder="체크인 날짜 선택">
+          <input type="text" name="checkout" placeholder="체크아웃 날짜 선택">
+          <button type="submit">검색</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <div class="inr right">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="${contextPath}/resources/image/event/event_1.png" class="d-block w-100" alt="캐러셀1">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="${contextPath}/resources/image/event/event_2.png" class="d-block w-100" alt="캐러셀2">
+    </div>
+    <div class="carousel-item">
+      <img src="${contextPath}/resources/image/event/event_3.png" class="d-block w-100" alt="캐러셀3">
+    </div>
+    <div class="carousel-item">
+      <img src="${contextPath}/resources/image/event/event_4.png" class="d-block w-100" alt="캐러셀3">
+    </div>      
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+</div>
+</div>
+</div>
+<script>
+$('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
+     var index = $(e.relatedTarget).index();
+     var images = [
+       '${contextPath}/resources/image/event/event_1.png',
+       '${contextPath}/resources/image/event/event_2.png',
+       '${contextPath}/resources/image/event/event_3.png',
+       '${contextPath}/resources/image/event/event_4.png',
+     ];
+     /*슬라이드 4개의 배경색*/
+     var colors = ['#e0f0d7', '#d9edf7', '#ebd7ff', '#fcf8e3'];
+     /*슬라이드 5개의 배경색*/
+     /* var colors = ['#c6ffc4', '#d9edf7', '#ebd7ff', '#fcf8e3', '#f2dede']; */
+     var sliderdiv = $('#sliderdiv_center');
+     sliderdiv.css('background-color', colors[index % colors.length]);
+   });
+</script>
+</div>
+</div>
+
+
+<%-- <!-- 메인 슬라이더 -->
 <div id="sliderdiv">
 <div id="sliderdiv_center">
 <div id="main_searchform">
@@ -93,7 +305,7 @@ $('#carouselExampleInterval').on('slide.bs.carousel', function (e) {
      var sliderdiv = $('#sliderdiv_center');
      sliderdiv.css('background-color', colors[index % colors.length]);
    });
-</script>
+</script> --%>
 
    <!-- 카테고리별 숙박/렌터카 추천 -->
    <div class="categoryPopularSection">

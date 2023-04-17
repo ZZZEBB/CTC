@@ -147,7 +147,7 @@
 						<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
 						<p>상품 관리</p>
 					</a>
-					<a class="navbar-brand" href="${contextPath}/comBoard/comEventForm.do">
+					<a class="navbar-brand" href="${contextPath}/comBoard/comEventList.do">
 						<img src="${contextPath}/resources/image/event.png" alt="Logo" width="30%" class="align-center">
 						<p>이벤트 관리</p>
 					</a>

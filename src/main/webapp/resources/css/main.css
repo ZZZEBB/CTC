@@ -261,7 +261,7 @@
   top: 170px;
 }
 #sliderdiv_center{
-   width:1200px;
+   width:1300px;
    height:500px;
    display:block;
    margin:auto;
@@ -294,7 +294,7 @@
    position: relative;
    left: 10%;
    top:50px;
-   width: 50%;
+   width: 65%;
    height: 400px;
    margin:0;
 }
@@ -339,8 +339,7 @@
   }
 }
 .carousel-item img{
-   width:600px;
-   height:400px;
+   height:370px;
    object-fit:fill;
 } 
 .carousel-item.active,
@@ -512,4 +511,71 @@
 }
 .carousel-dark .carousel-caption {
   color: #000;
+}
+
+
+
+
+
+
+
+
+
+   .lywrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: 55px;
+}
+
+
+
+.item01{height:720px;position:relative;}
+.ly_wrap .inr{padding-top:50px;}
+.left{width:435px;position:relative;}
+.right {
+   width: 765px;
+}
+
+.ment{font-size:20px;line-height:34px;color:#111;margin:75px 0 5px 100px; text-align: left;}
+
+
+ .tab-wrap {
+  margin-left:100px;
+  float: left;
+
+}
+
+.tab-menu {
+ display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #333333;
+}
+
+.tab-menu-item {
+  flex-basis: calc(33.33% - 1px); /* 3등분으로 나눈 후, 1px 만큼 빼줌 */   
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  margin-right: 10px;
+  padding: 10px 15px;
+}
+
+.tab-menu-item.active {
+  border-bottom: 3px solid #0067a3;
+}
+
+.tab-content {
+
+  padding: 20px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
 }

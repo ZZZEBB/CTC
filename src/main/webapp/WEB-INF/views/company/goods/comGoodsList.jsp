@@ -29,13 +29,13 @@ input{
 </style>
 </head>
 <body>
-<div class="container ms-2">
+<div class = "container ms-2">
    <nav class="text-start" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">예약 관리</li>
+			<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">예약 목록</li>
 		</ol>
 	</nav>
-   <form action="${contextPath}/comGoods/reservationfind.do" class = "d-flex">
+   <form action="${contextPath}/comGoods/reservationfind.do" class = "col-md-10 justify-content-center">
       <table>
          <tr>
             <td class="block">예약자 명 <input type="text" name="member_id" placeholder="ex)조재명"/></td>
