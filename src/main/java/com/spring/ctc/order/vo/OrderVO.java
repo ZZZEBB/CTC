@@ -15,6 +15,7 @@ public class OrderVO {
 	private int goods_saleprice;
 	private Date order_date;
 	private int order_status;
+	private int pay_status;
 	private Date pay_order_time;
 	private String card_com_name;
 	private String card_pay_month;
@@ -70,6 +71,12 @@ public class OrderVO {
 	}
 	public void setOrder_status(int order_status) {
 		this.order_status = order_status;
+	}
+	public int getPay_status() {
+		return pay_status;
+	}
+	public void setPay_status(int pay_status) {
+		this.pay_status = pay_status;
 	}
 	public Date getPay_order_time() {
 		return pay_order_time;

@@ -13,6 +13,7 @@
       <result property="goods_saleprice" column="goods_saleprice"/>
       <result property="order_date" column="order_date"/>
       <result property="order_status" column="order_status"/>
+      <result property="pay_status" column="pay_status"/>
       <result property="pay_order_time" column="pay_order_time"/>
       <result property="card_com_name" column="card_com_name"/>
       <result property="card_pay_month" column="card_pay_month"/>

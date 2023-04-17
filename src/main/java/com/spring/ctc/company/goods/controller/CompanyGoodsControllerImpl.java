@@ -33,7 +33,6 @@ public class CompanyGoodsControllerImpl implements CompanyGoodsController{
          String viewName = (String)request.getAttribute("viewName");
          List<OrderVO> order = companyGoodsService.selectOrderList();
          mav.setViewName(viewName);
-         session.setAttribute("header_mode", "com_mode"); //사업자 모드
          session.setAttribute("side_menu", "reservationManage_mode"); //사업자 모드 - 예약관리 사이드 메뉴
          
          mav.addObject("reservation",order);
@@ -48,7 +47,6 @@ public class CompanyGoodsControllerImpl implements CompanyGoodsController{
       String viewName = (String)request.getAttribute("viewName");
       System.out.println("asdsadsada" + find.get("member_id"));
       mav.setViewName(viewName);
-      session.setAttribute("header_mode", "com_mode"); //사업자 모드
       session.setAttribute("side_menu", "reservationManage_mode"); //사업자 모드 - 예약관리 사이드 메뉴
       List<OrderVO> order = companyGoodsService.findOrderGoods(find);
       mav.addObject("comReser", order);

@@ -22,7 +22,6 @@ public class CompanyBoardControllerImpl implements CompanyBoardController {
 		session = request.getSession();
 		
 		//사업체 이벤트 관리 사이드메뉴
-		session.setAttribute("header_mode", "com_mode");
 		session.setAttribute("side_menu", "eventManage_mode"); //사업자 모드 - 이벤트관리 사이드 메뉴
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
