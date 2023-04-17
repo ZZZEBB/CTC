@@ -11,9 +11,9 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
 	</definition>
 	
-	<!-- 사업체 이벤트 게시물 등록 페이지 -->
+	<!-- 사업체 이벤트 게시물 목록 페이지 -->
 	<definition name="/comBoard/comEventForm" extends="comSide">
-		<put-attribute name="title" value="사업체 이벤트 게시물 등록 페이지" />
+		<put-attribute name="title" value="사업체 이벤트 게시물 목록 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/company/board/comEventForm.jsp" />
 	</definition>
 </tiles-definitions>

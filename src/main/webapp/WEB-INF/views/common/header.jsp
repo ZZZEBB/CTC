@@ -171,27 +171,27 @@
 							</ul>
 						</div>
 		            </div>
-		            <nav class="navbar bg-light" style="background-color: #00aff0;">
-						<div class="container-fluid">
+		            <nav class="navbar mt-3 text-center" style="background-color: #dce4f0;">
+						<div class="container-fluid d-flex justify-content-evenly w-70">
 							<a class="navbar-brand" href="#">
-								<img src="${contextPath}/resources/image/booking.png" alt="Logo" width="20%" class="align-text-top">
-							예약 관리
+								<img src="${contextPath}/resources/image/booking.png" alt="Logo" width="30%" class="align-center">
+								<p>예약 관리</p>
 							</a>
 							<a class="navbar-brand" href="#">
-								<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
-								상품 관리
+								<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
+								<p>상품 관리</p>
 							</a>
 							<a class="navbar-brand" href="#">
-								<img src="${contextPath}/resources/image/event.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
-								이벤트 관리
+								<img src="${contextPath}/resources/image/event.png" alt="Logo" width="30%" class="align-center">
+								<p>이벤트 관리</p>
 							</a>
 							<a class="navbar-brand" href="#">
-								<img src="${contextPath}/resources/image/review.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
-								후기 관리
+								<img src="${contextPath}/resources/image/review.png" alt="Logo" width="30%" class="align-center">
+								<p>후기 관리</p>
 							</a>
 							<a class="navbar-brand" href="#">
-								<img src="${contextPath}/resources/image/qna.png" alt="Logo" width="30%" class="d-inline-block align-text-top">
-								문의 관리
+								<img src="${contextPath}/resources/image/qna.png" alt="Logo" width="30%" class="align-center">
+								<p>문의 관리</p>
 							</a>
 						</div>
 					</nav>

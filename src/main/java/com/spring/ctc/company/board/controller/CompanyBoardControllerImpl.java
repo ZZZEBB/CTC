@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CompanyBoardControllerImpl implements CompanyBoardController {
 	/* private static final String CURR_IMAGE_REPO_PATH = "C:\\ctc\\file_repo"; */
 
-	//사업체모드 - 이벤트 게시물 등록 페이지 이동 (/comEventForm.do)
+	//사업체모드 - 이벤트 게시물 목록 페이지 이동 (/comEventForm.do)
 	@Override
 	@RequestMapping(value= "/comEventForm.do" , method = {RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView comEventForm(HttpServletRequest request, HttpServletResponse response) throws Exception{
