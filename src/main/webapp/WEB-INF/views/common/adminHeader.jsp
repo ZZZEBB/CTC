@@ -150,7 +150,7 @@
 			<nav class="navbar mt-3 text-center justify-content-center" style="background-color: #dce4f0;">
 				<div class="container-fluid align-items-center">
 					<a class="navbar-brand" href="#">
-						<img src="${contextPath}/resources/image/money.png" alt="Logo" width="30%" class="align-center">
+						<img src="${contextPath}/resources/image/sales.png" alt="Logo" width="30%" class="align-center">
 						<p>매출 관리</p>
 					</a>
 					<a class="navbar-brand" href="#">
