@@ -39,7 +39,7 @@ public class AdminGoodsControllerImpl implements AdminGoodsController{
          //관리자 - 매출관리 사이드메뉴
          session.setAttribute("side_menu", "goodsManage_mode"); 
          mav.setViewName(viewName);
-           return mav;
+          return mav;
       }
       
       // 개월수로 조회
