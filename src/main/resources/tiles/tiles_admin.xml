@@ -17,8 +17,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/sales/adminSalesMain.jsp" />
 	</definition>
 	
-	<!-- 관리자 상품관리 페이지 조건추가-->
-	<definition name="/adminGoods/listMyOrderHistory" extends="adminSide">
+	<!-- 관리자 전체 상품 조회 페이지 -->
+	<definition name="/adminGoods/adminGoodsList" extends="adminSide">
 		<put-attribute name="title" value="관리자 매출관리 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsList.jsp" />
 	</definition>

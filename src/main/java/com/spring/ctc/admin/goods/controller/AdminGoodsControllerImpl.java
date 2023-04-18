@@ -43,35 +43,35 @@ public class AdminGoodsControllerImpl implements AdminGoodsController{
       }
       
       // 개월수로 조회
-      @RequestMapping(value = "/listMyOrderHistory.do", method={RequestMethod.POST,RequestMethod.GET})
-      public ModelAndView listMyOrderHistory(@RequestParam Map<String, String> dateMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
+      @RequestMapping(value = "/listGoodsHistory.do", method={RequestMethod.POST,RequestMethod.GET})
+      public ModelAndView listGoodsHistory(@RequestParam Map<String, String> dateMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
            String viewName = (String)request.getAttribute("viewName");
        
-       ModelAndView mav = new ModelAndView(viewName);
-       HttpSession session = request.getSession();
-       //관리자 사이드메뉴
-       session.setAttribute("side_menu", "goodsManage_mode"); 
-       memberVO = (MemberVO)session.getAttribute("memberInfo");
-       String member_id = memberVO.getMember_id();
-       String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
-       String beginDate = null, endDate = null;
-       String[] tempDate = calcSearchPeriod(fixedSearchPeriod).split(",");
-       beginDate=tempDate[0];
-       endDate=tempDate[1];
-       dateMap.put("beginDate", beginDate);
-       dateMap.put("endDate", endDate);
-       dateMap.put("member_id", member_id);
-       List<GoodsVO> myOrderHistList=adminGoodsService.listMyOrderHistory(dateMap);
-       String beginDate1[]=beginDate.split("-");
-       String endDate1[]=endDate.split("-");
-       mav.addObject("beginYear", beginDate1[0]);
-       mav.addObject("beginMonth", beginDate1[1]);
-       mav.addObject("beginDay", beginDate1[2]);
-       mav.addObject("endYear", endDate1[0]);
-       mav.addObject("endYear", endDate1[1]);
-       mav.addObject("endYear", endDate1[2]);
-       mav.addObject("myOrderHistList", myOrderHistList);
-       mav.addObject("member", memberVO);
+	       ModelAndView mav = new ModelAndView(viewName);
+	       HttpSession session = request.getSession();
+	       //관리자 사이드메뉴
+	       session.setAttribute("side_menu", "goodsManage_mode"); 
+	       memberVO = (MemberVO)session.getAttribute("memberInfo");
+	       String member_id = memberVO.getMember_id();
+	       String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
+	       String beginDate = null, endDate = null;
+	       String[] tempDate = calcSearchPeriod(fixedSearchPeriod).split(",");
+	       beginDate=tempDate[0];
+	       endDate=tempDate[1];
+	       dateMap.put("beginDate", beginDate);
+	       dateMap.put("endDate", endDate);
+	       dateMap.put("member_id", member_id);
+	       List<GoodsVO> myOrderHistList=adminGoodsService.listMyOrderHistory(dateMap);
+	       String beginDate1[]=beginDate.split("-");
+	       String endDate1[]=endDate.split("-");
+	       mav.addObject("beginYear", beginDate1[0]);
+	       mav.addObject("beginMonth", beginDate1[1]);
+	       mav.addObject("beginDay", beginDate1[2]);
+	       mav.addObject("endYear", endDate1[0]);
+	       mav.addObject("endYear", endDate1[1]);
+	       mav.addObject("endYear", endDate1[2]);
+	       mav.addObject("myOrderHistList", myOrderHistList);
+	       mav.addObject("member", memberVO);
        
         return mav;
      }

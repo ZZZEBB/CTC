@@ -149,11 +149,11 @@
 		<div class="container col-md-9 mt-3 pt-2">
 			<nav class="navbar mt-3 text-center justify-content-center" style="background-color: #dce4f0;">
 				<div class="container-fluid align-items-center">
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="${contextPath}/adminSales/adminSalesMain.do">
 						<img src="${contextPath}/resources/image/sales.png" alt="Logo" width="40%" class="align-center">
 						<p>매출 관리</p>
 					</a>
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="${contextPath}/adminGoods/adminGoodsList.do">
 						<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
 						<p>상품 관리</p>
 					</a>

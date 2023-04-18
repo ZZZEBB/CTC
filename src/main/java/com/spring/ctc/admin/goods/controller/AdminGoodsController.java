@@ -11,5 +11,5 @@ import org.springframework.web.servlet.ModelAndView;
 public interface AdminGoodsController {
 
 	public ModelAndView adminGoodsList(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView listMyOrderHistory(@RequestParam Map<String, String> dateMap, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView listGoodsHistory(@RequestParam Map<String, String> dateMap, HttpServletRequest request, HttpServletResponse response) throws Exception;
 }
