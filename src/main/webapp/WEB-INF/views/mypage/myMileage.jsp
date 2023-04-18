@@ -40,11 +40,17 @@
 <form action="post">
 <div class = "container">
    
-   <h4 class="mainText">마일리지 확인</h4>
+   <!-- 상단 간략화 메뉴 -->
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
+			<li class="breadcrumb-item active" aria-current="page">나의 마일리지 조회</li>
+		</ol>
+	</nav>
    
    <p class="Text">${member.member_name}님의 사용가능한 마일리지는 ${member.member_mileage}M 입니다.</p>
    
-   <div class="align-baseline" id="mainContent">
+   <div class="align-baseline mt-3" id="mainContent">
       <span class="fs-6">최근 내역 조회</span>
       <a href="javascript:search_order_history('today')"><span><input type="button" class="btn btn-light btn-outline-dark" value="당일"></span></a>
       <a href="javascript:search_order_history('one_week')"><span><input type="button" class="btn btn-light btn-outline-dark" value="1주"></span></a>

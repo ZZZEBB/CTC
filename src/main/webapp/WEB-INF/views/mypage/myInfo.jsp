@@ -19,9 +19,15 @@
 </head>
 <body>
 <div class="container mt-1">
-   <h3 style="margin-left:1.5%;">개인정보</h3>
+   <!-- 상단 간략화 메뉴 -->
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
+			<li class="breadcrumb-item active" aria-current="page">나의 정보</li>
+		</ol>
+	</nav>
    <!-- 개인이미지 칸-->
-   <div>
+   <div class = "mt-3">
       <div style="float:left;margin-left:50px;background-color:#D1D1D1;width:100px;height:100px;border-radius:50px;text-align:center;padding-top:35px;">
 			<c:choose>
 				<c:when test="${not empty member.member_name}">${member.member_name}</c:when>

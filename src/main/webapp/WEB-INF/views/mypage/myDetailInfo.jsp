@@ -399,8 +399,8 @@
                <td>
                   <div class="row g-3">
                      <div class="col-md">
-                        <input type="text" id="member_zipcode" name="member_zipcode">
-                        <a href="javascript:execDaumPostcode()">우편번호검색</a>
+                        <input type="text" class="form-control" id="member_zipcode" name="member_zipcode">
+                        <label for="member_zipcode"><a href="javascript:execDaumPostcode()">우편번호검색</a></label>
                      </div>
                      <div class="form-floating">
                         <input type="text" class="form-control" id="member_local_address" value="${memberInfo.member_local_address}" name="member_local_address">

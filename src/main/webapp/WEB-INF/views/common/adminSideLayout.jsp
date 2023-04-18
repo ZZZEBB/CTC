@@ -25,15 +25,21 @@
 <body>
 	<div class = "container">
 		<header>
-			<tiles:insertAttribute name="header" />
+			<tiles:insertAttribute name="adminHeader" />
 		</header>
 		
 		<div class="clear"></div>
 		
-		<article>
-			<tiles:insertAttribute name="body" />
-		</article>
-		
+		<div class = "d-flex p-2 bd-highlight">
+			<aside class = "p-2 bd-highlight">
+				<tiles:insertAttribute name="adminSide" />
+			</aside>
+			<article class = "p-2 flex-fill bd-highlight">
+				<div class = "container-fluid">
+					<tiles:insertAttribute name="body" />
+				</div>
+			</article>
+		</div>
 		<div class="clear"></div>
 		
 		<footer>

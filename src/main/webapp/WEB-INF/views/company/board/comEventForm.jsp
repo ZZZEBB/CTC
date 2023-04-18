@@ -15,13 +15,13 @@
 	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class = "container ms-2">
+	<div class = "container justify-content-center col-md-9 ms-2">
 		<nav class="text-start" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">이벤트 등록</li>
 			</ol>
 		</nav>
-		<form class="row g-3 col-md-10 justify-content-center is-invalid">
+		<form class="row g-3 col-md-9 justify-content-center is-invalid">
 			<div class="mb-3 row">
 				<label for="inputEventTitle" class="col-sm-2 col-form-label">제목</label>
 				<div class="col-sm-9">

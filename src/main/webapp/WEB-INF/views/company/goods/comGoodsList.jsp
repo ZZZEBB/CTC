@@ -15,7 +15,7 @@
 input{
    border-radius:5px;
    border:1px solid skyblue;
-   text-align:center;
+   /* text-align:center; */
 }
 .block{
    display:block;
@@ -29,7 +29,7 @@ input{
 </style>
 </head>
 <body>
-<div class = "container ms-2">
+<div class = "container ms-2 text-center">
    <nav class="text-start" aria-label="breadcrumb">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">예약 목록</li>

@@ -131,10 +131,14 @@
 
 <div class= "col-md-10">
    <div id="contents" class="contents">
-     <div class="text_wrap big fix">
-       <strong class="d-flex mt-4 fs-5 fw-bold">1:1 문의내역</strong>
-     </div>
-     <div class="tbl">
+     <!-- 상단 간략화 메뉴 -->
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
+			<li class="breadcrumb-item active" aria-current="page">나의 문의내역 조회</li>
+		</ol>
+	</nav>
+     <div class="tbl mt-3">
        <table class="board_type">
          <colgroup>
            <col style="width: 20%;">

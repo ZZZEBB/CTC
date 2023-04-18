@@ -143,30 +143,35 @@
                              </c:otherwise>
                    		</c:choose>
                    </ul>
-					<div class="container-fluid">
-						<div class="d-flex flex-wrap align-items-center justify-content-center">
-							<ul class="nav justify-content-center">
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsHotelSearch.do">호텔</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsFlightSearch.do">항공</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsRentSearch.do">렌트</a>
-								</li>
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/goods/goodsPackageSearch.do">패키지</a>
-								</li> 
-								<li class="nav-item fs-4">
-									<a class="nav-link link-dark" href="${contextPath}/board/eventList.do">이벤트</a>
-								</li>
-							</ul>
-						</div>
-					</div>
                </div>
             </div>
         </header>
+		<div class="container col-md-9 mt-3 pt-2">
+			<nav class="navbar mt-3 text-center justify-content-center" style="background-color: #dce4f0;">
+				<div class="container-fluid align-items-center">
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/money.png" alt="Logo" width="30%" class="align-center">
+						<p>매출 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
+						<p>상품 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/order.png" alt="Logo" width="30%" class="align-center">
+						<p>주문 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/people.png" alt="Logo" width="30%" class="align-center">
+						<p>고객 관리</p>
+					</a>
+					<a class="navbar-brand" href="#">
+						<img src="${contextPath}/resources/image/board.png" alt="Logo" width="30%" class="align-center">
+						<p>게시판 관리</p>
+					</a>
+				</div>
+			</nav>
+		</div>
     </div>
     <hr class = "main_hr">
     <!-- JavaScript Bundle with Popper -->

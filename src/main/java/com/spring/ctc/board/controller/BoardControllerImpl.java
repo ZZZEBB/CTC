@@ -71,18 +71,17 @@ public class BoardControllerImpl implements BoardController {
 		mav.addObject("faqrent" , faqrent);
 		mav.addObject("faqpackage" , faqpackage);
 		
-        if(memberVO != null) {
+		if(memberVO != null) {
 	         mav.addObject("member", memberVO);
 	         //고객 - 마이페이지 사이드메뉴
 	         session.setAttribute("side_menu", "mem_customercenter_mode"); 
-        }
-        else if(comVO != null) {
+       }
+       else if(comVO != null) {
 			 mav.addObject("com", comVO);
 			 //사업체 - 마이페이지 사이드메뉴
 			 session.setAttribute("side_menu", "com_customercenter_mode"); 
-        }
-        
-        return mav;
+       }
+		return mav;
 	}
 	
 	//이벤트 목록 조회(/eventList.do)
@@ -199,7 +198,6 @@ public class BoardControllerImpl implements BoardController {
 			 //사업체 - 마이페이지 사이드메뉴
 			 session.setAttribute("side_menu", "com_customercenter_mode"); 
        }
-       
 				
 		Map noticeMap = boardService.noticeDetail(notice_num);
 		mav.addObject("noticeMap", noticeMap);
@@ -223,7 +221,6 @@ public class BoardControllerImpl implements BoardController {
 		    String value=multipartRequest.getParameter(name);
 		    newQnaMap.put(name,value);
 		}
-
 	
 		//로그인한 회원의 정보를 세션에서 가져와서 Map에 추가합니다.
 		HttpSession session = multipartRequest.getSession();

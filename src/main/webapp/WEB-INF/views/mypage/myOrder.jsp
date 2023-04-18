@@ -34,7 +34,7 @@
 	</nav>
 	
 	<!-- 주제목 -->
-	<table class="table col-md-10">
+	<table class="table col-md-10 mt-3">
   <thead>
     <tr class="table-light">
       <th class="col-md-3" scope="col">예약/구매정보</th>
