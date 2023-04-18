@@ -15,7 +15,7 @@
    <!-- CSS only -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 <style>
 
 </style>
@@ -38,15 +38,15 @@
 
 </head>
 <body>
-	
-	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
-			<li class="breadcrumb-item active" aria-current="page">1:1 문의하기</li>
-		</ol>
-	</nav>
-	<br><br>
-	<form method="post" action="${contextPath}/board/addNewQna.do" enctype="multipart/form-data"> <!-- 파일 업로드를 위한 enctype 추가 -->
+   
+   <nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">고객센터</a></li>
+         <li class="breadcrumb-item active" aria-current="page">1:1 문의하기</li>
+      </ol>
+   </nav>
+   <br><br>
+   <form method="post" action="${contextPath}/board/addNewQna.do" enctype="multipart/form-data"> <!-- 파일 업로드를 위한 enctype 추가 -->
     <div class="container">
     <div class="notice_wrap mt0">
         <strong class="tit">문의하시기 전 확인해 주세요.</strong>
@@ -65,41 +65,41 @@
     </div>
     <br>
     <label for="writer" class="pb-2 mb-2 border-bottom"><b>작성자 아이디</b></label>
-    	<input class="form-control mt-2 mb-2" style="width:35%" type="text" id="writer" name="member_id" value="${sessionScope.memberInfo.member_id}" readonly disabled>
-   		<br>
+       <input class="form-control mt-2 mb-2" style="width:35%" type="text" id="writer" name="member_id" value="${sessionScope.memberInfo.member_id}" readonly disabled>
+         <br>
     <label for="contact" class="pb-2 mb-2 border-bottom"><b>연락처 이메일</b></label>
-   		<input class="form-control mt-2 mb-2" style="width:35%" type="email" id="contact" name="qna_contact" value="${sessionScope.memberInfo.member_email}" readonly disabled>
-    	<br>
+         <input class="form-control mt-2 mb-2" style="width:35%" type="email" id="contact" name="qna_contact" value="${sessionScope.memberInfo.member_email}" readonly disabled>
+       <br>
     <label for="qna_type" class="pb-2 mb-2 border-bottom"><b>문의 유형</b></label>
-		<select id="qna_type" name="qna_type" class="form-select" style="width:150px" >
-	  		<option value="국내여행">국내여행</option>
-	  		<option value="기타여행">기타여행</option>
-	  		<option value="법인여행">법인여행</option>
-	  		<option value="상품문의">상품문의</option>
-		</select>
-    	<br>
+      <select id="qna_type" name="qna_type" class="form-select" style="width:150px" >
+           <option value="국내여행">국내여행</option>
+           <option value="기타여행">기타여행</option>
+           <option value="법인여행">법인여행</option>
+           <option value="상품문의">상품문의</option>
+      </select>
+       <br>
     <label for="qna_title" class="pb-2 mb-2 border-bottom"><b>문의 제목</b></label>
-    	<input type="text" id="qna_title" name="qna_title" class="form-control mt-2 mb-2" placeholder="제목을 입력해주세요." required>
-    	<br>
+       <input type="text" id="qna_title" name="qna_title" class="form-control mt-2 mb-2" placeholder="제목을 입력해주세요." required>
+       <br>
    
     <label for="qna_content" class="pb-2 mb-2 border-bottom"><b>문의 내용</b></label>
-    	<textarea class="form-control mt-2 mb-2" rows="10" id="content" name="board_content" placeholder="최대 2500자까지 입력 가능합니다. 문의할 내용을 입력해 주세요." required></textarea>
-    	<br>
-    	<div class="char_count_group">
-			<span class="char_count">0</span> / 2500
-		</div>
-		<br>
+       <textarea class="form-control mt-2 mb-2" rows="10" id="content" name="qna_content" placeholder="최대 2500자까지 입력 가능합니다. 문의할 내용을 입력해 주세요." required></textarea>
+       <br>
+       <div class="char_count_group">
+         <span class="char_count">0</span> / 2500
+      </div>
+      <br>
     <label for="image" class="pb-2 mb-2 border-bottom"><b>이미지 첨부</b></label>
-    	<br>
-    	<input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple">
-    	<!-- <input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple">
-    	<input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple"> -->
-    	<br>
+       <br>
+       <input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple">
+       <!-- <input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple">
+       <input type="file" class="btn btn-outline-secondary col-8 mt-2 mb-2" id="board_fileName" name="board_fileName" multiple="multiple"> -->
+       <br>
     <div class="mt-3 mb-3"align="center">
     <input type="reset" class="btn btn-outline-danger mb-3" value="다시입력">
     <input type="submit" class="btn btn-outline-primary mb-3" value="문의등록">
     </div>
-	</form>
-	
+   </form>
+   
 </body>
 </html>

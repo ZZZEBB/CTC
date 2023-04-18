@@ -43,7 +43,7 @@
 					<li class="list-group-item"><a href="#">상품 승인</a></li>
 				</ul>
 			</c:when>
-			<%-- 관리자 모드 - 상품관리 사이드바 --%>
+			<%-- 관리자 모드 - 예약관리 사이드바 --%>
 			<c:when test="${side_menu =='reservationManage_mode' }">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><a href="#">전체 주문조회</a></li>
