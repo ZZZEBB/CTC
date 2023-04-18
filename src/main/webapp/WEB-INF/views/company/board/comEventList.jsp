@@ -16,9 +16,11 @@
 </head>
 <body>
 	<div class = "container ms-2">
-		<nav class="text-start" aria-label="breadcrumb">
+		<!-- 상단 간략화 메뉴 -->
+		<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">이벤트 목록</li>
+				<li class="breadcrumb-item"><a href="${contextPath}/comBoard/comEventList.do" style="text-decoration:none; color:black;">이벤트 관리</a></li>
+				<li class="breadcrumb-item active" aria-current="page">이벤트 목록</li>
 			</ol>
 		</nav>
 		<table class = "table table-hover table-bordered text-center col-md-10 justify-content-center">

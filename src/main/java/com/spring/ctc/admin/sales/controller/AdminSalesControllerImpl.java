@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/admin")
+@RequestMapping(value="/adminSales")
 public class AdminSalesControllerImpl implements AdminSalesController{
 
 	//관리자 모드 - 메인페이지(매출관리 페이지, /adminSalesMain.do)

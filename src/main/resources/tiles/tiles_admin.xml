@@ -12,7 +12,7 @@
 	</definition>
 	
 	<!-- 관리자 매출관리 페이지 -->
-	<definition name="/admin/adminSalesMain" extends="adminSide">
+	<definition name="/adminSales/adminSalesMain" extends="adminSide">
 		<put-attribute name="title" value="관리자 매출관리 페이지" />
 		<put-attribute name="body" value="/WEB-INF/views/admin/sales/adminSalesMain.jsp" />
 	</definition>

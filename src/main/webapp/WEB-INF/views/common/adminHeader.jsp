@@ -117,7 +117,7 @@
                             			<li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
 										<li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark">고객센터</a></li>
 										<li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
-										<li><a href="${contextPath}/admin/adminSalesMain.do" class="nav-link px-2 text-dark">관리자</a></li>
+										<li><a href="${contextPath}/adminSales/adminSalesMain.do" class="nav-link px-2 text-dark">관리자</a></li>
                             		</c:when>
                             		<c:otherwise>
                             			<li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
@@ -150,7 +150,7 @@
 			<nav class="navbar mt-3 text-center justify-content-center" style="background-color: #dce4f0;">
 				<div class="container-fluid align-items-center">
 					<a class="navbar-brand" href="#">
-						<img src="${contextPath}/resources/image/sales.png" alt="Logo" width="30%" class="align-center">
+						<img src="${contextPath}/resources/image/sales.png" alt="Logo" width="40%" class="align-center">
 						<p>매출 관리</p>
 					</a>
 					<a class="navbar-brand" href="#">

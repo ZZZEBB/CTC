@@ -30,9 +30,11 @@ input{
 </head>
 <body>
 <div class = "container ms-2 text-center">
-   <nav class="text-start" aria-label="breadcrumb">
+   <!-- 상단 간략화 메뉴 -->
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item active fs-4 fw-bolder" style = "color : #0070c0;" aria-current="page">예약 목록</li>
+			<li class="breadcrumb-item"><a href="${contextPath}/comGoods/comGoodsList.do" style="text-decoration:none; color:black;">예약 관리</a></li>
+			<li class="breadcrumb-item active" aria-current="page">예약목록 조회</li>
 		</ol>
 	</nav>
    <form action="${contextPath}/comGoods/reservationfind.do" class = "col-md-10 justify-content-center">

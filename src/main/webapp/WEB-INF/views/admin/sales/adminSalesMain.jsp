@@ -16,16 +16,18 @@
 	<link href="${contextPath}/resources/css/styles.css" rel="stylesheet" />
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body class="sb-nav-fixed">
-        <div id="layoutSidenav">
-            
-            <div id="layoutSidenav_content">
+<body>
+	<div id="layoutSidenav" class = "container">
+		<div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
+                    <div class="container-fluid">
+                        <!-- 상단 간략화 메뉴 -->
+						<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="${contextPath}/adminSales/adminSalesMain.do" style="text-decoration:none; color:black;">매출 관리</a></li>
+								<li class="breadcrumb-item active" aria-current="page">매출 조회</li>
+							</ol>
+						</nav>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">

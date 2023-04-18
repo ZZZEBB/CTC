@@ -313,9 +313,13 @@
 </head>
 <body>
    <div class = "container col-md-10 justify-content-center text-center">
-      <div class = "d-flex col-md-9 justify-content-between align-item-center">
-         <h4>회원정보</h4>
-      </div>
+      <!-- 상단 간략화 메뉴 -->
+	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			 class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
+			<li class="breadcrumb-item active" aria-current="page">나의 상세정보</li>
+		</ol>
+	</nav>
       <c:if test="${not empty memberInfo}">
       <form action="${contextPath}/mypage/modifyMyInfo.do" method="post">   
          <table class="table table align-middle">

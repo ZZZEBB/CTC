@@ -117,7 +117,7 @@
                             			<li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
 										<li><a href="${contextPath}/board/faq.do" class="nav-link px-2 text-dark">고객센터</a></li>
 										<li><a href="${contextPath}/main/intro.do" class="nav-link px-2 text-dark">회사소개</a></li>
-										<li><a href="${contextPath}/admin/adminSalesMain.do" class="nav-link px-2 text-dark">관리자</a></li>
+										<li><a href="${contextPath}/adminSales/adminSalesMain.do" class="nav-link px-2 text-dark">관리자</a></li>
                             		</c:when>
                             		<c:otherwise>
                             			<li><a href="${contextPath}/joinAndLogin/logout.do" class="nav-link px-2 text-dark">${memberInfo.member_name}님 로그아웃</a></li>
