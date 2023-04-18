@@ -28,9 +28,22 @@
       <result property="reser_period" column="reser_period"/>
       <result property="reser_headcount" column="reser_headcount"/>
    </resultMap>
+	
+	<!-- 사업체 매출 조회 -->
+	<!-- <select id="selectComOrderList" parameterType="java.util.Map" resultType="orderVO">
+		SELECT order_num, member_id, goods_name, order_status, order_date, goods_saleprice, pay_order_time, refund_price, pay_status
+		FROM reservation
+		where com_id = #{com_id}
+	</select> -->
+	
+	<!-- 관리자 매출 조회 -->
+	<select id="selectAllOrderList" parameterType="java.util.Map" resultType="orderVO">
+		SELECT order_num, member_id, goods_name, order_status, order_date, goods_saleprice, pay_order_time, refund_price, pay_status
+		FROM reservation
+	</select>
 
    <select id="orderList" parameterType="java.util.Map" resultType="orderVO">
-   SELECT * FROM reservation
+		SELECT * FROM reservation
    </select>
    
    <select id="selectMyOrderList" resultMap="orderGoodsResult"  parameterType="orderVO"  >

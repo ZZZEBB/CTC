@@ -192,10 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="tab-pane" id="hotel">
         <!-- 호텔 검색 폼 -->
         <form class="hotel-search-form">
-          <input type="text" name="location" placeholder="지역, 명소, 호텔명 검색">
-          <input type="text" name="checkin" placeholder="체크인 날짜 선택">
-          <input type="text" name="checkout" placeholder="체크아웃 날짜 선택">
-          <button type="submit">검색</button>
+          <input type="text" name="destination" class="form-control mb-3" placeholder="어디로 떠나시나요?">
+           <div class="d-flex justify-content-between">
+           <input type="text" name="checkin" id="startdate" class="form-control" placeholder="체크인 날짜" readonly="readonly" style="width: 118px;">
+           <input type="text" name="checkout" id="startdate" class="form-control" placeholder="체크아웃날짜" readonly="readonly" style="width: 118px;">
+           </div>
+          <button type="submit" class="btn btn-primary opacity-75 w-100 my-3">호텔 검색</button>
         </form>
       </div>
     </div>

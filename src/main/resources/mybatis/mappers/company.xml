@@ -28,27 +28,21 @@
       <result property="reser_headcount" column="reser_headcount"/>
    </resultMap>
    
-   <!-- 최초페이지 리스트 출력 -->
-   <select id="selectReservationList" parameterType="java.util.Map" resultType="orderVO">
-         SELECT * 
-         FROM reservation 
-   </select>
-   
    <!-- 검색 -->
-<select id="selectCompanyGoodsList" parameterType="java.util.Map" resultType="orderVO">
-     SELECT *
-     FROM reservation 
-     <where>
-       <if test="member_id != ''">
-            or member_id = #{member_id}
-       </if>
-       <if test="goods_code != ''">
-            or goods_code = #{goods_code}
-       </if>
-       <if test="order_date1 != null and order_date2 != null">
-            or order_date BETWEEN #{order_date1} AND #{order_date2}
-       </if>
-     </where>
-</select>
+	<select id="selectCompanyGoodsList" parameterType="java.util.Map" resultType="orderVO">
+	     SELECT *
+	     FROM reservation 
+	     <where>
+	       <if test="member_id != ''">
+	            or member_id = #{member_id}
+	       </if>
+	       <if test="goods_code != ''">
+	            or goods_code = #{goods_code}
+	       </if>
+	       <if test="order_date1 != null and order_date2 != null">
+	            or order_date BETWEEN #{order_date1} AND #{order_date2}
+	       </if>
+	     </where>
+	</select>
    
 </mapper>

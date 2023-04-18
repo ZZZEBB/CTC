@@ -60,4 +60,9 @@
       <put-attribute name="title" value="마이페이지 - 나의 이용후기 상세 페이지" />
       <put-attribute name="body" value="/WEB-INF/views/mypage/myReviewDetail.jsp" />
    </definition>
+   
+   <definition name="/mypage/reviewForm" extends="baseLayout">
+    <put-attribute name="title" value="글쓰기창" />
+    <put-attribute name="body" value="/WEB-INF/views/mypage/myReviewAdd.jsp" />
+   </definition>
 </tiles-definitions>

@@ -26,24 +26,24 @@
       }
    </style>
 </head>
-
+<script>
+   function fn_reviewForm(reviewForm){
+     
+       location.href=reviewForm;
+     
+   }
+</script>
 <body>
 <div class = "container">
-   <!-- 상단 간략화 메뉴 -->
-	<nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="${contextPath}/mypage/myInfo.do" style="text-decoration:none; color:black;">마이페이지</a></li>
-			<li class="breadcrumb-item active" aria-current="page">나의 여행후기</li>
-		</ol>
-	</nav>
+   <h4 class="mainText">이용후기 내역</h4>
    <br>
-   <p>${member.member_name}님의 여행후기 내역입니다.</p>
-   <table class="table mt-3" style="width: 80%">
+   <p>${member.member_name}님의 이용후기 내역입니다.</p>
+   <table class="table" style="width: 80%">
   <thead>
     <tr>
       <th scope="col">번호</th>
       <th scope="col">작성자ID</th>
-      <th scope="col">상품코드</th>
+      <!-- <th scope="col">상품코드</th> -->
       <th scope="col">제목</th>
       <th scope="col">작성일</th>
    </tr>
@@ -52,7 +52,7 @@
      <c:choose>
         <c:when test="${ empty review }">
            <tr>
-              <td><strong>등록된 여행후기가 없습니다.</strong></td>
+              <td><strong>등록된 이용후기가 없습니다.</strong></td>
            </tr>
         </c:when>
      <c:otherwise>
@@ -60,7 +60,7 @@
           <tr>
             <th scope="row">${reviewList.review_num}</th>
             <td>${reviewList.member_id}</td>
-            <td>${reviewList.goods_code}</td>
+            <%-- <td>${reviewList.goods_code}</td> --%>
             <td><a href="${contextPath}/mypage/myReviewDetail.do?review_num=${reviewList.review_num}">${reviewList.review_title}</a></td>
             <td><fmt:formatDate value="${reviewList.review_write_date}" pattern="yyyy-MM-dd"/></td>
           </tr>
@@ -69,7 +69,7 @@
      </c:choose>
   </tbody>
 </table>
-   <input class="button1" type="button" value="등록">
+   <a href="javascript:fn_reviewForm('${contextPath}/mypage/reviewForm.do')"><input class="button1" type="button" value="등록"></a>
 </div>
 
 

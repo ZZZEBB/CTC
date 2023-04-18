@@ -8,6 +8,7 @@ import org.springframework.dao.DataAccessException;
 import com.spring.ctc.board.vo.QnaVO;
 import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
+import com.spring.ctc.mypage.vo.ReviewVO;
 import com.spring.ctc.order.vo.OrderVO;
 
 public interface MypageDAO {
@@ -21,8 +22,10 @@ public interface MypageDAO {
 	public void deleteCompany(Map company)throws DataAccessException;
 	public List<OrderVO> checkMileage() throws DataAccessException;
 	public List<OrderVO> selectMyOrderHistory(Map dateMap) throws DataAccessException;
-	/*
-	 * public List<ReviewVO> reviewList(String member_id) throws DataAccessException;
-	 */
-
+	public List<ReviewVO> reviewList(String member_id) throws DataAccessException;
+	public ReviewVO reviewDetail(int review_num) throws DataAccessException;
+	public int insertNewReview(Map reviewMap) throws DataAccessException;
+	public void updateReview(Map reviewMap) throws DataAccessException;
+	public void deleteReview(int review_num) throws DataAccessException;
+	public List selectImageFileList(int review_num) throws DataAccessException;
 }

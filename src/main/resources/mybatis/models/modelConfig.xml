@@ -24,6 +24,7 @@
 		<typeAlias type="com.spring.ctc.goods.rent.vo.GoodsRentVO" alias="goodsRentVO" /> -->
 		<typeAlias type="com.spring.ctc.mypage.vo.MyPageVO" alias="myPageVO" />
 		<typeAlias type="com.spring.ctc.mypage.vo.ReviewVO" alias="reviewVO" />
+		<typeAlias type="com.spring.ctc.mypage.vo.ImageVO" alias="imageVO" />
 		<typeAlias type="com.spring.ctc.cart.vo.CartVO" alias="cartVO" />
 		<typeAlias type="com.spring.ctc.order.vo.OrderVO" alias="orderVO" />
 		<typeAlias type="com.spring.ctc.order.vo.SalesVO" alias="salesVO" />

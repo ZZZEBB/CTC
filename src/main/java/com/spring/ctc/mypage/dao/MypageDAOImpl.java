@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 import com.spring.ctc.board.vo.QnaVO;
 import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
+import com.spring.ctc.mypage.vo.ImageVO;
+import com.spring.ctc.mypage.vo.ReviewVO;
 import com.spring.ctc.order.vo.OrderVO;
 
 
@@ -41,7 +43,7 @@ public class MypageDAOImpl implements MypageDAO {
    //상품결제목록 출력
    @Override
    public List<OrderVO> selectOrder(MemberVO memberInfo) throws DataAccessException{
-	   List<OrderVO> revervation = sqlSession.selectList("mapper.mypage.selectOrderList" , memberInfo);
+	   List<OrderVO> revervation = sqlSession.selectList("mapper.mypage.selectOrderList", memberInfo);
 	   return revervation;
    }
    
@@ -69,11 +71,49 @@ public class MypageDAOImpl implements MypageDAO {
       return myOrderHistList;
    }
 
-	/*
-	 * @Override 
-	 * public List<ReviewVO> reviewList(String member_id) throws DataAccessException { 
-	 * List<ReviewVO> review sqlSession.selectList("mapper.mypage.reviewList", member_id); return review;
-	 * }
-	 */
+   @Override
+   public List<ReviewVO> reviewList(String member_id) throws DataAccessException {
+      List<ReviewVO> review = sqlSession.selectList("mapper.mypage.reviewList", member_id);
+      return review;
+   }
 
+   @Override
+   public ReviewVO reviewDetail(int review_num) throws DataAccessException {
+      return sqlSession.selectOne("mapper.mypage.reviewDetail", review_num);
+   }
+
+   @Override
+   public int insertNewReview(Map reviewMap) throws DataAccessException {
+      int review_num = selectNewReview_num();
+      reviewMap.put("review_num", review_num);
+      sqlSession.insert("mapper.mypage.insertNewReview", reviewMap);
+      return review_num;
+   }
+
+   @Override
+   public void updateReview(Map reviewMap) throws DataAccessException {
+      sqlSession.update("mapper.mypage.updateReview", reviewMap);
+      
+   }
+
+   @Override
+   public void deleteReview(int review_num) throws DataAccessException {
+      sqlSession.delete("mapper.mypage.deleteReview", review_num);
+      
+   }
+
+   @Override
+   public List selectImageFileList(int review_num) throws DataAccessException {
+      List<ImageVO> imageFileList = null;
+      imageFileList = sqlSession.selectList("mapper.mypage.selectImageFileList", review_num);
+      return imageFileList;   
+   }
+   
+   private int selectNewReview_num() throws DataAccessException {
+      return sqlSession.selectOne("mapper.mypage.selectNewReviewNO");
+   }
+   
+   private int selectNewImageFileNO() throws DataAccessException {
+      return sqlSession.selectOne("mapper.board.selectNewImageFileNO");
+   }
  }

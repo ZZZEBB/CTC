@@ -10,6 +10,7 @@ import com.spring.ctc.board.vo.QnaVO;
 import com.spring.ctc.joinandlogin.vo.CompanyVO;
 import com.spring.ctc.joinandlogin.vo.MemberVO;
 import com.spring.ctc.mypage.dao.MypageDAO;
+import com.spring.ctc.mypage.vo.ReviewVO;
 import com.spring.ctc.order.vo.OrderVO;
 
 @Service("mypageservice")
@@ -61,10 +62,33 @@ public class MypageServiceImpl implements MypageService {
       return mypageDAO.selectMyOrderHistory(dateMap);
    }
 
-	/*
-	 * @Override public List<ReviewVO> reviewList(String member_id) throws Exception
-	 * { return mypageDAO.reviewList(member_id); }
-	 */
+   @Override
+   public List<ReviewVO> reviewList(String member_id) throws Exception {
+      return mypageDAO.reviewList(member_id);
+   }
 
-   
+   //단일 파일 보이기
+   @Override
+   public ReviewVO reviewDetail(int review_num) throws Exception {
+      ReviewVO reviewVO = mypageDAO.reviewDetail(review_num);
+      return reviewVO;
+   }
+
+   //단일 이미지 추가하기
+   @Override
+   public int addNewReview(Map reviewMap) throws Exception {
+      return mypageDAO.insertNewReview(reviewMap);
+   }
+
+   @Override
+   public void modReview(Map reviewMap) throws Exception {
+      mypageDAO.updateReview(reviewMap);
+      
+   }
+
+   @Override
+   public void removeReview(int review_num) throws Exception {
+      mypageDAO.deleteReview(review_num);
+      
+   }
 }
