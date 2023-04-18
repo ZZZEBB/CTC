@@ -23,4 +23,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/goods/adminGoodsList.jsp" />
 	</definition>
 	
+	<!-- 관리자 전체 주문 조회 페이지 -->
+	<definition name="/adminOrder/adminAllOrderList" extends="adminSide">
+		<put-attribute name="title" value="관리자 매출관리 페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/order/adminOrderList.jsp" />
+	</definition>
+	
 </tiles-definitions>

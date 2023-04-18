@@ -157,7 +157,7 @@
 						<img src="${contextPath}/resources/image/goods.png" alt="Logo" width="30%" class="align-center">
 						<p>상품 관리</p>
 					</a>
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="${contextPath}/adminOrder/adminAllOrderList.do">
 						<img src="${contextPath}/resources/image/order.png" alt="Logo" width="30%" class="align-center">
 						<p>주문 관리</p>
 					</a>
