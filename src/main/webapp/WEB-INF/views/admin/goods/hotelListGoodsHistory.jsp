@@ -20,7 +20,7 @@ function search_order_history(fixedSearchPeriod){
      formObj.appendChild(i_fixedSearch_period);
      document.body.appendChild(formObj); 
      formObj.method="get";
-     formObj.action="${contextPath}/adminGoods/listGoodsHistory.do";
+     formObj.action="${contextPath}/adminGoods/hotelListGoodsHistory.do";
      formObj.submit();
 }
 </script>
@@ -53,7 +53,7 @@ input{
    <!-- 상단 간략화 메뉴 -->
    <nav class="text-end" style="margin-top:0.5%; text-align:center;" aria-label="breadcrumb">
       <ol class="breadcrumb">
-         <li class="breadcrumb-item"><a href="${contextPath}/adminGoods/listGoodsHistory.do" style="text-decoration:none; color:black;">상품 관리</a></li>
+         <li class="breadcrumb-item"><a href="${contextPath}/adminGoods/hotelListGoodsHistory.do" style="text-decoration:none; color:black;">상품 관리</a></li>
          <li class="breadcrumb-item active" aria-current="page">상품 목록 조회</li>
       </ol>
    </nav>
@@ -84,7 +84,7 @@ input{
             <%-- <td><a href="#"><img src = "${contextPath}/resources/image/x.png"></a></td> --%>
          <c:if test="${not empty myOrderHistList}">
             <c:forEach var="item1" items="${myOrderHistList}" varStatus="status">
-            <c:if test="${item1.goods_status == 1}">
+            <c:if test="${item1.goods_status == 1 and item1.goods_category == '숙박'}">
             <tr style="height:50px; text-align:center; border-bottom:1px solid #CCCCCC;">
                <td><input type="checkbox"/></td>
                <td>${item1.com_id}</td>

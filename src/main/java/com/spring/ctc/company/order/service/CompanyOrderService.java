@@ -7,7 +7,7 @@ import com.spring.ctc.order.vo.OrderVO;
 
 public interface CompanyOrderService {
 	
-	public List<OrderVO> selectOrderList() throws Exception;
-	public List<OrderVO> findOrderGoods(Map find) throws Exception;
+	public List<OrderVO> selectComOrderList() throws Exception;
+	public List<OrderVO> findComOrderGoods(Map find) throws Exception;
 
 }

@@ -17,13 +17,13 @@ public class CompanyOrderDAOImpl implements CompanyOrderDAO {
    private SqlSession sqlSession;
    
    //사업자 모드 - 메인(예약관리 페이지)
-   public List<OrderVO> selectComList() throws DataAccessException{
-      List<OrderVO> comOrder = sqlSession.selectList("mapper.company.selectReservationList");
+   public List<OrderVO> selectComOrderList() throws DataAccessException{
+      List<OrderVO> comOrder = sqlSession.selectList("mapper.company.selectComOrderList");
       return comOrder;
    }
    
    //예약목록 조회
-   public List<OrderVO> comOrderFind(Map find) throws DataAccessException{
+   public List<OrderVO> selectCompanyOrderList(Map find) throws DataAccessException{
       List<OrderVO> comOrder = sqlSession.selectList("mapper.company.selectCompanyOrderList",find);
       return comOrder;
    }

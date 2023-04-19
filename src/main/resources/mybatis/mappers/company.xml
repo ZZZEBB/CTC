@@ -56,7 +56,7 @@
 	</resultMap>
    
    <!-- 사업체 매출 조회 -->
-	<select id="selectReservationList" parameterType="java.util.Map" resultType="orderVO">
+	<select id="selectComOrderList" parameterType="java.util.Map" resultType="orderVO">
 		SELECT r.order_num, r.member_id, r.goods_name, r.order_status, r.order_date, r.goods_saleprice, r.pay_order_time, r.refund_price, r.pay_status
 		FROM reservation r, company c
 		where c.com_id = #{com_id}

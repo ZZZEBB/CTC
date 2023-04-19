@@ -9,7 +9,7 @@ import com.spring.ctc.order.vo.OrderVO;
 
 public interface CompanyOrderDAO {
 	
-	public List<OrderVO> selectComList() throws DataAccessException;
-	public List<OrderVO> comOrderFind(Map find) throws DataAccessException;
+	public List<OrderVO> selectComOrderList() throws DataAccessException;
+	public List<OrderVO> selectCompanyOrderList(Map find) throws DataAccessException;
 
 }

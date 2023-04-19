@@ -16,14 +16,14 @@ public class CompanyOrderServiceImpl implements CompanyOrderService {
 	   private CompanyOrderDAO companyOrderDAO;
 	   
 	   @Override
-	   public List<OrderVO> selectOrderList() throws Exception{
-	      List<OrderVO> order = companyOrderDAO.selectComList();
+	   public List<OrderVO> selectComOrderList() throws Exception{
+	      List<OrderVO> order = companyOrderDAO.selectComOrderList();
 	      return order;
 	   }
 	   
 	   @Override
-	   public List<OrderVO> findOrderGoods(Map find) throws Exception{
-	      List<OrderVO> order = companyOrderDAO.comOrderFind(find);
+	   public List<OrderVO> findComOrderGoods(Map find) throws Exception{
+	      List<OrderVO> order = companyOrderDAO.selectCompanyOrderList(find);
 	      return order;
 	   }
 

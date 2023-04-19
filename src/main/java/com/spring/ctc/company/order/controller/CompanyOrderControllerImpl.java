@@ -30,7 +30,7 @@ public class CompanyOrderControllerImpl implements CompanyOrderController {
 		session = request.getSession();  
 		ModelAndView mav = new ModelAndView();
 		String viewName = (String)request.getAttribute("viewName");
-		List<OrderVO> order = companyOrderService.selectOrderList();
+		List<OrderVO> order = companyOrderService.selectComOrderList();
 		mav.setViewName(viewName);
 		session.setAttribute("side_menu", "reservationManage_mode"); //사업자 모드 - 예약관리 사이드 메뉴
 		mav.addObject("reservation",order);
@@ -46,7 +46,7 @@ public class CompanyOrderControllerImpl implements CompanyOrderController {
 	      System.out.println("asdsadsada" + find.get("member_id"));
 	      mav.setViewName(viewName);
 	      session.setAttribute("side_menu", "reservationManage_mode"); //사업자 모드 - 예약관리 사이드 메뉴
-	      List<OrderVO> order = companyOrderService.findOrderGoods(find);
+	      List<OrderVO> order = companyOrderService.findComOrderGoods(find);
 	      mav.addObject("comReser", order);
 	      return mav;
 	   }
