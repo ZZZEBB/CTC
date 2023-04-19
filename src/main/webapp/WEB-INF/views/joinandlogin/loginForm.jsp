@@ -7,19 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<c:if test='${not empty message }'>
-		<script>
-		window.onload=function()
-		{
-		  result(); .
-		}
-		
-		function result(){
-		   alert("아이디나  비밀번호가 틀립니다. 다시 로그인해주세요");
-		}
-		</script>
-	
-	</c:if>
+   <c:if test='${not empty message }'>
+      <script>
+      window.onload=function()
+      {
+        result();
+      }
+      
+      function result(){
+         alert("아이디나  비밀번호가 틀립니다. 다시 로그인해주세요");
+      }
+      </script>
+   
+   </c:if>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <style type="text/css">
@@ -161,7 +161,7 @@ form fieldset a:hover { text-decoration: underline; }
 
 
   <form action="${contextPath}/joinAndLogin/login.do" method="post" name="member" >
-	
+   
     <fieldset>
 
       <p><input type="text" placeholder="아이디" name="member_id" required></p>
